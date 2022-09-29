@@ -35,6 +35,12 @@ with block:
             with gr.Row():
                 data_run = gr.Button("Refresh")
                 data_run.click(get_blocks_party_spaces, inputs=None, outputs=data)
+        with gr.TabItem("Blocks Party Leaderboard2"):
+            with gr.Row():
+                data = gr.outputs.Dataframe(type="pandas")
+            with gr.Row():
+                data_run = gr.Button("Refresh")
+                data_run.click(get_blocks_party_spaces, inputs=None, outputs=data)
     # running the function on page load in addition to when the button is clicked
     block.load(get_blocks_party_spaces, inputs=None, outputs=data)               
 
