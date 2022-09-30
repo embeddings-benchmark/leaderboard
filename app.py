@@ -136,7 +136,10 @@ def get_mteb_data(tasks=["Clustering"], langs=[], cast_to_str=True, task_to_metr
         #    ],
         # },
         # Use "get" instead of dict indexing to skip incompat metadata instead of erroring out
-        task_results = [sub_res for sub_res in meta["model-index"][0]["results"] if (sub_res.get("task", {}).get("type", "") in tasks) and (sub_res.get("dataset", {}).get("config", "default") in ("default", *langs))]
+        if langs:
+            task_results = [sub_res for sub_res in meta["model-index"][0]["results"] if (sub_res.get("task", {}).get("type", "") in tasks) and (sub_res.get("dataset", {}).get("config", "default") in ("default", *langs))]
+        else:
+            task_results = [sub_res for sub_res in meta["model-index"][0]["results"] if (sub_res.get("task", {}).get("type", "") in tasks)]
         out = [{res["dataset"]["name"].replace("MTEB ", ""): [round(score["value"], 2) for score in res["metrics"] if score["type"] == task_to_metric.get(res["task"]["type"])][0]} for res in task_results]
         #else:
             # Multilingual
@@ -470,7 +473,7 @@ with block:
     block.load(get_mteb_data, inputs=[task_clustering], outputs=data_clustering)
     block.load(get_mteb_data, inputs=[task_retrieval], outputs=data_retrieval)
     block.load(get_mteb_data, inputs=[task_reranking], outputs=data_reranking)
-    block.load(get_mteb_data, inputs=[task_sts_en], outputs=data_sts_en)
+    block.load(get_mteb_data, inputs=[task_sts_en, lang_sts_en], outputs=data_sts_en)
     block.load(get_mteb_data, inputs=[task_sts], outputs=data_sts)
     block.load(get_mteb_data, inputs=[task_summarization], outputs=data_summarization)
 
@@ -485,3 +488,4 @@ block.launch()
 # Sources:
 # https://huggingface.co/spaces/gradio/leaderboard
 # https://huggingface.co/spaces/huggingface-projects/Deep-Reinforcement-Learning-Leaderboard
+# https://getemoji.com/
