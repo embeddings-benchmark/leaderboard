@@ -7,14 +7,6 @@ from huggingface_hub.repocard import metadata_load
 
 path = f"https://huggingface.co/api/spaces"
 
-
-#api = HfApi()
-#models = api.list_models(filter="mteb")
-#readme_path = hf_hub_download(models[0].modelId, filename="README.md")
-#meta = metadata_load(readme_path)
-#list(filter(lambda x: x["task"]["type"] == "Retrieval", meta["model-index"][0]["results"]))
-
-
 def get_blocks_party_spaces():
     r = requests.get(path)
     d = r.json()
@@ -28,7 +20,14 @@ def get_blocks_party_spaces():
     df = df.sort_values(by=['likes'],ascending=False)
     return df
 
-def get_clustering(task="Clustering", metric="v_measure"):
+def make_clickable_model(model_name):
+    # remove user from model name
+    model_name_show = ' '.join(model_name.split('/')[1:])
+
+    link = "https://huggingface.co/" + model_name
+    return f'<a target="_blank" href="{link}">{model_name_show}</a>'
+
+def get_mteb_data(task="Clustering", metric="v_measure"):
     api = HfApi()
     models = api.list_models(filter="mteb")
     df_list = []
@@ -37,11 +36,14 @@ def get_clustering(task="Clustering", metric="v_measure"):
         meta = metadata_load(readme_path)
         out = list(
             map(
-                lambda x: {x["dataset"]["name"]: list(filter(lambda x: x["type"] == metric, x["metrics"]))[0]["value"]}, 
+                lambda x: {x["dataset"]["name"].replace("MTEB ", ""): round(list(filter(lambda x: x["type"] == metric, x["metrics"]))[0]["value"], 2)}, 
                 filter(lambda x: x["task"]["type"] == task, meta["model-index"][0]["results"])
             )
         )
         out = {k: v for d in out for k, v in d.items()}
+        # Does not work https://github.com/gradio-app/gradio/issues/2375
+        # Turning it into HTML will make the formatting ugly
+        # make_clickable_model(model.modelId)
         out["Model"] = model.modelId
         df_list.append(out)
     df = pd.DataFrame(df_list)
@@ -67,7 +69,9 @@ with block:
                 data = gr.components.Dataframe(type="pandas")
             with gr.Row():
                 data_run = gr.Button("Refresh")
-                data_run.click(get_clustering, inputs=None, outputs=data)
+                task = gr.Variable(value="Clustering")
+                metric = gr.Variable(value="v_measure")
+                data_run.click(get_mteb_data, inputs=[task, metric], outputs=data)
         with gr.TabItem("Blocks Party Leaderboard2"):
             with gr.Row():
                 data = gr.components.Dataframe(type="pandas")
