@@ -66,12 +66,12 @@ with block:
             with gr.Row():
                 gr.Markdown("""Leaderboard for Clustering""")
             with gr.Row():
-                data = gr.components.Dataframe(type="pandas")
+                data_clustering = gr.components.Dataframe(type="pandas")
             with gr.Row():
                 data_run = gr.Button("Refresh")
                 task = gr.Variable(value="Clustering")
                 metric = gr.Variable(value="v_measure")
-                data_run.click(get_mteb_data, inputs=[task, metric], outputs=data)
+                data_run.click(get_mteb_data, inputs=[task, metric], outputs=data_clustering)
         with gr.TabItem("Blocks Party Leaderboard2"):
             with gr.Row():
                 data = gr.components.Dataframe(type="pandas")
@@ -79,7 +79,8 @@ with block:
                 data_run = gr.Button("Refresh")
                 data_run.click(get_blocks_party_spaces, inputs=None, outputs=data)
     # running the function on page load in addition to when the button is clicked
-    block.load(get_blocks_party_spaces, inputs=None, outputs=data)               
+    block.load(get_mteb_data, inputs=[task, metric], outputs=data_clustering)
+    block.load(get_blocks_party_spaces, inputs=None, outputs=data)  
 
 block.launch()
 
