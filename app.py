@@ -3,8 +3,6 @@ import pandas as pd
 from huggingface_hub import HfApi, hf_hub_download
 from huggingface_hub.repocard import metadata_load
 
-path = f"https://huggingface.co/api/spaces"
-
 TASKS = [
     "BitextMining",
     "Classification",
@@ -185,15 +183,15 @@ def get_mteb_average(get_all_avgs=False):
         cast_to_str=False
     )
     
-    DATA_OVERALL.insert(1, "Average", DATA_OVERALL[TASK_LIST_EN].mean(axis=1, skipna=False))
-    DATA_OVERALL.insert(2, "Classification Average", DATA_OVERALL[TASK_LIST_CLASSIFICATION].mean(axis=1, skipna=False))
-    DATA_OVERALL.insert(3, "Clustering Average", DATA_OVERALL[TASK_LIST_CLUSTERING].mean(axis=1, skipna=False))
-    DATA_OVERALL.insert(4, "Pair Classification Average", DATA_OVERALL[TASK_LIST_PAIR_CLASSIFICATION].mean(axis=1, skipna=False))
-    DATA_OVERALL.insert(5, "Reranking Average", DATA_OVERALL[TASK_LIST_RERANKING].mean(axis=1, skipna=False))
-    DATA_OVERALL.insert(6, "Retrieval Average", DATA_OVERALL[TASK_LIST_RETRIEVAL].mean(axis=1, skipna=False))
-    DATA_OVERALL.insert(7, "STS Average", DATA_OVERALL[TASK_LIST_STS].mean(axis=1, skipna=False))
-    DATA_OVERALL.insert(8, "Summarization Average", DATA_OVERALL[TASK_LIST_SUMMARIZATION].mean(axis=1, skipna=False))
-    DATA_OVERALL.sort_values("Average", ascending=False, inplace=True)
+    DATA_OVERALL.insert(1, f"Average ({len(TASK_LIST_EN)} datasets)", DATA_OVERALL[TASK_LIST_EN].mean(axis=1, skipna=False))
+    DATA_OVERALL.insert(2, f"Classification Average ({len(TASK_LIST_CLASSIFICATION)} datasets)", DATA_OVERALL[TASK_LIST_CLASSIFICATION].mean(axis=1, skipna=False))
+    DATA_OVERALL.insert(3, f"Clustering Average ({len(TASK_LIST_CLUSTERING)} datasets)", DATA_OVERALL[TASK_LIST_CLUSTERING].mean(axis=1, skipna=False))
+    DATA_OVERALL.insert(4, f"Pair Classification Average ({len(TASK_LIST_PAIR_CLASSIFICATION)} datasets)", DATA_OVERALL[TASK_LIST_PAIR_CLASSIFICATION].mean(axis=1, skipna=False))
+    DATA_OVERALL.insert(5, f"Reranking Average ({len(TASK_LIST_RERANKING)} datasets)", DATA_OVERALL[TASK_LIST_RERANKING].mean(axis=1, skipna=False))
+    DATA_OVERALL.insert(6, f"Retrieval Average ({len(TASK_LIST_RETRIEVAL)} datasets)", DATA_OVERALL[TASK_LIST_RETRIEVAL].mean(axis=1, skipna=False))
+    DATA_OVERALL.insert(7, f"STS Average ({len(TASK_LIST_STS)} datasets)", DATA_OVERALL[TASK_LIST_STS].mean(axis=1, skipna=False))
+    DATA_OVERALL.insert(8, f"Summarization Average ({len(TASK_LIST_SUMMARIZATION)} dataset)", DATA_OVERALL[TASK_LIST_SUMMARIZATION].mean(axis=1, skipna=False))
+    DATA_OVERALL.sort_values(f"Average ({len(TASK_LIST_EN)} datasets)", ascending=False, inplace=True)
     # Start ranking from 1
     DATA_OVERALL.insert(0, "Rank", list(range(1, len(DATA_OVERALL) + 1)))
 
@@ -207,7 +205,7 @@ def get_mteb_average(get_all_avgs=False):
     DATA_STS_EN = DATA_OVERALL[["Model"] + TASK_LIST_STS]
     DATA_SUMMARIZATION = DATA_OVERALL[["Model"] + TASK_LIST_SUMMARIZATION]
 
-    DATA_OVERALL = DATA_OVERALL[["Rank", "Model", "Average", "Classification Average", "Clustering Average", "Pair Classification Average", "Reranking Average", "Retrieval Average", "STS Average", "Summarization Average"]]
+    DATA_OVERALL = DATA_OVERALL[["Rank", "Model", f"Average ({len(TASK_LIST_EN)} datasets)", f"Classification Average ({len(TASK_LIST_CLASSIFICATION)} datasets)", f"Clustering Average ({len(TASK_LIST_CLUSTERING)} datasets)", f"Pair Classification Average ({len(TASK_LIST_PAIR_CLASSIFICATION)} datasets)", f"Reranking Average ({len(TASK_LIST_RERANKING)} datasets)", f"Retrieval Average ({len(TASK_LIST_RETRIEVAL)} datasets)", f"STS Average ({len(TASK_LIST_STS)} datasets)", f"Summarization Average ({len(TASK_LIST_SUMMARIZATION)} dataset)"]]
 
     return DATA_OVERALL
 
@@ -216,19 +214,27 @@ block = gr.Blocks()
 
 
 with block:
-    gr.Markdown(
-        """MTEB Leaderboard. See <a href="https://huggingface.co/Gradio-Blocks" target="_blank" style="text-decoration: underline">Blocks Party Event</a>"""
-    )
+    gr.Markdown(f"""
+    Massive Text Embedding Benchmark (MTEB) Leaderboard. To submit, refer to the <a href="https://github.com/embeddings-benchmark/mteb#leaderboard" target="_blank" style="text-decoration: underline">MTEB GitHub repository</a> 🤗
+
+    - **Total Scores**: TODO
+    - **Total Models**: {len(DATA_OVERALL)}
+    - **Total Users**: TODO
+    """)
     with gr.Tabs():
         with gr.TabItem("Overall"):
             with gr.Row():
-                gr.Markdown("""Average Scores""")
+                gr.Markdown("""
+                **Overall MTEB English leaderboard 🔮**
+                
+                - **Metric:** Various, refer to task tabs
+                - **Languages:** English, refer to task tabs for others
+                """)
             with gr.Row():
                 data_overall = gr.components.Dataframe(
                     DATA_OVERALL,
                     datatype=["markdown"] * len(DATA_OVERALL.columns) * 2,
                     type="pandas",
-                    #col_count=(len(DATA_OVERALL.columns), "fixed"),
                     wrap=True,
                 )
             with gr.Row():
@@ -236,7 +242,12 @@ with block:
                 data_run.click(get_mteb_average, inputs=None, outputs=data_overall)                
         with gr.TabItem("BitextMining"):
             with gr.Row():
-                gr.Markdown("""Leaderboard for Clustering""")
+                    gr.Markdown("""
+                    **Bitext Mining Leaderboard 🎌**
+                    
+                    - **Metric:** Accuracy (accuracy)
+                    - **Languages:** 117
+                    """)
             with gr.Row():
                 data_bitext_mining = gr.components.Dataframe(
                     datatype=["markdown"] * 500, # hack when we don't know how many columns
@@ -253,7 +264,12 @@ with block:
         with gr.TabItem("Classification"):
             with gr.TabItem("English"):
                 with gr.Row():
-                    gr.Markdown("""Leaderboard for Classification""")
+                    gr.Markdown("""
+                    **Classification Leaderboard ❤️**
+                    
+                    - **Metric:** Accuracy (accuracy)
+                    - **Languages:** English
+                    """)
                 with gr.Row():
                     data_classification_en = gr.components.Dataframe(
                         DATA_CLASSIFICATION_EN,
@@ -274,7 +290,12 @@ with block:
                     )
             with gr.TabItem("Multilingual"):
                 with gr.Row():
-                    gr.Markdown("""Multilingual Classification""")
+                    gr.Markdown("""
+                    **Classification Multilingual Leaderboard 💜💚💙**
+                    
+                    - **Metric:** Accuracy (accuracy)
+                    - **Languages:** 51
+                    """)
                 with gr.Row():
                     data_classification = gr.components.Dataframe(
                         datatype=["markdown"] * 500, # hack when we don't know how many columns
@@ -290,7 +311,12 @@ with block:
                     )
         with gr.TabItem("Clustering"):
             with gr.Row():
-                gr.Markdown("""Leaderboard for Clustering""")
+                gr.Markdown("""
+                **Clustering Leaderboard ✨**
+                
+                - **Metric:** Validity Measure (v_measure)
+                - **Languages:** English
+                """)
             with gr.Row():
                 data_clustering = gr.components.Dataframe(
                     DATA_CLUSTERING,
@@ -308,7 +334,12 @@ with block:
                 )
         with gr.TabItem("Pair Classification"):
             with gr.Row():
-                gr.Markdown("""Leaderboard for Pair Classification""")
+                gr.Markdown("""
+                **Pair Classification Leaderboard 🎭**
+                
+                - **Metric:** Average Precision based on Cosine Similarities (cos_sim_ap)
+                - **Languages:** English
+                """)
             with gr.Row():
                 data_pair_classification = gr.components.Dataframe(
                     DATA_PAIR_CLASSIFICATION,
@@ -318,7 +349,7 @@ with block:
                 )
             with gr.Row():
                 data_run = gr.Button("Refresh")
-                task_pair_classification = gr.Variable(value="Clustering")
+                task_pair_classification = gr.Variable(value="PairClassification")
                 data_run.click(
                     get_mteb_data,
                     inputs=[task_pair_classification],
@@ -326,7 +357,12 @@ with block:
                 )
         with gr.TabItem("Retrieval"):
             with gr.Row():
-                gr.Markdown("""Leaderboard for Retrieval""")
+                gr.Markdown("""
+                **Retrieval Leaderboard  🔎**
+                
+                - **Metric:** Normalized Discounted Cumulative Gain @ k (ndcg_at_10)
+                - **Languages:** English
+                """)
             with gr.Row():
                 data_retrieval = gr.components.Dataframe(
                     DATA_RETRIEVAL,
@@ -341,7 +377,12 @@ with block:
                 )
         with gr.TabItem("Reranking"):
             with gr.Row():
-                gr.Markdown("""Leaderboard for Reranking""")
+                gr.Markdown("""
+                **Reranking Leaderboard 🥇**
+                
+                - **Metric:** Mean Average Precision (MAP)
+                - **Languages:** English
+                """)
             with gr.Row():
                 data_reranking = gr.components.Dataframe(
                     DATA_RERANKING,
@@ -359,7 +400,12 @@ with block:
         with gr.TabItem("STS"):
             with gr.TabItem("English"):
                 with gr.Row():
-                    gr.Markdown("""Leaderboard for STS""")
+                    gr.Markdown("""
+                    **STS Leaderboard 🤖**
+                    
+                    - **Metric:** Spearman correlation based on cosine similarity
+                    - **Languages:** English
+                    """)
                 with gr.Row():
                     data_sts_en = gr.components.Dataframe(
                         DATA_STS_EN,
@@ -378,7 +424,12 @@ with block:
                     )
             with gr.TabItem("Multilingual"):
                 with gr.Row():
-                    gr.Markdown("""Leaderboard for STS""")
+                    gr.Markdown("""
+                    **STS Multilingual Leaderboard 👽**
+                    
+                    - **Metric:** Spearman correlation based on cosine similarity
+                    - **Languages:** Arabic, Chinese, Dutch, English, French, German, Italian, Korean, Polish, Russian, Spanish
+                    """)
                 with gr.Row():
                     data_sts = gr.components.Dataframe(
                         datatype=["markdown"] * 50, # hack when we don't know how many columns
@@ -390,7 +441,12 @@ with block:
                     data_run.click(get_mteb_data, inputs=[task_sts], outputs=data_sts)
         with gr.TabItem("Summarization"):
             with gr.Row():
-                gr.Markdown("""Leaderboard for Summarization""")
+                gr.Markdown("""
+                **Summarization Leaderboard 📜**
+                
+                - **Metric:** Spearman correlation based on cosine similarity
+                - **Languages:** English
+                """)
             with gr.Row():
                 data_summarization = gr.components.Dataframe(
                     DATA_SUMMARIZATION,
@@ -406,13 +462,15 @@ with block:
                     inputs=[task_summarization],
                     outputs=data_summarization,
                 )
-    # running the function on page load in addition to when the button is clicked
+    # Running the function on page load in addition to when the button is clicked
+    # This is optional - If deactivated the data created loaded at "Build time" is shown like for Overall tab
     block.load(get_mteb_data, inputs=[task_bitext_mining], outputs=data_bitext_mining)
     block.load(get_mteb_data, inputs=[task_classification_en, lang_classification_en], outputs=data_classification_en)
     block.load(get_mteb_data, inputs=[task_classification], outputs=data_classification)
     block.load(get_mteb_data, inputs=[task_clustering], outputs=data_clustering)
     block.load(get_mteb_data, inputs=[task_retrieval], outputs=data_retrieval)
     block.load(get_mteb_data, inputs=[task_reranking], outputs=data_reranking)
+    block.load(get_mteb_data, inputs=[task_sts_en], outputs=data_sts_en)
     block.load(get_mteb_data, inputs=[task_sts], outputs=data_sts)
     block.load(get_mteb_data, inputs=[task_summarization], outputs=data_summarization)
 
