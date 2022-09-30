@@ -1,7 +1,7 @@
 ---
-title: leaderboard 
-emoji: 💹
-colorFrom: indigo
+title: MTEB Leaderboard 
+emoji: 🥇
+colorFrom: blue
 colorTo: indigo
 sdk: gradio
 sdk_version: 3.4
