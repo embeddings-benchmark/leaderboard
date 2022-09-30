@@ -141,22 +141,6 @@ def get_mteb_data(tasks=["Clustering"], langs=[], cast_to_str=True, task_to_metr
         else:
             task_results = [sub_res for sub_res in meta["model-index"][0]["results"] if (sub_res.get("task", {}).get("type", "") in tasks)]
         out = [{res["dataset"]["name"].replace("MTEB ", ""): [round(score["value"], 2) for score in res["metrics"] if score["type"] == task_to_metric.get(res["task"]["type"])][0]} for res in task_results]
-        #else:
-            # Multilingual
-        #    out = list(
-        #        map(
-        #            lambda x: {
-        #                x["dataset"]["name"].replace("MTEB ", ""): round(
-        #                    list(filter(lambda x: x["type"] == metric, x["metrics"]))[0]["value"], 2
-        #                )
-        #            },
-        #            filter(
-        #                lambda x: (x.get("task", {}).get("type", "") in tasks)
-        #                and (x.get("dataset", {}).get("config", "") in ("default", *langs)),
-        #                meta["model-index"][0]["results"],
-        #            ),
-        #        )
-        #    )
         out = {k: v for d in out for k, v in d.items()}
         out["Model"] = make_clickable_model(model.modelId)
         df_list.append(out)
