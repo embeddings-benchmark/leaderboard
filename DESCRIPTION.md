@@ -1,1 +1,1 @@
-A simple dashboard ranking spaces by number of likes.
+Massive Text Embedding Benchmark (MTEB) Leaderboard.
