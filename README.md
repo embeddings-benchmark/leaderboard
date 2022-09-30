@@ -1,4 +1,3 @@
-
 ---
 title: leaderboard 
 emoji: 🔥

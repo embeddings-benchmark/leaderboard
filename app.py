@@ -96,19 +96,6 @@ TASK_LIST_SUMMARIZATION = [
 
 TASK_LIST_EN = TASK_LIST_CLASSIFICATION + TASK_LIST_CLUSTERING + TASK_LIST_PAIR_CLASSIFICATION + TASK_LIST_RERANKING + TASK_LIST_RETRIEVAL + TASK_LIST_STS + TASK_LIST_SUMMARIZATION
 
-TASK_TO_TASK_LIST = {}
-
-
-
-def make_clickable_model(model_name):
-    # Remove user from model name
-    model_name_show = " ".join(model_name.split("/")[1:])
-    link = "https://huggingface.co/" + model_name
-    return (
-        f'<a target="_blank" style="text-decoration: underline" href="{link}">{model_name_show}</a>'
-    )
-
-
 TASK_TO_METRIC = {
     "BitextMining": "f1",
     "Clustering": "v_measure",
@@ -120,7 +107,16 @@ TASK_TO_METRIC = {
     "Summarization": "cos_sim_spearman",
 }
 
-def get_mteb_data(tasks=["Clustering"], metric="v_measure", langs=[], cast_to_str=True, task_to_metric=TASK_TO_METRIC):
+def make_clickable_model(model_name):
+    # Remove user from model name
+    model_name_show = " ".join(model_name.split("/")[1:])
+    link = "https://huggingface.co/" + model_name
+    return (
+        f'<a target="_blank" style="text-decoration: underline" href="{link}">{model_name_show}</a>'
+    )
+
+
+def get_mteb_data(tasks=["Clustering"], langs=[], cast_to_str=True, task_to_metric=TASK_TO_METRIC):
     api = HfApi()
     models = api.list_models(filter="mteb")
     df_list = []
@@ -141,9 +137,7 @@ def get_mteb_data(tasks=["Clustering"], metric="v_measure", langs=[], cast_to_st
         #        {"type": "f1", "value": 38.809586587791664},
         #    ],
         # },
-
         # Use "get" instead of dict indexing to skip incompat metadata instead of erroring out
-        #if langs is None:
         task_results = [sub_res for sub_res in meta["model-index"][0]["results"] if (sub_res.get("task", {}).get("type", "") in tasks) and (sub_res.get("dataset", {}).get("config", "default") in ("default", *langs))]
         out = [{res["dataset"]["name"].replace("MTEB ", ""): [round(score["value"], 2) for score in res["metrics"] if score["type"] == task_to_metric.get(res["task"]["type"])][0]} for res in task_results]
         #else:
@@ -170,53 +164,60 @@ def get_mteb_data(tasks=["Clustering"], metric="v_measure", langs=[], cast_to_st
     cols = sorted(list(df.columns))
     cols.insert(0, cols.pop(cols.index("Model")))
     df = df[cols]
-    # df.insert(1, "Average", df.mean(axis=1, skipna=False))
     df.fillna("", inplace=True)
     if cast_to_str:
         return df.astype(str) # Cast to str as Gradio does not accept floats
     return df
 
+def get_mteb_average(get_all_avgs=False):
+    global DATA_OVERALL, DATA_CLASSIFICATION_EN, DATA_CLUSTERING, DATA_PAIR_CLASSIFICATION, DATA_RERANKING, DATA_RETRIEVAL, DATA_STS_EN, DATA_SUMMARIZATION
+    DATA_OVERALL = get_mteb_data(
+        tasks=[
+            "Classification",
+            "Clustering",
+            "PairClassification",
+            "Reranking",
+            "Retrieval",
+            "STS",
+            "Summarization",
+        ],
+        langs=["en", "en-en"],
+        cast_to_str=False
+    )
+    
+    DATA_OVERALL.insert(1, "Average", DATA_OVERALL[TASK_LIST_EN].mean(axis=1, skipna=False))
+    DATA_OVERALL.insert(2, "Classification Average", DATA_OVERALL[TASK_LIST_CLASSIFICATION].mean(axis=1, skipna=False))
+    DATA_OVERALL.insert(3, "Clustering Average", DATA_OVERALL[TASK_LIST_CLUSTERING].mean(axis=1, skipna=False))
+    DATA_OVERALL.insert(4, "Pair Classification Average", DATA_OVERALL[TASK_LIST_PAIR_CLASSIFICATION].mean(axis=1, skipna=False))
+    DATA_OVERALL.insert(5, "Reranking Average", DATA_OVERALL[TASK_LIST_RERANKING].mean(axis=1, skipna=False))
+    DATA_OVERALL.insert(6, "Retrieval Average", DATA_OVERALL[TASK_LIST_RETRIEVAL].mean(axis=1, skipna=False))
+    DATA_OVERALL.insert(7, "STS Average", DATA_OVERALL[TASK_LIST_STS].mean(axis=1, skipna=False))
+    DATA_OVERALL.insert(8, "Summarization Average", DATA_OVERALL[TASK_LIST_SUMMARIZATION].mean(axis=1, skipna=False))
+    DATA_OVERALL.sort_values("Average", ascending=False, inplace=True)
+    # Start ranking from 1
+    DATA_OVERALL.insert(0, "Rank", list(range(1, len(DATA_OVERALL) + 1)))
 
-DATA_OVERALL = get_mteb_data(
-    tasks=[
-        "Classification",
-        "Clustering",
-        "PairClassification",
-        "Reranking",
-        "Retrieval",
-        "STS",
-        "Summarization",
-    ],
-    langs=["en", "en-en"],
-    cast_to_str=False
-)
+    DATA_OVERALL = DATA_OVERALL.round(2).astype(str)
 
-DATA_OVERALL.insert(1, "Average", DATA_OVERALL[TASK_LIST_EN].mean(axis=1, skipna=False))
-DATA_OVERALL.insert(2, "Classification Average", DATA_OVERALL[TASK_LIST_CLASSIFICATION].mean(axis=1, skipna=False))
-DATA_OVERALL.insert(3, "Clustering Average", DATA_OVERALL[TASK_LIST_CLUSTERING].mean(axis=1, skipna=False))
-DATA_OVERALL.insert(4, "Pair Classification Average", DATA_OVERALL[TASK_LIST_PAIR_CLASSIFICATION].mean(axis=1, skipna=False))
-DATA_OVERALL.insert(5, "Reranking Average", DATA_OVERALL[TASK_LIST_RERANKING].mean(axis=1, skipna=False))
-DATA_OVERALL.insert(6, "Retrieval Average", DATA_OVERALL[TASK_LIST_RETRIEVAL].mean(axis=1, skipna=False))
-DATA_OVERALL.insert(7, "STS Average", DATA_OVERALL[TASK_LIST_STS].mean(axis=1, skipna=False))
-DATA_OVERALL.insert(8, "Summarization Average", DATA_OVERALL[TASK_LIST_SUMMARIZATION].mean(axis=1, skipna=False))
-DATA_OVERALL = DATA_OVERALL.round(2).astype(str)
+    DATA_CLASSIFICATION_EN = DATA_OVERALL[["Model"] + TASK_LIST_CLASSIFICATION]
+    DATA_CLUSTERING = DATA_OVERALL[["Model"] + TASK_LIST_CLUSTERING]
+    DATA_PAIR_CLASSIFICATION = DATA_OVERALL[["Model"] + TASK_LIST_PAIR_CLASSIFICATION]
+    DATA_RERANKING = DATA_OVERALL[["Model"] + TASK_LIST_RERANKING]
+    DATA_RETRIEVAL = DATA_OVERALL[["Model"] + TASK_LIST_RETRIEVAL]
+    DATA_STS_EN = DATA_OVERALL[["Model"] + TASK_LIST_STS]
+    DATA_SUMMARIZATION = DATA_OVERALL[["Model"] + TASK_LIST_SUMMARIZATION]
 
-DATA_CLASSIFICATION_EN = DATA_OVERALL[["Model"] + TASK_LIST_CLASSIFICATION]
-DATA_CLUSTERING = DATA_OVERALL[["Model"] + TASK_LIST_CLUSTERING]
-DATA_PAIR_CLASSIFICATION = DATA_OVERALL[["Model"] + TASK_LIST_PAIR_CLASSIFICATION]
-DATA_RERANKING = DATA_OVERALL[["Model"] + TASK_LIST_RERANKING]
-DATA_RETRIEVAL = DATA_OVERALL[["Model"] + TASK_LIST_RETRIEVAL]
-DATA_STS_EN = DATA_OVERALL[["Model"] + TASK_LIST_STS]
-DATA_SUMMARIZATION = DATA_OVERALL[["Model"] + TASK_LIST_SUMMARIZATION]
+    DATA_OVERALL = DATA_OVERALL[["Rank", "Model", "Average", "Classification Average", "Clustering Average", "Pair Classification Average", "Reranking Average", "Retrieval Average", "STS Average", "Summarization Average"]]
 
-DATA_OVERALL = DATA_OVERALL[["Model", "Average", "Classification Average", "Clustering Average", "Pair Classification Average", "Reranking Average", "Retrieval Average", "STS Average", "Summarization Average"]]
+    return DATA_OVERALL
 
-
+get_mteb_average()
 block = gr.Blocks()
+
 
 with block:
     gr.Markdown(
-        """Leaderboard for XX most popular Blocks Event Spaces. To learn more and join, see <a href="https://huggingface.co/Gradio-Blocks" target="_blank" style="text-decoration: underline">Blocks Party Event</a>"""
+        """MTEB Leaderboard. See <a href="https://huggingface.co/Gradio-Blocks" target="_blank" style="text-decoration: underline">Blocks Party Event</a>"""
     )
     with gr.Tabs():
         with gr.TabItem("Overall"):
@@ -225,10 +226,29 @@ with block:
             with gr.Row():
                 data_overall = gr.components.Dataframe(
                     DATA_OVERALL,
-                    datatype="markdown",
+                    datatype=["markdown"] * len(DATA_OVERALL.columns) * 2,
                     type="pandas",
-                    col_count=(len(DATA_OVERALL.columns), "fixed"),
+                    #col_count=(len(DATA_OVERALL.columns), "fixed"),
                     wrap=True,
+                )
+            with gr.Row():
+                data_run = gr.Button("Refresh")
+                data_run.click(get_mteb_average, inputs=None, outputs=data_overall)                
+        with gr.TabItem("BitextMining"):
+            with gr.Row():
+                gr.Markdown("""Leaderboard for Clustering""")
+            with gr.Row():
+                data_bitext_mining = gr.components.Dataframe(
+                    datatype=["markdown"] * 500, # hack when we don't know how many columns
+                    type="pandas",
+                )
+            with gr.Row():
+                data_run = gr.Button("Refresh")
+                task_bitext_mining = gr.Variable(value="BitextMining")
+                data_run.click(
+                    get_mteb_data,
+                    inputs=[task_bitext_mining],
+                    outputs=data_bitext_mining,
                 )
         with gr.TabItem("Classification"):
             with gr.TabItem("English"):
@@ -237,20 +257,17 @@ with block:
                 with gr.Row():
                     data_classification_en = gr.components.Dataframe(
                         DATA_CLASSIFICATION_EN,
-                        datatype="markdown",
+                        datatype=["markdown"] * len(DATA_CLASSIFICATION_EN.columns) * 20,
                         type="pandas",
-                        col_count=(len(DATA_CLASSIFICATION_EN.columns), "fixed"),
                     )
                 with gr.Row():
-                    data_run = gr.Button("Refresh")
+                    data_run_classification_en = gr.Button("Refresh")
                     task_classification_en = gr.Variable(value="Classification")
-                    metric_classification_en = gr.Variable(value="accuracy")
                     lang_classification_en = gr.Variable(value=["en"])
-                    data_run.click(
+                    data_run_classification_en.click(
                         get_mteb_data,
                         inputs=[
                             task_classification_en,
-                            metric_classification_en,
                             lang_classification_en,
                         ],
                         outputs=data_classification_en,
@@ -260,16 +277,15 @@ with block:
                     gr.Markdown("""Multilingual Classification""")
                 with gr.Row():
                     data_classification = gr.components.Dataframe(
-                        datatype=["markdown"] * 500,
+                        datatype=["markdown"] * 500, # hack when we don't know how many columns
                         type="pandas",
                     )
                 with gr.Row():
                     data_run = gr.Button("Refresh")
                     task_classification = gr.Variable(value="Classification")
-                    metric_classification = gr.Variable(value="accuracy")
                     data_run.click(
                         get_mteb_data,
-                        inputs=[task_classification, metric_classification],
+                        inputs=[task_classification],
                         outputs=data_classification,
                     )
         with gr.TabItem("Clustering"):
@@ -277,48 +293,68 @@ with block:
                 gr.Markdown("""Leaderboard for Clustering""")
             with gr.Row():
                 data_clustering = gr.components.Dataframe(
-                    datatype=["markdown"] * 500,
+                    DATA_CLUSTERING,
+                    datatype="markdown",
                     type="pandas",
+                    col_count=(len(DATA_CLUSTERING.columns), "fixed"),
                 )
             with gr.Row():
                 data_run = gr.Button("Refresh")
                 task_clustering = gr.Variable(value="Clustering")
-                metric_clustering = gr.Variable(value="v_measure")
                 data_run.click(
                     get_mteb_data,
-                    inputs=[task_clustering, metric_clustering],
+                    inputs=[task_clustering],
                     outputs=data_clustering,
+                )
+        with gr.TabItem("Pair Classification"):
+            with gr.Row():
+                gr.Markdown("""Leaderboard for Pair Classification""")
+            with gr.Row():
+                data_pair_classification = gr.components.Dataframe(
+                    DATA_PAIR_CLASSIFICATION,
+                    datatype="markdown",
+                    type="pandas",
+                    col_count=(len(DATA_PAIR_CLASSIFICATION.columns), "fixed"),
+                )
+            with gr.Row():
+                data_run = gr.Button("Refresh")
+                task_pair_classification = gr.Variable(value="Clustering")
+                data_run.click(
+                    get_mteb_data,
+                    inputs=[task_pair_classification],
+                    outputs=data_pair_classification,
                 )
         with gr.TabItem("Retrieval"):
             with gr.Row():
                 gr.Markdown("""Leaderboard for Retrieval""")
             with gr.Row():
                 data_retrieval = gr.components.Dataframe(
-                    datatype=["markdown"] * 500,
+                    DATA_RETRIEVAL,
+                    datatype=["markdown"] * len(DATA_RETRIEVAL.columns) * 2,
                     type="pandas",
                 )
             with gr.Row():
                 data_run = gr.Button("Refresh")
                 task_retrieval = gr.Variable(value="Retrieval")
-                metric_retrieval = gr.Variable(value="ndcg_at_10")
                 data_run.click(
-                    get_mteb_data, inputs=[task_retrieval, metric_retrieval], outputs=data_retrieval
+                    get_mteb_data, inputs=[task_retrieval], outputs=data_retrieval
                 )
         with gr.TabItem("Reranking"):
             with gr.Row():
                 gr.Markdown("""Leaderboard for Reranking""")
             with gr.Row():
                 data_reranking = gr.components.Dataframe(
-                    datatype=["markdown"] * 500,
+                    DATA_RERANKING,
+                    datatype="markdown",
                     type="pandas",
-                    # col_count=(12, "fixed"),
+                    col_count=(len(DATA_RERANKING.columns), "fixed"),
                 )
             with gr.Row():
                 data_run = gr.Button("Refresh")
                 task_reranking = gr.Variable(value="Reranking")
                 metric_reranking = gr.Variable(value="map")
                 data_run.click(
-                    get_mteb_data, inputs=[task_reranking, metric_reranking], outputs=data_reranking
+                    get_mteb_data, inputs=[task_reranking], outputs=data_reranking
                 )
         with gr.TabItem("STS"):
             with gr.TabItem("English"):
@@ -326,17 +362,18 @@ with block:
                     gr.Markdown("""Leaderboard for STS""")
                 with gr.Row():
                     data_sts_en = gr.components.Dataframe(
-                        datatype=["markdown"] * 500,
+                        DATA_STS_EN,
+                        datatype="markdown",
                         type="pandas",
+                        col_count=(len(DATA_STS_EN.columns), "fixed"),
                     )
                 with gr.Row():
                     data_run_en = gr.Button("Refresh")
                     task_sts_en = gr.Variable(value="STS")
-                    metric_sts_en = gr.Variable(value="cos_sim_spearman")
                     lang_sts_en = gr.Variable(value=["en", "en-en"])
                     data_run.click(
                         get_mteb_data,
-                        inputs=[task_sts_en, metric_sts_en, lang_sts_en],
+                        inputs=[task_sts_en, lang_sts_en],
                         outputs=data_sts_en,
                     )
             with gr.TabItem("Multilingual"):
@@ -344,49 +381,49 @@ with block:
                     gr.Markdown("""Leaderboard for STS""")
                 with gr.Row():
                     data_sts = gr.components.Dataframe(
-                        datatype=["markdown"] * 500,
+                        datatype=["markdown"] * 50, # hack when we don't know how many columns
                         type="pandas",
                     )
                 with gr.Row():
                     data_run = gr.Button("Refresh")
                     task_sts = gr.Variable(value="STS")
-                    metric_sts = gr.Variable(value="cos_sim_spearman")
-                    data_run.click(get_mteb_data, inputs=[task_sts, metric_sts], outputs=data_sts)
+                    data_run.click(get_mteb_data, inputs=[task_sts], outputs=data_sts)
         with gr.TabItem("Summarization"):
             with gr.Row():
                 gr.Markdown("""Leaderboard for Summarization""")
             with gr.Row():
                 data_summarization = gr.components.Dataframe(
-                    datatype=["markdown"] * 500,
+                    DATA_SUMMARIZATION,
+                    datatype="markdown",
                     type="pandas",
+                    col_count=(len(DATA_SUMMARIZATION.columns), "fixed"),
                 )
             with gr.Row():
                 data_run = gr.Button("Refresh")
                 task_summarization = gr.Variable(value="Summarization")
-                metric_summarization = gr.Variable(value="cos_sim_spearman")
                 data_run.click(
                     get_mteb_data,
-                    inputs=[task_summarization, metric_summarization],
+                    inputs=[task_summarization],
                     outputs=data_summarization,
                 )
     # running the function on page load in addition to when the button is clicked
-    #block.load(
-    #    get_mteb_data,
-    #    inputs=[task_classification_en, metric_classification_en],
-    #    outputs=data_classification_en,
-    #    show_progress=False,
-    #)
-    block.load(
-        get_mteb_data,
-        inputs=[task_classification, metric_classification],
-        outputs=data_classification,
-    )
-    block.load(get_mteb_data, inputs=[task_clustering, metric_clustering], outputs=data_clustering)
-    block.load(get_mteb_data, inputs=[task_retrieval, metric_retrieval], outputs=data_retrieval)
-    block.load(get_mteb_data, inputs=[task_reranking, metric_reranking], outputs=data_reranking)
-    block.load(get_mteb_data, inputs=[task_sts, metric_sts], outputs=data_sts)
-    block.load(
-        get_mteb_data, inputs=[task_summarization, metric_summarization], outputs=data_summarization
-    )
+    block.load(get_mteb_data, inputs=[task_bitext_mining], outputs=data_bitext_mining)
+    block.load(get_mteb_data, inputs=[task_classification_en, lang_classification_en], outputs=data_classification_en)
+    block.load(get_mteb_data, inputs=[task_classification], outputs=data_classification)
+    block.load(get_mteb_data, inputs=[task_clustering], outputs=data_clustering)
+    block.load(get_mteb_data, inputs=[task_retrieval], outputs=data_retrieval)
+    block.load(get_mteb_data, inputs=[task_reranking], outputs=data_reranking)
+    block.load(get_mteb_data, inputs=[task_sts], outputs=data_sts)
+    block.load(get_mteb_data, inputs=[task_summarization], outputs=data_summarization)
 
 block.launch()
+
+
+# Possible changes:
+# Could check if tasks are valid (Currently users could just invent new tasks - similar for languages)
+# Could make it load in the background without the Gradio logo closer to the Deep RL space
+# Could add graphs / other visual content
+
+# Sources:
+# https://huggingface.co/spaces/gradio/leaderboard
+# https://huggingface.co/spaces/huggingface-projects/Deep-Reinforcement-Learning-Leaderboard
