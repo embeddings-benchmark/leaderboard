@@ -365,7 +365,7 @@ with block:
         with gr.TabItem("Reranking"):
             with gr.Row():
                 gr.Markdown("""
-                **Reranking Leaderboard 🥇**
+                **Reranking Leaderboard 🥈**
                 
                 - **Metric:** Mean Average Precision (MAP)
                 - **Languages:** English
