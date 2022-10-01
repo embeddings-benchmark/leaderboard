@@ -124,12 +124,11 @@ TASK_TO_METRIC = {
 }
 
 def make_clickable_model(model_name, link=None):
-    # Remove user from model name
-    model_name = model_name.split("/")[-1]
     if link is None:
         link = "https://huggingface.co/" + model_name
+    # Remove user from model name
     return (
-        f'<a target="_blank" style="text-decoration: underline" href="{link}">{model_name}</a>'
+        f'<a target="_blank" style="text-decoration: underline" href="{link}">{model_name.split("/")[-1]}</a>'
     )
 
 # Models without metadata, thus we cannot fetch their results naturally
