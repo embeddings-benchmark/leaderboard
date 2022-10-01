@@ -556,6 +556,9 @@ with block:
                     inputs=[task_summarization],
                     outputs=data_summarization,
                 )
+    gr.Markdown(f"""
+    <p style="text-align: center;">Made with ❤️ for NLP by <a href=https://huggingface.co/Muennighoff>Niklas Muennighoff</a>.</p>
+    """)
     # Running the function on page load in addition to when the button is clicked
     # This is optional - If deactivated the data created loaded at "Build time" is shown like for Overall tab
     block.load(get_mteb_data, inputs=[task_bitext_mining], outputs=data_bitext_mining)
