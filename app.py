@@ -199,7 +199,7 @@ for model in EXTERNAL_MODELS:
     ds = load_dataset("mteb/results", model)
     ds = ds.map(add_lang)
     ds = ds.map(add_task)
-    base_dict = {"Model": make_clickable_model(model, link=EXTERNAL_MODEL_TO_LINK.get(model, "https://huggingface.co/mteb/leaderboard"))}
+    base_dict = {"Model": make_clickable_model(model, link=EXTERNAL_MODEL_TO_LINK.get(model, "https://huggingface.co/spaces/mteb/leaderboard"))}
     # For now only one metric per task - Could add more metrics lateron
     for task, metric in TASK_TO_METRIC.items():
         ds_dict = ds.filter(lambda x: (x["mteb_task"] == task) and (x["metric"] == metric))["test"].to_dict()
