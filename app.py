@@ -1,8 +1,8 @@
 from datasets import load_dataset
 import gradio as gr
-import pandas as pd
 from huggingface_hub import HfApi, hf_hub_download
 from huggingface_hub.repocard import metadata_load
+import pandas as pd
 
 TASKS = [
     "BitextMining",
@@ -278,8 +278,8 @@ def get_mteb_average():
     # Approximation (Missing Bitext Mining & including some nans)
     NUM_SCORES = DATA_OVERALL.shape[0] * DATA_OVERALL.shape[1]
 
-    print("OVERALLDATA", DATA_OVERALL)
-    DATA_OVERALL.to_csv("overall.csv")
+    # Debugging:
+    # DATA_OVERALL.to_csv("overall.csv")
     
     DATA_OVERALL.insert(1, f"Average ({len(TASK_LIST_EN)} datasets)", DATA_OVERALL[TASK_LIST_EN].mean(axis=1, skipna=False))
     DATA_OVERALL.insert(2, f"Classification Average ({len(TASK_LIST_CLASSIFICATION)} datasets)", DATA_OVERALL[TASK_LIST_CLASSIFICATION].mean(axis=1, skipna=False))
@@ -315,9 +315,10 @@ with block:
     gr.Markdown(f"""
     Massive Text Embedding Benchmark (MTEB) Leaderboard. To submit, refer to the <a href="https://github.com/embeddings-benchmark/mteb#leaderboard" target="_blank" style="text-decoration: underline">MTEB GitHub repository</a> 🤗
 
+    - **Total Datasets**: 56
+    - **Total Languages**: 117
     - **Total Scores**: >{NUM_SCORES}
     - **Total Models**: {len(DATA_OVERALL)}
-    - **Total Users**: TODO
     """)
     with gr.Tabs():
         with gr.TabItem("Overall"):
