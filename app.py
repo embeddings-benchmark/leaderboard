@@ -157,7 +157,7 @@ EXTERNAL_MODELS = [
     "sgpt-bloom-1b3-nli",
     "sgpt-bloom-7b1-msmarco",
     "sup-simcse-bert-base-uncased",
-#    "text-similarity-ada-001",
+    "text-similarity-ada-001",
     "unsup-simcse-bert-base-uncased",
 ]
 EXTERNAL_MODEL_TO_LINK = {
