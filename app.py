@@ -195,6 +195,8 @@ def add_task(examples):
 
 for model in EXTERNAL_MODELS:
     ds = load_dataset("mteb/results", model)
+    # For local debugging:
+    #, download_mode='force_redownload', ignore_verifications=True)
     ds = ds.map(add_lang)
     ds = ds.map(add_task)
     base_dict = {"Model": make_clickable_model(model, link=EXTERNAL_MODEL_TO_LINK.get(model, "https://huggingface.co/spaces/mteb/leaderboard"))}
@@ -205,7 +207,7 @@ for model in EXTERNAL_MODELS:
         EXTERNAL_MODEL_RESULTS[model][task][metric].append({**base_dict, **ds_dict})
 
 
-def get_mteb_data(tasks=["Clustering"], langs=[], task_to_metric=TASK_TO_METRIC):
+def get_mteb_data(tasks=["Clustering"], langs=[], fillna=True, task_to_metric=TASK_TO_METRIC):
     api = HfApi()
     models = api.list_models(filter="mteb")
     # Initialize list to models that we cannot fetch metadata from
@@ -253,7 +255,8 @@ def get_mteb_data(tasks=["Clustering"], langs=[], task_to_metric=TASK_TO_METRIC)
     cols = sorted(list(df.columns))
     cols.insert(0, cols.pop(cols.index("Model")))
     df = df[cols]
-    df.fillna("", inplace=True)
+    if fillna:
+        df.fillna("", inplace=True)
     return df
 
 def get_mteb_average():
@@ -269,6 +272,7 @@ def get_mteb_average():
             "Summarization",
         ],
         langs=["en", "en-en"],
+        fillna=False
     )
     # Approximation (Missing Bitext Mining & including some nans)
     NUM_SCORES = DATA_OVERALL.shape[0] * DATA_OVERALL.shape[1]
@@ -289,6 +293,9 @@ def get_mteb_average():
     DATA_OVERALL.insert(0, "Rank", list(range(1, len(DATA_OVERALL) + 1)))
 
     DATA_OVERALL = DATA_OVERALL.round(2)
+
+    # Fill NaN after averaging
+    DATA_OVERALL.fillna("", inplace=True)
 
     DATA_CLASSIFICATION_EN = DATA_OVERALL[["Model"] + TASK_LIST_CLASSIFICATION]
     DATA_CLUSTERING = DATA_OVERALL[["Model"] + TASK_LIST_CLUSTERING]
