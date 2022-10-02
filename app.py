@@ -206,7 +206,7 @@ for model in EXTERNAL_MODELS:
         EXTERNAL_MODEL_RESULTS[model][task][metric].append({**base_dict, **ds_dict})
 
 
-def get_mteb_data(tasks=["Clustering"], langs=[], cast_to_str=True, task_to_metric=TASK_TO_METRIC):
+def get_mteb_data(tasks=["Clustering"], langs=[], task_to_metric=TASK_TO_METRIC):
     api = HfApi()
     models = api.list_models(filter="mteb")
     # Initialize list to models that we cannot fetch metadata from
@@ -255,8 +255,6 @@ def get_mteb_data(tasks=["Clustering"], langs=[], cast_to_str=True, task_to_metr
     cols.insert(0, cols.pop(cols.index("Model")))
     df = df[cols]
     df.fillna("", inplace=True)
-    if cast_to_str:
-        return df.astype(str) # Cast to str as Gradio does not accept floats
     return df
 
 def get_mteb_average():
@@ -272,7 +270,6 @@ def get_mteb_average():
             "Summarization",
         ],
         langs=["en", "en-en"],
-        cast_to_str=False
     )
     # Approximation (Missing Bitext Mining & including some nans)
     NUM_SCORES = DATA_OVERALL.shape[0] * DATA_OVERALL.shape[1]
@@ -292,7 +289,7 @@ def get_mteb_average():
     # Start ranking from 1
     DATA_OVERALL.insert(0, "Rank", list(range(1, len(DATA_OVERALL) + 1)))
 
-    DATA_OVERALL = DATA_OVERALL.round(2).astype(str)
+    DATA_OVERALL = DATA_OVERALL.round(2)
 
     DATA_CLASSIFICATION_EN = DATA_OVERALL[["Model"] + TASK_LIST_CLASSIFICATION]
     DATA_CLUSTERING = DATA_OVERALL[["Model"] + TASK_LIST_CLUSTERING]
@@ -331,7 +328,7 @@ with block:
             with gr.Row():
                 data_overall = gr.components.Dataframe(
                     DATA_OVERALL,
-                    datatype=["markdown"] * len(DATA_OVERALL.columns) * 2,
+                    datatype=["number", "markdown"] + ["number"] * len(DATA_OVERALL.columns),
                     type="pandas",
                     wrap=True,
                 )
@@ -348,7 +345,7 @@ with block:
                     """)
             with gr.Row():
                 data_bitext_mining = gr.components.Dataframe(
-                    datatype=["markdown"] * 500, # hack when we don't know how many columns
+                    datatype=["markdown"] + ["number"] * 500, # hack when we don't know how many columns
                     type="pandas",
                 )
             with gr.Row():
@@ -371,7 +368,7 @@ with block:
                 with gr.Row():
                     data_classification_en = gr.components.Dataframe(
                         DATA_CLASSIFICATION_EN,
-                        datatype=["markdown"] * len(DATA_CLASSIFICATION_EN.columns) * 20,
+                        datatype=["markdown"] + ["number"] * len(DATA_CLASSIFICATION_EN.columns),
                         type="pandas",
                     )
                 with gr.Row():
@@ -396,7 +393,7 @@ with block:
                     """)
                 with gr.Row():
                     data_classification = gr.components.Dataframe(
-                        datatype=["markdown"] * 200, # hack when we don't know how many columns
+                        datatype=["markdown"] + ["number"] * 200, # hack when we don't know how many columns
                         type="pandas",
                     )
                 with gr.Row():
@@ -418,7 +415,7 @@ with block:
             with gr.Row():
                 data_clustering = gr.components.Dataframe(
                     DATA_CLUSTERING,
-                    datatype=["markdown"] * len(DATA_CLUSTERING.columns) * 2,
+                    datatype=["markdown"] + ["number"] * len(DATA_CLUSTERING.columns),
                     type="pandas",
                 )
             with gr.Row():
@@ -440,7 +437,7 @@ with block:
             with gr.Row():
                 data_pair_classification = gr.components.Dataframe(
                     DATA_PAIR_CLASSIFICATION,
-                    datatype=["markdown"] * len(DATA_PAIR_CLASSIFICATION.columns) * 2,
+                    datatype=["markdown"] + ["number"] * len(DATA_PAIR_CLASSIFICATION.columns),
                     type="pandas",
                 )
             with gr.Row():
@@ -462,7 +459,8 @@ with block:
             with gr.Row():
                 data_retrieval = gr.components.Dataframe(
                     DATA_RETRIEVAL,
-                    datatype=["markdown"] * len(DATA_RETRIEVAL.columns) * 2,
+                    # Add support for more columns than existing as a buffer for CQADupstack & other Retrieval tasks (e.g. MSMARCOv2)
+                    datatype=["markdown"] + ["number"] * len(DATA_RETRIEVAL.columns) * 2,
                     type="pandas",
                 )
             with gr.Row():
@@ -482,7 +480,7 @@ with block:
             with gr.Row():
                 data_reranking = gr.components.Dataframe(
                     DATA_RERANKING,
-                    datatype=["markdown"] * len(DATA_RERANKING.columns) * 2,
+                    datatype=["markdown"] + ["number"] * len(DATA_RERANKING.columns),
                     type="pandas",
                 )
             with gr.Row():
@@ -504,7 +502,7 @@ with block:
                 with gr.Row():
                     data_sts_en = gr.components.Dataframe(
                         DATA_STS_EN,
-                        datatype=["markdown"] * len(DATA_STS_EN.columns) * 2,
+                        datatype=["markdown"] + ["number"] * len(DATA_STS_EN.columns),
                         type="pandas",
                     )
                 with gr.Row():
@@ -526,7 +524,7 @@ with block:
                     """)
                 with gr.Row():
                     data_sts = gr.components.Dataframe(
-                        datatype=["markdown"] * 50, # hack when we don't know how many columns
+                        datatype=["markdown"] + ["number"] * 100, # hack when we don't know how many columns
                         type="pandas",
                     )
                 with gr.Row():
@@ -543,8 +541,8 @@ with block:
                 """)
             with gr.Row():
                 data_summarization = gr.components.Dataframe(
-                    DATA_SUMMARIZATION * len(DATA_SUMMARIZATION.columns) * 2,
-                    datatype="markdown",
+                    DATA_SUMMARIZATION,
+                    datatype=["markdown"] + ["number"] * 2,
                     type="pandas",
                 )
             with gr.Row():
@@ -564,6 +562,7 @@ with block:
     block.load(get_mteb_data, inputs=[task_classification_en, lang_classification_en], outputs=data_classification_en)
     block.load(get_mteb_data, inputs=[task_classification], outputs=data_classification)
     block.load(get_mteb_data, inputs=[task_clustering], outputs=data_clustering)
+    block.load(get_mteb_data, inputs=[task_pair_classification], outputs=data_pair_classification)
     block.load(get_mteb_data, inputs=[task_retrieval], outputs=data_retrieval)
     block.load(get_mteb_data, inputs=[task_reranking], outputs=data_reranking)
     block.load(get_mteb_data, inputs=[task_sts_en, lang_sts_en], outputs=data_sts_en)
@@ -577,6 +576,7 @@ block.launch()
 # Could check if tasks are valid (Currently users could just invent new tasks - similar for languages)
 # Could make it load in the background without the Gradio logo closer to the Deep RL space
 # Could add graphs / other visual content
+# Could add verification marks
 
 # Sources:
 # https://huggingface.co/spaces/gradio/leaderboard
