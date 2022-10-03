@@ -374,7 +374,7 @@ with block:
                     gr.Markdown("""
                     **Bitext Mining Leaderboard 🎌**
                     
-                    - **Metric:** F1 (f1)
+                    - **Metric:** [F1](https://huggingface.co/spaces/evaluate-metric/f1)
                     - **Languages:** 117
                     """)
             with gr.Row():
@@ -396,7 +396,7 @@ with block:
                     gr.Markdown("""
                     **Classification Leaderboard ❤️**
                     
-                    - **Metric:** Accuracy (accuracy)
+                    - **Metric:** [Accuracy](https://huggingface.co/spaces/evaluate-metric/accuracy)
                     - **Languages:** English
                     """)
                 with gr.Row():
@@ -422,7 +422,7 @@ with block:
                     gr.Markdown("""
                     **Classification Multilingual Leaderboard 💜💚💙**
                     
-                    - **Metric:** Accuracy (accuracy)
+                    - **Metric:** [Accuracy](https://huggingface.co/spaces/evaluate-metric/accuracy)
                     - **Languages:** 51
                     """)
                 with gr.Row():
