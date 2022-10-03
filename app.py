@@ -163,7 +163,35 @@ EXTERNAL_MODELS = [
 EXTERNAL_MODEL_TO_LINK = {
     "LASER2": "https://github.com/facebookresearch/LASER",
     "text-similarity-ada-001": "https://beta.openai.com/docs/guides/embeddings/types-of-embedding-models",
+    "LaBSE": "https://huggingface.co/sentence-transformers/LaBSE",
+    "sentence-t5-xxl": "https://huggingface.co/sentence-transformers/sentence-t5-xxl",
+    "sentence-t5-xl": "https://huggingface.co/sentence-transformers/sentence-t5-xl",
+    "sentence-t5-large": "https://huggingface.co/sentence-transformers/sentence-t5-large",
+    "sentence-t5-base": "https://huggingface.co/sentence-transformers/sentence-t5-base",
+    "gtr-t5-xxl": "https://huggingface.co/sentence-transformers/gtr-t5-xxl",
+    "gtr-t5-xl": "https://huggingface.co/sentence-transformers/gtr-t5-xl",
+    "gtr-t5-large": "https://huggingface.co/sentence-transformers/gtr-t5-large",
+    "gtr-t5-base": "https://huggingface.co/sentence-transformers/gtr-t5-base",
+    "gtr-t5-xxl": "https://huggingface.co/sentence-transformers/gtr-t5-xxl",
+    "gtr-t5-xl": "https://huggingface.co/sentence-transformers/gtr-t5-xl",
+    "gtr-t5-large": "https://huggingface.co/sentence-transformers/gtr-t5-large",
+    "gtr-t5-base": "https://huggingface.co/sentence-transformers/gtr-t5-base",
+    "bert-base-uncased": "https://huggingface.co/bert-base-uncased",
+    "allenai-specter": "https://huggingface.co/sentence-transformers/allenai-specter",
+    "allenai-specter": "https://huggingface.co/sentence-transformers/allenai-specter",
+    "unsup-simcse-bert-base-uncased": "https://huggingface.co/princeton-nlp/unsup-simcse-bert-base-uncased",
+    "sup-simcse-bert-base-uncased": "https://huggingface.co/princeton-nlp/sup-simcse-bert-base-uncased",
+    "komninos": "https://huggingface.co/sentence-transformers/average_word_embeddings_komninos",
+    "glove.6B.300d": "https://huggingface.co/sentence-transformers/average_word_embeddings_glove.6B.300d",
+    "msmarco-bert-co-condensor": "https://huggingface.co/sentence-transformers/msmarco-bert-co-condensor",
+    "all-MiniLM-L12-v2": "https://huggingface.co/sentence-transformers/all-MiniLM-L12-v2",
+    "all-MiniLM-L6-v2": "https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2",
+    "all-mpnet-base-v2": "https://huggingface.co/sentence-transformers/all-mpnet-base-v2",
+    "paraphrase-multilingual-mpnet-base-v2": "https://huggingface.co/sentence-transformers/paraphrase-multilingual-mpnet-base-v2",    
+    "paraphrase-multilingual-MiniLM-L12-v2": "https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
 }
+
+
 EXTERNAL_MODEL_RESULTS = {model: {k: {v: []} for k, v in TASK_TO_METRIC.items()} for model in EXTERNAL_MODELS}
 
 def add_lang(examples):
