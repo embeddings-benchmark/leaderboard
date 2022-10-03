@@ -155,7 +155,6 @@ EXTERNAL_MODELS = [
     "sentence-t5-xl",
     "sentence-t5-xxl",
     "sgpt-bloom-1b3-nli",
-    "sgpt-bloom-7b1-msmarco",
     "sup-simcse-bert-base-uncased",
     "text-similarity-ada-001",
     "unsup-simcse-bert-base-uncased",
