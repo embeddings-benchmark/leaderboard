@@ -157,11 +157,15 @@ EXTERNAL_MODELS = [
     "sgpt-bloom-1b3-nli",
     "sup-simcse-bert-base-uncased",
     "text-similarity-ada-001",
+    "text-search-ada-query-001",
+    "text-search-ada-doc-001",        
     "unsup-simcse-bert-base-uncased",
 ]
 EXTERNAL_MODEL_TO_LINK = {
     "LASER2": "https://github.com/facebookresearch/LASER",
     "text-similarity-ada-001": "https://beta.openai.com/docs/guides/embeddings/types-of-embedding-models",
+    "text-search-ada-query-001": "https://beta.openai.com/docs/guides/embeddings/types-of-embedding-models",
+    "text-search-ada-doc-001": "https://beta.openai.com/docs/guides/embeddings/types-of-embedding-models",
     "LaBSE": "https://huggingface.co/sentence-transformers/LaBSE",
     "sentence-t5-xxl": "https://huggingface.co/sentence-transformers/sentence-t5-xxl",
     "sentence-t5-xl": "https://huggingface.co/sentence-transformers/sentence-t5-xl",
