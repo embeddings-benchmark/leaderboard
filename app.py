@@ -348,7 +348,7 @@ with block:
     Massive Text Embedding Benchmark (MTEB) Leaderboard. To submit, refer to the <a href="https://github.com/embeddings-benchmark/mteb#leaderboard" target="_blank" style="text-decoration: underline">MTEB GitHub repository</a> 🤗
 
     - **Total Datasets**: 56
-    - **Total Languages**: 117
+    - **Total Languages**: 112
     - **Total Scores**: >{NUM_SCORES}
     - **Total Models**: {len(DATA_OVERALL)}
     """)
@@ -377,7 +377,7 @@ with block:
                     **Bitext Mining Leaderboard 🎌**
                     
                     - **Metric:** [F1](https://huggingface.co/spaces/evaluate-metric/f1)
-                    - **Languages:** 117
+                    - **Languages:** 112
                     """)
             with gr.Row():
                 data_bitext_mining = gr.components.Dataframe(
