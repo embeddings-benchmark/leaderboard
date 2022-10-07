@@ -1,3 +1,5 @@
+import json
+
 from datasets import load_dataset
 import gradio as gr
 from huggingface_hub import HfApi, hf_hub_download
@@ -193,6 +195,35 @@ EXTERNAL_MODEL_TO_LINK = {
     "paraphrase-multilingual-MiniLM-L12-v2": "https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
 }
 
+EXTERNAL_MODEL_TO_DIM = {
+    "LASER2": 1024,
+    "LaBSE": 768,
+    "all-MiniLM-L12-v2": 384,
+    "all-MiniLM-L6-v2": 384,
+    "all-mpnet-base-v2": 768,
+    "allenai-specter": 768,
+    "bert-base-uncased": 768,
+    "contriever-base-msmarco": 768,
+    "glove.6B.300d": 300,
+    "gtr-t5-base": 768,
+    "gtr-t5-large": 768,
+    "gtr-t5-xl": 768,
+    "gtr-t5-xxl": 768,
+    "komninos": 300,
+    "msmarco-bert-co-condensor": 768,
+    "paraphrase-multilingual-MiniLM-L12-v2": 384,
+    "paraphrase-multilingual-mpnet-base-v2": 768,
+    "sentence-t5-base": 768,
+    "sentence-t5-large": 768,
+    "sentence-t5-xl": 768,
+    "sentence-t5-xxl": 768,
+    "sup-simcse-bert-base-uncased": 768,
+    "text-similarity-ada-001": 1024,
+    "text-search-ada-query-001": 1024,
+    "text-search-ada-doc-001": 1024, 
+    "unsup-simcse-bert-base-uncased": 768,
+}
+
 
 EXTERNAL_MODEL_RESULTS = {model: {k: {v: []} for k, v in TASK_TO_METRIC.items()} for model in EXTERNAL_MODELS}
 
@@ -236,8 +267,22 @@ for model in EXTERNAL_MODELS:
         ds_dict = {k: round(v, 2) for k, v in zip(ds_dict["mteb_dataset_name_with_lang"], ds_dict["score"])}
         EXTERNAL_MODEL_RESULTS[model][task][metric].append({**base_dict, **ds_dict})
 
+def get_emb_dim(model):
+    filenames = [sib.rfilename for sib in model.siblings]
+    dim = ""
+    if "1_Pooling/config.json" in filenames:
+        st_config_path = hf_hub_download(model.modelId, filename="1_Pooling/config.json")
+        dim = json.load(open(st_config_path)).get("word_embedding_dimension", "")
+    elif "2_Pooling/config.json" in filenames:
+        st_config_path = hf_hub_download(model.modelId, filename="2_Pooling/config.json")
+        dim = json.load(open(st_config_path)).get("word_embedding_dimension", "")
+    elif "config.json" in filenames:
+        config_path = hf_hub_download(model.modelId, filename="config.json")
+        dim = json.load(open(config_path)).get("hidden_dim", "")
+    return dim
 
-def get_mteb_data(tasks=["Clustering"], langs=[], fillna=True, task_to_metric=TASK_TO_METRIC):
+
+def get_mteb_data(tasks=["Clustering"], langs=[], fillna=True, add_emb_dim=False, task_to_metric=TASK_TO_METRIC):
     api = HfApi()
     models = api.list_models(filter="mteb")
     # Initialize list to models that we cannot fetch metadata from
@@ -252,6 +297,7 @@ def get_mteb_data(tasks=["Clustering"], langs=[], fillna=True, task_to_metric=TA
             res = {k: v for d in results_list for k, v in d.items()}
         # Model & at least one result
         if len(res) > 1:
+            res["Embedding Dimensions"] = EXTERNAL_MODEL_TO_DIM.get(model, "")
             df_list.append(res)
     
     for model in models:
@@ -279,6 +325,8 @@ def get_mteb_data(tasks=["Clustering"], langs=[], fillna=True, task_to_metric=TA
         out = [{res["dataset"]["name"].replace("MTEB ", ""): [round(score["value"], 2) for score in res["metrics"] if score["type"] == task_to_metric.get(res["task"]["type"])][0]} for res in task_results]
         out = {k: v for d in out for k, v in d.items()}
         out["Model"] = make_clickable_model(model.modelId)
+        if add_emb_dim:
+            out["Embedding Dimensions"] = get_emb_dim(model)
         df_list.append(out)
     df = pd.DataFrame(df_list)
     # Put 'Model' column first
@@ -302,7 +350,8 @@ def get_mteb_average():
             "Summarization",
         ],
         langs=["en", "en-en"],
-        fillna=False
+        fillna=False,
+        add_emb_dim=True,
     )
     # Approximation (Missing Bitext Mining & including some nans)
     NUM_SCORES = DATA_OVERALL.shape[0] * DATA_OVERALL.shape[1]
@@ -335,7 +384,7 @@ def get_mteb_average():
     DATA_STS_EN = DATA_OVERALL[["Model"] + TASK_LIST_STS]
     DATA_SUMMARIZATION = DATA_OVERALL[["Model"] + TASK_LIST_SUMMARIZATION]
 
-    DATA_OVERALL = DATA_OVERALL[["Rank", "Model", f"Average ({len(TASK_LIST_EN)} datasets)", f"Classification Average ({len(TASK_LIST_CLASSIFICATION)} datasets)", f"Clustering Average ({len(TASK_LIST_CLUSTERING)} datasets)", f"Pair Classification Average ({len(TASK_LIST_PAIR_CLASSIFICATION)} datasets)", f"Reranking Average ({len(TASK_LIST_RERANKING)} datasets)", f"Retrieval Average ({len(TASK_LIST_RETRIEVAL)} datasets)", f"STS Average ({len(TASK_LIST_STS)} datasets)", f"Summarization Average ({len(TASK_LIST_SUMMARIZATION)} dataset)"]]
+    DATA_OVERALL = DATA_OVERALL[["Rank", "Model", "Embedding Dimensions", f"Average ({len(TASK_LIST_EN)} datasets)", f"Classification Average ({len(TASK_LIST_CLASSIFICATION)} datasets)", f"Clustering Average ({len(TASK_LIST_CLUSTERING)} datasets)", f"Pair Classification Average ({len(TASK_LIST_PAIR_CLASSIFICATION)} datasets)", f"Reranking Average ({len(TASK_LIST_RERANKING)} datasets)", f"Retrieval Average ({len(TASK_LIST_RETRIEVAL)} datasets)", f"STS Average ({len(TASK_LIST_STS)} datasets)", f"Summarization Average ({len(TASK_LIST_SUMMARIZATION)} dataset)"]]
 
     return DATA_OVERALL
 
@@ -377,7 +426,7 @@ with block:
                     **Bitext Mining Leaderboard 🎌**
                     
                     - **Metric:** [F1](https://huggingface.co/spaces/evaluate-metric/f1)
-                    - **Languages:** 112
+                    - **Languages:** 117
                     """)
             with gr.Row():
                 data_bitext_mining = gr.components.Dataframe(
