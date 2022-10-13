@@ -420,7 +420,7 @@ with block:
             with gr.Row():
                 data_run = gr.Button("Refresh")
                 data_run.click(get_mteb_average, inputs=None, outputs=data_overall)                
-        with gr.TabItem("BitextMining"):
+        with gr.TabItem("Bitext Mining"):
             with gr.Row():
                     gr.Markdown("""
                     **Bitext Mining Leaderboard 🎌**
