@@ -158,15 +158,23 @@ EXTERNAL_MODELS = [
     "sentence-t5-xxl",
     "sup-simcse-bert-base-uncased",
     "text-similarity-ada-001",
-    "text-search-ada-query-001",
-    "text-search-ada-doc-001",        
+    "text-similarity-curie-001",    
+    "text-search-ada-001",
+    "text-search-babbage-001",
+    "text-search-curie-001",
+    "text-search-davinci-001",
     "unsup-simcse-bert-base-uncased",
 ]
 EXTERNAL_MODEL_TO_LINK = {
     "LASER2": "https://github.com/facebookresearch/LASER",
     "text-similarity-ada-001": "https://beta.openai.com/docs/guides/embeddings/types-of-embedding-models",
-    "text-search-ada-query-001": "https://beta.openai.com/docs/guides/embeddings/types-of-embedding-models",
+    "text-similarity-curie-001": "https://beta.openai.com/docs/guides/embeddings/types-of-embedding-models",    
     "text-search-ada-doc-001": "https://beta.openai.com/docs/guides/embeddings/types-of-embedding-models",
+    "text-search-ada-query-001": "https://beta.openai.com/docs/guides/embeddings/types-of-embedding-models",
+    "text-search-ada-001": "https://beta.openai.com/docs/guides/embeddings/types-of-embedding-models",
+    "text-search-curie-001": "https://beta.openai.com/docs/guides/embeddings/types-of-embedding-models",
+    "text-search-babbage-001": "https://beta.openai.com/docs/guides/embeddings/types-of-embedding-models",
+    "text-search-davinci-001": "https://beta.openai.com/docs/guides/embeddings/types-of-embedding-models",
     "LaBSE": "https://huggingface.co/sentence-transformers/LaBSE",
     "sentence-t5-xxl": "https://huggingface.co/sentence-transformers/sentence-t5-xxl",
     "sentence-t5-xl": "https://huggingface.co/sentence-transformers/sentence-t5-xl",
@@ -219,8 +227,15 @@ EXTERNAL_MODEL_TO_DIM = {
     "sentence-t5-xxl": 768,
     "sup-simcse-bert-base-uncased": 768,
     "text-similarity-ada-001": 1024,
+    "text-similarity-curie-001": 4096,
+
+    "text-search-ada-doc-001": 1024,
     "text-search-ada-query-001": 1024,
-    "text-search-ada-doc-001": 1024, 
+    "text-search-ada-001": 1024,   
+    "text-search-babbage-001": 2048,     
+    "text-search-curie-001": 4096,
+    "text-search-davinci-001": 12288,   
+
     "unsup-simcse-bert-base-uncased": 768,
 }
 
@@ -255,7 +270,7 @@ def add_task(examples):
     return examples
 
 for model in EXTERNAL_MODELS:
-    ds = load_dataset("mteb/results", model)
+    ds = load_dataset("mteb/results", model, download_mode='force_redownload', ignore_verifications=True)
     # For local debugging:
     #, download_mode='force_redownload', ignore_verifications=True)
     ds = ds.map(add_lang)
@@ -297,7 +312,8 @@ def get_mteb_data(tasks=["Clustering"], langs=[], fillna=True, add_emb_dim=False
             res = {k: v for d in results_list for k, v in d.items()}
         # Model & at least one result
         if len(res) > 1:
-            res["Embedding Dimensions"] = EXTERNAL_MODEL_TO_DIM.get(model, "")
+            if add_emb_dim:
+                res["Embedding Dimensions"] = EXTERNAL_MODEL_TO_DIM.get(model, "")
             df_list.append(res)
     
     for model in models:
