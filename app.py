@@ -231,7 +231,7 @@ EXTERNAL_MODEL_TO_DIM = {
     "sentence-t5-xxl": 768,
     "sup-simcse-bert-base-uncased": 768,
     "text-similarity-ada-001": 1024,
-    "text-similarity-babbge-001": 2048,    
+    "text-similarity-babbage-001": 2048,    
     "text-similarity-curie-001": 4096,
     "text-similarity-davinci-001": 12288,    
 
