@@ -299,7 +299,11 @@ def get_emb_dim(model):
         dim = json.load(open(st_config_path)).get("word_embedding_dimension", "")
     elif "config.json" in filenames:
         config_path = hf_hub_download(model.modelId, filename="config.json")
-        dim = json.load(open(config_path)).get("hidden_dim", "")
+        config = json.load(open(config_path))
+        if "hidden_dim" in config:
+            dim = config["hidden_dim"]
+        elif "hidden_size" in config:
+            dim = config["hidden_size"]
     return dim
 
 
