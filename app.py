@@ -304,6 +304,8 @@ def get_emb_dim(model):
             dim = config["hidden_dim"]
         elif "hidden_size" in config:
             dim = config["hidden_size"]
+        elif "d_model" in config:
+            dim = config["d_model"]
     return dim
 
 
