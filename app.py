@@ -157,6 +157,7 @@ EXTERNAL_MODELS = [
     "sentence-t5-xl",
     "sentence-t5-xxl",
     "sup-simcse-bert-base-uncased",
+    "text-embedding-ada-002",
     "text-similarity-ada-001",
     "text-similarity-babbage-001",  
     "text-similarity-curie-001",  
@@ -169,6 +170,7 @@ EXTERNAL_MODELS = [
 ]
 EXTERNAL_MODEL_TO_LINK = {
     "LASER2": "https://github.com/facebookresearch/LASER",
+    "text-embedding-ada-002": "https://beta.openai.com/docs/guides/embeddings/types-of-embedding-models",
     "text-similarity-ada-001": "https://beta.openai.com/docs/guides/embeddings/types-of-embedding-models",
     "text-similarity-babbage-001": "https://beta.openai.com/docs/guides/embeddings/types-of-embedding-models",
     "text-similarity-curie-001": "https://beta.openai.com/docs/guides/embeddings/types-of-embedding-models",        
@@ -230,6 +232,9 @@ EXTERNAL_MODEL_TO_DIM = {
     "sentence-t5-xl": 768,
     "sentence-t5-xxl": 768,
     "sup-simcse-bert-base-uncased": 768,
+
+    "text-embedding-ada-002": 1536,
+    
     "text-similarity-ada-001": 1024,
     "text-similarity-babbage-001": 2048,    
     "text-similarity-curie-001": 4096,
