@@ -429,7 +429,7 @@ with block:
     gr.Markdown(f"""
     Massive Text Embedding Benchmark (MTEB) Leaderboard. To submit, refer to the <a href="https://github.com/embeddings-benchmark/mteb#leaderboard" target="_blank" style="text-decoration: underline">MTEB GitHub repository</a> 🤗
 
-    - **Total Datasets**: 56
+    - **Total Datasets**: 58
     - **Total Languages**: 112
     - **Total Scores**: >{NUM_SCORES}
     - **Total Models**: {len(DATA_OVERALL)}
