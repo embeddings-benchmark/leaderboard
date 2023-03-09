@@ -281,7 +281,7 @@ def add_task(examples):
     return examples
 
 for model in EXTERNAL_MODELS:
-    ds = load_dataset("mteb/results", model, download_mode='force_redownload', ignore_verifications=True)
+    ds = load_dataset("mteb/results", model)#, download_mode='force_redownload', ignore_verifications=True)
     # For local debugging:
     #, download_mode='force_redownload', ignore_verifications=True)
     ds = ds.map(add_lang)
