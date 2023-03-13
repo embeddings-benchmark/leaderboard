@@ -250,6 +250,10 @@ EXTERNAL_MODEL_TO_DIM = {
     "unsup-simcse-bert-base-uncased": 768,
 }
 
+MODELS_TO_SKIP = {
+    "baseplate/instructor-large-1", # Duplicate
+}
+
 
 EXTERNAL_MODEL_RESULTS = {model: {k: {v: []} for k, v in TASK_TO_METRIC.items()} for model in EXTERNAL_MODELS}
 
@@ -334,6 +338,7 @@ def get_mteb_data(tasks=["Clustering"], langs=[], fillna=True, add_emb_dim=False
             df_list.append(res)
     
     for model in models:
+        if model.modelId in MODELS_TO_SKIP: continue
         readme_path = hf_hub_download(model.modelId, filename="README.md")
         meta = metadata_load(readme_path)
         # meta['model-index'][0]["results"] is list of elements like:
