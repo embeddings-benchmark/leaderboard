@@ -285,9 +285,9 @@ def add_task(examples):
     return examples
 
 for model in EXTERNAL_MODELS:
-    ds = load_dataset("mteb/results", model)#, download_mode='force_redownload', ignore_verifications=True)
+    ds = load_dataset("mteb/results", model, download_mode='force_redownload', verification_mode="no_checks")
     # For local debugging:
-    #, download_mode='force_redownload', ignore_verifications=True)
+    #, download_mode='force_redownload', verification_mode="no_checks")
     ds = ds.map(add_lang)
     ds = ds.map(add_task)
     base_dict = {"Model": make_clickable_model(model, link=EXTERNAL_MODEL_TO_LINK.get(model, "https://huggingface.co/spaces/mteb/leaderboard"))}
