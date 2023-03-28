@@ -676,8 +676,23 @@ with block:
                     inputs=[task_summarization],
                     outputs=data_summarization,
                 )
-    gr.Markdown(f"""
-    <p style="text-align: center;">Made with ❤️ for NLP by <a href=https://huggingface.co/Muennighoff>Niklas Muennighoff</a>.</p>
+    gr.Markdown(r"""
+    
+    Made with ❤️ for NLP
+    
+    If this work is useful to you, please consider citing:
+
+    ```bibtex
+    @article{muennighoff2022mteb,
+        doi = {10.48550/ARXIV.2210.07316},
+        url = {https://arxiv.org/abs/2210.07316},
+        author = {Muennighoff, Niklas and Tazi, Nouamane and Magne, Lo{\"\i}c and Reimers, Nils},
+        title = {MTEB: Massive Text Embedding Benchmark},
+        publisher = {arXiv},
+        journal={arXiv preprint arXiv:2210.07316},  
+        year = {2022}
+    }
+    ```
     """)
     # Running the function on page load in addition to when the button is clicked
     # This is optional - If deactivated the data created loaded at "Build time" is shown like for Overall tab
