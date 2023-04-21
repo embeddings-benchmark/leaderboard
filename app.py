@@ -252,6 +252,7 @@ EXTERNAL_MODEL_TO_DIM = {
 
 MODELS_TO_SKIP = {
     "baseplate/instructor-large-1", # Duplicate
+    "radames/e5-large", # Duplicate
 }
 
 
