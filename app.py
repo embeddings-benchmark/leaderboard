@@ -254,6 +254,7 @@ MODELS_TO_SKIP = {
     "baseplate/instructor-large-1", # Duplicate
     "radames/e5-large", # Duplicate
     "gentlebowl/instructor-large-safetensors", # Duplicate
+    "Consensus/instructor-base", # Duplicate
 }
 
 
