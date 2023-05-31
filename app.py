@@ -48,6 +48,13 @@ TASK_LIST_CLUSTERING = [
     "TwentyNewsgroupsClustering",
 ]
 
+TASK_LIST_CLUSTERING_DE = [
+    "BlurbsClusteringP2P",
+    "BlurbsClusteringS2S",
+    "TenKGnadClusteringP2P",
+    "TenKGnadClusteringS2S",
+]
+
 TASK_LIST_PAIR_CLASSIFICATION = [
     "SprintDuplicateQuestions",
     "TwitterSemEval2015",
@@ -117,6 +124,7 @@ TASK_LIST_EN = TASK_LIST_CLASSIFICATION + TASK_LIST_CLUSTERING + TASK_LIST_PAIR_
 TASK_TO_METRIC = {
     "BitextMining": "f1",
     "Clustering": "v_measure",
+    "Clustering (DE)": "v_measure",    
     "Classification": "accuracy",
     "PairClassification": "cos_sim_ap",
     "Reranking": "map",
@@ -255,6 +263,9 @@ MODELS_TO_SKIP = {
     "radames/e5-large", # Duplicate
     "gentlebowl/instructor-large-safetensors", # Duplicate
     "Consensus/instructor-base", # Duplicate
+    "GovCompete/instructor-xl", # Duplicate
+    "GovCompete/e5-large-v2", # Duplicate
+    "t12e/instructor-base", # Duplicate
 }
 
 
@@ -271,7 +282,7 @@ def add_task(examples):
     # Could be added to the dataset loading script instead
     if examples["mteb_dataset_name"] in TASK_LIST_CLASSIFICATION_NORM:
         examples["mteb_task"] = "Classification"
-    elif examples["mteb_dataset_name"] in TASK_LIST_CLUSTERING:
+    elif examples["mteb_dataset_name"] in TASK_LIST_CLUSTERING + TASK_LIST_CLUSTERING_DE:
         examples["mteb_task"] = "Clustering"
     elif examples["mteb_dataset_name"] in TASK_LIST_PAIR_CLASSIFICATION:
         examples["mteb_task"] = "PairClassification"
@@ -288,7 +299,7 @@ def add_task(examples):
     return examples
 
 for model in EXTERNAL_MODELS:
-    ds = load_dataset("mteb/results", model, download_mode='force_redownload', verification_mode="no_checks")
+    ds = load_dataset("mteb/results", model)#, download_mode='force_redownload', verification_mode="no_checks")
     # For local debugging:
     #, download_mode='force_redownload', verification_mode="no_checks")
     ds = ds.map(add_lang)
@@ -321,14 +332,16 @@ def get_emb_dim(model):
     return dim
 
 
-def get_mteb_data(tasks=["Clustering"], langs=[], fillna=True, add_emb_dim=False, task_to_metric=TASK_TO_METRIC):
+def get_mteb_data(tasks=["Clustering"], langs=[], datasets=[], fillna=True, add_emb_dim=False, task_to_metric=TASK_TO_METRIC):
     api = HfApi()
     models = api.list_models(filter="mteb")
     # Initialize list to models that we cannot fetch metadata from
     df_list = []
     for model in EXTERNAL_MODEL_RESULTS:
         results_list = [res for task in tasks for res in EXTERNAL_MODEL_RESULTS[model][task][task_to_metric[task]]]
-        if langs:
+        if len(datasets) > 0:
+            res = {k: v for d in results_list for k, v in d.items() if (k == "Model") or any([x in k for x in datasets])}
+        elif langs:
             # Would be cleaner to rely on an extra language column instead
             langs_format = [f"({lang})" for lang in langs]
             res = {k: v for d in results_list for k, v in d.items() if any([k.split(" ")[-1] in (k, x) for x in langs_format])}
@@ -359,16 +372,20 @@ def get_mteb_data(tasks=["Clustering"], langs=[], fillna=True, add_emb_dim=False
         #    ],
         # },
         # Use "get" instead of dict indexing to skip incompat metadata instead of erroring out
-        if langs:
+        if len(datasets) > 0:
+            task_results = [sub_res for sub_res in meta["model-index"][0]["results"] if (sub_res.get("task", {}).get("type", "") in tasks) and any([x in sub_res.get("dataset", {}).get("name", "") for x in datasets])]
+        elif langs:
             task_results = [sub_res for sub_res in meta["model-index"][0]["results"] if (sub_res.get("task", {}).get("type", "") in tasks) and (sub_res.get("dataset", {}).get("config", "default") in ("default", *langs))]
         else:
             task_results = [sub_res for sub_res in meta["model-index"][0]["results"] if (sub_res.get("task", {}).get("type", "") in tasks)]
         out = [{res["dataset"]["name"].replace("MTEB ", ""): [round(score["value"], 2) for score in res["metrics"] if score["type"] == task_to_metric.get(res["task"]["type"])][0]} for res in task_results]
         out = {k: v for d in out for k, v in d.items()}
         out["Model"] = make_clickable_model(model.modelId)
-        if add_emb_dim:
-            out["Embedding Dimensions"] = get_emb_dim(model)
-        df_list.append(out)
+        # Model & at least one result
+        if len(out) > 1:
+            if add_emb_dim:
+                out["Embedding Dimensions"] = get_emb_dim(model)
+            df_list.append(out)
     df = pd.DataFrame(df_list)
     # Put 'Model' column first
     cols = sorted(list(df.columns))
@@ -437,7 +454,7 @@ with block:
     gr.Markdown(f"""
     Massive Text Embedding Benchmark (MTEB) Leaderboard. To submit, refer to the <a href="https://github.com/embeddings-benchmark/mteb#leaderboard" target="_blank" style="text-decoration: underline">MTEB GitHub repository</a> 🤗
 
-    - **Total Datasets**: 58
+    - **Total Datasets**: 62
     - **Total Languages**: 112
     - **Total Scores**: >{NUM_SCORES}
     - **Total Models**: {len(DATA_OVERALL)}
@@ -531,27 +548,53 @@ with block:
                         outputs=data_classification,
                     )
         with gr.TabItem("Clustering"):
-            with gr.Row():
-                gr.Markdown("""
-                **Clustering Leaderboard ✨**
-                
-                - **Metric:** Validity Measure (v_measure)
-                - **Languages:** English
-                """)
-            with gr.Row():
-                data_clustering = gr.components.Dataframe(
-                    DATA_CLUSTERING,
-                    datatype=["markdown"] + ["number"] * len(DATA_CLUSTERING.columns),
-                    type="pandas",
-                )
-            with gr.Row():
-                data_run = gr.Button("Refresh")
-                task_clustering = gr.Variable(value=["Clustering"])
-                data_run.click(
-                    get_mteb_data,
-                    inputs=[task_clustering],
-                    outputs=data_clustering,
-                )
+            with gr.TabItem("English"):
+                with gr.Row():
+                    gr.Markdown("""
+                    **Clustering Leaderboard ✨**
+                    
+                    - **Metric:** Validity Measure (v_measure)
+                    - **Languages:** English
+                    """)
+                with gr.Row():
+                    data_clustering = gr.components.Dataframe(
+                        DATA_CLUSTERING,
+                        datatype=["markdown"] + ["number"] * len(DATA_CLUSTERING.columns),
+                        type="pandas",
+                    )
+                with gr.Row():
+                    data_run = gr.Button("Refresh")
+                    task_clustering = gr.Variable(value=["Clustering"])
+                    empty = gr.Variable(value=[])
+                    datasets_clustering = gr.Variable(value=TASK_LIST_CLUSTERING)
+                    data_run.click(
+                        get_mteb_data,
+                        inputs=[task_clustering, empty, datasets_clustering],
+                        outputs=data_clustering,
+                    )
+            with gr.TabItem("German"):
+                with gr.Row():
+                    gr.Markdown("""
+                    **Clustering Leaderboard ✨🇩🇪**
+                    
+                    - **Metric:** Validity Measure (v_measure)
+                    - **Languages:** German
+                    """)
+                with gr.Row():
+                    data_clustering_de = gr.components.Dataframe(
+                        datatype=["markdown"] + ["number"] * len(TASK_LIST_CLUSTERING_DE),
+                        type="pandas",
+                    )
+                with gr.Row():
+                    data_run = gr.Button("Refresh")
+                    task_clustering_de = gr.Variable(value=["Clustering"])
+                    empty_de = gr.Variable(value=[])
+                    datasets_clustering_de = gr.Variable(value=TASK_LIST_CLUSTERING_DE)
+                    data_run.click(
+                        get_mteb_data,
+                        inputs=[task_clustering_de, empty_de, datasets_clustering_de],
+                        outputs=data_clustering_de,
+                    )                
         with gr.TabItem("Pair Classification"):
             with gr.Row():
                 gr.Markdown("""
@@ -681,9 +724,7 @@ with block:
                 )
     gr.Markdown(r"""
     
-    Made with ❤️ for NLP
-    
-    If this work is useful to you, please consider citing:
+    Made with ❤️ for NLP. If this work is useful to you, please consider citing:
 
     ```bibtex
     @article{muennighoff2022mteb,
@@ -702,7 +743,8 @@ with block:
     block.load(get_mteb_data, inputs=[task_bitext_mining], outputs=data_bitext_mining)
     block.load(get_mteb_data, inputs=[task_classification_en, lang_classification_en], outputs=data_classification_en)
     block.load(get_mteb_data, inputs=[task_classification], outputs=data_classification)
-    block.load(get_mteb_data, inputs=[task_clustering], outputs=data_clustering)
+    block.load(get_mteb_data, inputs=[task_clustering, empty, datasets_clustering], outputs=data_clustering)
+    block.load(get_mteb_data, inputs=[task_clustering_de, empty_de, datasets_clustering_de], outputs=data_clustering_de)
     block.load(get_mteb_data, inputs=[task_pair_classification], outputs=data_pair_classification)
     block.load(get_mteb_data, inputs=[task_retrieval], outputs=data_retrieval)
     block.load(get_mteb_data, inputs=[task_reranking], outputs=data_reranking)
