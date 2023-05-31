@@ -579,6 +579,7 @@ with block:
                     
                     - **Metric:** Validity Measure (v_measure)
                     - **Languages:** German
+                    - **Credits:** [Silvan](https://github.com/slvnwhrl)
                     """)
                 with gr.Row():
                     data_clustering_de = gr.components.Dataframe(
