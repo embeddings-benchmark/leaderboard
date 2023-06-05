@@ -783,6 +783,7 @@ with block:
     block.load(get_mteb_data, inputs=[task_sts], outputs=data_sts)
     block.load(get_mteb_data, inputs=[task_summarization], outputs=data_summarization)
 
+block.queue(concurrency_count=40, max_size=10)
 block.launch()
 
 
