@@ -288,6 +288,59 @@ EXTERNAL_MODEL_TO_DIM = {
     "unsup-simcse-bert-base-uncased": 768,
 }
 
+
+EXTERNAL_MODEL_TO_SEQLEN = {
+    "xlm-roberta-large":  514,
+    "use-cmlm-multilingual": 512,
+    "gottbert-base": 512,
+    "cross-en-de-roberta-sentence-transformer": 514,
+    "gbert-base": 512,
+    "gbert-large": 512,
+    "gelectra-base": 512,
+    "gelectra-large": 512,
+    "gottbert-base": 512,
+
+    "LASER2": "N/A",
+    "LaBSE": 512,
+    "all-MiniLM-L12-v2": 512,
+    "all-MiniLM-L6-v2": 512,
+    "all-mpnet-base-v2": 514,
+    "allenai-specter": 512,
+    "bert-base-uncased": 512,
+    "contriever-base-msmarco": 512,
+    "glove.6B.300d": "N/A",
+    "gtr-t5-base": 512,
+    "gtr-t5-large": 512,
+    "gtr-t5-xl": 512,
+    "gtr-t5-xxl": 512,
+    "komninos": "N/A",
+    "msmarco-bert-co-condensor": 512,
+    "paraphrase-multilingual-MiniLM-L12-v2": 512,
+    "paraphrase-multilingual-mpnet-base-v2": 514,
+    "sentence-t5-base": 512,
+    "sentence-t5-large": 512,
+    "sentence-t5-xl": 512,
+    "sentence-t5-xxl": 512,
+    "sup-simcse-bert-base-uncased": 512,
+
+    "text-embedding-ada-002": 8191,
+    
+    "text-similarity-ada-001": 2046,
+    "text-similarity-babbage-001": 2046,    
+    "text-similarity-curie-001": 2046,
+    "text-similarity-davinci-001": 2046,    
+
+    "text-search-ada-doc-001": 2046,
+    "text-search-ada-query-001": 2046,
+    "text-search-ada-001": 2046,   
+    "text-search-babbage-001": 2046,     
+    "text-search-curie-001": 2046,
+    "text-search-davinci-001": 2046,   
+
+    "unsup-simcse-bert-base-uncased": 512,
+}
+
+
 MODELS_TO_SKIP = {
     "baseplate/instructor-large-1", # Duplicate
     "radames/e5-large", # Duplicate
@@ -341,26 +394,22 @@ for model in EXTERNAL_MODELS:
         ds_dict = {k: round(v, 2) for k, v in zip(ds_dict["mteb_dataset_name_with_lang"], ds_dict["score"])}
         EXTERNAL_MODEL_RESULTS[model][task][metric].append({**base_dict, **ds_dict})
 
-def get_emb_dim(model):
+def get_dim_seq(model):
     filenames = [sib.rfilename for sib in model.siblings]
-    dim = ""
+    dim, seq = "", ""
     if "1_Pooling/config.json" in filenames:
         st_config_path = hf_hub_download(model.modelId, filename="1_Pooling/config.json")
         dim = json.load(open(st_config_path)).get("word_embedding_dimension", "")
     elif "2_Pooling/config.json" in filenames:
         st_config_path = hf_hub_download(model.modelId, filename="2_Pooling/config.json")
         dim = json.load(open(st_config_path)).get("word_embedding_dimension", "")
-    elif "config.json" in filenames:
+    if "config.json" in filenames:
         config_path = hf_hub_download(model.modelId, filename="config.json")
         config = json.load(open(config_path))
-        if "hidden_dim" in config:
-            dim = config["hidden_dim"]
-        elif "hidden_size" in config:
-            dim = config["hidden_size"]
-        elif "d_model" in config:
-            dim = config["d_model"]
-    return dim
-
+        if not dim:
+            dim = config.get("hidden_dim", config.get("hidden_size", config.get("d_model", "")))
+        seq = config.get("n_positions", config.get("max_position_embeddings", config.get("n_ctx", config.get("seq_length", ""))))
+    return dim, seq
 
 def get_mteb_data(tasks=["Clustering"], langs=[], datasets=[], fillna=True, add_emb_dim=False, task_to_metric=TASK_TO_METRIC):
     api = HfApi()
@@ -381,6 +430,7 @@ def get_mteb_data(tasks=["Clustering"], langs=[], datasets=[], fillna=True, add_
         if len(res) > 1:
             if add_emb_dim:
                 res["Embedding Dimensions"] = EXTERNAL_MODEL_TO_DIM.get(model, "")
+                res["Sequence Length"] = EXTERNAL_MODEL_TO_SEQLEN.get(model, "")
             df_list.append(res)
     
     for model in models:
@@ -414,7 +464,7 @@ def get_mteb_data(tasks=["Clustering"], langs=[], datasets=[], fillna=True, add_
         # Model & at least one result
         if len(out) > 1:
             if add_emb_dim:
-                out["Embedding Dimensions"] = get_emb_dim(model)
+                out["Embedding Dimensions"], out["Sequence Length"] = get_dim_seq(model)
             df_list.append(out)
     df = pd.DataFrame(df_list)
     # Put 'Model' column first
@@ -472,7 +522,7 @@ def get_mteb_average():
     DATA_STS_EN = DATA_OVERALL[["Model"] + TASK_LIST_STS]
     DATA_SUMMARIZATION = DATA_OVERALL[["Model"] + TASK_LIST_SUMMARIZATION]
 
-    DATA_OVERALL = DATA_OVERALL[["Rank", "Model", "Embedding Dimensions", f"Average ({len(TASK_LIST_EN)} datasets)", f"Classification Average ({len(TASK_LIST_CLASSIFICATION)} datasets)", f"Clustering Average ({len(TASK_LIST_CLUSTERING)} datasets)", f"Pair Classification Average ({len(TASK_LIST_PAIR_CLASSIFICATION)} datasets)", f"Reranking Average ({len(TASK_LIST_RERANKING)} datasets)", f"Retrieval Average ({len(TASK_LIST_RETRIEVAL)} datasets)", f"STS Average ({len(TASK_LIST_STS)} datasets)", f"Summarization Average ({len(TASK_LIST_SUMMARIZATION)} dataset)"]]
+    DATA_OVERALL = DATA_OVERALL[["Rank", "Model", "Embedding Dimensions", "Sequence Length", f"Average ({len(TASK_LIST_EN)} datasets)", f"Classification Average ({len(TASK_LIST_CLASSIFICATION)} datasets)", f"Clustering Average ({len(TASK_LIST_CLUSTERING)} datasets)", f"Pair Classification Average ({len(TASK_LIST_PAIR_CLASSIFICATION)} datasets)", f"Reranking Average ({len(TASK_LIST_RERANKING)} datasets)", f"Retrieval Average ({len(TASK_LIST_RETRIEVAL)} datasets)", f"STS Average ({len(TASK_LIST_STS)} datasets)", f"Summarization Average ({len(TASK_LIST_SUMMARIZATION)} dataset)"]]
 
     return DATA_OVERALL
 
