@@ -347,6 +347,11 @@ MODELS_TO_SKIP = {
     "GovCompete/instructor-xl", # Duplicate
     "GovCompete/e5-large-v2", # Duplicate
     "t12e/instructor-base", # Duplicate
+    "michaelfeil/ct2fast-e5-large-v2",
+    "michaelfeil/ct2fast-e5-large",
+    "michaelfeil/ct2fast-e5-small-v2",
+    "newsrx/instructor-xl-newsrx",
+    "newsrx/instructor-large-newsrx",    
 }
 
 
