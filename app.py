@@ -351,7 +351,11 @@ MODELS_TO_SKIP = {
     "michaelfeil/ct2fast-e5-large",
     "michaelfeil/ct2fast-e5-small-v2",
     "newsrx/instructor-xl-newsrx",
-    "newsrx/instructor-large-newsrx",    
+    "newsrx/instructor-large-newsrx",
+    "fresha/e5-large-v2-endpoint",
+    "ggrn/e5-small-v2",
+    "michaelfeil/ct2fast-e5-small",
+    
 }
 
 
