@@ -355,7 +355,8 @@ MODELS_TO_SKIP = {
     "fresha/e5-large-v2-endpoint",
     "ggrn/e5-small-v2",
     "michaelfeil/ct2fast-e5-small",
-    
+    "jncraton/e5-small-v2-ct2-int8",
+    "anttip/ct2fast-e5-small-v2-hfie",
 }
 
 
