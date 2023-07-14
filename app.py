@@ -357,6 +357,8 @@ MODELS_TO_SKIP = {
     "michaelfeil/ct2fast-e5-small",
     "jncraton/e5-small-v2-ct2-int8",
     "anttip/ct2fast-e5-small-v2-hfie",
+    "newsrx/instructor-large",
+    "newsrx/instructor-xl",
 }
 
 
