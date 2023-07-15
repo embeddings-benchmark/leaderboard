@@ -2,7 +2,7 @@ import json
 
 from datasets import load_dataset
 import gradio as gr
-from huggingface_hub import HfApi, hf_hub_download
+from huggingface_hub import get_hf_file_metadata, HfApi, hf_hub_download, hf_hub_url
 from huggingface_hub.repocard import metadata_load
 import pandas as pd
 
@@ -233,6 +233,7 @@ EXTERNAL_MODEL_TO_LINK = {
     "all-mpnet-base-v2": "https://huggingface.co/sentence-transformers/all-mpnet-base-v2",
     "paraphrase-multilingual-mpnet-base-v2": "https://huggingface.co/sentence-transformers/paraphrase-multilingual-mpnet-base-v2",    
     "paraphrase-multilingual-MiniLM-L12-v2": "https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+    "contriever-base-msmarco": "https://huggingface.co/nthakur/contriever-base-msmarco",
 }
 
 EXTERNAL_MODEL_TO_DIM = {
@@ -338,6 +339,39 @@ EXTERNAL_MODEL_TO_SEQLEN = {
     "unsup-simcse-bert-base-uncased": 512,
 }
 
+EXTERNAL_MODEL_TO_SIZE = {
+    "gtr-t5-xxl": 9.73,
+    "gtr-t5-xl": 2.48,
+    "gtr-t5-large": 0.67,
+    "gtr-t5-base": 0.22,
+    "sentence-t5-xxl": 9.73,
+    "sentence-t5-xl": 2.48,
+    "sentence-t5-large": 0.67,
+    "sentence-t5-base": 0.22,
+    "all-mpnet-base-v2": 0.44,
+    "all-MiniLM-L12-v2": 0.13,
+    "all-MiniLM-L6-v2": 0.09,
+    "contriever-base-msmarco": 0.44,
+    "paraphrase-multilingual-mpnet-base-v2": 1.11,
+    "paraphrase-multilingual-MiniLM-L12-v2": 0.47,
+    "msmarco-bert-co-condensor": 0.44,
+    "sup-simcse-bert-base-uncased": 0.44,
+    "unsup-simcse-bert-base-uncased": 0.44,
+    "LaBSE": 1.88,
+    "komninos": 0.27,
+    "glove.6B.300d": 0.48,
+    "allenai-specter": 0.44,
+    "bert-base-uncased": 0.44,
+    "LASER2": 0.17,
+    "cross-en-de-roberta-sentence-transformer": 1.11,
+    "gbert-base": 0.44,
+    "gbert-large": 1.35,
+    "gelectra-base": 0.44,
+    "gelectra-large": 1.34,
+    "use-cmlm-multilingual": 1.89,
+    "xlm-roberta-large": 2.24,
+    "gottbert-base": 0.51
+}
 
 MODELS_TO_SKIP = {
     "baseplate/instructor-large-1", # Duplicate
@@ -404,9 +438,9 @@ for model in EXTERNAL_MODELS:
         ds_dict = {k: round(v, 2) for k, v in zip(ds_dict["mteb_dataset_name_with_lang"], ds_dict["score"])}
         EXTERNAL_MODEL_RESULTS[model][task][metric].append({**base_dict, **ds_dict})
 
-def get_dim_seq(model):
+def get_dim_seq_size(model):
     filenames = [sib.rfilename for sib in model.siblings]
-    dim, seq = "", ""
+    dim, seq, size = "", "", ""
     if "1_Pooling/config.json" in filenames:
         st_config_path = hf_hub_download(model.modelId, filename="1_Pooling/config.json")
         dim = json.load(open(st_config_path)).get("word_embedding_dimension", "")
@@ -419,7 +453,23 @@ def get_dim_seq(model):
         if not dim:
             dim = config.get("hidden_dim", config.get("hidden_size", config.get("d_model", "")))
         seq = config.get("n_positions", config.get("max_position_embeddings", config.get("n_ctx", config.get("seq_length", ""))))
-    return dim, seq
+    # Get model file size without downloading
+    if "pytorch_model.bin" in filenames:
+        url = hf_hub_url(model.modelId, filename="pytorch_model.bin")
+        meta = get_hf_file_metadata(url)
+        size = round(meta.size / 1e9, 2)
+    elif "pytorch_model.bin.index.json" in filenames:
+        index_path = hf_hub_download(model.modelId, filename="pytorch_model.bin.index.json")
+        """
+        {
+        "metadata": {
+            "total_size": 28272820224
+        },....
+        """
+        size = json.load(open(index_path))
+        if ("metadata" in size) and ("total_size" in size["metadata"]):
+            size = round(size["metadata"]["total_size"] / 1e9, 2)
+    return dim, seq, size
 
 def get_mteb_data(tasks=["Clustering"], langs=[], datasets=[], fillna=True, add_emb_dim=False, task_to_metric=TASK_TO_METRIC):
     api = HfApi()
@@ -439,6 +489,7 @@ def get_mteb_data(tasks=["Clustering"], langs=[], datasets=[], fillna=True, add_
         # Model & at least one result
         if len(res) > 1:
             if add_emb_dim:
+                res["Model Size (GB)"] = EXTERNAL_MODEL_TO_SIZE.get(model, "")
                 res["Embedding Dimensions"] = EXTERNAL_MODEL_TO_DIM.get(model, "")
                 res["Sequence Length"] = EXTERNAL_MODEL_TO_SEQLEN.get(model, "")
             df_list.append(res)
@@ -474,7 +525,7 @@ def get_mteb_data(tasks=["Clustering"], langs=[], datasets=[], fillna=True, add_
         # Model & at least one result
         if len(out) > 1:
             if add_emb_dim:
-                out["Embedding Dimensions"], out["Sequence Length"] = get_dim_seq(model)
+                out["Embedding Dimensions"], out["Sequence Length"], out["Model Size (GB)"] = get_dim_seq_size(model)
             df_list.append(out)
     df = pd.DataFrame(df_list)
     # Put 'Model' column first
@@ -532,7 +583,7 @@ def get_mteb_average():
     DATA_STS_EN = DATA_OVERALL[["Model"] + TASK_LIST_STS]
     DATA_SUMMARIZATION = DATA_OVERALL[["Model"] + TASK_LIST_SUMMARIZATION]
 
-    DATA_OVERALL = DATA_OVERALL[["Rank", "Model", "Embedding Dimensions", "Sequence Length", f"Average ({len(TASK_LIST_EN)} datasets)", f"Classification Average ({len(TASK_LIST_CLASSIFICATION)} datasets)", f"Clustering Average ({len(TASK_LIST_CLUSTERING)} datasets)", f"Pair Classification Average ({len(TASK_LIST_PAIR_CLASSIFICATION)} datasets)", f"Reranking Average ({len(TASK_LIST_RERANKING)} datasets)", f"Retrieval Average ({len(TASK_LIST_RETRIEVAL)} datasets)", f"STS Average ({len(TASK_LIST_STS)} datasets)", f"Summarization Average ({len(TASK_LIST_SUMMARIZATION)} dataset)"]]
+    DATA_OVERALL = DATA_OVERALL[["Rank", "Model", "Model Size (GB)", "Embedding Dimensions", "Sequence Length", f"Average ({len(TASK_LIST_EN)} datasets)", f"Classification Average ({len(TASK_LIST_CLASSIFICATION)} datasets)", f"Clustering Average ({len(TASK_LIST_CLUSTERING)} datasets)", f"Pair Classification Average ({len(TASK_LIST_PAIR_CLASSIFICATION)} datasets)", f"Reranking Average ({len(TASK_LIST_RERANKING)} datasets)", f"Retrieval Average ({len(TASK_LIST_RETRIEVAL)} datasets)", f"STS Average ({len(TASK_LIST_STS)} datasets)", f"Summarization Average ({len(TASK_LIST_SUMMARIZATION)} dataset)"]]
 
     return DATA_OVERALL
 
