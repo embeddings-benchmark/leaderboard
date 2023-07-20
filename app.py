@@ -393,6 +393,7 @@ MODELS_TO_SKIP = {
     "anttip/ct2fast-e5-small-v2-hfie",
     "newsrx/instructor-large",
     "newsrx/instructor-xl",
+    "dmlls/all-mpnet-base-v2",
 }
 
 
@@ -471,7 +472,20 @@ def get_dim_seq_size(model):
             size = round(size["metadata"]["total_size"] / 1e9, 2)
     return dim, seq, size
 
-def get_mteb_data(tasks=["Clustering"], langs=[], datasets=[], fillna=True, add_emb_dim=False, task_to_metric=TASK_TO_METRIC):
+def add_rank(df):
+    cols_to_rank = [col for col in df.columns if col not in ["Model", "Model Size (GB)", "Embedding Dimensions", "Sequence Length"]]
+    if len(cols_to_rank) == 1:
+        df.sort_values(cols_to_rank[0], ascending=False, inplace=True)
+    else:
+        df.insert(1, "Average", df[cols_to_rank].mean(axis=1, skipna=False))
+        df.sort_values("Average", ascending=False, inplace=True)
+    df.insert(0, "Rank", list(range(1, len(df) + 1)))
+    df = df.round(2)
+    # Fill NaN after averaging
+    df.fillna("", inplace=True)
+    return df
+
+def get_mteb_data(tasks=["Clustering"], langs=[], datasets=[], fillna=True, add_emb_dim=False, task_to_metric=TASK_TO_METRIC, rank=True):
     api = HfApi()
     models = api.list_models(filter="mteb")
     # Initialize list to models that we cannot fetch metadata from
@@ -532,6 +546,8 @@ def get_mteb_data(tasks=["Clustering"], langs=[], datasets=[], fillna=True, add_
     cols = sorted(list(df.columns))
     cols.insert(0, cols.pop(cols.index("Model")))
     df = df[cols]
+    if rank:
+        df = add_rank(df)       
     if fillna:
         df.fillna("", inplace=True)
     return df
@@ -551,10 +567,8 @@ def get_mteb_average():
         langs=["en", "en-en"],
         fillna=False,
         add_emb_dim=True,
+        rank=False,
     )
-    # Approximation (Missing Bitext Mining & including some nans)
-    NUM_SCORES = DATA_OVERALL.shape[0] * DATA_OVERALL.shape[1]
-
     # Debugging:
     # DATA_OVERALL.to_csv("overall.csv")
     
@@ -572,32 +586,51 @@ def get_mteb_average():
 
     DATA_OVERALL = DATA_OVERALL.round(2)
 
+    DATA_CLASSIFICATION_EN = add_rank(DATA_OVERALL[["Model"] + TASK_LIST_CLASSIFICATION])
+    DATA_CLUSTERING = add_rank(DATA_OVERALL[["Model"] + TASK_LIST_CLUSTERING])
+    DATA_PAIR_CLASSIFICATION = add_rank(DATA_OVERALL[["Model"] + TASK_LIST_PAIR_CLASSIFICATION])
+    DATA_RERANKING = add_rank(DATA_OVERALL[["Model"] + TASK_LIST_RERANKING])
+    DATA_RETRIEVAL = add_rank(DATA_OVERALL[["Model"] + TASK_LIST_RETRIEVAL])
+    DATA_STS_EN = add_rank(DATA_OVERALL[["Model"] + TASK_LIST_STS])
+    DATA_SUMMARIZATION = add_rank(DATA_OVERALL[["Model"] + TASK_LIST_SUMMARIZATION])
+
     # Fill NaN after averaging
     DATA_OVERALL.fillna("", inplace=True)
-
-    DATA_CLASSIFICATION_EN = DATA_OVERALL[["Model"] + TASK_LIST_CLASSIFICATION]
-    DATA_CLUSTERING = DATA_OVERALL[["Model"] + TASK_LIST_CLUSTERING]
-    DATA_PAIR_CLASSIFICATION = DATA_OVERALL[["Model"] + TASK_LIST_PAIR_CLASSIFICATION]
-    DATA_RERANKING = DATA_OVERALL[["Model"] + TASK_LIST_RERANKING]
-    DATA_RETRIEVAL = DATA_OVERALL[["Model"] + TASK_LIST_RETRIEVAL]
-    DATA_STS_EN = DATA_OVERALL[["Model"] + TASK_LIST_STS]
-    DATA_SUMMARIZATION = DATA_OVERALL[["Model"] + TASK_LIST_SUMMARIZATION]
 
     DATA_OVERALL = DATA_OVERALL[["Rank", "Model", "Model Size (GB)", "Embedding Dimensions", "Sequence Length", f"Average ({len(TASK_LIST_EN)} datasets)", f"Classification Average ({len(TASK_LIST_CLASSIFICATION)} datasets)", f"Clustering Average ({len(TASK_LIST_CLUSTERING)} datasets)", f"Pair Classification Average ({len(TASK_LIST_PAIR_CLASSIFICATION)} datasets)", f"Reranking Average ({len(TASK_LIST_RERANKING)} datasets)", f"Retrieval Average ({len(TASK_LIST_RETRIEVAL)} datasets)", f"STS Average ({len(TASK_LIST_STS)} datasets)", f"Summarization Average ({len(TASK_LIST_SUMMARIZATION)} dataset)"]]
 
     return DATA_OVERALL
 
 get_mteb_average()
+DATA_BITEXT_MINING = get_mteb_data(["BitextMining"])
+DATA_CLASSIFICATION = get_mteb_data(["Classification"])
+DATA_CLUSTERING_GERMAN = get_mteb_data(["Clustering"], [], TASK_LIST_CLUSTERING_DE)
+DATA_STS = get_mteb_data(["STS"])
+
+# Exact, add all non-nan integer values for every dataset
+NUM_SCORES = 0
+DATASETS = []
+# LANGUAGES = []
+for d in [DATA_BITEXT_MINING, DATA_CLASSIFICATION, DATA_CLUSTERING, DATA_CLUSTERING_GERMAN, DATA_PAIR_CLASSIFICATION, DATA_RERANKING, DATA_RETRIEVAL, DATA_STS, DATA_SUMMARIZATION]:
+    # NUM_SCORES += d.iloc[:, 1:].apply(lambda x: sum([1 for y in x if isinstance(y, float) and not np.isnan(y)]), axis=1).sum()
+    cols_to_ignore = 3 if "Average" in d.columns else 2
+    # Count number of scores including only non-nan floats & excluding the rank column
+    NUM_SCORES += d.iloc[:, cols_to_ignore:].notna().sum().sum()
+    # Exclude rank & model name column (first two); Do not count different language versions as different datasets
+    DATASETS += [i.split(" ")[0] for i in d.columns[cols_to_ignore:]]
+    # LANGUAGES += [i.split(" ")[-1] for i in d.columns[cols_to_ignore:]]
+
+NUM_DATASETS = len(set(DATASETS))
+# NUM_LANGUAGES = len(set(LANGUAGES))
+
 block = gr.Blocks()
-
-
 with block:
     gr.Markdown(f"""
     Massive Text Embedding Benchmark (MTEB) Leaderboard. To submit, refer to the <a href="https://github.com/embeddings-benchmark/mteb#leaderboard" target="_blank" style="text-decoration: underline">MTEB GitHub repository</a> 🤗 Refer to the [MTEB paper](https://arxiv.org/abs/2210.07316) for details on metrics, tasks and models.
 
-    - **Total Datasets**: 62
+    - **Total Datasets**: {NUM_DATASETS}
     - **Total Languages**: 112
-    - **Total Scores**: >{NUM_SCORES}
+    - **Total Scores**: {NUM_SCORES}
     - **Total Models**: {len(DATA_OVERALL)}
     """)
     with gr.Tabs():
@@ -629,7 +662,8 @@ with block:
                     """)
             with gr.Row():
                 data_bitext_mining = gr.components.Dataframe(
-                    datatype=["markdown"] + ["number"] * 500, # hack when we don't know how many columns
+                    DATA_BITEXT_MINING,
+                    datatype=["number", "markdown"] + ["number"] * len(DATA_BITEXT_MINING.columns),
                     type="pandas",
                 )
             with gr.Row():
@@ -652,7 +686,7 @@ with block:
                 with gr.Row():
                     data_classification_en = gr.components.Dataframe(
                         DATA_CLASSIFICATION_EN,
-                        datatype=["markdown"] + ["number"] * len(DATA_CLASSIFICATION_EN.columns),
+                        datatype=["number", "markdown"] + ["number"] * len(DATA_CLASSIFICATION_EN.columns),
                         type="pandas",
                     )
                 with gr.Row():
@@ -677,7 +711,8 @@ with block:
                     """)
                 with gr.Row():
                     data_classification = gr.components.Dataframe(
-                        datatype=["markdown"] + ["number"] * 200, # hack when we don't know how many columns
+                        DATA_CLASSIFICATION,
+                        datatype=["number", "markdown"] + ["number"] * len(DATA_CLASSIFICATION) * 10,
                         type="pandas",
                     )
                 with gr.Row():
@@ -700,7 +735,7 @@ with block:
                 with gr.Row():
                     data_clustering = gr.components.Dataframe(
                         DATA_CLUSTERING,
-                        datatype=["markdown"] + ["number"] * len(DATA_CLUSTERING.columns),
+                        datatype=["number", "markdown"] + ["number"] * len(DATA_CLUSTERING.columns),
                         type="pandas",
                     )
                 with gr.Row():
@@ -724,7 +759,8 @@ with block:
                     """)
                 with gr.Row():
                     data_clustering_de = gr.components.Dataframe(
-                        datatype=["markdown"] + ["number"] * len(TASK_LIST_CLUSTERING_DE),
+                        DATA_CLUSTERING_GERMAN,
+                        datatype=["number", "markdown"] + ["number"] * len(DATA_CLUSTERING_GERMAN.columns) * 2,
                         type="pandas",
                     )
                 with gr.Row():
@@ -748,7 +784,7 @@ with block:
             with gr.Row():
                 data_pair_classification = gr.components.Dataframe(
                     DATA_PAIR_CLASSIFICATION,
-                    datatype=["markdown"] + ["number"] * len(DATA_PAIR_CLASSIFICATION.columns),
+                    datatype=["number", "markdown"] + ["number"] * len(DATA_PAIR_CLASSIFICATION.columns),
                     type="pandas",
                 )
             with gr.Row():
@@ -771,7 +807,7 @@ with block:
                 data_retrieval = gr.components.Dataframe(
                     DATA_RETRIEVAL,
                     # Add support for more columns than existing as a buffer for CQADupstack & other Retrieval tasks (e.g. MSMARCOv2)
-                    datatype=["markdown"] + ["number"] * len(DATA_RETRIEVAL.columns) * 2,
+                    datatype=["number", "markdown"] + ["number"] * len(DATA_RETRIEVAL.columns) * 2,
                     type="pandas",
                 )
             with gr.Row():
@@ -791,7 +827,7 @@ with block:
             with gr.Row():
                 data_reranking = gr.components.Dataframe(
                     DATA_RERANKING,
-                    datatype=["markdown"] + ["number"] * len(DATA_RERANKING.columns),
+                    datatype=["number", "markdown"] + ["number"] * len(DATA_RERANKING.columns),
                     type="pandas",
                 )
             with gr.Row():
@@ -813,7 +849,7 @@ with block:
                 with gr.Row():
                     data_sts_en = gr.components.Dataframe(
                         DATA_STS_EN,
-                        datatype=["markdown"] + ["number"] * len(DATA_STS_EN.columns),
+                        datatype=["number", "markdown"] + ["number"] * len(DATA_STS_EN.columns),
                         type="pandas",
                     )
                 with gr.Row():
@@ -835,7 +871,8 @@ with block:
                     """)
                 with gr.Row():
                     data_sts = gr.components.Dataframe(
-                        datatype=["markdown"] + ["number"] * 100, # hack when we don't know how many columns
+                        DATA_STS,
+                        datatype=["number", "markdown"] + ["number"] * len(DATA_STS.columns) * 2,
                         type="pandas",
                     )
                 with gr.Row():
@@ -853,7 +890,7 @@ with block:
             with gr.Row():
                 data_summarization = gr.components.Dataframe(
                     DATA_SUMMARIZATION,
-                    datatype=["markdown"] + ["number"] * 2,
+                    datatype=["number", "markdown"] + ["number"] * 2,
                     type="pandas",
                 )
             with gr.Row():
@@ -880,8 +917,9 @@ with block:
     }
     ```
     """)
-    # Running the function on page load in addition to when the button is clicked
-    # This is optional - If deactivated the data created loaded at "Build time" is shown like for Overall tab
+    # Running the functions on page load in addition to when the button is clicked
+    # This is optional - If deactivated the data loaded at "Build time" is shown like for Overall tab
+    """
     block.load(get_mteb_data, inputs=[task_bitext_mining], outputs=data_bitext_mining)
     block.load(get_mteb_data, inputs=[task_classification_en, lang_classification_en], outputs=data_classification_en)
     block.load(get_mteb_data, inputs=[task_classification], outputs=data_classification)
@@ -893,6 +931,7 @@ with block:
     block.load(get_mteb_data, inputs=[task_sts_en, lang_sts_en], outputs=data_sts_en)
     block.load(get_mteb_data, inputs=[task_sts], outputs=data_sts)
     block.load(get_mteb_data, inputs=[task_summarization], outputs=data_summarization)
+    """
 
 block.queue(concurrency_count=40, max_size=10)
 block.launch()
