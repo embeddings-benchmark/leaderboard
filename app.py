@@ -814,7 +814,7 @@ with block:
                         
                         - **Metric:** [F1](https://huggingface.co/spaces/evaluate-metric/f1)
                         - **Languages:** Danish & Bornholmsk (Danish Dialect)
-                        - **Credits:** [Kenneth Enevoldsen](https://github.com/KennethEnevoldsen)                                    
+                        - **Credits:** [Kenneth Enevoldsen](https://github.com/KennethEnevoldsen), [scandinavian-embedding-benchmark](https://kennethenevoldsen.github.io/scandinavian-embedding-benchmark/)
                         """)
                 with gr.Row():
                     data_bitext_mining_other = gr.components.Dataframe(
@@ -870,7 +870,7 @@ with block:
                     
                     - **Metric:** [Accuracy](https://huggingface.co/spaces/evaluate-metric/accuracy)
                     - **Languages:** Danish
-                    - **Credits:** [Kenneth Enevoldsen](https://github.com/KennethEnevoldsen)
+                    - **Credits:** [Kenneth Enevoldsen](https://github.com/KennethEnevoldsen), [scandinavian-embedding-benchmark](https://kennethenevoldsen.github.io/scandinavian-embedding-benchmark/)
                     """)
                 with gr.Row():
                     data_classification_da = gr.components.Dataframe(
@@ -899,7 +899,7 @@ with block:
                     
                     - **Metric:** [Accuracy](https://huggingface.co/spaces/evaluate-metric/accuracy)
                     - **Languages:** Norwegian Bokmål
-                    - **Credits:** [Kenneth Enevoldsen](https://github.com/KennethEnevoldsen)
+                    - **Credits:** [Kenneth Enevoldsen](https://github.com/KennethEnevoldsen), [scandinavian-embedding-benchmark](https://kennethenevoldsen.github.io/scandinavian-embedding-benchmark/)                                
                     """)
                 with gr.Row():
                     data_classification_nb = gr.components.Dataframe(
@@ -928,7 +928,7 @@ with block:
                     
                     - **Metric:** [Accuracy](https://huggingface.co/spaces/evaluate-metric/accuracy)
                     - **Languages:** Swedish
-                    - **Credits:** [Kenneth Enevoldsen](https://github.com/KennethEnevoldsen)
+                    - **Credits:** [Kenneth Enevoldsen](https://github.com/KennethEnevoldsen), [scandinavian-embedding-benchmark](https://kennethenevoldsen.github.io/scandinavian-embedding-benchmark/)
                     """)
                 with gr.Row():
                     data_classification_sv = gr.components.Dataframe(
