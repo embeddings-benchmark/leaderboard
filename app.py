@@ -54,7 +54,7 @@ TASK_LIST_CLASSIFICATION_NB = [
     "NorwegianParliament",
     "MassiveIntentClassification (nb)",
     "MassiveScenarioClassification (nb)",
-    "ScalaNbClassification (nb)",
+    "ScalaNbClassification",
 ]
 
 TASK_LIST_CLASSIFICATION_SV = [
@@ -62,7 +62,6 @@ TASK_LIST_CLASSIFICATION_SV = [
     "MassiveIntentClassification (sv)",
     "MassiveScenarioClassification (sv)",
     "NordicLangClassification",
-    "ScalaNbClassification",
     "ScalaSvClassification",
     "SweRecClassification",
 ]
@@ -587,6 +586,15 @@ def get_dim_seq_size(model):
             size = round(size["metadata"]["total_size"] / 1e9, 2)
     return dim, seq, size
 
+def make_datasets_clickable(df):
+    """Does not work"""
+    if "BornholmBitextMining" in df.columns:
+        link = "https://huggingface.co/datasets/strombergnlp/bornholmsk_parallel"
+        df = df.rename(
+            columns={f'BornholmBitextMining': '<a target="_blank" style="text-decoration: underline" href="{link}">BornholmBitextMining</a>',})
+    return df
+
+
 def add_rank(df):
     cols_to_rank = [col for col in df.columns if col not in ["Model", "Model Size (GB)", "Embedding Dimensions", "Sequence Length"]]
     if len(cols_to_rank) == 1:
@@ -659,8 +667,6 @@ def get_mteb_data(tasks=["Clustering"], langs=[], datasets=[], fillna=True, add_
     df = pd.DataFrame(df_list)
     # If there are any models that are the same, merge them
     # E.g. if out["Model"] has the same value in two places, merge & take whichever one is not NaN else just take the first one
-    # Save to csv
-    df.to_csv("mteb.csv", index=False)
     df = df.groupby("Model", as_index=False).first()
     # Put 'Model' column first
     cols = sorted(list(df.columns))
@@ -780,7 +786,7 @@ with block:
             with gr.TabItem("English-X"):
                 with gr.Row():
                         gr.Markdown("""
-                        **Bitext Mining Leaderboard 🏴󠁧󠁢󠁳󠁣󠁴󠁿**
+                        **Bitext Mining Leaderboard 🎌**
                         
                         - **Metric:** [F1](https://huggingface.co/spaces/evaluate-metric/f1)
                         - **Languages:** 117 (Pairs of: English & other language)
@@ -801,13 +807,13 @@ with block:
                         inputs=[task_bitext_mining, lang_bitext_mining_other, datasets_bitext_mining_other],
                         outputs=data_bitext_mining,
                     )
-            with gr.TabItem("Other"):
+            with gr.TabItem("Danish"):
                 with gr.Row():
                         gr.Markdown("""
-                        **Bitext Mining Other Leaderboard 🎌**
+                        **Bitext Mining Danish Leaderboard 🇩🇰🎌**
                         
                         - **Metric:** [F1](https://huggingface.co/spaces/evaluate-metric/f1)
-                        - **Languages:** 2 (Pair of: Danish & Bornholmsk)
+                        - **Languages:** Danish & Bornholmsk (Danish Dialect)
                         - **Credits:** [Kenneth Enevoldsen](https://github.com/KennethEnevoldsen)                                    
                         """)
                 with gr.Row():
