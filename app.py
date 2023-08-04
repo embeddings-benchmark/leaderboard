@@ -398,8 +398,8 @@ EXTERNAL_MODEL_TO_SEQLEN = {
     "dfm-sentence-encoder-large-1": 512,
     "distiluse-base-multilingual-cased-v2": 512,
     "e5-base": 512,
-    "e5-large": 512,    
-    "e5-small": 512,    
+    "e5-large": 512,
+    "e5-small": 512,
     "electra-small-nordic": 512,
     "electra-small-swedish-cased-discriminator": 512,
     "gbert-base": 512,
@@ -452,18 +452,18 @@ EXTERNAL_MODEL_TO_SIZE = {
     "allenai-specter": 0.44,
     "all-MiniLM-L12-v2": 0.13,
     "all-MiniLM-L6-v2": 0.09,
-    "all-mpnet-base-v2": 0.44,    
-    "bert-base-uncased": 0.44,    
+    "all-mpnet-base-v2": 0.44,
+    "bert-base-uncased": 0.44,
     "bert-base-swedish-cased": 0.50,
     "cross-en-de-roberta-sentence-transformer": 1.11,
-    "contriever-base-msmarco": 0.44,    
+    "contriever-base-msmarco": 0.44,
     "DanskBERT": 0.50,
     "distiluse-base-multilingual-cased-v2": 0.54,
     "dfm-encoder-large-v1": 1.42,
     "dfm-sentence-encoder-large-1": 1.63,
     "e5-base": 0.44,
     "e5-small": 0.13,
-    "e5-large": 1.34,      
+    "e5-large": 1.34,
     "electra-small-nordic": 0.09,
     "electra-small-swedish-cased-discriminator": 0.06,
     "gbert-base": 0.44,
@@ -471,18 +471,18 @@ EXTERNAL_MODEL_TO_SIZE = {
     "gelectra-base": 0.44,
     "gelectra-large": 1.34,
     "glove.6B.300d": 0.48,
-    "gottbert-base": 0.51,    
+    "gottbert-base": 0.51,
     "gtr-t5-base": 0.22,
     "gtr-t5-large": 0.67,
     "gtr-t5-xl": 2.48,
     "gtr-t5-xxl": 9.73,
-    "komninos": 0.27,    
+    "komninos": 0.27,
     "LASER2": 0.17,
     "LaBSE": 1.88,
     "msmarco-bert-co-condensor": 0.44,
     "multilingual-e5-base": 1.11,
     "multilingual-e5-small": 0.47,
-    "multilingual-e5-large": 2.24,    
+    "multilingual-e5-large": 2.24,
     "nb-bert-base": 0.71,
     "nb-bert-large": 1.42,
     "norbert3-base": 0.52,
@@ -496,7 +496,7 @@ EXTERNAL_MODEL_TO_SIZE = {
     "sentence-t5-xxl": 9.73,
     "sup-simcse-bert-base-uncased": 0.44,
     "unsup-simcse-bert-base-uncased": 0.44,
-    "use-cmlm-multilingual": 1.89, 
+    "use-cmlm-multilingual": 1.89,
     "xlm-roberta-base": 1.12,
     "xlm-roberta-large": 2.24,
 }
@@ -522,6 +522,7 @@ MODELS_TO_SKIP = {
     "newsrx/instructor-large",
     "newsrx/instructor-xl",
     "dmlls/all-mpnet-base-v2",
+    "cgldo/semanticClone",
 }
 
 
@@ -544,7 +545,7 @@ def add_task(examples):
         examples["mteb_task"] = "PairClassification"
     elif examples["mteb_dataset_name"] in TASK_LIST_RERANKING:
         examples["mteb_task"] = "Reranking"
-    elif examples["mteb_dataset_name"] in TASK_LIST_RETRIEVAL_NORM:
+    elif examples["mteb_dataset_name"] in TASK_LIST_RETRIEVAL_NORM + TASK_LIST_RETRIEVAL_PL:
         examples["mteb_task"] = "Retrieval"
     elif examples["mteb_dataset_name"] in TASK_LIST_STS_NORM:
         examples["mteb_task"] = "STS"
@@ -749,7 +750,7 @@ DATA_CLASSIFICATION_NB = get_mteb_data(["Classification"], [], TASK_LIST_CLASSIF
 DATA_CLASSIFICATION_SV = get_mteb_data(["Classification"], [], TASK_LIST_CLASSIFICATION_SV)
 DATA_CLASSIFICATION_OTHER = get_mteb_data(["Classification"], [], TASK_LIST_CLASSIFICATION_OTHER)
 DATA_CLUSTERING_GERMAN = get_mteb_data(["Clustering"], [], TASK_LIST_CLUSTERING_DE)
-#DATA_RETRIEVAL_PL = get_mteb_data(["Retrieval"], [], TASK_LIST_RETRIEVAL_PL)
+DATA_RETRIEVAL_PL = get_mteb_data(["Retrieval"], [], TASK_LIST_RETRIEVAL_PL)
 DATA_STS = get_mteb_data(["STS"])
 
 # Exact, add all non-nan integer values for every dataset
@@ -815,11 +816,11 @@ with block:
                 with gr.Row():
                     data_run = gr.Button("Refresh")
                     task_bitext_mining = gr.Variable(value=["BitextMining"])
-                    lang_bitext_mining_other = gr.Variable(value=[])
-                    datasets_bitext_mining_other = gr.Variable(value=TASK_LIST_BITEXT_MINING)                    
+                    lang_bitext_mining = gr.Variable(value=[])
+                    datasets_bitext_mining = gr.Variable(value=TASK_LIST_BITEXT_MINING)
                     data_run.click(
                         get_mteb_data,
-                        inputs=[task_bitext_mining, lang_bitext_mining_other, datasets_bitext_mining_other],
+                        inputs=[task_bitext_mining, lang_bitext_mining, datasets_bitext_mining],
                         outputs=data_bitext_mining,
                     )
             with gr.TabItem("Danish"):
@@ -832,24 +833,24 @@ with block:
                         - **Credits:** [Kenneth Enevoldsen](https://github.com/KennethEnevoldsen), [scandinavian-embedding-benchmark](https://kennethenevoldsen.github.io/scandinavian-embedding-benchmark/)
                         """)
                 with gr.Row():
-                    data_bitext_mining_other = gr.components.Dataframe(
+                    data_bitext_mining_da = gr.components.Dataframe(
                         DATA_BITEXT_MINING_OTHER,
                         datatype=["number", "markdown"] + ["number"] * len(DATA_BITEXT_MINING_OTHER.columns),
                         type="pandas",
                     )
                 with gr.Row():
                     data_run = gr.Button("Refresh")
-                    task_bitext_mining_other = gr.Variable(value=["BitextMining"])
-                    lang_bitext_mining_other = gr.Variable(value=[])
-                    datasets_bitext_mining_other = gr.Variable(value=TASK_LIST_BITEXT_MINING_OTHER)
+                    task_bitext_mining_da = gr.Variable(value=["BitextMining"])
+                    lang_bitext_mining_da = gr.Variable(value=[])
+                    datasets_bitext_mining_da = gr.Variable(value=TASK_LIST_BITEXT_MINING_OTHER)
                     data_run.click(
                         get_mteb_data,
                         inputs=[
-                            task_bitext_mining_other,
-                            lang_bitext_mining_other,
-                            datasets_bitext_mining_other,
+                            task_bitext_mining_da,
+                            lang_bitext_mining_da,
+                            datasets_bitext_mining_da,
                         ],
-                        outputs=data_bitext_mining_other,
+                        outputs=data_bitext_mining_da,
                     )
         with gr.TabItem("Classification"):
             with gr.TabItem("English"):
@@ -1011,11 +1012,11 @@ with block:
                 with gr.Row():
                     data_run = gr.Button("Refresh")
                     task_clustering = gr.Variable(value=["Clustering"])
-                    empty = gr.Variable(value=[])
+                    lang_clustering = gr.Variable(value=[])
                     datasets_clustering = gr.Variable(value=TASK_LIST_CLUSTERING)
                     data_run.click(
                         get_mteb_data,
-                        inputs=[task_clustering, empty, datasets_clustering],
+                        inputs=[task_clustering, lang_clustering, datasets_clustering],
                         outputs=data_clustering,
                     )
             with gr.TabItem("German"):
@@ -1036,11 +1037,11 @@ with block:
                 with gr.Row():
                     data_run = gr.Button("Refresh")
                     task_clustering_de = gr.Variable(value=["Clustering"])
-                    empty_de = gr.Variable(value=[])
+                    lang_clustering_de = gr.Variable(value=[])
                     datasets_clustering_de = gr.Variable(value=TASK_LIST_CLUSTERING_DE)
                     data_run.click(
                         get_mteb_data,
-                        inputs=[task_clustering_de, empty_de, datasets_clustering_de],
+                        inputs=[task_clustering_de, lang_clustering_de, datasets_clustering_de],
                         outputs=data_clustering_de,
                     )                
         with gr.TabItem("Pair Classification"):
@@ -1108,7 +1109,6 @@ with block:
                     data_run.click(
                         get_mteb_data, inputs=[task_retrieval], outputs=data_retrieval
                     )
-            '''
             with gr.TabItem("Polish"):
                 with gr.Row():
                     gr.Markdown("""
@@ -1128,10 +1128,13 @@ with block:
                 with gr.Row():
                     data_run = gr.Button("Refresh")
                     task_retrieval_pl = gr.Variable(value=["Retrieval"])
+                    lang_retrieval_pl = gr.Variable(value=[])
+                    datasets_retrieval_pl = gr.Variable(value=TASK_LIST_RETRIEVAL_PL)
                     data_run.click(
-                        get_mteb_data, inputs=[task_retrieval_pl], outputs=data_retrieval_pl
-                    )                    
-            '''
+                        get_mteb_data, 
+                        inputs=[task_retrieval_pl, lang_retrieval_pl, datasets_retrieval_pl], 
+                        outputs=data_retrieval_pl
+                    )
         with gr.TabItem("STS"):
             with gr.TabItem("English"):
                 with gr.Row():
