@@ -121,6 +121,20 @@ TASK_LIST_RETRIEVAL = [
     "TRECCOVID",
 ]
 
+TASK_LIST_RETRIEVAL_PL = [
+    "ArguAna-PL",
+    "DBPedia-PL",
+    "FiQA2018-PL",
+    "HotpotQA-PL",
+    "MSMARCO-PL",
+    "NFCorpus-PL",
+    "NQ-PL",
+    "Quora-PL",
+    "SCIDOCS-PL",
+    "SciFact-PL",
+    "TRECCOVID-PL",
+]
+
 TASK_LIST_RETRIEVAL_NORM = TASK_LIST_RETRIEVAL + [
     "CQADupstackAndroidRetrieval",
     "CQADupstackEnglishRetrieval",
@@ -735,6 +749,7 @@ DATA_CLASSIFICATION_NB = get_mteb_data(["Classification"], [], TASK_LIST_CLASSIF
 DATA_CLASSIFICATION_SV = get_mteb_data(["Classification"], [], TASK_LIST_CLASSIFICATION_SV)
 DATA_CLASSIFICATION_OTHER = get_mteb_data(["Classification"], [], TASK_LIST_CLASSIFICATION_OTHER)
 DATA_CLUSTERING_GERMAN = get_mteb_data(["Clustering"], [], TASK_LIST_CLUSTERING_DE)
+DATA_RETRIEVAL_PL = get_mteb_data(["Retrieval"], [], TASK_LIST_RETRIEVAL_PL)
 DATA_STS = get_mteb_data(["STS"])
 
 # Exact, add all non-nan integer values for every dataset
@@ -1072,26 +1087,49 @@ with block:
                     get_mteb_data, inputs=[task_reranking], outputs=data_reranking
                 )
         with gr.TabItem("Retrieval"):
-            with gr.Row():
-                gr.Markdown("""
-                **Retrieval Leaderboard  🔎**
-                
-                - **Metric:** Normalized Discounted Cumulative Gain @ k (ndcg_at_10)
-                - **Languages:** English
-                """)
-            with gr.Row():
-                data_retrieval = gr.components.Dataframe(
-                    DATA_RETRIEVAL,
-                    # Add support for more columns than existing as a buffer for CQADupstack & other Retrieval tasks (e.g. MSMARCOv2)
-                    datatype=["number", "markdown"] + ["number"] * len(DATA_RETRIEVAL.columns) * 2,
-                    type="pandas",
-                )
-            with gr.Row():
-                data_run = gr.Button("Refresh")
-                task_retrieval = gr.Variable(value=["Retrieval"])
-                data_run.click(
-                    get_mteb_data, inputs=[task_retrieval], outputs=data_retrieval
-                )                
+            with gr.TabItem("English"):
+                with gr.Row():
+                    gr.Markdown("""
+                    **Retrieval Leaderboard  🔎**
+                    
+                    - **Metric:** Normalized Discounted Cumulative Gain @ k (ndcg_at_10)
+                    - **Languages:** English
+                    """)
+                with gr.Row():
+                    data_retrieval = gr.components.Dataframe(
+                        DATA_RETRIEVAL,
+                        # Add support for more columns than existing as a buffer for CQADupstack & other Retrieval tasks (e.g. MSMARCOv2)
+                        datatype=["number", "markdown"] + ["number"] * len(DATA_RETRIEVAL.columns) * 2,
+                        type="pandas",
+                    )
+                with gr.Row():
+                    data_run = gr.Button("Refresh")
+                    task_retrieval = gr.Variable(value=["Retrieval"])
+                    data_run.click(
+                        get_mteb_data, inputs=[task_retrieval], outputs=data_retrieval
+                    )
+            with gr.TabItem("Polish"):
+                with gr.Row():
+                    gr.Markdown("""
+                    **Retrieval Leaderboard 🇵🇱**
+                    
+                    - **Metric:** Normalized Discounted Cumulative Gain @ k (ndcg_at_10)
+                    - **Languages:** Polish
+                    - **Credits:** [Konrad Wojtasik](https://github.com/kwojtasi) & [BEIR-PL](https://arxiv.org/abs/2305.19840)
+                    """)
+                with gr.Row():
+                    data_retrieval_pl = gr.components.Dataframe(
+                        DATA_RETRIEVAL_PL,
+                        # Add support for more columns than existing as a buffer for CQADupstack & other Retrieval tasks (e.g. MSMARCOv2)
+                        datatype=["number", "markdown"] + ["number"] * len(DATA_RETRIEVAL_PL.columns) * 2,
+                        type="pandas",
+                    )
+                with gr.Row():
+                    data_run = gr.Button("Refresh")
+                    task_retrieval_pl = gr.Variable(value=["Retrieval"])
+                    data_run.click(
+                        get_mteb_data, inputs=[task_retrieval_pl], outputs=data_retrieval_pl
+                    )                    
         with gr.TabItem("STS"):
             with gr.TabItem("English"):
                 with gr.Row():
