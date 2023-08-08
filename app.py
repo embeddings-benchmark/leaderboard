@@ -66,7 +66,19 @@ TASK_LIST_CLASSIFICATION_SV = [
     "SweRecClassification",
 ]
 
-TASK_LIST_CLASSIFICATION_OTHER = ['AmazonCounterfactualClassification (de)', 'AmazonCounterfactualClassification (ja)', 'AmazonReviewsClassification (de)', 'AmazonReviewsClassification (es)', 'AmazonReviewsClassification (fr)', 'AmazonReviewsClassification (ja)', 'AmazonReviewsClassification (zh)', 'MTOPDomainClassification (de)', 'MTOPDomainClassification (es)', 'MTOPDomainClassification (fr)', 'MTOPDomainClassification (hi)', 'MTOPDomainClassification (th)', 'MTOPIntentClassification (de)', 'MTOPIntentClassification (es)', 'MTOPIntentClassification (fr)', 'MTOPIntentClassification (hi)', 'MTOPIntentClassification (th)', 'MassiveIntentClassification (af)', 'MassiveIntentClassification (am)', 'MassiveIntentClassification (ar)', 'MassiveIntentClassification (az)', 'MassiveIntentClassification (bn)', 'MassiveIntentClassification (cy)', 'MassiveIntentClassification (de)', 'MassiveIntentClassification (el)', 'MassiveIntentClassification (es)', 'MassiveIntentClassification (fa)', 'MassiveIntentClassification (fi)', 'MassiveIntentClassification (fr)', 'MassiveIntentClassification (he)', 'MassiveIntentClassification (hi)', 'MassiveIntentClassification (hu)', 'MassiveIntentClassification (hy)', 'MassiveIntentClassification (id)', 'MassiveIntentClassification (is)', 'MassiveIntentClassification (it)', 'MassiveIntentClassification (ja)', 'MassiveIntentClassification (jv)', 'MassiveIntentClassification (ka)', 'MassiveIntentClassification (km)', 'MassiveIntentClassification (kn)', 'MassiveIntentClassification (ko)', 'MassiveIntentClassification (lv)', 'MassiveIntentClassification (ml)', 'MassiveIntentClassification (mn)', 'MassiveIntentClassification (ms)', 'MassiveIntentClassification (my)', 'MassiveIntentClassification (nl)', 'MassiveIntentClassification (pl)', 'MassiveIntentClassification (pt)', 'MassiveIntentClassification (ro)', 'MassiveIntentClassification (ru)', 'MassiveIntentClassification (sl)', 'MassiveIntentClassification (sq)', 'MassiveIntentClassification (sw)', 'MassiveIntentClassification (ta)', 'MassiveIntentClassification (te)', 'MassiveIntentClassification (th)', 'MassiveIntentClassification (tl)', 'MassiveIntentClassification (tr)', 'MassiveIntentClassification (ur)', 'MassiveIntentClassification (vi)', 'MassiveIntentClassification (zh-CN)', 'MassiveIntentClassification (zh-TW)', 'MassiveScenarioClassification (af)', 'MassiveScenarioClassification (am)', 'MassiveScenarioClassification (ar)', 'MassiveScenarioClassification (az)', 'MassiveScenarioClassification (bn)', 'MassiveScenarioClassification (cy)', 'MassiveScenarioClassification (de)', 'MassiveScenarioClassification (el)', 'MassiveScenarioClassification (es)', 'MassiveScenarioClassification (fa)', 'MassiveScenarioClassification (fi)', 'MassiveScenarioClassification (fr)', 'MassiveScenarioClassification (he)', 'MassiveScenarioClassification (hi)', 'MassiveScenarioClassification (hu)', 'MassiveScenarioClassification (hy)', 'MassiveScenarioClassification (id)', 'MassiveScenarioClassification (is)', 'MassiveScenarioClassification (it)', 'MassiveScenarioClassification (ja)', 'MassiveScenarioClassification (jv)', 'MassiveScenarioClassification (ka)', 'MassiveScenarioClassification (km)', 'MassiveScenarioClassification (kn)', 'MassiveScenarioClassification (ko)', 'MassiveScenarioClassification (lv)', 'MassiveScenarioClassification (ml)', 'MassiveScenarioClassification (mn)', 'MassiveScenarioClassification (ms)', 'MassiveScenarioClassification (my)', 'MassiveScenarioClassification (nl)', 'MassiveScenarioClassification (pl)', 'MassiveScenarioClassification (pt)', 'MassiveScenarioClassification (ro)', 'MassiveScenarioClassification (ru)', 'MassiveScenarioClassification (sl)', 'MassiveScenarioClassification (sq)', 'MassiveScenarioClassification (sw)', 'MassiveScenarioClassification (ta)', 'MassiveScenarioClassification (te)', 'MassiveScenarioClassification (th)', 'MassiveScenarioClassification (tl)', 'MassiveScenarioClassification (tr)', 'MassiveScenarioClassification (ur)', 'MassiveScenarioClassification (vi)', 'MassiveScenarioClassification (zh-CN)', 'MassiveScenarioClassification (zh-TW)']
+TASK_LIST_CLASSIFICATION_ZH = [
+    "AmazonReviewsClassification (zh)",
+    "IFlyTek",
+    "JDReview",
+    "MassiveIntentClassification (zh-CN)",
+    "MassiveScenarioClassification (zh-CN)",
+    "MultilingualSentiment",
+    "OnlineShopping",
+    "TNews",
+    "Waimai",
+]
+
+TASK_LIST_CLASSIFICATION_OTHER = ['AmazonCounterfactualClassification (de)', 'AmazonCounterfactualClassification (ja)', 'AmazonReviewsClassification (de)', 'AmazonReviewsClassification (es)', 'AmazonReviewsClassification (fr)', 'AmazonReviewsClassification (ja)', 'AmazonReviewsClassification (zh)', 'MTOPDomainClassification (de)', 'MTOPDomainClassification (es)', 'MTOPDomainClassification (fr)', 'MTOPDomainClassification (hi)', 'MTOPDomainClassification (th)', 'MTOPIntentClassification (de)', 'MTOPIntentClassification (es)', 'MTOPIntentClassification (fr)', 'MTOPIntentClassification (hi)', 'MTOPIntentClassification (th)', 'MassiveIntentClassification (af)', 'MassiveIntentClassification (am)', 'MassiveIntentClassification (ar)', 'MassiveIntentClassification (az)', 'MassiveIntentClassification (bn)', 'MassiveIntentClassification (cy)', 'MassiveIntentClassification (de)', 'MassiveIntentClassification (el)', 'MassiveIntentClassification (es)', 'MassiveIntentClassification (fa)', 'MassiveIntentClassification (fi)', 'MassiveIntentClassification (fr)', 'MassiveIntentClassification (he)', 'MassiveIntentClassification (hi)', 'MassiveIntentClassification (hu)', 'MassiveIntentClassification (hy)', 'MassiveIntentClassification (id)', 'MassiveIntentClassification (is)', 'MassiveIntentClassification (it)', 'MassiveIntentClassification (ja)', 'MassiveIntentClassification (jv)', 'MassiveIntentClassification (ka)', 'MassiveIntentClassification (km)', 'MassiveIntentClassification (kn)', 'MassiveIntentClassification (ko)', 'MassiveIntentClassification (lv)', 'MassiveIntentClassification (ml)', 'MassiveIntentClassification (mn)', 'MassiveIntentClassification (ms)', 'MassiveIntentClassification (my)', 'MassiveIntentClassification (nl)', 'MassiveIntentClassification (pl)', 'MassiveIntentClassification (pt)', 'MassiveIntentClassification (ro)', 'MassiveIntentClassification (ru)', 'MassiveIntentClassification (sl)', 'MassiveIntentClassification (sq)', 'MassiveIntentClassification (sw)', 'MassiveIntentClassification (ta)', 'MassiveIntentClassification (te)', 'MassiveIntentClassification (th)', 'MassiveIntentClassification (tl)', 'MassiveIntentClassification (tr)', 'MassiveIntentClassification (ur)', 'MassiveIntentClassification (vi)', 'MassiveIntentClassification (zh-TW)', 'MassiveScenarioClassification (af)', 'MassiveScenarioClassification (am)', 'MassiveScenarioClassification (ar)', 'MassiveScenarioClassification (az)', 'MassiveScenarioClassification (bn)', 'MassiveScenarioClassification (cy)', 'MassiveScenarioClassification (de)', 'MassiveScenarioClassification (el)', 'MassiveScenarioClassification (es)', 'MassiveScenarioClassification (fa)', 'MassiveScenarioClassification (fi)', 'MassiveScenarioClassification (fr)', 'MassiveScenarioClassification (he)', 'MassiveScenarioClassification (hi)', 'MassiveScenarioClassification (hu)', 'MassiveScenarioClassification (hy)', 'MassiveScenarioClassification (id)', 'MassiveScenarioClassification (is)', 'MassiveScenarioClassification (it)', 'MassiveScenarioClassification (ja)', 'MassiveScenarioClassification (jv)', 'MassiveScenarioClassification (ka)', 'MassiveScenarioClassification (km)', 'MassiveScenarioClassification (kn)', 'MassiveScenarioClassification (ko)', 'MassiveScenarioClassification (lv)', 'MassiveScenarioClassification (ml)', 'MassiveScenarioClassification (mn)', 'MassiveScenarioClassification (ms)', 'MassiveScenarioClassification (my)', 'MassiveScenarioClassification (nl)', 'MassiveScenarioClassification (pl)', 'MassiveScenarioClassification (pt)', 'MassiveScenarioClassification (ro)', 'MassiveScenarioClassification (ru)', 'MassiveScenarioClassification (sl)', 'MassiveScenarioClassification (sq)', 'MassiveScenarioClassification (sw)', 'MassiveScenarioClassification (ta)', 'MassiveScenarioClassification (te)', 'MassiveScenarioClassification (th)', 'MassiveScenarioClassification (tl)', 'MassiveScenarioClassification (tr)', 'MassiveScenarioClassification (ur)', 'MassiveScenarioClassification (vi)', 'MassiveScenarioClassification (zh-TW)']
 
 TASK_LIST_CLUSTERING = [
     "ArxivClusteringP2P",
@@ -90,10 +102,22 @@ TASK_LIST_CLUSTERING_DE = [
     "TenKGnadClusteringS2S",
 ]
 
+TASK_LIST_CLUSTERING_ZH = [
+    "CLSClusteringP2P",
+    "CLSClusteringS2S",
+    "ThuNewsClusteringP2P",
+    "ThuNewsClusteringS2S",
+]
+
 TASK_LIST_PAIR_CLASSIFICATION = [
     "SprintDuplicateQuestions",
     "TwitterSemEval2015",
     "TwitterURLCorpus",
+]
+
+TASK_LIST_PAIR_CLASSIFICATION_ZH = [
+    "Cmnli",
+    "Ocnli",
 ]
 
 TASK_LIST_RERANKING = [
@@ -101,6 +125,13 @@ TASK_LIST_RERANKING = [
     "MindSmallReranking",
     "SciDocsRR",
     "StackOverflowDupQuestions",
+]
+
+TASK_LIST_RERANKING_ZH = [
+    "CMedQAv1",
+    "CMedQAv2",
+    "MmarcoReranking",
+    "T2Reranking",
 ]
 
 TASK_LIST_RETRIEVAL = [
@@ -124,7 +155,7 @@ TASK_LIST_RETRIEVAL = [
 TASK_LIST_RETRIEVAL_PL = [
     "ArguAna-PL",
     "DBPedia-PL",
-    "FiQA2018-PL",
+    "FiQA-PL",
     "HotpotQA-PL",
     "MSMARCO-PL",
     "NFCorpus-PL",
@@ -133,6 +164,17 @@ TASK_LIST_RETRIEVAL_PL = [
     "SCIDOCS-PL",
     "SciFact-PL",
     "TRECCOVID-PL",
+]
+
+TASK_LIST_RETRIEVAL_ZH = [
+    "CmedqaRetrieval",
+    "CovidRetrieval",
+    "DuRetrieval",
+    "EcomRetrieval",
+    "MedicalRetrieval",
+    "MMarcoRetrieval",
+    "T2Retrieval",
+    "VideoRetrieval",
 ]
 
 TASK_LIST_RETRIEVAL_NORM = TASK_LIST_RETRIEVAL + [
@@ -163,13 +205,24 @@ TASK_LIST_STS = [
     "STSBenchmark",
 ]
 
-TASK_LIST_STS_NORM = [x.replace(" (en)", "").replace(" (en-en)", "") for x in TASK_LIST_STS]
-
-TASK_LIST_SUMMARIZATION = [
-    "SummEval",
+TASK_LIST_STS_ZH = [
+    "AFQMC",
+    "ATEC",
+    "BQ",
+    "LCQMC",
+    "PAWSX",
+    "QBQTC",
+    "STS22 (zh)",
+    "STSB",
 ]
 
+TASK_LIST_STS_OTHER = ["STS17 (ar-ar)", "STS17 (en-ar)", "STS17 (en-de)", "STS17 (en-tr)", "STS17 (es-en)", "STS17 (es-es)", "STS17 (fr-en)", "STS17 (it-en)", "STS17 (ko-ko)", "STS17 (nl-en)", "STS22 (ar)", "STS22 (de)", "STS22 (de-en)", "STS22 (de-fr)", "STS22 (de-pl)", "STS22 (es)", "STS22 (es-en)", "STS22 (es-it)", "STS22 (fr)", "STS22 (fr-pl)", "STS22 (it)", "STS22 (pl)", "STS22 (pl-en)", "STS22 (ru)", "STS22 (tr)", "STS22 (zh-en)", "STSBenchmark",]
+TASK_LIST_STS_NORM = [x.replace(" (en)", "").replace(" (en-en)", "") for x in TASK_LIST_STS]
+
+TASK_LIST_SUMMARIZATION = ["SummEval",]
+
 TASK_LIST_EN = TASK_LIST_CLASSIFICATION + TASK_LIST_CLUSTERING + TASK_LIST_PAIR_CLASSIFICATION + TASK_LIST_RERANKING + TASK_LIST_RETRIEVAL + TASK_LIST_STS + TASK_LIST_SUMMARIZATION
+TASK_LIST_ZH = TASK_LIST_CLASSIFICATION_ZH + TASK_LIST_CLUSTERING_ZH + TASK_LIST_PAIR_CLASSIFICATION_ZH + TASK_LIST_RERANKING_ZH + TASK_LIST_RETRIEVAL_ZH + TASK_LIST_STS_ZH
 
 TASK_TO_METRIC = {
     "BitextMining": "f1",
@@ -198,6 +251,10 @@ EXTERNAL_MODELS = [
     "allenai-specter",
     "bert-base-swedish-cased",
     "bert-base-uncased",
+    "bge-base-zh",
+    "bge-large-zh",
+    "bge-large-zh-noinstruct",
+    "bge-small-zh",    
     "contriever-base-msmarco",
     "cross-en-de-roberta-sentence-transformer",
     "dfm-encoder-large-v1",
@@ -220,8 +277,11 @@ EXTERNAL_MODELS = [
     "gtr-t5-xl",
     "gtr-t5-xxl",
     "komninos",
+    "luotuo-bert-medium",
     "LASER2",
-    "LaBSE",
+    "LaBSE", 
+    "m3e-base",
+    "m3e-large",    
     "msmarco-bert-co-condensor",
     "multilingual-e5-base",
     "multilingual-e5-large",
@@ -238,6 +298,8 @@ EXTERNAL_MODELS = [
     "sentence-t5-xl",
     "sentence-t5-xxl",
     "sup-simcse-bert-base-uncased",
+    "text2vec-base-chinese",
+    "text2vec-large-chinese",
     "text-embedding-ada-002",
     "text-similarity-ada-001",
     "text-similarity-babbage-001",
@@ -262,6 +324,10 @@ EXTERNAL_MODEL_TO_LINK = {
     "all-mpnet-base-v2": "https://huggingface.co/sentence-transformers/all-mpnet-base-v2",
     "bert-base-swedish-cased": "https://huggingface.co/KB/bert-base-swedish-cased",
     "bert-base-uncased": "https://huggingface.co/bert-base-uncased",
+    "bge-base-zh": "https://huggingface.co/BAAI/bge-base-zh",
+    "bge-large-zh": "https://huggingface.co/BAAI/bge-large-zh",
+    "bge-large-zh-noinstruct": "https://huggingface.co/BAAI/bge-large-zh-noinstruct",
+    "bge-small-zh": "https://huggingface.co/BAAI/bge-small-zh",
     "contriever-base-msmarco": "https://huggingface.co/nthakur/contriever-base-msmarco",
     "cross-en-de-roberta-sentence-transformer": "https://huggingface.co/T-Systems-onsite/cross-en-de-roberta-sentence-transformer",
     "DanskBERT": "https://huggingface.co/vesteinn/DanskBERT",
@@ -284,8 +350,11 @@ EXTERNAL_MODEL_TO_LINK = {
     "gtr-t5-xl": "https://huggingface.co/sentence-transformers/gtr-t5-xl",
     "gtr-t5-xxl": "https://huggingface.co/sentence-transformers/gtr-t5-xxl",
     "komninos": "https://huggingface.co/sentence-transformers/average_word_embeddings_komninos",
+    "luotuo-bert-medium": "https://huggingface.co/silk-road/luotuo-bert-medium",
     "LASER2": "https://github.com/facebookresearch/LASER",
     "LaBSE": "https://huggingface.co/sentence-transformers/LaBSE",
+    "m3e-base": "https://huggingface.co/moka-ai/m3e-base",
+    "m3e-large": "https://huggingface.co/moka-ai/m3e-large",
     "msmarco-bert-co-condensor": "https://huggingface.co/sentence-transformers/msmarco-bert-co-condensor",
     "multilingual-e5-base": "https://huggingface.co/intfloat/multilingual-e5-base",
     "multilingual-e5-large": "https://huggingface.co/intfloat/multilingual-e5-large",
@@ -302,6 +371,8 @@ EXTERNAL_MODEL_TO_LINK = {
     "sentence-t5-xl": "https://huggingface.co/sentence-transformers/sentence-t5-xl",
     "sentence-t5-xxl": "https://huggingface.co/sentence-transformers/sentence-t5-xxl",
     "sup-simcse-bert-base-uncased": "https://huggingface.co/princeton-nlp/sup-simcse-bert-base-uncased",
+    "text2vec-base-chinese": "https://huggingface.co/shibing624/text2vec-base-chinese",
+    "text2vec-large-chinese": "https://huggingface.co/GanymedeNil/text2vec-large-chinese",
     "text-embedding-ada-002": "https://beta.openai.com/docs/guides/embeddings/types-of-embedding-models",
     "text-similarity-ada-001": "https://beta.openai.com/docs/guides/embeddings/types-of-embedding-models",
     "text-similarity-babbage-001": "https://beta.openai.com/docs/guides/embeddings/types-of-embedding-models",
@@ -326,6 +397,10 @@ EXTERNAL_MODEL_TO_DIM = {
     "allenai-specter": 768,    
     "bert-base-swedish-cased": 768,
     "bert-base-uncased": 768,
+    "bge-base-zh": 768,
+    "bge-large-zh": 1024,
+    "bge-large-zh-noinstruct": 1024,
+    "bge-small-zh": 512,
     "contriever-base-msmarco": 768,
     "cross-en-de-roberta-sentence-transformer": 768,
     "DanskBERT": 768,
@@ -337,6 +412,7 @@ EXTERNAL_MODEL_TO_DIM = {
     "e5-large": 1024,    
     "electra-small-nordic": 256,
     "electra-small-swedish-cased-discriminator": 256,
+    "luotuo-bert-medium": 768,
     "LASER2": 1024,
     "LaBSE": 768,
     "gbert-base": 768,
@@ -350,6 +426,8 @@ EXTERNAL_MODEL_TO_DIM = {
     "gtr-t5-xl": 768,
     "gtr-t5-xxl": 768,
     "komninos": 300,
+    "m3e-base": 768,
+    "m3e-large": 768,
     "msmarco-bert-co-condensor": 768,
     "multilingual-e5-base": 768,
     "multilingual-e5-small": 384,
@@ -366,8 +444,8 @@ EXTERNAL_MODEL_TO_DIM = {
     "sentence-t5-xl": 768,
     "sentence-t5-xxl": 768,
     "sup-simcse-bert-base-uncased": 768,
-    "use-cmlm-multilingual": 768,
-    "unsup-simcse-bert-base-uncased": 768,
+    "text2vec-base-chinese": 768,
+    "text2vec-large-chinese": 1024,
     "text-embedding-ada-002": 1536,
     "text-similarity-ada-001": 1024,
     "text-similarity-babbage-001": 2048,    
@@ -379,10 +457,11 @@ EXTERNAL_MODEL_TO_DIM = {
     "text-search-babbage-001": 2048,     
     "text-search-curie-001": 4096,
     "text-search-davinci-001": 12288,
+    "unsup-simcse-bert-base-uncased": 768,
+    "use-cmlm-multilingual": 768, 
     "xlm-roberta-base":  768,
     "xlm-roberta-large":  1024,
 }
-
 
 EXTERNAL_MODEL_TO_SEQLEN = {
     "all-MiniLM-L12-v2": 512,
@@ -391,6 +470,10 @@ EXTERNAL_MODEL_TO_SEQLEN = {
     "allenai-specter": 512,
     "bert-base-swedish-cased": 512,    
     "bert-base-uncased": 512,
+    "bge-base-zh": 512,
+    "bge-large-zh": 512,
+    "bge-large-zh-noinstruct": 512,
+    "bge-small-zh": 512,    
     "contriever-base-msmarco": 512,
     "cross-en-de-roberta-sentence-transformer": 514,
     "DanskBERT": 514,
@@ -413,8 +496,11 @@ EXTERNAL_MODEL_TO_SEQLEN = {
     "gtr-t5-xl": 512,
     "gtr-t5-xxl": 512,
     "komninos": "N/A",
+    "luotuo-bert-medium": 512,
     "LASER2": "N/A",
-    "LaBSE": 512,    
+    "LaBSE": 512,
+    "m3e-base": 512,
+    "m3e-large": 512,    
     "msmarco-bert-co-condensor": 512,
     "multilingual-e5-base": 514,
     "multilingual-e5-large": 514,    
@@ -431,6 +517,8 @@ EXTERNAL_MODEL_TO_SEQLEN = {
     "sentence-t5-xl": 512,
     "sentence-t5-xxl": 512,
     "sup-simcse-bert-base-uncased": 512,
+    "text2vec-base-chinese": 512,
+    "text2vec-large-chinese": 512,
     "text-embedding-ada-002": 8191,
     "text-similarity-ada-001": 2046,
     "text-similarity-babbage-001": 2046,    
@@ -455,6 +543,10 @@ EXTERNAL_MODEL_TO_SIZE = {
     "all-mpnet-base-v2": 0.44,
     "bert-base-uncased": 0.44,
     "bert-base-swedish-cased": 0.50,
+    "bge-base-zh": 0.41,
+    "bge-large-zh": 1.30,
+    "bge-large-zh-noinstruct": 1.30,
+    "bge-small-zh": 0.10,      
     "cross-en-de-roberta-sentence-transformer": 1.11,
     "contriever-base-msmarco": 0.44,
     "DanskBERT": 0.50,
@@ -477,8 +569,11 @@ EXTERNAL_MODEL_TO_SIZE = {
     "gtr-t5-xl": 2.48,
     "gtr-t5-xxl": 9.73,
     "komninos": 0.27,
+    "luotuo-bert-medium": 1.31,    
     "LASER2": 0.17,
     "LaBSE": 1.88,
+    "m3e-base": 0.41,
+    "m3e-large": 0.41,
     "msmarco-bert-co-condensor": 0.44,
     "multilingual-e5-base": 1.11,
     "multilingual-e5-small": 0.47,
@@ -495,6 +590,8 @@ EXTERNAL_MODEL_TO_SIZE = {
     "sentence-t5-xl": 2.48,
     "sentence-t5-xxl": 9.73,
     "sup-simcse-bert-base-uncased": 0.44,
+    "text2vec-base-chinese": 0.41,
+    "text2vec-large-chinese": 1.30,    
     "unsup-simcse-bert-base-uncased": 0.44,
     "use-cmlm-multilingual": 1.89,
     "xlm-roberta-base": 1.12,
@@ -523,8 +620,8 @@ MODELS_TO_SKIP = {
     "newsrx/instructor-xl",
     "dmlls/all-mpnet-base-v2",
     "cgldo/semanticClone",
+    "Malmuk1/e5-large-v2_Sharded",
 }
-
 
 EXTERNAL_MODEL_RESULTS = {model: {k: {v: []} for k, v in TASK_TO_METRIC.items()} for model in EXTERNAL_MODELS}
 
@@ -537,26 +634,29 @@ def add_lang(examples):
 
 def add_task(examples):
     # Could be added to the dataset loading script instead
-    if examples["mteb_dataset_name"] in TASK_LIST_CLASSIFICATION_NORM + TASK_LIST_CLASSIFICATION_DA + TASK_LIST_CLASSIFICATION_SV + TASK_LIST_CLASSIFICATION_NB:
+    if examples["mteb_dataset_name"] in TASK_LIST_CLASSIFICATION_NORM + TASK_LIST_CLASSIFICATION_DA + TASK_LIST_CLASSIFICATION_SV + TASK_LIST_CLASSIFICATION_NB + TASK_LIST_CLASSIFICATION_ZH:
         examples["mteb_task"] = "Classification"
-    elif examples["mteb_dataset_name"] in TASK_LIST_CLUSTERING + TASK_LIST_CLUSTERING_DE:
+    elif examples["mteb_dataset_name"] in TASK_LIST_CLUSTERING + TASK_LIST_CLUSTERING_DE + TASK_LIST_CLUSTERING_ZH:
         examples["mteb_task"] = "Clustering"
-    elif examples["mteb_dataset_name"] in TASK_LIST_PAIR_CLASSIFICATION:
+    elif examples["mteb_dataset_name"] in TASK_LIST_PAIR_CLASSIFICATION + TASK_LIST_PAIR_CLASSIFICATION_ZH:
         examples["mteb_task"] = "PairClassification"
-    elif examples["mteb_dataset_name"] in TASK_LIST_RERANKING:
+    elif examples["mteb_dataset_name"] in TASK_LIST_RERANKING + TASK_LIST_RERANKING_ZH:
         examples["mteb_task"] = "Reranking"
-    elif examples["mteb_dataset_name"] in TASK_LIST_RETRIEVAL_NORM + TASK_LIST_RETRIEVAL_PL:
+    elif examples["mteb_dataset_name"] in TASK_LIST_RETRIEVAL_NORM + TASK_LIST_RETRIEVAL_PL + TASK_LIST_RETRIEVAL_ZH:
         examples["mteb_task"] = "Retrieval"
-    elif examples["mteb_dataset_name"] in TASK_LIST_STS_NORM:
+    elif examples["mteb_dataset_name"] in TASK_LIST_STS_NORM + TASK_LIST_STS_ZH:
         examples["mteb_task"] = "STS"
     elif examples["mteb_dataset_name"] in TASK_LIST_SUMMARIZATION:
         examples["mteb_task"] = "Summarization"
-    else:
+    elif examples["mteb_dataset_name"] in [x.split(" ")[0] for x in TASK_LIST_BITEXT_MINING + TASK_LIST_BITEXT_MINING_OTHER]:
         examples["mteb_task"] = "BitextMining"
+    else:
+        print("WARNING: Task not found for dataset", examples["mteb_dataset_name"])
+        examples["mteb_task"] = "Unknown"
     return examples
 
 for model in EXTERNAL_MODELS:
-    ds = load_dataset("mteb/results", model)#, download_mode='force_redownload', verification_mode="no_checks")
+    ds = load_dataset("mteb/results", model)
     # For local debugging:
     #, download_mode='force_redownload', verification_mode="no_checks")
     ds = ds.map(add_lang)
@@ -608,7 +708,6 @@ def make_datasets_clickable(df):
         df = df.rename(
             columns={f'BornholmBitextMining': '<a target="_blank" style="text-decoration: underline" href="{link}">BornholmBitextMining</a>',})
     return df
-
 
 def add_rank(df):
     cols_to_rank = [col for col in df.columns if col not in ["Model", "Model Size (GB)", "Embedding Dimensions", "Sequence Length"]]
@@ -694,7 +793,7 @@ def get_mteb_data(tasks=["Clustering"], langs=[], datasets=[], fillna=True, add_
     return df
 
 def get_mteb_average():
-    global DATA_OVERALL, DATA_CLASSIFICATION_EN, DATA_CLUSTERING, DATA_PAIR_CLASSIFICATION, DATA_RERANKING, DATA_RETRIEVAL, DATA_STS_EN, DATA_SUMMARIZATION, NUM_SCORES
+    global DATA_OVERALL, DATA_CLASSIFICATION_EN, DATA_CLUSTERING, DATA_PAIR_CLASSIFICATION, DATA_RERANKING, DATA_RETRIEVAL, DATA_STS_EN, DATA_SUMMARIZATION
     DATA_OVERALL = get_mteb_data(
         tasks=[
             "Classification",
@@ -705,7 +804,7 @@ def get_mteb_average():
             "STS",
             "Summarization",
         ],
-        langs=["en", "en-en"],
+        datasets=TASK_LIST_CLASSIFICATION + TASK_LIST_CLUSTERING + TASK_LIST_PAIR_CLASSIFICATION + TASK_LIST_RERANKING + TASK_LIST_RETRIEVAL + TASK_LIST_STS + TASK_LIST_SUMMARIZATION,
         fillna=False,
         add_emb_dim=True,
         rank=False,
@@ -728,36 +827,134 @@ def get_mteb_average():
     DATA_OVERALL = DATA_OVERALL.round(2)
 
     DATA_CLASSIFICATION_EN = add_rank(DATA_OVERALL[["Model"] + TASK_LIST_CLASSIFICATION])
+    # Only keep rows with at least one score in addition to the "Model" & rank column
+    DATA_CLASSIFICATION_EN = DATA_CLASSIFICATION_EN[DATA_CLASSIFICATION_EN.iloc[:, 2:].ne("").any(axis=1)]
+
     DATA_CLUSTERING = add_rank(DATA_OVERALL[["Model"] + TASK_LIST_CLUSTERING])
+    DATA_CLUSTERING = DATA_CLUSTERING[DATA_CLUSTERING.iloc[:, 2:].ne("").any(axis=1)]
+
     DATA_PAIR_CLASSIFICATION = add_rank(DATA_OVERALL[["Model"] + TASK_LIST_PAIR_CLASSIFICATION])
+    DATA_PAIR_CLASSIFICATION = DATA_PAIR_CLASSIFICATION[DATA_PAIR_CLASSIFICATION.iloc[:, 2:].ne("").any(axis=1)]
+
     DATA_RERANKING = add_rank(DATA_OVERALL[["Model"] + TASK_LIST_RERANKING])
+    DATA_RERANKING = DATA_RERANKING[DATA_RERANKING.iloc[:, 2:].ne("").any(axis=1)]
+
     DATA_RETRIEVAL = add_rank(DATA_OVERALL[["Model"] + TASK_LIST_RETRIEVAL])
+    DATA_RETRIEVAL = DATA_RETRIEVAL[DATA_RETRIEVAL.iloc[:, 2:].ne("").any(axis=1)]
+
     DATA_STS_EN = add_rank(DATA_OVERALL[["Model"] + TASK_LIST_STS])
+    DATA_STS_EN = DATA_STS_EN[DATA_STS_EN.iloc[:, 2:].ne("").any(axis=1)]
+
     DATA_SUMMARIZATION = add_rank(DATA_OVERALL[["Model"] + TASK_LIST_SUMMARIZATION])
+    DATA_SUMMARIZATION = DATA_SUMMARIZATION[DATA_SUMMARIZATION.iloc[:, 1:].ne("").any(axis=1)]
 
     # Fill NaN after averaging
     DATA_OVERALL.fillna("", inplace=True)
 
     DATA_OVERALL = DATA_OVERALL[["Rank", "Model", "Model Size (GB)", "Embedding Dimensions", "Sequence Length", f"Average ({len(TASK_LIST_EN)} datasets)", f"Classification Average ({len(TASK_LIST_CLASSIFICATION)} datasets)", f"Clustering Average ({len(TASK_LIST_CLUSTERING)} datasets)", f"Pair Classification Average ({len(TASK_LIST_PAIR_CLASSIFICATION)} datasets)", f"Reranking Average ({len(TASK_LIST_RERANKING)} datasets)", f"Retrieval Average ({len(TASK_LIST_RETRIEVAL)} datasets)", f"STS Average ({len(TASK_LIST_STS)} datasets)", f"Summarization Average ({len(TASK_LIST_SUMMARIZATION)} dataset)"]]
+    DATA_OVERALL = DATA_OVERALL[DATA_OVERALL.iloc[:, 5:].ne("").any(axis=1)]
 
     return DATA_OVERALL
 
+def get_mteb_average_zh():
+    global DATA_OVERALL_ZH, DATA_CLASSIFICATION_ZH, DATA_CLUSTERING_ZH, DATA_PAIR_CLASSIFICATION_ZH, DATA_RERANKING_ZH, DATA_RETRIEVAL_ZH, DATA_STS_ZH
+    DATA_OVERALL_ZH = get_mteb_data(
+        tasks=[
+            "Classification",
+            "Clustering",
+            "PairClassification",
+            "Reranking",
+            "Retrieval",
+            "STS",
+        ],
+        datasets=TASK_LIST_CLASSIFICATION_ZH + TASK_LIST_CLUSTERING_ZH + TASK_LIST_PAIR_CLASSIFICATION_ZH + TASK_LIST_RERANKING_ZH + TASK_LIST_RETRIEVAL_ZH + TASK_LIST_STS_ZH,
+        fillna=False,
+        add_emb_dim=True,
+        rank=False,
+    )
+    # Debugging:
+    # DATA_OVERALL_ZH.to_csv("overall.csv")
+    
+    DATA_OVERALL_ZH.insert(1, f"Average ({len(TASK_LIST_ZH)} datasets)", DATA_OVERALL_ZH[TASK_LIST_ZH].mean(axis=1, skipna=False))
+    DATA_OVERALL_ZH.insert(2, f"Classification Average ({len(TASK_LIST_CLASSIFICATION_ZH)} datasets)", DATA_OVERALL_ZH[TASK_LIST_CLASSIFICATION_ZH].mean(axis=1, skipna=False))
+    DATA_OVERALL_ZH.insert(3, f"Clustering Average ({len(TASK_LIST_CLUSTERING_ZH)} datasets)", DATA_OVERALL_ZH[TASK_LIST_CLUSTERING_ZH].mean(axis=1, skipna=False))
+    DATA_OVERALL_ZH.insert(4, f"Pair Classification Average ({len(TASK_LIST_PAIR_CLASSIFICATION_ZH)} datasets)", DATA_OVERALL_ZH[TASK_LIST_PAIR_CLASSIFICATION_ZH].mean(axis=1, skipna=False))
+    DATA_OVERALL_ZH.insert(5, f"Reranking Average ({len(TASK_LIST_RERANKING_ZH)} datasets)", DATA_OVERALL_ZH[TASK_LIST_RERANKING_ZH].mean(axis=1, skipna=False))
+    DATA_OVERALL_ZH.insert(6, f"Retrieval Average ({len(TASK_LIST_RETRIEVAL_ZH)} datasets)", DATA_OVERALL_ZH[TASK_LIST_RETRIEVAL_ZH].mean(axis=1, skipna=False))
+    DATA_OVERALL_ZH.insert(7, f"STS Average ({len(TASK_LIST_STS_ZH)} datasets)", DATA_OVERALL_ZH[TASK_LIST_STS_ZH].mean(axis=1, skipna=False))
+    DATA_OVERALL_ZH.sort_values(f"Average ({len(TASK_LIST_ZH)} datasets)", ascending=False, inplace=True)
+    # Start ranking from 1
+    DATA_OVERALL_ZH.insert(0, "Rank", list(range(1, len(DATA_OVERALL_ZH) + 1)))
+
+    DATA_OVERALL_ZH = DATA_OVERALL_ZH.round(2)
+
+    DATA_CLASSIFICATION_ZH = add_rank(DATA_OVERALL_ZH[["Model"] + TASK_LIST_CLASSIFICATION_ZH])
+    # Only keep rows with at least one score in addition to the "Model" & rank column
+    DATA_CLASSIFICATION_ZH = DATA_CLASSIFICATION_ZH[DATA_CLASSIFICATION_ZH.iloc[:, 2:].ne("").any(axis=1)]
+    
+    DATA_CLUSTERING_ZH = add_rank(DATA_OVERALL_ZH[["Model"] + TASK_LIST_CLUSTERING_ZH])
+    DATA_CLUSTERING_ZH = DATA_CLUSTERING_ZH[DATA_CLUSTERING_ZH.iloc[:, 2:].ne("").any(axis=1)]
+    
+    DATA_PAIR_CLASSIFICATION_ZH = add_rank(DATA_OVERALL_ZH[["Model"] + TASK_LIST_PAIR_CLASSIFICATION_ZH])
+    DATA_PAIR_CLASSIFICATION_ZH = DATA_PAIR_CLASSIFICATION_ZH[DATA_PAIR_CLASSIFICATION_ZH.iloc[:, 2:].ne("").any(axis=1)]
+    
+    DATA_RERANKING_ZH = add_rank(DATA_OVERALL_ZH[["Model"] + TASK_LIST_RERANKING_ZH])
+    DATA_RERANKING_ZH = DATA_RERANKING_ZH[DATA_RERANKING_ZH.iloc[:, 2:].ne("").any(axis=1)]
+    
+    DATA_RETRIEVAL_ZH = add_rank(DATA_OVERALL_ZH[["Model"] + TASK_LIST_RETRIEVAL_ZH])
+    DATA_RETRIEVAL_ZH = DATA_RETRIEVAL_ZH[DATA_RETRIEVAL_ZH.iloc[:, 2:].ne("").any(axis=1)]
+    
+    DATA_STS_ZH = add_rank(DATA_OVERALL_ZH[["Model"] + TASK_LIST_STS_ZH])
+    DATA_STS_ZH = DATA_STS_ZH[DATA_STS_ZH.iloc[:, 2:].ne("").any(axis=1)]
+
+    # Fill NaN after averaging
+    DATA_OVERALL_ZH.fillna("", inplace=True)
+
+    DATA_OVERALL_ZH = DATA_OVERALL_ZH[["Rank", "Model", "Model Size (GB)", "Embedding Dimensions", "Sequence Length", f"Average ({len(TASK_LIST_ZH)} datasets)", f"Classification Average ({len(TASK_LIST_CLASSIFICATION_ZH)} datasets)", f"Clustering Average ({len(TASK_LIST_CLUSTERING_ZH)} datasets)", f"Pair Classification Average ({len(TASK_LIST_PAIR_CLASSIFICATION_ZH)} datasets)", f"Reranking Average ({len(TASK_LIST_RERANKING_ZH)} datasets)", f"Retrieval Average ({len(TASK_LIST_RETRIEVAL_ZH)} datasets)", f"STS Average ({len(TASK_LIST_STS_ZH)} datasets)"]]
+    DATA_OVERALL_ZH = DATA_OVERALL_ZH[DATA_OVERALL_ZH.iloc[:, 5:].ne("").any(axis=1)]
+
+    return DATA_OVERALL_ZH
+
 get_mteb_average()
+get_mteb_average_zh()
 DATA_BITEXT_MINING = get_mteb_data(["BitextMining"], [], TASK_LIST_BITEXT_MINING)
 DATA_BITEXT_MINING_OTHER = get_mteb_data(["BitextMining"], [], TASK_LIST_BITEXT_MINING_OTHER)
 DATA_CLASSIFICATION_DA = get_mteb_data(["Classification"], [], TASK_LIST_CLASSIFICATION_DA)
 DATA_CLASSIFICATION_NB = get_mteb_data(["Classification"], [], TASK_LIST_CLASSIFICATION_NB)
 DATA_CLASSIFICATION_SV = get_mteb_data(["Classification"], [], TASK_LIST_CLASSIFICATION_SV)
 DATA_CLASSIFICATION_OTHER = get_mteb_data(["Classification"], [], TASK_LIST_CLASSIFICATION_OTHER)
-DATA_CLUSTERING_GERMAN = get_mteb_data(["Clustering"], [], TASK_LIST_CLUSTERING_DE)
+DATA_CLUSTERING_DE = get_mteb_data(["Clustering"], [], TASK_LIST_CLUSTERING_DE)
 DATA_RETRIEVAL_PL = get_mteb_data(["Retrieval"], [], TASK_LIST_RETRIEVAL_PL)
-DATA_STS = get_mteb_data(["STS"])
+DATA_STS_OTHER = get_mteb_data(["STS"], [], TASK_LIST_STS_OTHER)
 
 # Exact, add all non-nan integer values for every dataset
 NUM_SCORES = 0
 DATASETS = []
+MODELS = []
 # LANGUAGES = []
-for d in [DATA_BITEXT_MINING, DATA_BITEXT_MINING_OTHER, DATA_CLASSIFICATION_EN, DATA_CLASSIFICATION_DA, DATA_CLASSIFICATION_NB, DATA_CLASSIFICATION_SV, DATA_CLASSIFICATION_OTHER, DATA_CLUSTERING, DATA_CLUSTERING_GERMAN, DATA_PAIR_CLASSIFICATION, DATA_RERANKING, DATA_RETRIEVAL, DATA_STS_EN, DATA_STS, DATA_SUMMARIZATION]:
+for d in [
+    DATA_BITEXT_MINING,
+    DATA_BITEXT_MINING_OTHER,
+    DATA_CLASSIFICATION_EN,
+    DATA_CLASSIFICATION_DA,
+    DATA_CLASSIFICATION_NB,
+    DATA_CLASSIFICATION_SV,
+    DATA_CLASSIFICATION_ZH,
+    DATA_CLASSIFICATION_OTHER,
+    DATA_CLUSTERING,
+    DATA_CLUSTERING_DE,
+    DATA_CLUSTERING_ZH,
+    DATA_PAIR_CLASSIFICATION,
+    DATA_PAIR_CLASSIFICATION_ZH,
+    DATA_RERANKING,
+    DATA_RERANKING_ZH,
+    DATA_RETRIEVAL,
+    DATA_RETRIEVAL_ZH,
+    DATA_STS_EN,
+    DATA_STS_ZH,
+    DATA_STS_OTHER,
+    DATA_SUMMARIZATION,
+]:
     # NUM_SCORES += d.iloc[:, 1:].apply(lambda x: sum([1 for y in x if isinstance(y, float) and not np.isnan(y)]), axis=1).sum()
     cols_to_ignore = 3 if "Average" in d.columns else 2
     # Count number of scores including only non-nan floats & excluding the rank column
@@ -765,9 +962,11 @@ for d in [DATA_BITEXT_MINING, DATA_BITEXT_MINING_OTHER, DATA_CLASSIFICATION_EN, 
     # Exclude rank & model name column (first two); Do not count different language versions as different datasets
     DATASETS += [i.split(" ")[0] for i in d.columns[cols_to_ignore:]]
     # LANGUAGES += [i.split(" ")[-1] for i in d.columns[cols_to_ignore:]]
+    MODELS += d["Model"].tolist()
 
 NUM_DATASETS = len(set(DATASETS))
 # NUM_LANGUAGES = len(set(LANGUAGES))
+NUM_MODELS = len(set(MODELS))
 
 block = gr.Blocks()
 with block:
@@ -777,32 +976,52 @@ with block:
     - **Total Datasets**: {NUM_DATASETS}
     - **Total Languages**: 113
     - **Total Scores**: {NUM_SCORES}
-    - **Total Models**: {len(DATA_OVERALL)}
+    - **Total Models**: {NUM_MODELS}
     """)
     with gr.Tabs():
         with gr.TabItem("Overall"):
-            with gr.Row():
-                gr.Markdown("""
-                **Overall MTEB English leaderboard 🔮**
-                
-                - **Metric:** Various, refer to task tabs
-                - **Languages:** English, refer to task tabs for others
-                """)
-            with gr.Row():
-                data_overall = gr.components.Dataframe(
-                    DATA_OVERALL,
-                    datatype=["number", "markdown"] + ["number"] * len(DATA_OVERALL.columns),
-                    type="pandas",
-                    wrap=True,
-                )
-            with gr.Row():
-                data_run = gr.Button("Refresh")
-                data_run.click(get_mteb_average, inputs=None, outputs=data_overall)
+            with gr.TabItem("English"):
+                with gr.Row():
+                    gr.Markdown("""
+                    **Overall MTEB English leaderboard 🔮**
+                    
+                    - **Metric:** Various, refer to task tabs
+                    - **Languages:** English
+                    """)
+                with gr.Row():
+                    data_overall = gr.components.Dataframe(
+                        DATA_OVERALL,
+                        datatype=["number", "markdown"] + ["number"] * len(DATA_OVERALL.columns),
+                        type="pandas",
+                        wrap=True,
+                    )
+                with gr.Row():
+                    data_run_overall = gr.Button("Refresh")
+                    data_run_overall.click(get_mteb_average, inputs=None, outputs=data_overall)
+            with gr.TabItem("Chinese"):
+                with gr.Row():
+                    gr.Markdown("""
+                    **Overall MTEB Chinese leaderboard (C-MTEB) 🔮🇨🇳**
+                    
+                    - **Metric:** Various, refer to task tabs
+                    - **Languages:** Chinese
+                    - **Credits:** [FlagEmbedding](https://github.com/FlagOpen/FlagEmbedding)
+                    """)
+                with gr.Row():
+                    data_overall_zh = gr.components.Dataframe(
+                        DATA_OVERALL_ZH,
+                        datatype=["number", "markdown"] + ["number"] * len(DATA_OVERALL_ZH.columns),
+                        type="pandas",
+                        wrap=True,
+                    )
+                with gr.Row():
+                    data_run_overall_zh = gr.Button("Refresh")
+                    data_run_overall_zh.click(get_mteb_average_zh, inputs=None, outputs=data_overall_zh)                    
         with gr.TabItem("Bitext Mining"):
             with gr.TabItem("English-X"):
                 with gr.Row():
                         gr.Markdown("""
-                        **Bitext Mining Leaderboard 🎌**
+                        **Bitext Mining English-X Leaderboard 🎌**
                         
                         - **Metric:** [F1](https://huggingface.co/spaces/evaluate-metric/f1)
                         - **Languages:** 117 (Pairs of: English & other language)
@@ -814,11 +1033,11 @@ with block:
                         type="pandas",
                     )
                 with gr.Row():
-                    data_run = gr.Button("Refresh")
+                    data_run_bitext_mining = gr.Button("Refresh")
                     task_bitext_mining = gr.Variable(value=["BitextMining"])
                     lang_bitext_mining = gr.Variable(value=[])
                     datasets_bitext_mining = gr.Variable(value=TASK_LIST_BITEXT_MINING)
-                    data_run.click(
+                    data_run_bitext_mining.click(
                         get_mteb_data,
                         inputs=[task_bitext_mining, lang_bitext_mining, datasets_bitext_mining],
                         outputs=data_bitext_mining,
@@ -839,11 +1058,11 @@ with block:
                         type="pandas",
                     )
                 with gr.Row():
-                    data_run = gr.Button("Refresh")
+                    data_run_bitext_mining_da = gr.Button("Refresh")
                     task_bitext_mining_da = gr.Variable(value=["BitextMining"])
                     lang_bitext_mining_da = gr.Variable(value=[])
                     datasets_bitext_mining_da = gr.Variable(value=TASK_LIST_BITEXT_MINING_OTHER)
-                    data_run.click(
+                    data_run_bitext_mining_da.click(
                         get_mteb_data,
                         inputs=[
                             task_bitext_mining_da,
@@ -856,7 +1075,7 @@ with block:
             with gr.TabItem("English"):
                 with gr.Row():
                     gr.Markdown("""
-                    **Classification Leaderboard ❤️**
+                    **Classification English Leaderboard ❤️**
                     
                     - **Metric:** [Accuracy](https://huggingface.co/spaces/evaluate-metric/accuracy)
                     - **Languages:** English
@@ -878,6 +1097,35 @@ with block:
                             lang_classification_en,
                         ],
                         outputs=data_classification_en,
+                    )
+            with gr.TabItem("Chinese"):
+                with gr.Row():
+                    gr.Markdown("""
+                    **Classification Chinese Leaderboard 🧡🇨🇳**
+                    
+                    - **Metric:** [Accuracy](https://huggingface.co/spaces/evaluate-metric/accuracy)
+                    - **Languages:** Chinese
+                    - **Credits:** [FlagEmbedding](https://github.com/FlagOpen/FlagEmbedding)
+                    """)
+                with gr.Row():
+                    data_classification_zh = gr.components.Dataframe(
+                        DATA_CLASSIFICATION_ZH,
+                        datatype=["number", "markdown"] + ["number"] * len(DATA_CLASSIFICATION_ZH.columns),
+                        type="pandas",
+                    )
+                with gr.Row():
+                    data_run_classification_zh = gr.Button("Refresh")
+                    task_classification_zh = gr.Variable(value=["Classification"])
+                    lang_classification_zh = gr.Variable([])
+                    datasets_classification_zh = gr.Variable(value=TASK_LIST_CLASSIFICATION_ZH)
+                    data_run_classification_zh.click(
+                        get_mteb_data,
+                        inputs=[
+                            task_classification_zh,
+                            lang_classification_zh,
+                            datasets_classification_zh,
+                        ],
+                        outputs=data_classification_zh,
                     )
             with gr.TabItem("Danish"):
                 with gr.Row():
@@ -981,11 +1229,11 @@ with block:
                         type="pandas",
                     )
                 with gr.Row():
-                    data_run = gr.Button("Refresh")
+                    data_run_classification = gr.Button("Refresh")
                     task_classification = gr.Variable(value=["Classification"])
                     lang_classification = gr.Variable(value=[])
                     datasets_classification = gr.Variable(value=TASK_LIST_CLASSIFICATION_OTHER)                 
-                    data_run.click(
+                    data_run_classification.click(
                         get_mteb_data,
                         inputs=[
                             task_classification,
@@ -1010,14 +1258,39 @@ with block:
                         type="pandas",
                     )
                 with gr.Row():
-                    data_run = gr.Button("Refresh")
+                    data_run_clustering_en = gr.Button("Refresh")
                     task_clustering = gr.Variable(value=["Clustering"])
                     lang_clustering = gr.Variable(value=[])
                     datasets_clustering = gr.Variable(value=TASK_LIST_CLUSTERING)
-                    data_run.click(
+                    data_run_clustering_en.click(
                         get_mteb_data,
                         inputs=[task_clustering, lang_clustering, datasets_clustering],
                         outputs=data_clustering,
+                    )
+            with gr.TabItem("Chinese"):
+                with gr.Row():
+                    gr.Markdown("""
+                    **Clustering Chinese Leaderboard ✨🇨🇳**
+                    
+                    - **Metric:** Validity Measure (v_measure)
+                    - **Languages:** Chinese
+                    - **Credits:** [FlagEmbedding](https://github.com/FlagOpen/FlagEmbedding)
+                    """)
+                with gr.Row():
+                    data_clustering_zh = gr.components.Dataframe(
+                        DATA_CLUSTERING_ZH,
+                        datatype=["number", "markdown"] + ["number"] * len(DATA_CLUSTERING_ZH.columns),
+                        type="pandas",
+                    )
+                with gr.Row():
+                    data_run_clustering_zh = gr.Button("Refresh")
+                    task_clustering_zh = gr.Variable(value=["Clustering"])
+                    lang_clustering_zh = gr.Variable(value=[])
+                    datasets_clustering_zh = gr.Variable(value=TASK_LIST_CLUSTERING_ZH)
+                    data_run_clustering_zh.click(
+                        get_mteb_data,
+                        inputs=[task_clustering_zh, lang_clustering_zh, datasets_clustering_zh],
+                        outputs=data_clustering_zh,
                     )
             with gr.TabItem("German"):
                 with gr.Row():
@@ -1030,68 +1303,137 @@ with block:
                     """)
                 with gr.Row():
                     data_clustering_de = gr.components.Dataframe(
-                        DATA_CLUSTERING_GERMAN,
-                        datatype=["number", "markdown"] + ["number"] * len(DATA_CLUSTERING_GERMAN.columns) * 2,
+                        DATA_CLUSTERING_DE,
+                        datatype=["number", "markdown"] + ["number"] * len(DATA_CLUSTERING_DE.columns) * 2,
                         type="pandas",
                     )
                 with gr.Row():
-                    data_run = gr.Button("Refresh")
+                    data_run_clustering_de = gr.Button("Refresh")
                     task_clustering_de = gr.Variable(value=["Clustering"])
                     lang_clustering_de = gr.Variable(value=[])
                     datasets_clustering_de = gr.Variable(value=TASK_LIST_CLUSTERING_DE)
-                    data_run.click(
+                    data_run_clustering_de.click(
                         get_mteb_data,
                         inputs=[task_clustering_de, lang_clustering_de, datasets_clustering_de],
                         outputs=data_clustering_de,
                     )                
         with gr.TabItem("Pair Classification"):
-            with gr.Row():
-                gr.Markdown("""
-                **Pair Classification Leaderboard 🎭**
-                
-                - **Metric:** Average Precision based on Cosine Similarities (cos_sim_ap)
-                - **Languages:** English
-                """)
-            with gr.Row():
-                data_pair_classification = gr.components.Dataframe(
-                    DATA_PAIR_CLASSIFICATION,
-                    datatype=["number", "markdown"] + ["number"] * len(DATA_PAIR_CLASSIFICATION.columns),
-                    type="pandas",
-                )
-            with gr.Row():
-                data_run = gr.Button("Refresh")
-                task_pair_classification = gr.Variable(value=["PairClassification"])
-                data_run.click(
-                    get_mteb_data,
-                    inputs=[task_pair_classification],
-                    outputs=data_pair_classification,
-                )
+            with gr.TabItem("English"):
+                with gr.Row():
+                    gr.Markdown("""
+                    **Pair Classification English Leaderboard 🎭**
+                    
+                    - **Metric:** Average Precision based on Cosine Similarities (cos_sim_ap)
+                    - **Languages:** English
+                    """)
+                with gr.Row():
+                    data_pair_classification = gr.components.Dataframe(
+                        DATA_PAIR_CLASSIFICATION,
+                        datatype=["number", "markdown"] + ["number"] * len(DATA_PAIR_CLASSIFICATION.columns),
+                        type="pandas",
+                    )
+                with gr.Row():
+                    data_run_pair_classification = gr.Button("Refresh")
+                    task_pair_classification = gr.Variable(value=["PairClassification"])
+                    lang_pair_classification = gr.Variable(value=[])
+                    datasets_pair_classification = gr.Variable(value=TASK_LIST_PAIR_CLASSIFICATION)
+                    data_run_pair_classification.click(
+                        get_mteb_data,
+                        inputs=[
+                            task_pair_classification,
+                            lang_pair_classification,
+                            datasets_pair_classification,
+                        ],
+                        outputs=data_pair_classification,
+                    )
+            with gr.TabItem("Chinese"):
+                with gr.Row():
+                    gr.Markdown("""
+                    **Pair Classification Chinese Leaderboard 🎭🇨🇳**
+                    
+                    - **Metric:** Average Precision based on Cosine Similarities (cos_sim_ap)
+                    - **Languages:** Chinese
+                    - **Credits:** [FlagEmbedding](https://github.com/FlagOpen/FlagEmbedding)
+                    """)
+                with gr.Row():
+                    data_pair_classification_zh = gr.components.Dataframe(
+                        DATA_PAIR_CLASSIFICATION_ZH,
+                        datatype=["number", "markdown"] + ["number"] * len(DATA_PAIR_CLASSIFICATION_ZH.columns),
+                        type="pandas",
+                    )
+                with gr.Row():
+                    data_run = gr.Button("Refresh")
+                    task_pair_classification_zh = gr.Variable(value=["PairClassification"])
+                    lang_pair_classification_zh = gr.Variable(value=[])
+                    datasets_pair_classification_zh = gr.Variable(value=TASK_LIST_PAIR_CLASSIFICATION_ZH)
+                    data_run_classification_zh.click(
+                        get_mteb_data,
+                        inputs=[
+                            task_pair_classification_zh,
+                            lang_pair_classification_zh,
+                            datasets_pair_classification_zh,
+                        ],
+                        outputs=data_pair_classification_zh,
+                    )
         with gr.TabItem("Reranking"):
-            with gr.Row():
-                gr.Markdown("""
-                **Reranking Leaderboard 🥈**
-                
-                - **Metric:** Mean Average Precision (MAP)
-                - **Languages:** English
-                """)
-            with gr.Row():
-                data_reranking = gr.components.Dataframe(
-                    DATA_RERANKING,
-                    datatype=["number", "markdown"] + ["number"] * len(DATA_RERANKING.columns),
-                    type="pandas",
-                )
-            with gr.Row():
-                data_run = gr.Button("Refresh")
-                task_reranking = gr.Variable(value=["Reranking"])
-                metric_reranking = gr.Variable(value="map")
-                data_run.click(
-                    get_mteb_data, inputs=[task_reranking], outputs=data_reranking
-                )
+            with gr.TabItem("English"):
+                with gr.Row():
+                    gr.Markdown("""
+                    **Reranking English Leaderboard 🥈**
+                    
+                    - **Metric:** Mean Average Precision (MAP)
+                    - **Languages:** English
+                    """)
+                with gr.Row():
+                    data_reranking = gr.components.Dataframe(
+                        DATA_RERANKING,
+                        datatype=["number", "markdown"] + ["number"] * len(DATA_RERANKING.columns),
+                        type="pandas",
+                    )
+                with gr.Row():
+                    data_run_reranking = gr.Button("Refresh")
+                    task_reranking = gr.Variable(value=["Reranking"])
+                    lang_reranking = gr.Variable(value=[])
+                    datasets_reranking = gr.Variable(value=TASK_LIST_RERANKING)
+                    data_run_reranking.click(
+                        get_mteb_data, 
+                        inputs=[
+                            task_reranking,
+                            lang_reranking,
+                            datasets_reranking,
+                        ],
+                        outputs=data_reranking
+                    )
+            with gr.TabItem("Chinese"):
+                with gr.Row():
+                    gr.Markdown("""
+                    **Reranking Chinese Leaderboard 🥈🇨🇳**
+                    
+                    - **Metric:** Mean Average Precision (MAP)
+                    - **Languages:** Chinese
+                    - **Credits:** [FlagEmbedding](https://github.com/FlagOpen/FlagEmbedding)
+                    """)
+                with gr.Row():
+                    data_reranking_zh = gr.components.Dataframe(
+                        DATA_RERANKING_ZH,
+                        datatype=["number", "markdown"] + ["number"] * len(DATA_RERANKING_ZH.columns),
+                        type="pandas",
+                    )
+                with gr.Row():
+                    data_run_reranking_zh = gr.Button("Refresh")
+                    task_reranking_zh = gr.Variable(value=["Reranking"])
+                    lang_reranking_zh = gr.Variable(value=[])
+                    datasets_reranking_zh = gr.Variable(value=TASK_LIST_RERANKING_ZH)
+                    data_run_reranking_zh.click(
+                        get_mteb_data,
+                        inputs=[task_reranking_zh, lang_reranking_zh, datasets_reranking_zh],
+                        outputs=data_reranking_zh,
+                    )
         with gr.TabItem("Retrieval"):
             with gr.TabItem("English"):
                 with gr.Row():
                     gr.Markdown("""
-                    **Retrieval Leaderboard  🔎**
+                    **Retrieval English Leaderboard 🔎**
                     
                     - **Metric:** Normalized Discounted Cumulative Gain @ k (ndcg_at_10)
                     - **Languages:** English
@@ -1104,10 +1446,44 @@ with block:
                         type="pandas",
                     )
                 with gr.Row():
-                    data_run = gr.Button("Refresh")
+                    data_run_retrieval = gr.Button("Refresh")
                     task_retrieval = gr.Variable(value=["Retrieval"])
-                    data_run.click(
-                        get_mteb_data, inputs=[task_retrieval], outputs=data_retrieval
+                    lang_retrieval = gr.Variable(value=[])
+                    datasets_retrieval = gr.Variable(value=TASK_LIST_RETRIEVAL)
+                    data_run_retrieval.click(
+                        get_mteb_data, 
+                        inputs=[
+                            task_retrieval,
+                            lang_retrieval,
+                            datasets_retrieval,
+                        ],
+                        outputs=data_retrieval
+                    )
+            with gr.TabItem("Chinese"):
+                with gr.Row():
+                    gr.Markdown("""
+                    **Retrieval Chinese Leaderboard 🔎🇨🇳**
+                    
+                    - **Metric:** Normalized Discounted Cumulative Gain @ k (ndcg_at_10)
+                    - **Languages:** Chinese
+                    - **Credits:** [FlagEmbedding](https://github.com/FlagOpen/FlagEmbedding)
+                    """)
+                with gr.Row():
+                    data_retrieval_zh = gr.components.Dataframe(
+                        DATA_RETRIEVAL_ZH,
+                        # Add support for more columns than existing as a buffer for CQADupstack & other Retrieval tasks (e.g. MSMARCOv2)
+                        datatype=["number", "markdown"] + ["number"] * len(DATA_RETRIEVAL_ZH.columns) * 2,
+                        type="pandas",
+                    )
+                with gr.Row():
+                    data_run_retrieval_zh = gr.Button("Refresh")
+                    task_retrieval_zh = gr.Variable(value=["Retrieval"])
+                    lang_retrieval_zh = gr.Variable(value=[])
+                    datasets_retrieval_zh = gr.Variable(value=TASK_LIST_RETRIEVAL_ZH)
+                    data_run_retrieval_zh.click(
+                        get_mteb_data,
+                        inputs=[task_retrieval_zh, lang_retrieval_zh, datasets_retrieval_zh],
+                        outputs=data_retrieval_zh,
                     )
             with gr.TabItem("Polish"):
                 with gr.Row():
@@ -1126,11 +1502,11 @@ with block:
                         type="pandas",
                     )
                 with gr.Row():
-                    data_run = gr.Button("Refresh")
+                    data_run_retrieval_pl = gr.Button("Refresh")
                     task_retrieval_pl = gr.Variable(value=["Retrieval"])
                     lang_retrieval_pl = gr.Variable(value=[])
                     datasets_retrieval_pl = gr.Variable(value=TASK_LIST_RETRIEVAL_PL)
-                    data_run.click(
+                    data_run_retrieval_pl.click(
                         get_mteb_data, 
                         inputs=[task_retrieval_pl, lang_retrieval_pl, datasets_retrieval_pl], 
                         outputs=data_retrieval_pl
@@ -1139,7 +1515,7 @@ with block:
             with gr.TabItem("English"):
                 with gr.Row():
                     gr.Markdown("""
-                    **STS Leaderboard 🤖**
+                    **STS English Leaderboard 🤖**
                     
                     - **Metric:** Spearman correlation based on cosine similarity
                     - **Languages:** English
@@ -1153,30 +1529,62 @@ with block:
                 with gr.Row():
                     data_run_sts_en = gr.Button("Refresh")
                     task_sts_en = gr.Variable(value=["STS"])
-                    lang_sts_en = gr.Variable(value=["en", "en-en"])
+                    lang_sts_en = gr.Variable(value=[])
+                    datasets_sts_en = gr.Variable(value=TASK_LIST_STS)
                     data_run_sts_en.click(
                         get_mteb_data,
-                        inputs=[task_sts_en, lang_sts_en],
+                        inputs=[task_sts_en, lang_sts_en, datasets_sts_en],
                         outputs=data_sts_en,
                     )
-            with gr.TabItem("Multilingual"):
+            with gr.TabItem("Chinese"):
                 with gr.Row():
                     gr.Markdown("""
-                    **STS Multilingual Leaderboard 👽**
+                    **STS Chinese Leaderboard 🤖🇨🇳**
                     
                     - **Metric:** Spearman correlation based on cosine similarity
-                    - **Languages:** Arabic, Chinese, Dutch, English, French, German, Italian, Korean, Polish, Russian, Spanish
+                    - **Languages:** Chinese
+                    - **Credits:** [FlagEmbedding](https://github.com/FlagOpen/FlagEmbedding)
                     """)
                 with gr.Row():
-                    data_sts = gr.components.Dataframe(
-                        DATA_STS,
-                        datatype=["number", "markdown"] + ["number"] * len(DATA_STS.columns) * 2,
+                    data_sts_zh = gr.components.Dataframe(
+                        DATA_STS_ZH,
+                        datatype=["number", "markdown"] + ["number"] * len(DATA_STS_ZH.columns),
                         type="pandas",
                     )
                 with gr.Row():
-                    data_run = gr.Button("Refresh")
-                    task_sts = gr.Variable(value=["STS"])
-                    data_run.click(get_mteb_data, inputs=[task_sts], outputs=data_sts)
+                    data_run_sts_zh = gr.Button("Refresh")
+                    task_sts_zh = gr.Variable(value=["STS"])
+                    lang_sts_zh = gr.Variable(value=[])
+                    datasets_sts_zh = gr.Variable(value=TASK_LIST_STS_ZH)
+                    data_run_sts_zh.click(
+                        get_mteb_data,
+                        inputs=[task_sts_zh, lang_sts_zh, datasets_sts_zh],
+                        outputs=data_sts_zh,
+                    )
+            with gr.TabItem("Other"):
+                with gr.Row():
+                    gr.Markdown("""
+                    **STS Other Leaderboard 👽**
+                    
+                    - **Metric:** Spearman correlation based on cosine similarity
+                    - **Languages:** Arabic, Chinese, Dutch, English, French, German, Italian, Korean, Polish, Russian, Spanish (Only language combos not included in the other tabs)
+                    """)
+                with gr.Row():
+                    data_sts_other = gr.components.Dataframe(
+                        DATA_STS_OTHER,
+                        datatype=["number", "markdown"] + ["number"] * len(DATA_STS_OTHER.columns) * 2,
+                        type="pandas",
+                    )
+                with gr.Row():
+                    data_run_sts_other = gr.Button("Refresh")
+                    task_sts_other = gr.Variable(value=["STS"])
+                    lang_sts_other = gr.Variable(value=[])
+                    datasets_sts_other = gr.Variable(value=TASK_LIST_STS_OTHER)
+                    data_run_sts_other.click(
+                        get_mteb_data, 
+                        inputs=[task_sts_other, lang_sts_other, task_sts_other, datasets_sts_other],
+                        outputs=data_sts_other
+                    )
         with gr.TabItem("Summarization"):
             with gr.Row():
                 gr.Markdown("""
