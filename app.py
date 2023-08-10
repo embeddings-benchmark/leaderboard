@@ -130,7 +130,7 @@ TASK_LIST_RERANKING = [
 TASK_LIST_RERANKING_ZH = [
     "CMedQAv1",
     "CMedQAv2",
-    "MmarcoReranking",
+    "MMarcoReranking",
     "T2Reranking",
 ]
 
