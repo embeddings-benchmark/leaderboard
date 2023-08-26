@@ -660,6 +660,11 @@ MODELS_TO_SKIP = {
     "cgldo/semanticClone",
     "Malmuk1/e5-large-v2_Sharded",
     "jncraton/gte-small-ct2-int8",
+    "Einas/einas_ashkar",
+    "gruber/e5-small-v2-ggml",
+    "jncraton/bge-small-en-ct2-int8",
+    "vectoriseai/bge-small-en",
+    "recipe/embeddings",
 }
 
 EXTERNAL_MODEL_RESULTS = {model: {k: {v: []} for k, v in TASK_TO_METRIC.items()} for model in EXTERNAL_MODELS}
@@ -803,6 +808,7 @@ def get_mteb_data(tasks=["Clustering"], langs=[], datasets=[], fillna=True, add_
         #    ],
         # },
         # Use "get" instead of dict indexing to skip incompat metadata instead of erroring out
+        print("RUNNING", model)
         if len(datasets) > 0:
             task_results = [sub_res for sub_res in meta["model-index"][0]["results"] if (sub_res.get("task", {}).get("type", "") in tasks) and any([x in sub_res.get("dataset", {}).get("name", "") for x in datasets])]
         elif langs:
