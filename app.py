@@ -666,6 +666,7 @@ MODELS_TO_SKIP = {
     "vectoriseai/bge-small-en",
     "recipe/embeddings",
     "dhairya0907/thenlper-get-large",
+    "Narsil/bge-base-en",
 }
 
 EXTERNAL_MODEL_RESULTS = {model: {k: {v: []} for k, v in TASK_TO_METRIC.items()} for model in EXTERNAL_MODELS}
