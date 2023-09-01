@@ -58,11 +58,11 @@ TASK_LIST_CLASSIFICATION_NB = [
 ]
 
 TASK_LIST_CLASSIFICATION_PL = [
-    "AbusiveClauses",
     "AllegroReviews",
     "CBD",
     "MassiveIntentClassification (pl)",
     "MassiveScenarioClassification (pl)",
+    "PAC",
     "PolEmo2.0-IN",
     "PolEmo2.0-OUT",
 ]
@@ -304,6 +304,7 @@ EXTERNAL_MODELS = [
     "gtr-t5-large",
     "gtr-t5-xl",
     "gtr-t5-xxl",
+    "herbert-base-retrieval-v2",
     "komninos",
     "luotuo-bert-medium",
     "LASER2",
@@ -379,6 +380,7 @@ EXTERNAL_MODEL_TO_LINK = {
     "gtr-t5-large": "https://huggingface.co/sentence-transformers/gtr-t5-large",
     "gtr-t5-xl": "https://huggingface.co/sentence-transformers/gtr-t5-xl",
     "gtr-t5-xxl": "https://huggingface.co/sentence-transformers/gtr-t5-xxl",
+    "herbert-base-retrieval-v2": "https://huggingface.co/ipipan/herbert-base-retrieval-v2",
     "komninos": "https://huggingface.co/sentence-transformers/average_word_embeddings_komninos",
     "luotuo-bert-medium": "https://huggingface.co/silk-road/luotuo-bert-medium",
     "LASER2": "https://github.com/facebookresearch/LASER",
@@ -457,6 +459,7 @@ EXTERNAL_MODEL_TO_DIM = {
     "gtr-t5-large": 768,
     "gtr-t5-xl": 768,
     "gtr-t5-xxl": 768,
+    "herbert-base-retrieval-v2": 768,
     "komninos": 300,
     "m3e-base": 768,
     "m3e-large": 768,
@@ -529,6 +532,7 @@ EXTERNAL_MODEL_TO_SEQLEN = {
     "gtr-t5-large": 512,
     "gtr-t5-xl": 512,
     "gtr-t5-xxl": 512,
+    "herbert-base-retrieval-v2": 514,
     "komninos": "N/A",
     "luotuo-bert-medium": 512,
     "LASER2": "N/A",
@@ -604,6 +608,7 @@ EXTERNAL_MODEL_TO_SIZE = {
     "gtr-t5-large": 0.67,
     "gtr-t5-xl": 2.48,
     "gtr-t5-xxl": 9.73,
+    "herbert-base-retrieval-v2": 0.50,
     "komninos": 0.27,
     "luotuo-bert-medium": 1.31,    
     "LASER2": 0.17,
@@ -810,7 +815,6 @@ def get_mteb_data(tasks=["Clustering"], langs=[], datasets=[], fillna=True, add_
         #    ],
         # },
         # Use "get" instead of dict indexing to skip incompat metadata instead of erroring out
-        print("RUNNING", model)
         if len(datasets) > 0:
             task_results = [sub_res for sub_res in meta["model-index"][0]["results"] if (sub_res.get("task", {}).get("type", "") in tasks) and any([x in sub_res.get("dataset", {}).get("name", "") for x in datasets])]
         elif langs:
