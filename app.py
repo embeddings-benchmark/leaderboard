@@ -673,6 +673,8 @@ MODELS_TO_SKIP = {
     "dhairya0907/thenlper-get-large",
     "Narsil/bge-base-en",
     "kozistr/fused-large-en",
+    "sionic-ai/sionic-ai-v2", # Wait for https://huggingface.co/sionic-ai/sionic-ai-v2/discussions/1
+    "sionic-ai/sionic-ai-v1", # Wait for https://huggingface.co/sionic-ai/sionic-ai-v2/discussions/1
 }
 
 EXTERNAL_MODEL_RESULTS = {model: {k: {v: []} for k, v in TASK_TO_METRIC.items()} for model in EXTERNAL_MODELS}
