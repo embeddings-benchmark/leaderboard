@@ -1,0 +1,4 @@
+gradio
+datasets
+huggingface-hub
+uvicorn==0.21.1
