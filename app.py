@@ -679,6 +679,9 @@ MODELS_TO_SKIP = {
     "BAAI/bge-base-en", # Deprecated in favor of v1.5
     "BAAI/bge-small-en", # Deprecated in favor of v1.5
     "d0rj/e5-large-en-ru",
+    "d0rj/e5-base-en-ru",
+    "d0rj/e5-small-en-ru",
+    "aident-ai/bge-base-en-onnx"
 }
 
 EXTERNAL_MODEL_RESULTS = {model: {k: {v: []} for k, v in TASK_TO_METRIC.items()} for model in EXTERNAL_MODELS}
