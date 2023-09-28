@@ -681,7 +681,14 @@ MODELS_TO_SKIP = {
     "d0rj/e5-large-en-ru",
     "d0rj/e5-base-en-ru",
     "d0rj/e5-small-en-ru",
-    "aident-ai/bge-base-en-onnx"
+    "aident-ai/bge-base-en-onnx",
+    "barisaydin/bge-base-en",
+    "barisaydin/gte-large",
+    "barisaydin/gte-base",
+    "barisaydin/gte-small",
+    "barisaydin/bge-small-en",
+    "odunola/e5-base-v2",
+    "goldenrooster/multilingual-e5-large",
 }
 
 EXTERNAL_MODEL_RESULTS = {model: {k: {v: []} for k, v in TASK_TO_METRIC.items()} for model in EXTERNAL_MODELS}
