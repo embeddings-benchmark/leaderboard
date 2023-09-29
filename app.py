@@ -690,6 +690,8 @@ MODELS_TO_SKIP = {
     "odunola/e5-base-v2",
     "goldenrooster/multilingual-e5-large",
     "davidpeer/gte-small",
+    "barisaydin/bge-large-en",
+    "jamesgpt1/english-large-v1",
 }
 
 EXTERNAL_MODEL_RESULTS = {model: {k: {v: []} for k, v in TASK_TO_METRIC.items()} for model in EXTERNAL_MODELS}
