@@ -689,6 +689,7 @@ MODELS_TO_SKIP = {
     "barisaydin/bge-small-en",
     "odunola/e5-base-v2",
     "goldenrooster/multilingual-e5-large",
+    "davidpeer/gte-small",
 }
 
 EXTERNAL_MODEL_RESULTS = {model: {k: {v: []} for k, v in TASK_TO_METRIC.items()} for model in EXTERNAL_MODELS}
