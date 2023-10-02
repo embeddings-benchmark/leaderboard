@@ -673,8 +673,8 @@ MODELS_TO_SKIP = {
     "dhairya0907/thenlper-get-large",
     "Narsil/bge-base-en",
     "kozistr/fused-large-en",
-    # "sionic-ai/sionic-ai-v2", # Wait for https://huggingface.co/sionic-ai/sionic-ai-v2/discussions/1
-    # "sionic-ai/sionic-ai-v1", # Wait for https://huggingface.co/sionic-ai/sionic-ai-v2/discussions/1
+    "sionic-ai/sionic-ai-v2", # Wait for https://huggingface.co/sionic-ai/sionic-ai-v2/discussions/1
+    "sionic-ai/sionic-ai-v1", # Wait for https://huggingface.co/sionic-ai/sionic-ai-v2/discussions/1
     "BAAI/bge-large-en", # Deprecated in favor of v1.5
     "BAAI/bge-base-en", # Deprecated in favor of v1.5
     "BAAI/bge-small-en", # Deprecated in favor of v1.5
