@@ -692,6 +692,8 @@ MODELS_TO_SKIP = {
     "davidpeer/gte-small",
     "barisaydin/bge-large-en",
     "jamesgpt1/english-large-v1",
+    "vectoriseai/bge-large-en-v1.5",
+    "vectoriseai/bge-base-en-v1.5",
 }
 
 EXTERNAL_MODEL_RESULTS = {model: {k: {v: []} for k, v in TASK_TO_METRIC.items()} for model in EXTERNAL_MODELS}
