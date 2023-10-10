@@ -700,6 +700,8 @@ MODELS_TO_SKIP = {
     "vectoriseai/gte-base",
     "vectoriseai/e5-large-v2",
     "vectoriseai/bge-small-en-v1.5",
+    "vectoriseai/e5-base-v2",
+    "vectoriseai/e5-large",
 }
 
 EXTERNAL_MODEL_RESULTS = {model: {k: {v: []} for k, v in TASK_TO_METRIC.items()} for model in EXTERNAL_MODELS}
