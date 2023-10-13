@@ -703,6 +703,7 @@ MODELS_TO_SKIP = {
     "vectoriseai/e5-base-v2",
     "vectoriseai/e5-large",
     "vectoriseai/multilingual-e5-large",
+    "vectoriseai/gte-small",
 }
 
 EXTERNAL_MODEL_RESULTS = {model: {k: {v: []} for k, v in TASK_TO_METRIC.items()} for model in EXTERNAL_MODELS}
