@@ -707,6 +707,14 @@ MODELS_TO_SKIP = {
     "vectoriseai/ember-v1",
     "vectoriseai/e5-base",
     "vectoriseai/e5-small-v2",
+    "michaelfeil/ct2fast-bge-large-en-v1.5",
+    "michaelfeil/ct2fast-bge-large-en-v1.5",
+    "michaelfeil/ct2fast-bge-base-en-v1.5",
+    "michaelfeil/ct2fast-gte-large",
+    "michaelfeil/ct2fast-gte-base",
+    "michaelfeil/ct2fast-bge-small-en-v1.5",
+    
+    
 }
 
 EXTERNAL_MODEL_RESULTS = {model: {k: {v: []} for k, v in TASK_TO_METRIC.items()} for model in EXTERNAL_MODELS}
