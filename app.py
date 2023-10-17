@@ -713,7 +713,8 @@ MODELS_TO_SKIP = {
     "michaelfeil/ct2fast-gte-large",
     "michaelfeil/ct2fast-gte-base",
     "michaelfeil/ct2fast-bge-small-en-v1.5",
-    "rizki/bgr-tf",    
+    "rizki/bgr-tf",
+    "ef-zulla/e5-multi-sml-torch",
 }
 
 EXTERNAL_MODEL_RESULTS = {model: {k: {v: []} for k, v in TASK_TO_METRIC.items()} for model in EXTERNAL_MODELS}
