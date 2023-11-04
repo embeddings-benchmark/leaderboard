@@ -1,3 +1,4 @@
+from functools import partial
 import json
 
 from datasets import load_dataset
@@ -719,6 +720,10 @@ MODELS_TO_SKIP = {
     "michaelfeil/ct2fast-bge-small-en-v1.5",
     "rizki/bgr-tf",
     "ef-zulla/e5-multi-sml-torch",
+    "cherubhao/yogamodel",
+    "morgendigital/multilingual-e5-large-quantized",
+    "jncraton/gte-tiny-ct2-int8",
+    "Research2NLP/electrical_stella",
 }
 
 EXTERNAL_MODEL_RESULTS = {model: {k: {v: []} for k, v in TASK_TO_METRIC.items()} for model in EXTERNAL_MODELS}
@@ -1211,12 +1216,8 @@ with block:
                     )
                 with gr.Row():
                     data_run_bitext_mining = gr.Button("Refresh")
-                    task_bitext_mining = gr.Variable(value=["BitextMining"])
-                    lang_bitext_mining = gr.Variable(value=[])
-                    datasets_bitext_mining = gr.Variable(value=TASK_LIST_BITEXT_MINING)
                     data_run_bitext_mining.click(
-                        get_mteb_data,
-                        inputs=[task_bitext_mining, lang_bitext_mining, datasets_bitext_mining],
+                        partial(get_mteb_data, tasks=["BitextMining"], datasets=TASK_LIST_BITEXT_MINING),
                         outputs=data_bitext_mining,
                     )
             with gr.TabItem("Danish"):
@@ -1236,16 +1237,8 @@ with block:
                     )
                 with gr.Row():
                     data_run_bitext_mining_da = gr.Button("Refresh")
-                    task_bitext_mining_da = gr.Variable(value=["BitextMining"])
-                    lang_bitext_mining_da = gr.Variable(value=[])
-                    datasets_bitext_mining_da = gr.Variable(value=TASK_LIST_BITEXT_MINING_OTHER)
                     data_run_bitext_mining_da.click(
-                        get_mteb_data,
-                        inputs=[
-                            task_bitext_mining_da,
-                            lang_bitext_mining_da,
-                            datasets_bitext_mining_da,
-                        ],
+                        partial(get_mteb_data, tasks=["BitextMining"], datasets=TASK_LIST_BITEXT_MINING_OTHER),
                         outputs=data_bitext_mining_da,
                     )
         with gr.TabItem("Classification"):
@@ -1265,14 +1258,8 @@ with block:
                     )
                 with gr.Row():
                     data_run_classification_en = gr.Button("Refresh")
-                    task_classification_en = gr.Variable(value=["Classification"])
-                    lang_classification_en = gr.Variable(value=["en"])
                     data_run_classification_en.click(
-                        get_mteb_data,
-                        inputs=[
-                            task_classification_en,
-                            lang_classification_en,
-                        ],
+                        partial(get_mteb_data, tasks=["Classification"], langs=["en"]),
                         outputs=data_classification_en,
                     )
             with gr.TabItem("Chinese"):
@@ -1292,16 +1279,8 @@ with block:
                     )
                 with gr.Row():
                     data_run_classification_zh = gr.Button("Refresh")
-                    task_classification_zh = gr.Variable(value=["Classification"])
-                    lang_classification_zh = gr.Variable([])
-                    datasets_classification_zh = gr.Variable(value=TASK_LIST_CLASSIFICATION_ZH)
                     data_run_classification_zh.click(
-                        get_mteb_data,
-                        inputs=[
-                            task_classification_zh,
-                            lang_classification_zh,
-                            datasets_classification_zh,
-                        ],
+                        partial(get_mteb_data, tasks=["Classification"], datasets=TASK_LIST_CLASSIFICATION_ZH),
                         outputs=data_classification_zh,
                     )
             with gr.TabItem("Danish"):
@@ -1321,17 +1300,9 @@ with block:
                     )
                 with gr.Row():
                     data_run_classification_da = gr.Button("Refresh")
-                    task_classification_da = gr.Variable(value=["Classification"])
-                    lang_classification_da = gr.Variable(value=[])
-                    datasets_classification_da = gr.Variable(value=TASK_LIST_CLASSIFICATION_DA)
                     data_run_classification_da.click(
-                        get_mteb_data,
-                        inputs=[
-                            task_classification_da,
-                            lang_classification_da,
-                            datasets_classification_da,
-                        ],
-                        outputs=data_classification_da,
+                        partial(get_mteb_data, tasks=["Classification"], datasets=TASK_LIST_CLASSIFICATION_DA),
+                        outputs=data_run_classification_da,
                     )
             with gr.TabItem("Norwegian"):
                 with gr.Row():
@@ -1350,18 +1321,10 @@ with block:
                     )
                 with gr.Row():
                     data_run_classification_nb = gr.Button("Refresh")
-                    task_classification_nb = gr.Variable(value=["Classification"])
-                    lang_classification_nb = gr.Variable(value=[])
-                    datasets_classification_nb = gr.Variable(value=TASK_LIST_CLASSIFICATION_NB)
                     data_run_classification_nb.click(
-                        get_mteb_data,
-                        inputs=[
-                            task_classification_nb,
-                            lang_classification_nb,
-                            datasets_classification_nb,
-                        ],
+                        partial(get_mteb_data, tasks=["Classification"], datasets=TASK_LIST_CLASSIFICATION_NB),
                         outputs=data_classification_nb,
-                    )    
+                    )
             with gr.TabItem("Polish"):
                 with gr.Row():
                     gr.Markdown("""
@@ -1379,18 +1342,10 @@ with block:
                     )
                 with gr.Row():
                     data_run_classification_pl = gr.Button("Refresh")
-                    task_classification_pl = gr.Variable(value=["Classification"])
-                    lang_classification_pl = gr.Variable(value=[])
-                    datasets_classification_pl = gr.Variable(value=TASK_LIST_CLASSIFICATION_PL)
                     data_run_classification_pl.click(
-                        get_mteb_data,
-                        inputs=[
-                            task_classification_pl,
-                            lang_classification_pl,
-                            datasets_classification_pl,
-                        ],
+                        partial(get_mteb_data, tasks=["Classification"], datasets=TASK_LIST_CLASSIFICATION_PL),
                         outputs=data_classification_pl,
-                    )                       
+                    )
             with gr.TabItem("Swedish"):
                 with gr.Row():
                     gr.Markdown("""
@@ -1408,16 +1363,8 @@ with block:
                     )
                 with gr.Row():
                     data_run_classification_sv = gr.Button("Refresh")
-                    task_classification_sv = gr.Variable(value=["Classification"])
-                    lang_classification_sv = gr.Variable(value=[])
-                    datasets_classification_sv = gr.Variable(value=TASK_LIST_CLASSIFICATION_SV)
                     data_run_classification_sv.click(
-                        get_mteb_data,
-                        inputs=[
-                            task_classification_sv,
-                            lang_classification_sv,
-                            datasets_classification_sv,
-                        ],
+                        partial(get_mteb_data, tasks=["Classification"], datasets=TASK_LIST_CLASSIFICATION_SV),
                         outputs=data_classification_sv,
                     )
             with gr.TabItem("Other"):
@@ -1436,18 +1383,10 @@ with block:
                     )
                 with gr.Row():
                     data_run_classification = gr.Button("Refresh")
-                    task_classification = gr.Variable(value=["Classification"])
-                    lang_classification = gr.Variable(value=[])
-                    datasets_classification = gr.Variable(value=TASK_LIST_CLASSIFICATION_OTHER)                 
                     data_run_classification.click(
-                        get_mteb_data,
-                        inputs=[
-                            task_classification,
-                            lang_classification,
-                            datasets_classification,
-                        ],
+                        partial(get_mteb_data, tasks=["Classification"], datasets=TASK_LIST_CLASSIFICATION_OTHER),
                         outputs=data_classification,
-                    )                                      
+                    )                                    
         with gr.TabItem("Clustering"):
             with gr.TabItem("English"):
                 with gr.Row():
@@ -1465,12 +1404,8 @@ with block:
                     )
                 with gr.Row():
                     data_run_clustering_en = gr.Button("Refresh")
-                    task_clustering = gr.Variable(value=["Clustering"])
-                    lang_clustering = gr.Variable(value=[])
-                    datasets_clustering = gr.Variable(value=TASK_LIST_CLUSTERING)
                     data_run_clustering_en.click(
-                        get_mteb_data,
-                        inputs=[task_clustering, lang_clustering, datasets_clustering],
+                        partial(get_mteb_data, tasks=["Clustering"], datasets=TASK_LIST_CLUSTERING),
                         outputs=data_clustering,
                     )
             with gr.TabItem("Chinese"):
@@ -1490,12 +1425,8 @@ with block:
                     )
                 with gr.Row():
                     data_run_clustering_zh = gr.Button("Refresh")
-                    task_clustering_zh = gr.Variable(value=["Clustering"])
-                    lang_clustering_zh = gr.Variable(value=[])
-                    datasets_clustering_zh = gr.Variable(value=TASK_LIST_CLUSTERING_ZH)
                     data_run_clustering_zh.click(
-                        get_mteb_data,
-                        inputs=[task_clustering_zh, lang_clustering_zh, datasets_clustering_zh],
+                        partial(get_mteb_data, tasks=["Clustering"], datasets=TASK_LIST_CLUSTERING_ZH),
                         outputs=data_clustering_zh,
                     )
             with gr.TabItem("German"):
@@ -1515,12 +1446,8 @@ with block:
                     )
                 with gr.Row():
                     data_run_clustering_de = gr.Button("Refresh")
-                    task_clustering_de = gr.Variable(value=["Clustering"])
-                    lang_clustering_de = gr.Variable(value=[])
-                    datasets_clustering_de = gr.Variable(value=TASK_LIST_CLUSTERING_DE)
                     data_run_clustering_de.click(
-                        get_mteb_data,
-                        inputs=[task_clustering_de, lang_clustering_de, datasets_clustering_de],
+                        partial(get_mteb_data, tasks=["Clustering"], datasets=TASK_LIST_CLUSTERING_DE),
                         outputs=data_clustering_de,
                     )
             with gr.TabItem("Polish"):
@@ -1540,12 +1467,8 @@ with block:
                     )
                 with gr.Row():
                     data_run_clustering_pl = gr.Button("Refresh")
-                    task_clustering_pl = gr.Variable(value=["Clustering"])
-                    lang_clustering_pl = gr.Variable(value=[])
-                    datasets_clustering_pl = gr.Variable(value=TASK_LIST_CLUSTERING_PL)
                     data_run_clustering_pl.click(
-                        get_mteb_data,
-                        inputs=[task_clustering_pl, lang_clustering_pl, datasets_clustering_pl],
+                        partial(get_mteb_data, tasks=["Clustering"], datasets=TASK_LIST_CLUSTERING_PL),
                         outputs=data_clustering_pl,
                     )
         with gr.TabItem("Pair Classification"):
@@ -1565,16 +1488,8 @@ with block:
                     )
                 with gr.Row():
                     data_run_pair_classification = gr.Button("Refresh")
-                    task_pair_classification = gr.Variable(value=["PairClassification"])
-                    lang_pair_classification = gr.Variable(value=[])
-                    datasets_pair_classification = gr.Variable(value=TASK_LIST_PAIR_CLASSIFICATION)
                     data_run_pair_classification.click(
-                        get_mteb_data,
-                        inputs=[
-                            task_pair_classification,
-                            lang_pair_classification,
-                            datasets_pair_classification,
-                        ],
+                        partial(get_mteb_data, tasks=["PairClassification"], datasets=TASK_LIST_PAIR_CLASSIFICATION),
                         outputs=data_pair_classification,
                     )
             with gr.TabItem("Chinese"):
@@ -1593,23 +1508,15 @@ with block:
                         type="pandas",
                     )
                 with gr.Row():
-                    data_run = gr.Button("Refresh")
-                    task_pair_classification_zh = gr.Variable(value=["PairClassification"])
-                    lang_pair_classification_zh = gr.Variable(value=[])
-                    datasets_pair_classification_zh = gr.Variable(value=TASK_LIST_PAIR_CLASSIFICATION_ZH)
-                    data_run_classification_zh.click(
-                        get_mteb_data,
-                        inputs=[
-                            task_pair_classification_zh,
-                            lang_pair_classification_zh,
-                            datasets_pair_classification_zh,
-                        ],
+                    data_run_pair_classification_zh = gr.Button("Refresh")
+                    data_run_pair_classification_zh.click(
+                        partial(get_mteb_data, tasks=["PairClassification"], datasets=TASK_LIST_PAIR_CLASSIFICATION_ZH),
                         outputs=data_pair_classification_zh,
                     )
             with gr.TabItem("Polish"):
                 with gr.Row():
                     gr.Markdown("""
-                    **Pair Classification Chinese Leaderboard 🎭🇵🇱**
+                    **Pair Classification Polish Leaderboard 🎭🇵🇱**
                     
                     - **Metric:** Average Precision based on Cosine Similarities (cos_sim_ap)
                     - **Languages:** Polish
@@ -1622,19 +1529,11 @@ with block:
                         type="pandas",
                     )
                 with gr.Row():
-                    data_run = gr.Button("Refresh")
-                    task_pair_classification_pl = gr.Variable(value=["PairClassification"])
-                    lang_pair_classification_pl = gr.Variable(value=[])
-                    datasets_pair_classification_pl = gr.Variable(value=TASK_LIST_PAIR_CLASSIFICATION_PL)
-                    data_run_classification_pl.click(
-                        get_mteb_data,
-                        inputs=[
-                            task_pair_classification_pl,
-                            lang_pair_classification_pl,
-                            datasets_pair_classification_pl,
-                        ],
+                    data_run_pair_classification_pl = gr.Button("Refresh")
+                    data_run_pair_classification_pl.click(
+                        partial(get_mteb_data, tasks=["PairClassification"], datasets=TASK_LIST_PAIR_CLASSIFICATION_PL),
                         outputs=data_pair_classification_pl,
-                    )                    
+                    )               
         with gr.TabItem("Reranking"):
             with gr.TabItem("English"):
                 with gr.Row():
@@ -1652,17 +1551,9 @@ with block:
                     )
                 with gr.Row():
                     data_run_reranking = gr.Button("Refresh")
-                    task_reranking = gr.Variable(value=["Reranking"])
-                    lang_reranking = gr.Variable(value=[])
-                    datasets_reranking = gr.Variable(value=TASK_LIST_RERANKING)
                     data_run_reranking.click(
-                        get_mteb_data, 
-                        inputs=[
-                            task_reranking,
-                            lang_reranking,
-                            datasets_reranking,
-                        ],
-                        outputs=data_reranking
+                        partial(get_mteb_data, tasks=["Reranking"], datasets=TASK_LIST_RERANKING),
+                        outputs=data_reranking,
                     )
             with gr.TabItem("Chinese"):
                 with gr.Row():
@@ -1681,12 +1572,8 @@ with block:
                     )
                 with gr.Row():
                     data_run_reranking_zh = gr.Button("Refresh")
-                    task_reranking_zh = gr.Variable(value=["Reranking"])
-                    lang_reranking_zh = gr.Variable(value=[])
-                    datasets_reranking_zh = gr.Variable(value=TASK_LIST_RERANKING_ZH)
                     data_run_reranking_zh.click(
-                        get_mteb_data,
-                        inputs=[task_reranking_zh, lang_reranking_zh, datasets_reranking_zh],
+                        partial(get_mteb_data, tasks=["Reranking"], datasets=TASK_LIST_RERANKING_ZH),
                         outputs=data_reranking_zh,
                     )
         with gr.TabItem("Retrieval"):
@@ -1707,17 +1594,9 @@ with block:
                     )
                 with gr.Row():
                     data_run_retrieval = gr.Button("Refresh")
-                    task_retrieval = gr.Variable(value=["Retrieval"])
-                    lang_retrieval = gr.Variable(value=[])
-                    datasets_retrieval = gr.Variable(value=TASK_LIST_RETRIEVAL)
                     data_run_retrieval.click(
-                        get_mteb_data, 
-                        inputs=[
-                            task_retrieval,
-                            lang_retrieval,
-                            datasets_retrieval,
-                        ],
-                        outputs=data_retrieval
+                        partial(get_mteb_data, tasks=["Retrieval"], datasets=TASK_LIST_RETRIEVAL),
+                        outputs=data_retrieval,
                     )
             with gr.TabItem("Chinese"):
                 with gr.Row():
@@ -1737,12 +1616,8 @@ with block:
                     )
                 with gr.Row():
                     data_run_retrieval_zh = gr.Button("Refresh")
-                    task_retrieval_zh = gr.Variable(value=["Retrieval"])
-                    lang_retrieval_zh = gr.Variable(value=[])
-                    datasets_retrieval_zh = gr.Variable(value=TASK_LIST_RETRIEVAL_ZH)
                     data_run_retrieval_zh.click(
-                        get_mteb_data,
-                        inputs=[task_retrieval_zh, lang_retrieval_zh, datasets_retrieval_zh],
+                        partial(get_mteb_data, tasks=["Retrieval"], datasets=TASK_LIST_RETRIEVAL_ZH),
                         outputs=data_retrieval_zh,
                     )
             with gr.TabItem("Polish"):
@@ -1763,13 +1638,9 @@ with block:
                     )
                 with gr.Row():
                     data_run_retrieval_pl = gr.Button("Refresh")
-                    task_retrieval_pl = gr.Variable(value=["Retrieval"])
-                    lang_retrieval_pl = gr.Variable(value=[])
-                    datasets_retrieval_pl = gr.Variable(value=TASK_LIST_RETRIEVAL_PL)
                     data_run_retrieval_pl.click(
-                        get_mteb_data, 
-                        inputs=[task_retrieval_pl, lang_retrieval_pl, datasets_retrieval_pl], 
-                        outputs=data_retrieval_pl
+                        partial(get_mteb_data, tasks=["Retrieval"], datasets=TASK_LIST_RETRIEVAL_PL),
+                        outputs=data_retrieval_pl,
                     )
         with gr.TabItem("STS"):
             with gr.TabItem("English"):
@@ -1788,12 +1659,8 @@ with block:
                     )
                 with gr.Row():
                     data_run_sts_en = gr.Button("Refresh")
-                    task_sts_en = gr.Variable(value=["STS"])
-                    lang_sts_en = gr.Variable(value=[])
-                    datasets_sts_en = gr.Variable(value=TASK_LIST_STS)
                     data_run_sts_en.click(
-                        get_mteb_data,
-                        inputs=[task_sts_en, lang_sts_en, datasets_sts_en],
+                        partial(get_mteb_data, tasks=["STS"], datasets=TASK_LIST_STS),
                         outputs=data_sts_en,
                     )
             with gr.TabItem("Chinese"):
@@ -1813,12 +1680,8 @@ with block:
                     )
                 with gr.Row():
                     data_run_sts_zh = gr.Button("Refresh")
-                    task_sts_zh = gr.Variable(value=["STS"])
-                    lang_sts_zh = gr.Variable(value=[])
-                    datasets_sts_zh = gr.Variable(value=TASK_LIST_STS_ZH)
                     data_run_sts_zh.click(
-                        get_mteb_data,
-                        inputs=[task_sts_zh, lang_sts_zh, datasets_sts_zh],
+                        partial(get_mteb_data, tasks=["STS"], datasets=TASK_LIST_STS_ZH),
                         outputs=data_sts_zh,
                     )
             with gr.TabItem("Polish"):
@@ -1838,14 +1701,10 @@ with block:
                     )
                 with gr.Row():
                     data_run_sts_pl = gr.Button("Refresh")
-                    task_sts_pl = gr.Variable(value=["STS"])
-                    lang_sts_pl = gr.Variable(value=[])
-                    datasets_sts_pl = gr.Variable(value=TASK_LIST_STS_PL)
                     data_run_sts_pl.click(
-                        get_mteb_data,
-                        inputs=[task_sts_pl, lang_sts_pl, datasets_sts_pl],
+                        partial(get_mteb_data, tasks=["STS"], datasets=TASK_LIST_STS_PL),
                         outputs=data_sts_pl,
-                    )                    
+                    )
             with gr.TabItem("Other"):
                 with gr.Row():
                     gr.Markdown("""
@@ -1862,13 +1721,9 @@ with block:
                     )
                 with gr.Row():
                     data_run_sts_other = gr.Button("Refresh")
-                    task_sts_other = gr.Variable(value=["STS"])
-                    lang_sts_other = gr.Variable(value=[])
-                    datasets_sts_other = gr.Variable(value=TASK_LIST_STS_OTHER)
                     data_run_sts_other.click(
-                        get_mteb_data, 
-                        inputs=[task_sts_other, lang_sts_other, task_sts_other, datasets_sts_other],
-                        outputs=data_sts_other
+                        partial(get_mteb_data, tasks=["STS"], datasets=TASK_LIST_STS_OTHER),
+                        outputs=data_sts_other,
                     )
         with gr.TabItem("Summarization"):
             with gr.Row():
@@ -1886,10 +1741,8 @@ with block:
                 )
             with gr.Row():
                 data_run = gr.Button("Refresh")
-                task_summarization = gr.Variable(value=["Summarization"])
                 data_run.click(
-                    get_mteb_data,
-                    inputs=[task_summarization],
+                    partial(get_mteb_data, tasks=["Summarization"]),
                     outputs=data_summarization,
                 )
     gr.Markdown(r"""
@@ -1914,13 +1767,11 @@ with block:
     block.load(get_mteb_data, inputs=[task_bitext_mining], outputs=data_bitext_mining)
     """
 
-block.queue(concurrency_count=40, max_size=10)
+block.queue(max_size=10)
 block.launch()
 
 
 # Possible changes:
-# Could check if tasks are valid (Currently users could just invent new tasks - similar for languages)
-# Could make it load in the background without the Gradio logo closer to the Deep RL space
 # Could add graphs / other visual content
 # Could add verification marks
 
