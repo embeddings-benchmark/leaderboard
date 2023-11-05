@@ -1146,7 +1146,7 @@ with block:
             with gr.TabItem("English"):
                 with gr.Row():
                     gr.Markdown("""
-                    **Overall MTEB English leaderboard 🔮**
+                    ** Overall MTEB English leaderboard 🔮 **
                     
                     - **Metric:** Various, refer to task tabs
                     - **Languages:** English
@@ -1164,7 +1164,7 @@ with block:
             with gr.TabItem("Chinese"):
                 with gr.Row():
                     gr.Markdown("""
-                    **Overall MTEB Chinese leaderboard (C-MTEB) 🔮🇨🇳**
+                    ** Overall MTEB Chinese leaderboard (C-MTEB) 🔮🇨🇳 **
                     
                     - **Metric:** Various, refer to task tabs
                     - **Languages:** Chinese
