@@ -1203,7 +1203,7 @@ with block:
             with gr.TabItem("English-X"):
                 with gr.Row():
                         gr.Markdown("""
-                        **Bitext Mining English-X Leaderboard 🎌**
+                        **Bitext Mining English-X Leaderboard** 🎌
                         
                         - **Metric:** [F1](https://huggingface.co/spaces/evaluate-metric/f1)
                         - **Languages:** 117 (Pairs of: English & other language)
@@ -1223,7 +1223,7 @@ with block:
             with gr.TabItem("Danish"):
                 with gr.Row():
                         gr.Markdown("""
-                        **Bitext Mining Danish Leaderboard 🎌🇩🇰**
+                        **Bitext Mining Danish Leaderboard** 🎌🇩🇰
                         
                         - **Metric:** [F1](https://huggingface.co/spaces/evaluate-metric/f1)
                         - **Languages:** Danish & Bornholmsk (Danish Dialect)
@@ -1245,7 +1245,7 @@ with block:
             with gr.TabItem("English"):
                 with gr.Row():
                     gr.Markdown("""
-                    **Classification English Leaderboard ❤️**
+                    **Classification English Leaderboard** ❤️
                     
                     - **Metric:** [Accuracy](https://huggingface.co/spaces/evaluate-metric/accuracy)
                     - **Languages:** English
@@ -1265,7 +1265,7 @@ with block:
             with gr.TabItem("Chinese"):
                 with gr.Row():
                     gr.Markdown("""
-                    **Classification Chinese Leaderboard 🧡🇨🇳**
+                    **Classification Chinese Leaderboard** 🧡🇨🇳
                     
                     - **Metric:** [Accuracy](https://huggingface.co/spaces/evaluate-metric/accuracy)
                     - **Languages:** Chinese
@@ -1286,7 +1286,7 @@ with block:
             with gr.TabItem("Danish"):
                 with gr.Row():
                     gr.Markdown("""
-                    **Classification Danish Leaderboard 🤍🇩🇰**
+                    **Classification Danish Leaderboard** 🤍🇩🇰
                     
                     - **Metric:** [Accuracy](https://huggingface.co/spaces/evaluate-metric/accuracy)
                     - **Languages:** Danish
@@ -1307,7 +1307,7 @@ with block:
             with gr.TabItem("Norwegian"):
                 with gr.Row():
                     gr.Markdown("""
-                    **Classification Norwegian Leaderboard 💙🇳🇴**
+                    **Classification Norwegian Leaderboard** 💙🇳🇴
                     
                     - **Metric:** [Accuracy](https://huggingface.co/spaces/evaluate-metric/accuracy)
                     - **Languages:** Norwegian Bokmål
@@ -1328,7 +1328,7 @@ with block:
             with gr.TabItem("Polish"):
                 with gr.Row():
                     gr.Markdown("""
-                    **Classification Polish Leaderboard 🤍🇵🇱**
+                    **Classification Polish Leaderboard** 🤍🇵🇱
                     
                     - **Metric:** [Accuracy](https://huggingface.co/spaces/evaluate-metric/accuracy)
                     - **Languages:** Polish
@@ -1349,7 +1349,7 @@ with block:
             with gr.TabItem("Swedish"):
                 with gr.Row():
                     gr.Markdown("""
-                    **Classification Swedish Leaderboard 💛🇸🇪**
+                    **Classification Swedish Leaderboard** 💛🇸🇪
                     
                     - **Metric:** [Accuracy](https://huggingface.co/spaces/evaluate-metric/accuracy)
                     - **Languages:** Swedish
@@ -1370,7 +1370,7 @@ with block:
             with gr.TabItem("Other"):
                 with gr.Row():
                     gr.Markdown("""
-                    **Classification Other Languages Leaderboard 💜💚💙**
+                    **Classification Other Languages Leaderboard** 💜💚💙
                     
                     - **Metric:** [Accuracy](https://huggingface.co/spaces/evaluate-metric/accuracy)
                     - **Languages:** 47 (Only languages not included in the other tabs)
@@ -1391,7 +1391,7 @@ with block:
             with gr.TabItem("English"):
                 with gr.Row():
                     gr.Markdown("""
-                    **Clustering Leaderboard ✨**
+                    **Clustering Leaderboard** ✨
                     
                     - **Metric:** Validity Measure (v_measure)
                     - **Languages:** English
@@ -1411,7 +1411,7 @@ with block:
             with gr.TabItem("Chinese"):
                 with gr.Row():
                     gr.Markdown("""
-                    **Clustering Chinese Leaderboard ✨🇨🇳**
+                    **Clustering Chinese Leaderboard** ✨🇨🇳
                     
                     - **Metric:** Validity Measure (v_measure)
                     - **Languages:** Chinese
@@ -1432,7 +1432,7 @@ with block:
             with gr.TabItem("German"):
                 with gr.Row():
                     gr.Markdown("""
-                    **Clustering German Leaderboard ✨🇩🇪**
+                    **Clustering German Leaderboard** ✨🇩🇪
                     
                     - **Metric:** Validity Measure (v_measure)
                     - **Languages:** German
@@ -1453,7 +1453,7 @@ with block:
             with gr.TabItem("Polish"):
                 with gr.Row():
                     gr.Markdown("""
-                    **Clustering Polish Leaderboard ✨🇵🇱**
+                    **Clustering Polish Leaderboard** ✨🇵🇱
                     
                     - **Metric:** Validity Measure (v_measure)
                     - **Languages:** Polish
@@ -1475,7 +1475,7 @@ with block:
             with gr.TabItem("English"):
                 with gr.Row():
                     gr.Markdown("""
-                    **Pair Classification English Leaderboard 🎭**
+                    **Pair Classification English Leaderboard** 🎭
                     
                     - **Metric:** Average Precision based on Cosine Similarities (cos_sim_ap)
                     - **Languages:** English
@@ -1495,7 +1495,7 @@ with block:
             with gr.TabItem("Chinese"):
                 with gr.Row():
                     gr.Markdown("""
-                    **Pair Classification Chinese Leaderboard 🎭🇨🇳**
+                    **Pair Classification Chinese Leaderboard** 🎭🇨🇳
                     
                     - **Metric:** Average Precision based on Cosine Similarities (cos_sim_ap)
                     - **Languages:** Chinese
@@ -1516,7 +1516,7 @@ with block:
             with gr.TabItem("Polish"):
                 with gr.Row():
                     gr.Markdown("""
-                    **Pair Classification Polish Leaderboard 🎭🇵🇱**
+                    **Pair Classification Polish Leaderboard** 🎭🇵🇱
                     
                     - **Metric:** Average Precision based on Cosine Similarities (cos_sim_ap)
                     - **Languages:** Polish
@@ -1538,7 +1538,7 @@ with block:
             with gr.TabItem("English"):
                 with gr.Row():
                     gr.Markdown("""
-                    **Reranking English Leaderboard 🥈**
+                    **Reranking English Leaderboard** 🥈
                     
                     - **Metric:** Mean Average Precision (MAP)
                     - **Languages:** English
@@ -1558,7 +1558,7 @@ with block:
             with gr.TabItem("Chinese"):
                 with gr.Row():
                     gr.Markdown("""
-                    **Reranking Chinese Leaderboard 🥈🇨🇳**
+                    **Reranking Chinese Leaderboard** 🥈🇨🇳
                     
                     - **Metric:** Mean Average Precision (MAP)
                     - **Languages:** Chinese
@@ -1580,7 +1580,7 @@ with block:
             with gr.TabItem("English"):
                 with gr.Row():
                     gr.Markdown("""
-                    **Retrieval English Leaderboard 🔎**
+                    **Retrieval English Leaderboard** 🔎
                     
                     - **Metric:** Normalized Discounted Cumulative Gain @ k (ndcg_at_10)
                     - **Languages:** English
@@ -1601,7 +1601,7 @@ with block:
             with gr.TabItem("Chinese"):
                 with gr.Row():
                     gr.Markdown("""
-                    **Retrieval Chinese Leaderboard 🔎🇨🇳**
+                    **Retrieval Chinese Leaderboard** 🔎🇨🇳
                     
                     - **Metric:** Normalized Discounted Cumulative Gain @ k (ndcg_at_10)
                     - **Languages:** Chinese
@@ -1623,7 +1623,7 @@ with block:
             with gr.TabItem("Polish"):
                 with gr.Row():
                     gr.Markdown("""
-                    **Retrieval Polish Leaderboard 🔎🇵🇱**
+                    **Retrieval Polish Leaderboard** 🔎🇵🇱
                     
                     - **Metric:** Normalized Discounted Cumulative Gain @ k (ndcg_at_10)
                     - **Languages:** Polish
@@ -1646,7 +1646,7 @@ with block:
             with gr.TabItem("English"):
                 with gr.Row():
                     gr.Markdown("""
-                    **STS English Leaderboard 🤖**
+                    **STS English Leaderboard** 🤖
                     
                     - **Metric:** Spearman correlation based on cosine similarity
                     - **Languages:** English
@@ -1666,7 +1666,7 @@ with block:
             with gr.TabItem("Chinese"):
                 with gr.Row():
                     gr.Markdown("""
-                    **STS Chinese Leaderboard 🤖🇨🇳**
+                    **STS Chinese Leaderboard** 🤖🇨🇳
                     
                     - **Metric:** Spearman correlation based on cosine similarity
                     - **Languages:** Chinese
@@ -1687,7 +1687,7 @@ with block:
             with gr.TabItem("Polish"):
                 with gr.Row():
                     gr.Markdown("""
-                    **STS Polish Leaderboard 🤖🇵🇱**
+                    **STS Polish Leaderboard** 🤖🇵🇱
                     
                     - **Metric:** Spearman correlation based on cosine similarity
                     - **Languages:** Polish
@@ -1708,7 +1708,7 @@ with block:
             with gr.TabItem("Other"):
                 with gr.Row():
                     gr.Markdown("""
-                    **STS Other Leaderboard 👽**
+                    **STS Other Leaderboard** 👽
                     
                     - **Metric:** Spearman correlation based on cosine similarity
                     - **Languages:** Arabic, Chinese, Dutch, English, French, German, Italian, Korean, Polish, Russian, Spanish (Only language combos not included in the other tabs)
@@ -1728,7 +1728,7 @@ with block:
         with gr.TabItem("Summarization"):
             with gr.Row():
                 gr.Markdown("""
-                **Summarization Leaderboard 📜**
+                **Summarization Leaderboard** 📜
                 
                 - **Metric:** Spearman correlation based on cosine similarity
                 - **Languages:** English
