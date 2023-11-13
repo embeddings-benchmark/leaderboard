@@ -345,6 +345,7 @@ EXTERNAL_MODELS = [
     "titan-embed-text-v1",
     "unsup-simcse-bert-base-uncased",
     "use-cmlm-multilingual",
+    "voyage-lite-01-instruct",    
     "xlm-roberta-base",
     "xlm-roberta-large",  
 ]
@@ -423,6 +424,7 @@ EXTERNAL_MODEL_TO_LINK = {
     "titan-embed-text-v1": "https://docs.aws.amazon.com/bedrock/latest/userguide/embeddings.html",
     "unsup-simcse-bert-base-uncased": "https://huggingface.co/princeton-nlp/unsup-simcse-bert-base-uncased",
     "use-cmlm-multilingual": "https://huggingface.co/sentence-transformers/use-cmlm-multilingual",
+    "voyage-lite-01-instruct": "https://docs.voyageai.com/embeddings/",
     "xlm-roberta-base": "https://huggingface.co/xlm-roberta-base",
     "xlm-roberta-large": "https://huggingface.co/xlm-roberta-large",
 }
@@ -499,7 +501,8 @@ EXTERNAL_MODEL_TO_DIM = {
     "text-search-davinci-001": 12288,
     "titan-embed-text-v1": 1536,
     "unsup-simcse-bert-base-uncased": 768,
-    "use-cmlm-multilingual": 768, 
+    "use-cmlm-multilingual": 768,
+    "voyage-lite-01-instruct": 1024,
     "xlm-roberta-base":  768,
     "xlm-roberta-large":  1024,
 }
@@ -577,6 +580,7 @@ EXTERNAL_MODEL_TO_SEQLEN = {
     "titan-embed-text-v1": 8000,
     "use-cmlm-multilingual": 512,
     "unsup-simcse-bert-base-uncased": 512,
+    "voyage-lite-01-instruct": 4096,
     "xlm-roberta-base": 514,
     "xlm-roberta-large": 514,
 }
