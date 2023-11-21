@@ -736,6 +736,9 @@ MODELS_TO_SKIP = {
     "Intel/bge-small-en-v1.5-sst2",
     "Intel/bge-small-en-v1.5-sst2-int8-dynamic",
     "Intel/bge-small-en-v1.5-sst2-int8-static",
+    "binqiangliu/EmbeddingModlebgelargeENv1.5",
+    "DecisionOptimizationSystem/DeepFeatEmbeddingLargeContext",
+    "woody72/multilingual-e5-base",
 }
 
 EXTERNAL_MODEL_RESULTS = {model: {k: {v: []} for k, v in TASK_TO_METRIC.items()} for model in EXTERNAL_MODELS}
