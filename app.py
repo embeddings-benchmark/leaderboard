@@ -728,6 +728,7 @@ MODELS_TO_SKIP = {
     "morgendigital/multilingual-e5-large-quantized",
     "jncraton/gte-tiny-ct2-int8",
     "Research2NLP/electrical_stella",
+    "Intel/bge-base-en-v1.5-sts-int8-static",
 }
 
 EXTERNAL_MODEL_RESULTS = {model: {k: {v: []} for k, v in TASK_TO_METRIC.items()} for model in EXTERNAL_MODELS}
