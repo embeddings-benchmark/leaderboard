@@ -739,6 +739,9 @@ MODELS_TO_SKIP = {
     "binqiangliu/EmbeddingModlebgelargeENv1.5",
     "DecisionOptimizationSystem/DeepFeatEmbeddingLargeContext",
     "woody72/multilingual-e5-base",
+    "Severian/embed",
+    "Frazic/udever-bloom-3b-sentence",
+    "jamesgpt1/zzz",
 }
 
 EXTERNAL_MODEL_RESULTS = {model: {k: {v: []} for k, v in TASK_TO_METRIC.items()} for model in EXTERNAL_MODELS}
