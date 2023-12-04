@@ -820,6 +820,10 @@ def get_dim_seq_size(model):
         size = json.load(open(index_path))
         if ("metadata" in size) and ("total_size" in size["metadata"]):
             size = round(size["metadata"]["total_size"] / 1e9, 2)
+    elif "model.safetensors" in filenames:
+        url = hf_hub_url(model.modelId, filename="model.safetensors")
+        meta = get_hf_file_metadata(url)
+        size = round(meta.size / 1e9, 2)
     return dim, seq, size
 
 def make_datasets_clickable(df):
