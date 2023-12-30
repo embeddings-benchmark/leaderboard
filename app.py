@@ -746,6 +746,9 @@ MODELS_TO_SKIP = {
     "Severian/embed",
     "Frazic/udever-bloom-3b-sentence",
     "jamesgpt1/zzz",
+    "karrar-alwaili/UAE-Large-V1",
+    "odunola/UAE-Large-VI",
+    "retrainai/instructor-xl",
 }
 
 EXTERNAL_MODEL_RESULTS = {model: {k: {v: []} for k, v in TASK_TO_METRIC.items()} for model in EXTERNAL_MODELS}
