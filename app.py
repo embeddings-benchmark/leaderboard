@@ -882,6 +882,8 @@ def get_mteb_data(tasks=["Clustering"], langs=[], datasets=[], fillna=True, add_
         print("MODEL", model)
         readme_path = hf_hub_download(model.modelId, filename="README.md")
         meta = metadata_load(readme_path)
+        if "model-index" not in meta:
+            continue
         # meta['model-index'][0]["results"] is list of elements like:
         # {
         #    "task": {"type": "Classification"},
