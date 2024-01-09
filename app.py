@@ -749,6 +749,8 @@ MODELS_TO_SKIP = {
     "karrar-alwaili/UAE-Large-V1",
     "odunola/UAE-Large-VI",
     "retrainai/instructor-xl",
+    "weakit-v/bge-base-en-v1.5-onnx",
+    "ieasybooks/multilingual-e5-large-onnx",
 }
 
 EXTERNAL_MODEL_RESULTS = {model: {k: {v: []} for k, v in TASK_TO_METRIC.items()} for model in EXTERNAL_MODELS}
