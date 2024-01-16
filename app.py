@@ -751,6 +751,7 @@ MODELS_TO_SKIP = {
     "retrainai/instructor-xl",
     "weakit-v/bge-base-en-v1.5-onnx",
     "ieasybooks/multilingual-e5-large-onnx",
+    "gizmo-ai/Cohere-embed-multilingual-v3.0",
 }
 
 EXTERNAL_MODEL_RESULTS = {model: {k: {v: []} for k, v in TASK_TO_METRIC.items()} for model in EXTERNAL_MODELS}
