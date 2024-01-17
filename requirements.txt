@@ -2,3 +2,4 @@ gradio
 datasets
 pandas
 huggingface_hub
+tqdm

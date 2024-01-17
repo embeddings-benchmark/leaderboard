@@ -6,6 +6,7 @@ import gradio as gr
 from huggingface_hub import get_hf_file_metadata, HfApi, hf_hub_download, hf_hub_url
 from huggingface_hub.repocard import metadata_load
 import pandas as pd
+from tqdm.autonotebook import tqdm
 
 TASKS = [
     "BitextMining",
@@ -786,7 +787,9 @@ def add_task(examples):
         examples["mteb_task"] = "Unknown"
     return examples
 
-for model in EXTERNAL_MODELS:
+pbar = tqdm(EXTERNAL_MODELS, desc="Fetching external model results")
+for model in pbar:
+    pbar.set_description(f"Fetching external model results for {model!r}")
     ds = load_dataset("mteb/results", model)
     # For local debugging:
     #, download_mode='force_redownload', verification_mode="no_checks")
@@ -834,6 +837,17 @@ def get_dim_seq_size(model):
         url = hf_hub_url(model.modelId, filename="model.safetensors")
         meta = get_hf_file_metadata(url)
         size = round(meta.size / 1e9, 2)
+    elif "model.safetensors.index.json" in filenames:
+        index_path = hf_hub_download(model.modelId, filename="model.safetensors.index.json")
+        """
+        {
+        "metadata": {
+            "total_size": 14483464192
+        },....
+        """
+        size = json.load(open(index_path))
+        if ("metadata" in size) and ("total_size" in size["metadata"]):
+            size = round(size["metadata"]["total_size"] / 1e9, 2)
     return dim, seq, size
 
 def make_datasets_clickable(df):
