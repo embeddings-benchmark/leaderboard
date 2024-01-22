@@ -754,6 +754,14 @@ MODELS_TO_SKIP = {
     "ieasybooks/multilingual-e5-large-onnx",
     "gizmo-ai/Cohere-embed-multilingual-v3.0",
     "jingyeom/korean_embedding_model",
+    "barisaydin/text2vec-base-multilingual",
+    "mlx-community/multilingual-e5-large-mlx",
+    "mlx-community/multilingual-e5-base-mlx",
+    "mlx-community/multilingual-e5-small-mlx",
+    "maiyad/multilingual-e5-small",
+    "khoa-klaytn/bge-base-en-v1.5-angle",
+    "khoa-klaytn/bge-small-en-v1.5-angle",
+    "mixamrepijey/instructor-small",
 }
 
 EXTERNAL_MODEL_RESULTS = {model: {k: {v: []} for k, v in TASK_TO_METRIC.items()} for model in EXTERNAL_MODELS}
