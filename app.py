@@ -347,7 +347,8 @@ EXTERNAL_MODELS = [
     "titan-embed-text-v1",
     "unsup-simcse-bert-base-uncased",
     "use-cmlm-multilingual",
-    "voyage-lite-01-instruct",    
+    "voyage-lite-01-instruct",
+    "voyage-lite-02-instruct",    
     "xlm-roberta-base",
     "xlm-roberta-large",  
 ]
@@ -428,6 +429,7 @@ EXTERNAL_MODEL_TO_LINK = {
     "unsup-simcse-bert-base-uncased": "https://huggingface.co/princeton-nlp/unsup-simcse-bert-base-uncased",
     "use-cmlm-multilingual": "https://huggingface.co/sentence-transformers/use-cmlm-multilingual",
     "voyage-lite-01-instruct": "https://docs.voyageai.com/embeddings/",
+    "voyage-lite-02-instruct": "https://docs.voyageai.com/embeddings/",
     "xlm-roberta-base": "https://huggingface.co/xlm-roberta-base",
     "xlm-roberta-large": "https://huggingface.co/xlm-roberta-large",
 }
@@ -507,6 +509,7 @@ EXTERNAL_MODEL_TO_DIM = {
     "unsup-simcse-bert-base-uncased": 768,
     "use-cmlm-multilingual": 768,
     "voyage-lite-01-instruct": 1024,
+    "voyage-lite-02-instruct": 1024,
     "xlm-roberta-base":  768,
     "xlm-roberta-large":  1024,
 }
@@ -586,6 +589,7 @@ EXTERNAL_MODEL_TO_SEQLEN = {
     "use-cmlm-multilingual": 512,
     "unsup-simcse-bert-base-uncased": 512,
     "voyage-lite-01-instruct": 4096,
+    "voyage-lite-02-instruct": 4096,
     "xlm-roberta-base": 514,
     "xlm-roberta-large": 514,
 }
