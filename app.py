@@ -588,8 +588,8 @@ EXTERNAL_MODEL_TO_SEQLEN = {
     "titan-embed-text-v1": 8000,
     "use-cmlm-multilingual": 512,
     "unsup-simcse-bert-base-uncased": 512,
-    "voyage-lite-01-instruct": 4096,
-    "voyage-lite-02-instruct": 4096,
+    "voyage-lite-01-instruct": 4000,
+    "voyage-lite-02-instruct": 4000,
     "xlm-roberta-base": 514,
     "xlm-roberta-large": 514,
 }
