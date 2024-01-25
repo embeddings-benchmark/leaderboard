@@ -766,6 +766,8 @@ MODELS_TO_SKIP = {
     "khoa-klaytn/bge-base-en-v1.5-angle",
     "khoa-klaytn/bge-small-en-v1.5-angle",
     "mixamrepijey/instructor-small",
+    "Salesforce/SFR-Embedding-Mistral",
+    "mixamrepijey/instructor-models",
 }
 
 EXTERNAL_MODEL_RESULTS = {model: {k: {v: []} for k, v in TASK_TO_METRIC.items()} for model in EXTERNAL_MODELS}
@@ -803,7 +805,7 @@ def add_task(examples):
 pbar = tqdm(EXTERNAL_MODELS, desc="Fetching external model results")
 for model in pbar:
     pbar.set_description(f"Fetching external model results for {model!r}")
-    ds = load_dataset("mteb/results", model)
+    ds = load_dataset("mteb/results", model, trust_remote_code=True)
     # For local debugging:
     #, download_mode='force_redownload', verification_mode="no_checks")
     ds = ds.map(add_lang)
