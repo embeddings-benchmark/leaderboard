@@ -334,6 +334,8 @@ EXTERNAL_MODELS = [
     "st-polish-paraphrase-from-mpnet",    
     "text2vec-base-chinese",
     "text2vec-large-chinese",
+    "text-embedding-3-small",
+    "text-embedding-3-large",
     "text-embedding-ada-002",
     "text-similarity-ada-001",
     "text-similarity-babbage-001",
@@ -414,17 +416,19 @@ EXTERNAL_MODEL_TO_LINK = {
     "st-polish-paraphrase-from-mpnet": "https://huggingface.co/sdadas/st-polish-paraphrase-from-mpnet",
     "text2vec-base-chinese": "https://huggingface.co/shibing624/text2vec-base-chinese",
     "text2vec-large-chinese": "https://huggingface.co/GanymedeNil/text2vec-large-chinese",
-    "text-embedding-ada-002": "https://beta.openai.com/docs/guides/embeddings/types-of-embedding-models",
-    "text-similarity-ada-001": "https://beta.openai.com/docs/guides/embeddings/types-of-embedding-models",
-    "text-similarity-babbage-001": "https://beta.openai.com/docs/guides/embeddings/types-of-embedding-models",
-    "text-similarity-curie-001": "https://beta.openai.com/docs/guides/embeddings/types-of-embedding-models",        
-    "text-similarity-davinci-001": "https://beta.openai.com/docs/guides/embeddings/types-of-embedding-models",    
-    "text-search-ada-doc-001": "https://beta.openai.com/docs/guides/embeddings/types-of-embedding-models",
-    "text-search-ada-query-001": "https://beta.openai.com/docs/guides/embeddings/types-of-embedding-models",
-    "text-search-ada-001": "https://beta.openai.com/docs/guides/embeddings/types-of-embedding-models",
-    "text-search-curie-001": "https://beta.openai.com/docs/guides/embeddings/types-of-embedding-models",
-    "text-search-babbage-001": "https://beta.openai.com/docs/guides/embeddings/types-of-embedding-models",
-    "text-search-davinci-001": "https://beta.openai.com/docs/guides/embeddings/types-of-embedding-models",
+    "text-embedding-3-small": "https://openai.com/blog/new-embedding-models-and-api-updates",
+    "text-embedding-3-large": "https://openai.com/blog/new-embedding-models-and-api-updates",
+    "text-embedding-ada-002": "https://openai.com/blog/new-and-improved-embedding-model",
+    "text-similarity-ada-001": "https://openai.com/blog/introducing-text-and-code-embeddings",
+    "text-similarity-babbage-001": "https://openai.com/blog/introducing-text-and-code-embeddings",
+    "text-similarity-curie-001": "https://openai.com/blog/introducing-text-and-code-embeddings",        
+    "text-similarity-davinci-001": "https://openai.com/blog/introducing-text-and-code-embeddings",    
+    "text-search-ada-doc-001": "https://openai.com/blog/introducing-text-and-code-embeddings",
+    "text-search-ada-query-001": "https://openai.com/blog/introducing-text-and-code-embeddings",
+    "text-search-ada-001": "https://openai.com/blog/introducing-text-and-code-embeddings",
+    "text-search-curie-001": "https://openai.com/blog/introducing-text-and-code-embeddings",
+    "text-search-babbage-001": "https://openai.com/blog/introducing-text-and-code-embeddings",
+    "text-search-davinci-001": "https://openai.com/blog/introducing-text-and-code-embeddings",
     "titan-embed-text-v1": "https://docs.aws.amazon.com/bedrock/latest/userguide/embeddings.html",
     "unsup-simcse-bert-base-uncased": "https://huggingface.co/princeton-nlp/unsup-simcse-bert-base-uncased",
     "use-cmlm-multilingual": "https://huggingface.co/sentence-transformers/use-cmlm-multilingual",
@@ -494,6 +498,8 @@ EXTERNAL_MODEL_TO_DIM = {
     "st-polish-paraphrase-from-mpnet": 768,
     "text2vec-base-chinese": 768,
     "text2vec-large-chinese": 1024,
+    "text-embedding-3-large": 3072,
+    "text-embedding-3-small": 1536,    
     "text-embedding-ada-002": 1536,
     "text-similarity-ada-001": 1024,
     "text-similarity-babbage-001": 2048,    
@@ -574,6 +580,8 @@ EXTERNAL_MODEL_TO_SEQLEN = {
     "st-polish-paraphrase-from-mpnet": 514,
     "text2vec-base-chinese": 512,
     "text2vec-large-chinese": 512,
+    "text-embedding-3-large": 8191,
+    "text-embedding-3-small": 8191,
     "text-embedding-ada-002": 8191,
     "text-similarity-ada-001": 2046,
     "text-similarity-babbage-001": 2046,
@@ -943,7 +951,11 @@ def get_mteb_data(tasks=["Clustering"], langs=[], datasets=[], fillna=True, add_
         # Model & at least one result
         if len(out) > 1:
             if add_emb_dim:
-                out["Embedding Dimensions"], out["Sequence Length"], out["Model Size (GB)"] = get_dim_seq_size(model)
+                try:
+                    # Fails on gated repos, so we only include scores for them
+                    out["Embedding Dimensions"], out["Sequence Length"], out["Model Size (GB)"] = get_dim_seq_size(model)
+                except:
+                    pass
             df_list.append(out)
     df = pd.DataFrame(df_list)
     # If there are any models that are the same, merge them
