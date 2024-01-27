@@ -1206,7 +1206,24 @@ NUM_DATASETS = len(set(DATASETS))
 # NUM_LANGUAGES = len(set(LANGUAGES))
 NUM_MODELS = len(set(MODELS))
 
-block = gr.Blocks()
+# 1. Force headers to wrap
+# 2. Force model column (maximum) width
+# 3. Prevent model column from overflowing, scroll instead
+css = """
+table > thead {
+    white-space: normal
+}
+
+table {
+    --cell-width-1: 350px
+}
+
+table > tbody > tr > td:nth-child(2) > div {
+    overflow-x: scroll
+}
+"""
+
+block = gr.Blocks(css=css)
 with block:
     gr.Markdown(f"""
     Massive Text Embedding Benchmark (MTEB) Leaderboard. To submit, refer to the <a href="https://github.com/embeddings-benchmark/mteb#leaderboard" target="_blank" style="text-decoration: underline">MTEB GitHub repository</a> 🤗 Refer to the [MTEB paper](https://arxiv.org/abs/2210.07316) for details on metrics, tasks and models.
@@ -1231,7 +1248,6 @@ with block:
                         DATA_OVERALL,
                         datatype=["number", "markdown"] + ["number"] * len(DATA_OVERALL.columns),
                         type="pandas",
-                        wrap=True,
                     )
                 with gr.Row():
                     data_run_overall = gr.Button("Refresh")
@@ -1250,7 +1266,6 @@ with block:
                         DATA_OVERALL_ZH,
                         datatype=["number", "markdown"] + ["number"] * len(DATA_OVERALL_ZH.columns),
                         type="pandas",
-                        wrap=True,
                     )
                 with gr.Row():
                     data_run_overall_zh = gr.Button("Refresh")
@@ -1269,7 +1284,6 @@ with block:
                         DATA_OVERALL_PL,
                         datatype=["number", "markdown"] + ["number"] * len(DATA_OVERALL_PL.columns),
                         type="pandas",
-                        wrap=True,
                     )
                 with gr.Row():
                     data_run_overall_pl = gr.Button("Refresh")
