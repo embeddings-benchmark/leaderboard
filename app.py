@@ -336,6 +336,7 @@ EXTERNAL_MODELS = [
     "text2vec-large-chinese",
     "text-embedding-3-small",
     "text-embedding-3-large",
+    "text-embedding-3-large-256",
     "text-embedding-ada-002",
     "text-similarity-ada-001",
     "text-similarity-babbage-001",
@@ -418,6 +419,7 @@ EXTERNAL_MODEL_TO_LINK = {
     "text2vec-large-chinese": "https://huggingface.co/GanymedeNil/text2vec-large-chinese",
     "text-embedding-3-small": "https://openai.com/blog/new-embedding-models-and-api-updates",
     "text-embedding-3-large": "https://openai.com/blog/new-embedding-models-and-api-updates",
+    "text-embedding-3-large-256": "https://openai.com/blog/new-embedding-models-and-api-updates",
     "text-embedding-ada-002": "https://openai.com/blog/new-and-improved-embedding-model",
     "text-similarity-ada-001": "https://openai.com/blog/introducing-text-and-code-embeddings",
     "text-similarity-babbage-001": "https://openai.com/blog/introducing-text-and-code-embeddings",
@@ -499,7 +501,8 @@ EXTERNAL_MODEL_TO_DIM = {
     "text2vec-base-chinese": 768,
     "text2vec-large-chinese": 1024,
     "text-embedding-3-large": 3072,
-    "text-embedding-3-small": 1536,    
+    "text-embedding-3-large-256": 256,
+    "text-embedding-3-small": 1536,
     "text-embedding-ada-002": 1536,
     "text-similarity-ada-001": 1024,
     "text-similarity-babbage-001": 2048,    
@@ -581,6 +584,7 @@ EXTERNAL_MODEL_TO_SEQLEN = {
     "text2vec-base-chinese": 512,
     "text2vec-large-chinese": 512,
     "text-embedding-3-large": 8191,
+    "text-embedding-3-large-256": 8191,
     "text-embedding-3-small": 8191,
     "text-embedding-ada-002": 8191,
     "text-similarity-ada-001": 2046,
@@ -882,7 +886,7 @@ def make_datasets_clickable(df):
     return df
 
 def add_rank(df):
-    cols_to_rank = [col for col in df.columns if col not in ["Model", "Model Size (GB)", "Embedding Dimensions", "Sequence Length"]]
+    cols_to_rank = [col for col in df.columns if col not in ["Model", "Model Size (GB)", "Embedding Dimensions", "Max Tokens"]]
     if len(cols_to_rank) == 1:
         df.sort_values(cols_to_rank[0], ascending=False, inplace=True)
     else:
@@ -914,7 +918,7 @@ def get_mteb_data(tasks=["Clustering"], langs=[], datasets=[], fillna=True, add_
             if add_emb_dim:
                 res["Model Size (GB)"] = EXTERNAL_MODEL_TO_SIZE.get(model, "")
                 res["Embedding Dimensions"] = EXTERNAL_MODEL_TO_DIM.get(model, "")
-                res["Sequence Length"] = EXTERNAL_MODEL_TO_SEQLEN.get(model, "")
+                res["Max Tokens"] = EXTERNAL_MODEL_TO_SEQLEN.get(model, "")
             df_list.append(res)
     
     for model in models:
@@ -953,7 +957,7 @@ def get_mteb_data(tasks=["Clustering"], langs=[], datasets=[], fillna=True, add_
             if add_emb_dim:
                 try:
                     # Fails on gated repos, so we only include scores for them
-                    out["Embedding Dimensions"], out["Sequence Length"], out["Model Size (GB)"] = get_dim_seq_size(model)
+                    out["Embedding Dimensions"], out["Max Tokens"], out["Model Size (GB)"] = get_dim_seq_size(model)
                 except:
                     pass
             df_list.append(out)
@@ -1030,7 +1034,7 @@ def get_mteb_average():
     # Fill NaN after averaging
     DATA_OVERALL.fillna("", inplace=True)
 
-    DATA_OVERALL = DATA_OVERALL[["Rank", "Model", "Model Size (GB)", "Embedding Dimensions", "Sequence Length", f"Average ({len(TASK_LIST_EN)} datasets)", f"Classification Average ({len(TASK_LIST_CLASSIFICATION)} datasets)", f"Clustering Average ({len(TASK_LIST_CLUSTERING)} datasets)", f"Pair Classification Average ({len(TASK_LIST_PAIR_CLASSIFICATION)} datasets)", f"Reranking Average ({len(TASK_LIST_RERANKING)} datasets)", f"Retrieval Average ({len(TASK_LIST_RETRIEVAL)} datasets)", f"STS Average ({len(TASK_LIST_STS)} datasets)", f"Summarization Average ({len(TASK_LIST_SUMMARIZATION)} dataset)"]]
+    DATA_OVERALL = DATA_OVERALL[["Rank", "Model", "Model Size (GB)", "Embedding Dimensions", "Max Tokens", f"Average ({len(TASK_LIST_EN)} datasets)", f"Classification Average ({len(TASK_LIST_CLASSIFICATION)} datasets)", f"Clustering Average ({len(TASK_LIST_CLUSTERING)} datasets)", f"Pair Classification Average ({len(TASK_LIST_PAIR_CLASSIFICATION)} datasets)", f"Reranking Average ({len(TASK_LIST_RERANKING)} datasets)", f"Retrieval Average ({len(TASK_LIST_RETRIEVAL)} datasets)", f"STS Average ({len(TASK_LIST_STS)} datasets)", f"Summarization Average ({len(TASK_LIST_SUMMARIZATION)} dataset)"]]
     DATA_OVERALL = DATA_OVERALL[DATA_OVERALL.iloc[:, 5:].ne("").any(axis=1)]
 
     return DATA_OVERALL
@@ -1089,7 +1093,7 @@ def get_mteb_average_zh():
     # Fill NaN after averaging
     DATA_OVERALL_ZH.fillna("", inplace=True)
 
-    DATA_OVERALL_ZH = DATA_OVERALL_ZH[["Rank", "Model", "Model Size (GB)", "Embedding Dimensions", "Sequence Length", f"Average ({len(TASK_LIST_ZH)} datasets)", f"Classification Average ({len(TASK_LIST_CLASSIFICATION_ZH)} datasets)", f"Clustering Average ({len(TASK_LIST_CLUSTERING_ZH)} datasets)", f"Pair Classification Average ({len(TASK_LIST_PAIR_CLASSIFICATION_ZH)} datasets)", f"Reranking Average ({len(TASK_LIST_RERANKING_ZH)} datasets)", f"Retrieval Average ({len(TASK_LIST_RETRIEVAL_ZH)} datasets)", f"STS Average ({len(TASK_LIST_STS_ZH)} datasets)"]]
+    DATA_OVERALL_ZH = DATA_OVERALL_ZH[["Rank", "Model", "Model Size (GB)", "Embedding Dimensions", "Max Tokens", f"Average ({len(TASK_LIST_ZH)} datasets)", f"Classification Average ({len(TASK_LIST_CLASSIFICATION_ZH)} datasets)", f"Clustering Average ({len(TASK_LIST_CLUSTERING_ZH)} datasets)", f"Pair Classification Average ({len(TASK_LIST_PAIR_CLASSIFICATION_ZH)} datasets)", f"Reranking Average ({len(TASK_LIST_RERANKING_ZH)} datasets)", f"Retrieval Average ({len(TASK_LIST_RETRIEVAL_ZH)} datasets)", f"STS Average ({len(TASK_LIST_STS_ZH)} datasets)"]]
     DATA_OVERALL_ZH = DATA_OVERALL_ZH[DATA_OVERALL_ZH.iloc[:, 5:].ne("").any(axis=1)]
 
     return DATA_OVERALL_ZH
@@ -1143,7 +1147,7 @@ def get_mteb_average_pl():
     # Fill NaN after averaging
     DATA_OVERALL_PL.fillna("", inplace=True)
 
-    DATA_OVERALL_PL = DATA_OVERALL_PL[["Rank", "Model", "Model Size (GB)", "Embedding Dimensions", "Sequence Length", f"Average ({len(TASK_LIST_PL)} datasets)", f"Classification Average ({len(TASK_LIST_CLASSIFICATION_PL)} datasets)", f"Clustering Average ({len(TASK_LIST_CLUSTERING_PL)} datasets)", f"Pair Classification Average ({len(TASK_LIST_PAIR_CLASSIFICATION_PL)} datasets)", f"Retrieval Average ({len(TASK_LIST_RETRIEVAL_PL)} datasets)", f"STS Average ({len(TASK_LIST_STS_PL)} datasets)"]]
+    DATA_OVERALL_PL = DATA_OVERALL_PL[["Rank", "Model", "Model Size (GB)", "Embedding Dimensions", "Max Tokens", f"Average ({len(TASK_LIST_PL)} datasets)", f"Classification Average ({len(TASK_LIST_CLASSIFICATION_PL)} datasets)", f"Clustering Average ({len(TASK_LIST_CLUSTERING_PL)} datasets)", f"Pair Classification Average ({len(TASK_LIST_PAIR_CLASSIFICATION_PL)} datasets)", f"Retrieval Average ({len(TASK_LIST_RETRIEVAL_PL)} datasets)", f"STS Average ({len(TASK_LIST_STS_PL)} datasets)"]]
     DATA_OVERALL_PL = DATA_OVERALL_PL[DATA_OVERALL_PL.iloc[:, 5:].ne("").any(axis=1)]
 
     return DATA_OVERALL_PL
@@ -1215,7 +1219,7 @@ table > thead {
 }
 
 table {
-    --cell-width-1: 350px
+    --cell-width-1: 210px
 }
 
 table > tbody > tr > td:nth-child(2) > div {
@@ -1227,11 +1231,6 @@ block = gr.Blocks(css=css)
 with block:
     gr.Markdown(f"""
     Massive Text Embedding Benchmark (MTEB) Leaderboard. To submit, refer to the <a href="https://github.com/embeddings-benchmark/mteb#leaderboard" target="_blank" style="text-decoration: underline">MTEB GitHub repository</a> 🤗 Refer to the [MTEB paper](https://arxiv.org/abs/2210.07316) for details on metrics, tasks and models.
-
-    - **Total Datasets**: {NUM_DATASETS}
-    - **Total Languages**: 113
-    - **Total Scores**: {NUM_SCORES}
-    - **Total Models**: {NUM_MODELS}
     """)
     with gr.Tabs():
         with gr.TabItem("Overall"):
@@ -1248,6 +1247,7 @@ with block:
                         DATA_OVERALL,
                         datatype=["number", "markdown"] + ["number"] * len(DATA_OVERALL.columns),
                         type="pandas",
+                        height=600,
                     )
                 with gr.Row():
                     data_run_overall = gr.Button("Refresh")
@@ -1266,10 +1266,11 @@ with block:
                         DATA_OVERALL_ZH,
                         datatype=["number", "markdown"] + ["number"] * len(DATA_OVERALL_ZH.columns),
                         type="pandas",
+                        height=600,
                     )
                 with gr.Row():
                     data_run_overall_zh = gr.Button("Refresh")
-                    data_run_overall_zh.click(get_mteb_average_zh, inputs=None, outputs=data_overall_zh)                    
+                    data_run_overall_zh.click(get_mteb_average_zh, inputs=None, outputs=data_overall_zh)
             with gr.TabItem("Polish"):
                 with gr.Row():
                     gr.Markdown("""
@@ -1284,6 +1285,7 @@ with block:
                         DATA_OVERALL_PL,
                         datatype=["number", "markdown"] + ["number"] * len(DATA_OVERALL_PL.columns),
                         type="pandas",
+                        height=600,                        
                     )
                 with gr.Row():
                     data_run_overall_pl = gr.Button("Refresh")
@@ -1834,8 +1836,12 @@ with block:
                     partial(get_mteb_data, tasks=["Summarization"]),
                     outputs=data_summarization,
                 )
-    gr.Markdown(r"""
-    
+    gr.Markdown(f"""
+    - **Total Datasets**: {NUM_DATASETS}
+    - **Total Languages**: 113
+    - **Total Scores**: {NUM_SCORES}
+    - **Total Models**: {NUM_MODELS}
+    """ + r"""
     Made with ❤️ for NLP. If this work is useful to you, please consider citing:
 
     ```bibtex
