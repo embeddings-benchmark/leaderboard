@@ -778,7 +778,6 @@ MODELS_TO_SKIP = {
     "khoa-klaytn/bge-base-en-v1.5-angle",
     "khoa-klaytn/bge-small-en-v1.5-angle",
     "mixamrepijey/instructor-small",
-    "Salesforce/SFR-Embedding-Mistral",
     "mixamrepijey/instructor-models",
 }
 
