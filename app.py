@@ -1223,7 +1223,7 @@ table {
 }
 
 table > tbody > tr > td:nth-child(2) > div {
-    overflow-x: scroll
+    overflow-x: auto
 }
 """
 
