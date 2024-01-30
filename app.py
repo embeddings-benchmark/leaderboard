@@ -765,6 +765,7 @@ MODELS_TO_SKIP = {
     "jamesgpt1/zzz",
     "karrar-alwaili/UAE-Large-V1",
     "odunola/UAE-Large-VI",
+    "shubham-bgi/UAE-Large",
     "retrainai/instructor-xl",
     "weakit-v/bge-base-en-v1.5-onnx",
     "ieasybooks/multilingual-e5-large-onnx",
