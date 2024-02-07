@@ -780,6 +780,7 @@ MODELS_TO_SKIP = {
     "khoa-klaytn/bge-small-en-v1.5-angle",
     "mixamrepijey/instructor-small",
     "mixamrepijey/instructor-models",
+    "lsf1000/bge-evaluation", # Empty
 }
 
 EXTERNAL_MODEL_RESULTS = {model: {k: {v: []} for k, v in TASK_TO_METRIC.items()} for model in EXTERNAL_MODELS}
