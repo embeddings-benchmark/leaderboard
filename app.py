@@ -1242,7 +1242,7 @@ table > thead {
 }
 
 table {
-    --cell-width-1: 210px
+    --cell-width-1: 250px
 }
 
 table > tbody > tr > td:nth-child(2) > div {
