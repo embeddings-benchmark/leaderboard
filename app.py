@@ -320,6 +320,10 @@ EXTERNAL_MODELS = [
     "multilingual-e5-small",
     "nb-bert-base",
     "nb-bert-large",
+    "nomic-embed-text-v1.5-64",
+    "nomic-embed-text-v1.5-128",
+    "nomic-embed-text-v1.5-256",
+    "nomic-embed-text-v1.5-512",
     "norbert3-base",
     "norbert3-large",
     "paraphrase-multilingual-MiniLM-L12-v2",
@@ -403,6 +407,10 @@ EXTERNAL_MODEL_TO_LINK = {
     "multilingual-e5-small": "https://huggingface.co/intfloat/multilingual-e5-small",
     "nb-bert-base": "https://huggingface.co/NbAiLab/nb-bert-base",
     "nb-bert-large": "https://huggingface.co/NbAiLab/nb-bert-large",
+    "nomic-embed-text-v1.5-64": "https://huggingface.co/nomic-ai/nomic-embed-text-v1.5",
+    "nomic-embed-text-v1.5-128": "https://huggingface.co/nomic-ai/nomic-embed-text-v1.5",
+    "nomic-embed-text-v1.5-256": "https://huggingface.co/nomic-ai/nomic-embed-text-v1.5",
+    "nomic-embed-text-v1.5-512": "https://huggingface.co/nomic-ai/nomic-embed-text-v1.5",
     "norbert3-base": "https://huggingface.co/ltg/norbert3-base",
     "norbert3-large": "https://huggingface.co/ltg/norbert3-large",
     "paraphrase-multilingual-mpnet-base-v2": "https://huggingface.co/sentence-transformers/paraphrase-multilingual-mpnet-base-v2",    
@@ -486,6 +494,10 @@ EXTERNAL_MODEL_TO_DIM = {
     "multilingual-e5-large": 1024,
     "nb-bert-base": 768,
     "nb-bert-large": 1024,
+    "nomic-embed-text-v1.5-64": 64,
+    "nomic-embed-text-v1.5-128": 128,
+    "nomic-embed-text-v1.5-256": 256,
+    "nomic-embed-text-v1.5-512": 512,
     "norbert3-base": 768,
     "norbert3-large": 1024,
     "paraphrase-multilingual-MiniLM-L12-v2": 384,
@@ -569,6 +581,10 @@ EXTERNAL_MODEL_TO_SEQLEN = {
     "multilingual-e5-small": 512,
     "nb-bert-base": 512,
     "nb-bert-large": 512,
+    "nomic-embed-text-v1.5-64": 8192,
+    "nomic-embed-text-v1.5-128": 8192,
+    "nomic-embed-text-v1.5-256": 8192,
+    "nomic-embed-text-v1.5-512": 8192,
     "norbert3-base": 512,
     "norbert3-large": 512,
     "paraphrase-multilingual-MiniLM-L12-v2": 512,
@@ -651,6 +667,10 @@ EXTERNAL_MODEL_TO_SIZE = {
     "multilingual-e5-large": 2.24,
     "nb-bert-base": 0.71,
     "nb-bert-large": 1.42,
+    "nomic-embed-text-v1.5-64": 0.55,
+    "nomic-embed-text-v1.5-128": 0.55,
+    "nomic-embed-text-v1.5-256": 0.55,
+    "nomic-embed-text-v1.5-512": 0.55,
     "norbert3-base": 0.52,
     "norbert3-large": 1.47,
     "paraphrase-multilingual-mpnet-base-v2": 1.11,
@@ -781,6 +801,8 @@ MODELS_TO_SKIP = {
     "mixamrepijey/instructor-small",
     "mixamrepijey/instructor-models",
     "lsf1000/bge-evaluation", # Empty
+    "giulio98/placeholder", # Empty
+    "Severian/nomic", # Copy
 }
 
 EXTERNAL_MODEL_RESULTS = {model: {k: {v: []} for k, v in TASK_TO_METRIC.items()} for model in EXTERNAL_MODELS}
