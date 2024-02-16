@@ -1,5 +1,6 @@
 from functools import partial
 import json
+import os
 
 from datasets import load_dataset
 import gradio as gr
@@ -805,7 +806,12 @@ MODELS_TO_SKIP = {
     "Severian/nomic", # Copy
 }
 
-EXTERNAL_MODEL_RESULTS = {model: {k: {v: []} for k, v in TASK_TO_METRIC.items()} for model in EXTERNAL_MODELS}
+
+if os.path.exists("EXTERNAL_MODEL_RESULTS.json"):
+    with open("EXTERNAL_MODEL_RESULTS.json") as f:
+        EXTERNAL_MODEL_RESULTS = json.load(f)
+else:
+    EXTERNAL_MODEL_RESULTS = {model: {k: {v: []} for k, v in TASK_TO_METRIC.items()} for model in EXTERNAL_MODELS}
 
 def add_lang(examples):
     if not(examples["eval_language"]):
@@ -837,20 +843,25 @@ def add_task(examples):
         examples["mteb_task"] = "Unknown"
     return examples
 
-pbar = tqdm(EXTERNAL_MODELS, desc="Fetching external model results")
-for model in pbar:
-    pbar.set_description(f"Fetching external model results for {model!r}")
-    ds = load_dataset("mteb/results", model, trust_remote_code=True)
-    # For local debugging:
-    #, download_mode='force_redownload', verification_mode="no_checks")
-    ds = ds.map(add_lang)
-    ds = ds.map(add_task)
-    base_dict = {"Model": make_clickable_model(model, link=EXTERNAL_MODEL_TO_LINK.get(model, "https://huggingface.co/spaces/mteb/leaderboard"))}
-    # For now only one metric per task - Could add more metrics lateron
-    for task, metric in TASK_TO_METRIC.items():
-        ds_dict = ds.filter(lambda x: (x["mteb_task"] == task) and (x["metric"] == metric))["test"].to_dict()
-        ds_dict = {k: round(v, 2) for k, v in zip(ds_dict["mteb_dataset_name_with_lang"], ds_dict["score"])}
-        EXTERNAL_MODEL_RESULTS[model][task][metric].append({**base_dict, **ds_dict})
+if not(os.path.exists("EXTERNAL_MODEL_RESULTS.json")):
+    pbar = tqdm(EXTERNAL_MODELS, desc="Fetching external model results")
+    for model in pbar:
+        pbar.set_description(f"Fetching external model results for {model!r}")
+        ds = load_dataset("mteb/results", model, trust_remote_code=True)
+        # For local debugging:
+        #, download_mode='force_redownload', verification_mode="no_checks")
+        ds = ds.map(add_lang)
+        ds = ds.map(add_task)
+        base_dict = {"Model": make_clickable_model(model, link=EXTERNAL_MODEL_TO_LINK.get(model, "https://huggingface.co/spaces/mteb/leaderboard"))}
+        # For now only one metric per task - Could add more metrics lateron
+        for task, metric in TASK_TO_METRIC.items():
+            ds_dict = ds.filter(lambda x: (x["mteb_task"] == task) and (x["metric"] == metric))["test"].to_dict()
+            ds_dict = {k: round(v, 2) for k, v in zip(ds_dict["mteb_dataset_name_with_lang"], ds_dict["score"])}
+            EXTERNAL_MODEL_RESULTS[model][task][metric].append({**base_dict, **ds_dict})
+
+    # Save & cache EXTERNAL_MODEL_RESULTS
+    with open("EXTERNAL_MODEL_RESULTS.json", "w") as f:
+        json.dump(EXTERNAL_MODEL_RESULTS, f)
 
 def get_dim_seq_size(model):
     filenames = [sib.rfilename for sib in model.siblings]
