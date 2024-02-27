@@ -804,6 +804,10 @@ MODELS_TO_SKIP = {
     "lsf1000/bge-evaluation", # Empty
     "giulio98/placeholder", # Empty
     "Severian/nomic", # Copy
+    "atian-chapters/Chapters-SFR-Embedding-Mistral", # Copy
+    "rlsChapters/Chapters-SFR-Embedding-Mistral", # Copy
+    "TitanML/jina-v2-base-en-embed", # Copy
+    "MaziyarPanahi/GritLM-8x7B-GGUF", # GGUF variant
 }
 
 
