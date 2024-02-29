@@ -2261,45 +2261,47 @@ with block:
                         outputs=data_sts_other,
                     )
         with gr.TabItem("Summarization"):
-            with gr.Row():
-                gr.Markdown("""
-                **Summarization Leaderboard** 📜
-                
-                - **Metric:** Spearman correlation based on cosine similarity
-                - **Languages:** English
-                """)
-            with gr.Row():
-                data_summarization = gr.components.Dataframe(
-                    DATA_SUMMARIZATION,
-                    datatype=["number", "markdown"] + ["number"] * 2,
-                    type="pandas",
-                )
-            with gr.Row():
-                data_run = gr.Button("Refresh")
-                data_run.click(
-                    partial(get_mteb_data, tasks=TASK_LIST_SUMMARIZATION),
-                    outputs=data_summarization,
-                )
-            with gr.Row():
-                gr.Markdown("""
-                **Summarization Leaderboard** 📜
-                
-                - **Metric:** Spearman correlation based on cosine similarity
-                - **Languages:** French
-                - **Credits:** [Lyon-NLP](https://github.com/Lyon-NLP): [Gabriel Sequeira](https://github.com/GabrielSequeira), [Imene Kerboua](https://github.com/imenelydiaker), [wissam-sib](https://github.com/wissam-sib), [Mathieu Ciancone](https://github.com/MathieuCiancone), [Marion Schaeffer](https://github.com/schmarion)                            
-                """)
-            with gr.Row():
-                data_summarization_fr = gr.components.Dataframe(
-                    DATA_SUMMARIZATION_FR,
-                    datatype=["number", "markdown"] + ["number"] * 2,
-                    type="pandas",
-                )
-            with gr.Row():
-                data_run_summarization_fr = gr.Button("Refresh")
-                data_run_summarization_fr.click(
-                    partial(get_mteb_data, tasks=TASK_LIST_SUMMARIZATION_FR),
-                    outputs=data_run_summarization_fr,
-                )                
+            with gr.TabItem("English"):
+                with gr.Row():
+                    gr.Markdown("""
+                    **Summarization Leaderboard** 📜
+                    
+                    - **Metric:** Spearman correlation based on cosine similarity
+                    - **Languages:** English
+                    """)
+                with gr.Row():
+                    data_summarization = gr.components.Dataframe(
+                        DATA_SUMMARIZATION,
+                        datatype=["number", "markdown"] + ["number"] * 2,
+                        type="pandas",
+                    )
+                with gr.Row():
+                    data_run = gr.Button("Refresh")
+                    data_run.click(
+                        partial(get_mteb_data, tasks=TASK_LIST_SUMMARIZATION),
+                        outputs=data_summarization,
+                    )
+            with gr.TabItem("French"):
+                with gr.Row():
+                    gr.Markdown("""
+                    **Summarization Leaderboard** 📜
+                    
+                    - **Metric:** Spearman correlation based on cosine similarity
+                    - **Languages:** French
+                    - **Credits:** [Lyon-NLP](https://github.com/Lyon-NLP): [Gabriel Sequeira](https://github.com/GabrielSequeira), [Imene Kerboua](https://github.com/imenelydiaker), [wissam-sib](https://github.com/wissam-sib), [Mathieu Ciancone](https://github.com/MathieuCiancone), [Marion Schaeffer](https://github.com/schmarion)                            
+                    """)
+                with gr.Row():
+                    data_summarization_fr = gr.components.Dataframe(
+                        DATA_SUMMARIZATION_FR,
+                        datatype=["number", "markdown"] + ["number"] * 2,
+                        type="pandas",
+                    )
+                with gr.Row():
+                    data_run_summarization_fr = gr.Button("Refresh")
+                    data_run_summarization_fr.click(
+                        partial(get_mteb_data, tasks=TASK_LIST_SUMMARIZATION_FR),
+                        outputs=data_run_summarization_fr,
+                    )
     gr.Markdown(f"""
     - **Total Datasets**: {NUM_DATASETS}
     - **Total Languages**: 113
