@@ -2100,17 +2100,17 @@ with block:
                     - **Credits:** [FlagEmbedding](https://github.com/FlagOpen/FlagEmbedding)
                     """)
                 with gr.Row():
-                    data_retrieval_fr = gr.components.Dataframe(
-                        DATA_RETRIEVAL_FR,
+                    data_retrieval_zh = gr.components.Dataframe(
+                        DATA_RETRIEVAL_ZH,
                         # Add support for more columns than existing as a buffer for CQADupstack & other Retrieval tasks (e.g. MSMARCOv2)
-                        datatype=["number", "markdown"] + ["number"] * len(DATA_RETRIEVAL_FR.columns) * 2,
+                        datatype=["number", "markdown"] + ["number"] * len(DATA_RETRIEVAL_ZH.columns) * 2,
                         type="pandas",
                     )
                 with gr.Row():
-                    data_run_retrieval_fr = gr.Button("Refresh")
-                    data_run_retrieval_fr.click(
-                        partial(get_mteb_data, tasks=["Retrieval"], datasets=TASK_LIST_RETRIEVAL_FR),
-                        outputs=data_retrieval_fr,
+                    data_run_retrieval_zh = gr.Button("Refresh")
+                    data_run_retrieval_zh.click(
+                        partial(get_mteb_data, tasks=["Retrieval"], datasets=TASK_LIST_RETRIEVAL_ZH),
+                        outputs=data_retrieval_zh,
                     )
             with gr.TabItem("French"):
                 with gr.Row():
