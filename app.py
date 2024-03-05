@@ -1576,7 +1576,7 @@ with block:
                     
                     - **Metric:** Various, refer to task tabs
                     - **Languages:** French
-                    - **Credits:** [Lyon-NLP](https://github.com/Lyon-NLP): [Gabriel Sequeira](https://github.com/GabrielSequeira), [Imene Kerboua](https://github.com/imenelydiaker), [wissam-sib](https://github.com/wissam-sib), [Mathieu Ciancone](https://github.com/MathieuCiancone), [Marion Schaeffer](https://github.com/schmarion)
+                    - **Credits:** [Lyon-NLP](https://github.com/Lyon-NLP): [Gabriel Sequeira](https://github.com/GabrielSequeira), [Imene Kerboua](https://github.com/imenelydiaker), [Wissam Siblini](https://github.com/wissam-sib), [Mathieu Ciancone](https://github.com/MathieuCiancone), [Marion Schaeffer](https://github.com/schmarion)
                     """)
                 with gr.Row():
                     data_overall_fr = gr.components.Dataframe(
