@@ -990,7 +990,8 @@ MODELS_TO_SKIP = {
     "atian-chapters/Chapters-SFR-Embedding-Mistral", # Copy
     "rlsChapters/Chapters-SFR-Embedding-Mistral", # Copy
     "TitanML/jina-v2-base-en-embed", # Copy
-    "MaziyarPanahi/GritLM-8x7B-GGUF", # GGUF variant    
+    "MaziyarPanahi/GritLM-8x7B-GGUF", # GGUF variant
+    "Geolumina/instructor-xl", # Duplicate
 }
 
 def add_lang(examples):
