@@ -868,9 +868,10 @@ EXTERNAL_MODEL_TO_SIZE = {
     "st-polish-paraphrase-from-distilroberta": 0.50,
     "st-polish-paraphrase-from-mpnet": 0.50,    
     "text2vec-base-chinese": 0.41,
-    "text2vec-large-chinese": 1.30,    
+    "text2vec-large-chinese": 1.30,
     "unsup-simcse-bert-base-uncased": 0.44,
     "use-cmlm-multilingual": 1.89,
+    "voyage-lite-02-instruct": 2.45,
     "xlm-roberta-base": 1.12,
     "xlm-roberta-large": 2.24,
 }
