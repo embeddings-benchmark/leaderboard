@@ -993,6 +993,10 @@ MODELS_TO_SKIP = {
     "TitanML/jina-v2-base-en-embed", # Copy
     "MaziyarPanahi/GritLM-8x7B-GGUF", # GGUF variant
     "Geolumina/instructor-xl", # Duplicate
+    "krilecy/e5-mistral-7b-instruct",
+    "beademiguelperez/sentence-transformers-multilingual-e5-small",
+    "arcdev/SFR-Embedding-Mistral",
+    "arcdev/e5-mistral-7b-instruct",
 }
 
 def add_lang(examples):
