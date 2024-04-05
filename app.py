@@ -212,6 +212,17 @@ TASK_LIST_RETRIEVAL_FR = [
     "XPQARetrieval (fr)",
 ]
 
+TASK_LIST_RETRIEVAL_LAW = [
+    "AILACasedocs",
+    "AILAStatutes",
+    "GerDaLIRSmall",
+    "LeCaRDv2",
+    "LegalBenchConsumerContractsQA",
+    "LegalBenchCorporateLobbying",
+    "LegalQuAD",
+    "LegalSummarization",
+]
+
 TASK_LIST_RETRIEVAL_PL = [
     "ArguAna-PL",
     "DBPedia-PL",
@@ -321,6 +332,7 @@ def make_clickable_model(model_name, link=None):
 # Models without metadata, thus we cannot fetch their results naturally
 EXTERNAL_MODELS = [
     "Baichuan-text-embedding",
+    "Cohere-embed-english-v3.0",
     "Cohere-embed-multilingual-v3.0",
     "Cohere-embed-multilingual-light-v3.0",
     "DanskBERT",
@@ -339,6 +351,7 @@ EXTERNAL_MODELS = [
     "bert-base-swedish-cased",
     "bert-base-uncased",
     "bge-base-zh-v1.5",
+    "bge-large-en-v1.5",
     "bge-large-zh-v1.5",
     "bge-large-zh-noinstruct",
     "bge-small-zh-v1.5",
@@ -361,6 +374,8 @@ EXTERNAL_MODELS = [
     "gelectra-base",
     "gelectra-large",
     "glove.6B.300d",
+    "google-gecko.text-embedding-preview-0409",
+    "google-gecko-256.text-embedding-preview-0409",
     "gottbert-base",
     "gtr-t5-base",
     "gtr-t5-large",
@@ -431,6 +446,7 @@ EXTERNAL_MODELS = [
 ]
 
 EXTERNAL_MODEL_TO_LINK = {
+    "Cohere-embed-english-v3.0": "https://huggingface.co/Cohere/Cohere-embed-english-v3.0",
     "Cohere-embed-multilingual-v3.0": "https://huggingface.co/Cohere/Cohere-embed-multilingual-v3.0",
     "Cohere-embed-multilingual-light-v3.0": "https://huggingface.co/Cohere/Cohere-embed-multilingual-light-v3.0",
     "allenai-specter": "https://huggingface.co/sentence-transformers/allenai-specter",
@@ -447,6 +463,7 @@ EXTERNAL_MODEL_TO_LINK = {
     "bert-base-swedish-cased": "https://huggingface.co/KB/bert-base-swedish-cased",
     "bert-base-uncased": "https://huggingface.co/bert-base-uncased",
     "bge-base-zh-v1.5": "https://huggingface.co/BAAI/bge-base-zh-v1.5",
+    "bge-large-en-v1.5": "https://huggingface.co/BAAI/bge-large-en-v1.5",
     "bge-large-zh-v1.5": "https://huggingface.co/BAAI/bge-large-zh-v1.5",
     "bge-large-zh-noinstruct": "https://huggingface.co/BAAI/bge-large-zh-noinstruct",
     "bge-small-zh-v1.5": "https://huggingface.co/BAAI/bge-small-zh-v1.5",
@@ -477,6 +494,8 @@ EXTERNAL_MODEL_TO_LINK = {
     "gelectra-base": "https://huggingface.co/deepset/gelectra-base",
     "gelectra-large": "https://huggingface.co/deepset/gelectra-large",
     "glove.6B.300d": "https://huggingface.co/sentence-transformers/average_word_embeddings_glove.6B.300d",
+    "google-gecko.text-embedding-preview-0409": "https://cloud.google.com/vertex-ai/generative-ai/docs/embeddings/get-text-embeddings#latest_models",
+    "google-gecko-256.text-embedding-preview-0409": "https://cloud.google.com/vertex-ai/generative-ai/docs/embeddings/get-text-embeddings#latest_models",
     "gottbert-base": "https://huggingface.co/uklfr/gottbert-base",
     "gtr-t5-base": "https://huggingface.co/sentence-transformers/gtr-t5-base",
     "gtr-t5-large": "https://huggingface.co/sentence-transformers/gtr-t5-large",
@@ -550,6 +569,7 @@ EXTERNAL_MODEL_TO_LINK = {
 }
 
 EXTERNAL_MODEL_TO_DIM = {
+    "Cohere-embed-english-v3.0": 1024,
     "Cohere-embed-multilingual-v3.0": 1024,
     "Cohere-embed-multilingual-light-v3.0": 384,
     "all-MiniLM-L12-v2": 384,
@@ -565,6 +585,7 @@ EXTERNAL_MODEL_TO_DIM = {
     "bert-base-swedish-cased": 768,
     "bert-base-uncased": 768,
     "bge-base-zh-v1.5": 768,
+    "bge-large-en-v1.5": 1024,
     "bge-large-zh-v1.5": 1024,
     "bge-large-zh-noinstruct": 1024,
     "bge-small-zh-v1.5": 512,
@@ -598,6 +619,8 @@ EXTERNAL_MODEL_TO_DIM = {
     "gelectra-base": 768,
     "gelectra-large": 1024,
     "glove.6B.300d": 300,
+    "google-gecko.text-embedding-preview-0409": 768,
+    "google-gecko-256.text-embedding-preview-0409": 256,
     "gottbert-base": 768,    
     "gtr-t5-base": 768,
     "gtr-t5-large": 768,
@@ -668,6 +691,7 @@ EXTERNAL_MODEL_TO_DIM = {
 }
 
 EXTERNAL_MODEL_TO_SEQLEN = {
+    "Cohere-embed-english-v3.0": 512,
     "Cohere-embed-multilingual-v3.0": 512,
     "Cohere-embed-multilingual-light-v3.0": 512,    
     "all-MiniLM-L12-v2": 512,
@@ -683,6 +707,7 @@ EXTERNAL_MODEL_TO_SEQLEN = {
     "bert-base-swedish-cased": 512,
     "bert-base-uncased": 512,
     "bge-base-zh-v1.5": 512,
+    "bge-large-en-v1.5": 512,
     "bge-large-zh-v1.5": 512,
     "bge-large-zh-noinstruct": 512,
     "bge-small-zh-v1.5": 512,
@@ -712,6 +737,8 @@ EXTERNAL_MODEL_TO_SEQLEN = {
     "gbert-large": 512,
     "gelectra-base": 512,
     "gelectra-large": 512,
+    "google-gecko.text-embedding-preview-0409": 2048,
+    "google-gecko-256.text-embedding-preview-0409": 2048,
     "gottbert-base": 512,
     "glove.6B.300d": "N/A",
     "gtr-t5-base": 512,
@@ -798,6 +825,7 @@ EXTERNAL_MODEL_TO_SIZE = {
     "bert-base-uncased": 0.44,
     "bert-base-swedish-cased": 0.50,
     "bge-base-zh-v1.5": 0.41,
+    "bge-large-en-v1.5": 1.30,
     "bge-large-zh-v1.5": 1.30,
     "bge-large-zh-noinstruct": 1.30,
     "bge-small-zh-v1.5": 0.10,
@@ -828,6 +856,8 @@ EXTERNAL_MODEL_TO_SIZE = {
     "gelectra-base": 0.44,
     "gelectra-large": 1.34,
     "glove.6B.300d": 0.48,
+    "google-gecko.text-embedding-preview-0409": 2.29,
+    "google-gecko-256.text-embedding-preview-0409": 2.29,
     "gottbert-base": 0.51,
     "gtr-t5-base": 0.22,
     "gtr-t5-large": 0.67,
@@ -1018,7 +1048,7 @@ def add_task(examples):
         examples["mteb_task"] = "PairClassification"
     elif examples["mteb_dataset_name"] in norm(TASK_LIST_RERANKING + TASK_LIST_RERANKING_FR + TASK_LIST_RERANKING_ZH):
         examples["mteb_task"] = "Reranking"
-    elif examples["mteb_dataset_name"] in norm(TASK_LIST_RETRIEVAL_NORM + TASK_LIST_RETRIEVAL_FR + TASK_LIST_RETRIEVAL_PL + TASK_LIST_RETRIEVAL_ZH):
+    elif examples["mteb_dataset_name"] in norm(TASK_LIST_RETRIEVAL_NORM + TASK_LIST_RETRIEVAL_FR + TASK_LIST_RETRIEVAL_PL + TASK_LIST_RETRIEVAL_ZH + TASK_LIST_RETRIEVAL_LAW):
         examples["mteb_task"] = "Retrieval"
     elif examples["mteb_dataset_name"] in norm(TASK_LIST_STS + TASK_LIST_STS_FR + TASK_LIST_STS_PL + TASK_LIST_STS_ZH):
         examples["mteb_task"] = "STS"
@@ -1452,6 +1482,7 @@ get_mteb_average()
 get_mteb_average_fr()
 get_mteb_average_pl()
 get_mteb_average_zh()
+
 DATA_BITEXT_MINING = get_mteb_data(["BitextMining"], [], TASK_LIST_BITEXT_MINING)
 DATA_BITEXT_MINING_OTHER = get_mteb_data(["BitextMining"], [], TASK_LIST_BITEXT_MINING_OTHER)
 DATA_CLASSIFICATION_DA = get_mteb_data(["Classification"], [], TASK_LIST_CLASSIFICATION_DA)
@@ -1460,6 +1491,7 @@ DATA_CLASSIFICATION_SV = get_mteb_data(["Classification"], [], TASK_LIST_CLASSIF
 DATA_CLASSIFICATION_OTHER = get_mteb_data(["Classification"], [], TASK_LIST_CLASSIFICATION_OTHER)
 DATA_CLUSTERING_DE = get_mteb_data(["Clustering"], [], TASK_LIST_CLUSTERING_DE)
 DATA_STS_OTHER = get_mteb_data(["STS"], [], TASK_LIST_STS_OTHER)
+DATA_RETRIEVAL_LAW = get_mteb_data(["Retrieval"], [], TASK_LIST_RETRIEVAL_LAW)
 
 # Exact, add all non-nan integer values for every dataset
 NUM_SCORES = 0
@@ -1493,6 +1525,7 @@ for d in [
     DATA_RETRIEVAL_FR,
     DATA_RETRIEVAL_PL,
     DATA_RETRIEVAL_ZH,
+    DATA_RETRIEVAL_LAW,
     DATA_STS_EN,
     DATA_STS_FR,
     DATA_STS_PL,
@@ -1593,7 +1626,7 @@ with block:
                     )
                 with gr.Row():
                     data_overall_fr = gr.Button("Refresh")
-                    data_overall_fr.click(get_mteb_average_fr, inputs=None, outputs=data_overall_fr)                                  
+                    data_overall_fr.click(get_mteb_average_fr, inputs=None, outputs=data_overall_fr)
             with gr.TabItem("Polish"):
                 with gr.Row():
                     gr.Markdown("""
@@ -2139,7 +2172,29 @@ with block:
                     data_run_retrieval_fr.click(
                         partial(get_mteb_data, tasks=["Retrieval"], datasets=TASK_LIST_RETRIEVAL_FR),
                         outputs=data_retrieval_fr,
-                    )                    
+                    )    
+            with gr.TabItem("Law"):
+                with gr.Row():
+                    gr.Markdown("""
+                    **Retrieval Law Leaderboard** 🔎⚖️
+                    
+                    - **Metric:** Normalized Discounted Cumulative Gain @ k (ndcg_at_10)
+                    - **Languages:** English, German, Chinese
+                    - **Credits:** [Voyage AI](https://www.voyageai.com/)
+                    """)
+                with gr.Row():
+                    data_retrieval_law = gr.components.Dataframe(
+                        DATA_RETRIEVAL_LAW,
+                        # Add support for more columns than existing as a buffer for CQADupstack & other Retrieval tasks (e.g. MSMARCOv2)
+                        datatype=["number", "markdown"] + ["number"] * len(DATA_RETRIEVAL_LAW.columns) * 2,
+                        type="pandas",
+                    )
+                with gr.Row():
+                    data_run_retrieval_law = gr.Button("Refresh")
+                    data_run_retrieval_law.click(
+                        partial(get_mteb_data, tasks=["Retrieval"], datasets=TASK_LIST_RETRIEVAL_LAW),
+                        outputs=data_retrieval_law,
+                    )
             with gr.TabItem("Polish"):
                 with gr.Row():
                     gr.Markdown("""
