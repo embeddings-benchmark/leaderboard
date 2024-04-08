@@ -1168,6 +1168,7 @@ MODELS_TO_SKIP = {
     "arcdev/SFR-Embedding-Mistral",
     "arcdev/e5-mistral-7b-instruct",
     "Koat/gte-tiny",
+    "SmartComponents/bge-micro-v2",
 }
 
 
