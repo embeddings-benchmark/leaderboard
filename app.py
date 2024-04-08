@@ -1032,6 +1032,7 @@ MODELS_TO_SKIP = {
     "beademiguelperez/sentence-transformers-multilingual-e5-small",
     "arcdev/SFR-Embedding-Mistral",
     "arcdev/e5-mistral-7b-instruct",
+    "Koat/gte-tiny",
 }
 
 def add_lang(examples):
