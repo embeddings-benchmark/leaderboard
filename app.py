@@ -907,7 +907,7 @@ EXTERNAL_MODEL_TO_SIZE = {
     "text2vec-large-chinese": 326,
     "unsup-simcse-bert-base-uncased": 110,
     "use-cmlm-multilingual": 472,
-    "voyage-law-2": 1220,
+    #"voyage-law-2": 1220,
     "voyage-lite-02-instruct": 1220,
     "xlm-roberta-base": 279,
     "xlm-roberta-large": 560,
