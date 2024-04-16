@@ -2174,7 +2174,7 @@ with gr.Blocks(css=css) as block:
 
                             with gr.Row():
                                 refresh_button = gr.Button("Refresh")
-                                refresh_button.click(item["refresh"], inputs=None, outputs=dataframe)
+                                refresh_button.click(item["refresh"], inputs=None, outputs=dataframe, concurrency_limit=20)
 
     gr.Markdown(f"""
     - **Total Datasets**: {NUM_DATASETS}
