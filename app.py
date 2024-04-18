@@ -1202,6 +1202,12 @@ MODELS_TO_SKIP = {
     "SmartComponents/bge-micro-v2",
     "ildodeltaRule/multilingual-e5-large",
     "hsikchi/dump",
+    "McGill-NLP/LLM2Vec-Mistral-7B-Instruct-v2-mntp-supervised",
+    "McGill-NLP/LLM2Vec-Llama-2-7b-chat-hf-mntp-supervised",
+    "McGill-NLP/LLM2Vec-Sheared-LLaMA-mntp-supervised",
+    "McGill-NLP/LLM2Vec-Mistral-7B-Instruct-v2-mntp-unsup-simcse",
+    "McGill-NLP/LLM2Vec-Llama-2-7b-chat-hf-mntp-unsup-simcse",
+    "McGill-NLP/LLM2Vec-Sheared-LLaMA-mntp-unsup-simcse",
 }
 
 
