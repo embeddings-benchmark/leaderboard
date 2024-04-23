@@ -5,8 +5,9 @@ from huggingface_hub import hf_hub_download
 
 # Map model IDs to the number of bytes used for one parameter. So, 4 bytes for fp32, 2 bytes for fp16, etc.
 # By default, we assume that the model is stored in fp32.
-KNOWN_BYTES_PER_PARAM = {}
-
+KNOWN_BYTES_PER_PARAM = {
+    "dwzhu/e5-base-4k": 2,
+}
 
 def get_model_parameters_memory(model_info: ModelInfo):
     '''Get the size of the model in million of parameters.'''
@@ -22,7 +23,9 @@ def get_model_parameters_memory(model_info: ModelInfo):
         url = hf_hub_url(model_info.id, filename="pytorch_model.bin")
         meta = get_hf_file_metadata(url)
         bytes_per_param = KNOWN_BYTES_PER_PARAM.get(model_info.id, 4)
-        return round(meta.size / bytes_per_param / 1e6), round(meta.size / 1024**3, 2)
+        num_params = round(meta.size / bytes_per_param / 1e6)
+        size_gb = round(meta.size * (4 / bytes_per_param) / 1024**3, 2)
+        return num_params, size_gb
     
     if "pytorch_model.bin.index.json" in filenames:
         index_path = hf_hub_download(model_info.id, filename="pytorch_model.bin.index.json")
