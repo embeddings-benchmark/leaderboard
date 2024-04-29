@@ -448,6 +448,7 @@ EXTERNAL_MODELS = [
     "use-cmlm-multilingual",
     "voyage-2",
     "voyage-code-2",
+    "voyage-large-2-instruct",
     "voyage-law-2",
     "voyage-lite-01-instruct",
     "voyage-lite-02-instruct",
@@ -578,6 +579,7 @@ EXTERNAL_MODEL_TO_LINK = {
     "use-cmlm-multilingual": "https://huggingface.co/sentence-transformers/use-cmlm-multilingual",
     "voyage-2": "https://docs.voyageai.com/embeddings/",
     "voyage-code-2": "https://docs.voyageai.com/embeddings/",
+    "voyage-large-2-instruct": "https://docs.voyageai.com/embeddings/",
     "voyage-law-2": "https://docs.voyageai.com/embeddings/",
     "voyage-lite-01-instruct": "https://docs.voyageai.com/embeddings/",
     "voyage-lite-02-instruct": "https://docs.voyageai.com/embeddings/",
@@ -707,6 +709,7 @@ EXTERNAL_MODEL_TO_DIM = {
     "use-cmlm-multilingual": 768,
     "voyage-2": 1024,
     "voyage-code-2": 1536,
+    "voyage-large-2-instruct": 1536,
     "voyage-law-2": 1024,
     "voyage-lite-01-instruct": 1024,
     "voyage-lite-02-instruct": 1024,
@@ -836,6 +839,7 @@ EXTERNAL_MODEL_TO_SEQLEN = {
     "unsup-simcse-bert-base-uncased": 512,
     "voyage-2": 1024,
     "voyage-code-2": 16000,
+    "voyage-large-2-instruct": 16000,
     "voyage-law-2": 4000,
     "voyage-lite-01-instruct": 4000,
     "voyage-lite-02-instruct": 4000,
@@ -1208,6 +1212,11 @@ MODELS_TO_SKIP = {
     "McGill-NLP/LLM2Vec-Mistral-7B-Instruct-v2-mntp-unsup-simcse",
     "McGill-NLP/LLM2Vec-Llama-2-7b-chat-hf-mntp-unsup-simcse",
     "McGill-NLP/LLM2Vec-Sheared-LLaMA-mntp-unsup-simcse",
+    "jncraton/GIST-small-Embedding-v0-ct2-int8",
+    "jncraton/stella-base-en-v2-ct2-int8",
+    "lightbird-ai/nomic",
+    "jamesdborin/jina-v2-base-en-embed",
+    "iampanda/Test",
 }
 
 
