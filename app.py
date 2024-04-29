@@ -709,7 +709,7 @@ EXTERNAL_MODEL_TO_DIM = {
     "use-cmlm-multilingual": 768,
     "voyage-2": 1024,
     "voyage-code-2": 1536,
-    "voyage-large-2-instruct": 1536,
+    "voyage-large-2-instruct": 1024,
     "voyage-law-2": 1024,
     "voyage-lite-01-instruct": 1024,
     "voyage-lite-02-instruct": 1024,
