@@ -1,0 +1,364 @@
+config:
+  REPO_ID: "mteb/leaderboard"
+  RESULTS_REPO: mteb/results
+  LEADERBOARD_NAME: "MTEB Leaderboard"
+tasks:
+  BitextMining:
+    icon: "🎌"
+    metric: f1
+    metric_description: "[F1](https://huggingface.co/spaces/evaluate-metric/f1)"
+  Classification:
+    icon: "❤️"
+    metric: accuracy
+    metric_description: "[Accuracy](https://huggingface.co/spaces/evaluate-metric/accuracy)"
+  Clustering:
+    icon: "✨"
+    metric: v_measure
+    metric_description: "Validity Measure (v_measure)"
+  PairClassification:
+    icon: "🎭"
+    metric: cos_sim_ap
+    metric_description: "Average Precision based on Cosine Similarities (cos_sim_ap)"
+  Reranking: 
+    icon: "🥈"
+    metric: map
+    metric_description: "Mean Average Precision (MAP)"
+  Retrieval:
+    icon: "🔎"
+    metric: ndcg_at_10
+    metric_description: "Normalized Discounted Cumulative Gain @ k (ndcg_at_10)"
+  STS:
+    icon: "🤖"
+    metric: cos_sim_spearman
+    metric_description: "Spearman correlation based on cosine similarity"
+  Summarization:
+    icon: "📜"
+    metric: cos_sim_spearman
+    metric_description: "Spearman correlation	based on cosine similarity"
+boards:
+  en:
+    title: English
+    language_long: "English"
+    has_overall: true
+    acronym: null
+    icon: null
+    special_icons: null
+    credits: null
+    tasks:
+      Classification:
+        - AmazonCounterfactualClassification (en)
+        - AmazonPolarityClassification
+        - AmazonReviewsClassification (en)
+        - Banking77Classification
+        - EmotionClassification
+        - ImdbClassification
+        - MassiveIntentClassification (en)
+        - MassiveScenarioClassification (en)
+        - MTOPDomainClassification (en)
+        - MTOPIntentClassification (en)
+        - ToxicConversationsClassification
+        - TweetSentimentExtractionClassification
+      Clustering:
+        - ArxivClusteringP2P
+        - ArxivClusteringS2S
+        - BiorxivClusteringP2P
+        - BiorxivClusteringS2S
+        - MedrxivClusteringP2P
+        - MedrxivClusteringS2S
+        - RedditClustering
+        - RedditClusteringP2P
+        - StackExchangeClustering
+        - StackExchangeClusteringP2P
+        - TwentyNewsgroupsClustering
+      PairClassification:
+        - SprintDuplicateQuestions
+        - TwitterSemEval2015
+        - TwitterURLCorpus
+      Reranking:
+        - AskUbuntuDupQuestions
+        - MindSmallReranking
+        - SciDocsRR
+        - StackOverflowDupQuestions
+      Retrieval:
+        - ArguAna
+        - ClimateFEVER
+        - CQADupstackRetrieval
+        - DBPedia
+        - FEVER
+        - FiQA2018
+        - HotpotQA
+        - MSMARCO
+        - NFCorpus
+        - NQ
+        - QuoraRetrieval
+        - SCIDOCS
+        - SciFact
+        - Touche2020
+        - TRECCOVID
+      STS:
+        - BIOSSES
+        - SICK-R
+        - STS12
+        - STS13
+        - STS14
+        - STS15
+        - STS16
+        - STS17 (en-en)
+        - STS22 (en)
+        - STSBenchmark
+      Summarization:
+        - SummEval
+  en-x:
+    title: "English-X"
+    language_long: "117 (Pairs of: English & other language)"
+    has_overall: false
+    acronym: null
+    icon: null
+    special_icons: null
+    credits: null
+    tasks:
+      BitextMining: ['BUCC (de-en)', 'BUCC (fr-en)', 'BUCC (ru-en)', 'BUCC (zh-en)', 'Tatoeba (afr-eng)', 'Tatoeba (amh-eng)', 'Tatoeba (ang-eng)', 'Tatoeba (ara-eng)', 'Tatoeba (arq-eng)', 'Tatoeba (arz-eng)', 'Tatoeba (ast-eng)', 'Tatoeba (awa-eng)', 'Tatoeba (aze-eng)', 'Tatoeba (bel-eng)', 'Tatoeba (ben-eng)', 'Tatoeba (ber-eng)', 'Tatoeba (bos-eng)', 'Tatoeba (bre-eng)', 'Tatoeba (bul-eng)', 'Tatoeba (cat-eng)', 'Tatoeba (cbk-eng)', 'Tatoeba (ceb-eng)', 'Tatoeba (ces-eng)', 'Tatoeba (cha-eng)', 'Tatoeba (cmn-eng)', 'Tatoeba (cor-eng)', 'Tatoeba (csb-eng)', 'Tatoeba (cym-eng)', 'Tatoeba (dan-eng)', 'Tatoeba (deu-eng)', 'Tatoeba (dsb-eng)', 'Tatoeba (dtp-eng)', 'Tatoeba (ell-eng)', 'Tatoeba (epo-eng)', 'Tatoeba (est-eng)', 'Tatoeba (eus-eng)', 'Tatoeba (fao-eng)', 'Tatoeba (fin-eng)', 'Tatoeba (fra-eng)', 'Tatoeba (fry-eng)', 'Tatoeba (gla-eng)', 'Tatoeba (gle-eng)', 'Tatoeba (glg-eng)', 'Tatoeba (gsw-eng)', 'Tatoeba (heb-eng)', 'Tatoeba (hin-eng)', 'Tatoeba (hrv-eng)', 'Tatoeba (hsb-eng)', 'Tatoeba (hun-eng)', 'Tatoeba (hye-eng)', 'Tatoeba (ido-eng)', 'Tatoeba (ile-eng)', 'Tatoeba (ina-eng)', 'Tatoeba (ind-eng)', 'Tatoeba (isl-eng)', 'Tatoeba (ita-eng)', 'Tatoeba (jav-eng)', 'Tatoeba (jpn-eng)', 'Tatoeba (kab-eng)', 'Tatoeba (kat-eng)', 'Tatoeba (kaz-eng)', 'Tatoeba (khm-eng)', 'Tatoeba (kor-eng)', 'Tatoeba (kur-eng)', 'Tatoeba (kzj-eng)', 'Tatoeba (lat-eng)', 'Tatoeba (lfn-eng)', 'Tatoeba (lit-eng)', 'Tatoeba (lvs-eng)', 'Tatoeba (mal-eng)', 'Tatoeba (mar-eng)', 'Tatoeba (max-eng)', 'Tatoeba (mhr-eng)', 'Tatoeba (mkd-eng)', 'Tatoeba (mon-eng)', 'Tatoeba (nds-eng)', 'Tatoeba (nld-eng)', 'Tatoeba (nno-eng)', 'Tatoeba (nob-eng)', 'Tatoeba (nov-eng)', 'Tatoeba (oci-eng)', 'Tatoeba (orv-eng)', 'Tatoeba (pam-eng)', 'Tatoeba (pes-eng)', 'Tatoeba (pms-eng)', 'Tatoeba (pol-eng)', 'Tatoeba (por-eng)', 'Tatoeba (ron-eng)', 'Tatoeba (rus-eng)', 'Tatoeba (slk-eng)', 'Tatoeba (slv-eng)', 'Tatoeba (spa-eng)', 'Tatoeba (sqi-eng)', 'Tatoeba (srp-eng)', 'Tatoeba (swe-eng)', 'Tatoeba (swg-eng)', 'Tatoeba (swh-eng)', 'Tatoeba (tam-eng)', 'Tatoeba (tat-eng)', 'Tatoeba (tel-eng)', 'Tatoeba (tgl-eng)', 'Tatoeba (tha-eng)', 'Tatoeba (tuk-eng)', 'Tatoeba (tur-eng)', 'Tatoeba (tzl-eng)', 'Tatoeba (uig-eng)', 'Tatoeba (ukr-eng)', 'Tatoeba (urd-eng)', 'Tatoeba (uzb-eng)', 'Tatoeba (vie-eng)', 'Tatoeba (war-eng)', 'Tatoeba (wuu-eng)', 'Tatoeba (xho-eng)', 'Tatoeba (yid-eng)', 'Tatoeba (yue-eng)', 'Tatoeba (zsm-eng)']
+  zh:
+    title: Chinese
+    language_long: Chinese
+    has_overall: true
+    acronym: C-MTEB
+    icon: "🇨🇳"
+    special_icons:
+      Classification: "🧡"
+    credits: "[FlagEmbedding](https://github.com/FlagOpen/FlagEmbedding)"
+    tasks:
+      Classification:
+        - AmazonReviewsClassification (zh)
+        - IFlyTek
+        - JDReview
+        - MassiveIntentClassification (zh-CN)
+        - MassiveScenarioClassification (zh-CN)
+        - MultilingualSentiment
+        - OnlineShopping
+        - TNews
+        - Waimai
+      Clustering:
+        - CLSClusteringP2P
+        - CLSClusteringS2S
+        - ThuNewsClusteringP2P
+        - ThuNewsClusteringS2S
+      PairClassification:
+        - Cmnli
+        - Ocnli
+      Reranking:
+        - CMedQAv1
+        - CMedQAv2
+        - MMarcoReranking
+        - T2Reranking
+      Retrieval:
+        - CmedqaRetrieval
+        - CovidRetrieval
+        - DuRetrieval
+        - EcomRetrieval
+        - MedicalRetrieval
+        - MMarcoRetrieval
+        - T2Retrieval
+        - VideoRetrieval
+      STS:
+        - AFQMC
+        - ATEC
+        - BQ
+        - LCQMC
+        - PAWSX
+        - QBQTC
+        - STS22 (zh)
+        - STSB
+  da:
+    title: Danish
+    language_long: Danish
+    has_overall: false
+    acronym: null
+    icon: "🇩🇰"
+    special_icons:
+      Classification: "🤍"
+    credits: "[Kenneth Enevoldsen](https://github.com/KennethEnevoldsen), [scandinavian-embedding-benchmark](https://kennethenevoldsen.github.io/scandinavian-embedding-benchmark/)"
+    tasks:
+      BitextMining:
+        - BornholmBitextMining
+      Classification:
+        - AngryTweetsClassification
+        - DanishPoliticalCommentsClassification
+        - DKHateClassification
+        - LccSentimentClassification
+        - MassiveIntentClassification (da)
+        - MassiveScenarioClassification (da)
+        - NordicLangClassification
+        - ScalaDaClassification
+  fr:
+    title: French
+    language_long: "French"
+    has_overall: true
+    acronym: "F-MTEB"
+    icon: "🇫🇷"
+    special_icons:
+      Classification: "💙"
+    credits: "[Lyon-NLP](https://github.com/Lyon-NLP): [Gabriel Sequeira](https://github.com/GabrielSequeira), [Imene Kerboua](https://github.com/imenelydiaker), [Wissam Siblini](https://github.com/wissam-sib), [Mathieu Ciancone](https://github.com/MathieuCiancone), [Marion Schaeffer](https://github.com/schmarion)"
+    tasks:
+      Classification:
+        - AmazonReviewsClassification (fr)
+        - MasakhaNEWSClassification (fra)
+        - MassiveIntentClassification (fr)
+        - MassiveScenarioClassification (fr)
+        - MTOPDomainClassification (fr)
+        - MTOPIntentClassification (fr)
+      Clustering:
+        - AlloProfClusteringP2P
+        - AlloProfClusteringS2S
+        - HALClusteringS2S
+        - MLSUMClusteringP2P
+        - MLSUMClusteringS2S
+        - MasakhaNEWSClusteringP2P (fra)
+        - MasakhaNEWSClusteringS2S (fra)
+      PairClassification:
+        - OpusparcusPC (fr)
+        - PawsX (fr)
+      Reranking:
+        - AlloprofReranking
+        - SyntecReranking
+      Retrieval:
+        - AlloprofRetrieval
+        - BSARDRetrieval
+        - MintakaRetrieval (fr)
+        - SyntecRetrieval
+        - XPQARetrieval (fr)
+      STS:
+        - STS22 (fr)
+        - STSBenchmarkMultilingualSTS (fr)
+        - SICKFr
+      Summarization:
+        - SummEvalFr
+  'no':
+    title: Norwegian
+    language_long: "Norwegian Bokmål"
+    has_overall: false
+    acronym: null
+    icon: "🇳🇴"
+    special_icons:
+      Classification: "💙"
+    credits: "[Kenneth Enevoldsen](https://github.com/KennethEnevoldsen), [scandinavian-embedding-benchmark](https://kennethenevoldsen.github.io/scandinavian-embedding-benchmark/)"
+    tasks:
+      Classification: &id001
+        - NoRecClassification
+        - NordicLangClassification
+        - NorwegianParliament
+        - MassiveIntentClassification (nb)
+        - MassiveScenarioClassification (nb)
+        - ScalaNbClassification
+  law:
+    title: Law
+    language_long: "English, German, Chinese"
+    has_overall: false
+    acronym: null
+    icon: "⚖️"
+    special_icons: null
+    credits: "[Voyage AI](https://www.voyageai.com/)"
+    tasks:
+      Retrieval:
+        - AILACasedocs
+        - AILAStatutes
+        - GerDaLIRSmall
+        - LeCaRDv2
+        - LegalBenchConsumerContractsQA
+        - LegalBenchCorporateLobbying
+        - LegalQuAD
+        - LegalSummarization
+  de:
+    title: German
+    language_long: "German"
+    has_overall: false
+    acronym: null
+    icon: "🇩🇪"
+    special_icons: null
+    credits: "[Silvan](https://github.com/slvnwhrl)"
+    tasks:
+      Clustering:
+      - BlurbsClusteringP2P
+      - BlurbsClusteringS2S
+      - TenKGnadClusteringP2P
+      - TenKGnadClusteringS2S
+  pl:
+    title: Polish
+    language_long: Polish
+    has_overall: true
+    acronym: null
+    icon: "🇵🇱"
+    special_icons:
+      Classification: "🤍"
+    credits: "[Rafał Poświata](https://github.com/rafalposwiata)"
+    tasks:
+      Classification:
+        - AllegroReviews
+        - CBD
+        - MassiveIntentClassification (pl)
+        - MassiveScenarioClassification (pl)
+        - PAC
+        - PolEmo2.0-IN
+        - PolEmo2.0-OUT
+      Clustering:
+        - 8TagsClustering
+      PairClassification:
+        - CDSC-E
+        - PPC
+        - PSC
+        - SICK-E-PL
+      Retrieval:
+        - ArguAna-PL
+        - DBPedia-PL
+        - FiQA-PL
+        - HotpotQA-PL
+        - MSMARCO-PL
+        - NFCorpus-PL
+        - NQ-PL
+        - Quora-PL
+        - SCIDOCS-PL
+        - SciFact-PL
+        - TRECCOVID-PL
+      STS:
+        - CDSC-R
+        - SICK-R-PL
+        - STS22 (pl)
+  se:
+    title: Swedish
+    language_long: Swedish
+    has_overall: false
+    acronym: null
+    icon: "🇸🇪"
+    special_icons:
+      Classification: "💛"
+    credits: "[Kenneth Enevoldsen](https://github.com/KennethEnevoldsen), [scandinavian-embedding-benchmark](https://kennethenevoldsen.github.io/scandinavian-embedding-benchmark/)"
+    tasks:
+      Classification:
+        - NoRecClassification
+        - NordicLangClassification
+        - NorwegianParliament
+        - MassiveIntentClassification (nb)
+        - MassiveScenarioClassification (nb)
+        - ScalaNbClassification
+  other-cls:
+    title: "Other Languages"
+    language_long: "47 (Only languages not included in the other tabs)"
+    has_overall: false
+    acronym: null
+    icon: null
+    special_icons:
+      Classification: "💜💚💙"
+    credits: null
+    tasks:
+      Classification: ['AmazonCounterfactualClassification (de)', 'AmazonCounterfactualClassification (ja)', 'AmazonReviewsClassification (de)', 'AmazonReviewsClassification (es)', 'AmazonReviewsClassification (fr)', 'AmazonReviewsClassification (ja)', 'AmazonReviewsClassification (zh)', 'MTOPDomainClassification (de)', 'MTOPDomainClassification (es)', 'MTOPDomainClassification (fr)', 'MTOPDomainClassification (hi)', 'MTOPDomainClassification (th)', 'MTOPIntentClassification (de)', 'MTOPIntentClassification (es)', 'MTOPIntentClassification (fr)', 'MTOPIntentClassification (hi)', 'MTOPIntentClassification (th)', 'MassiveIntentClassification (af)', 'MassiveIntentClassification (am)', 'MassiveIntentClassification (ar)', 'MassiveIntentClassification (az)', 'MassiveIntentClassification (bn)', 'MassiveIntentClassification (cy)', 'MassiveIntentClassification (de)', 'MassiveIntentClassification (el)', 'MassiveIntentClassification (es)', 'MassiveIntentClassification (fa)', 'MassiveIntentClassification (fi)', 'MassiveIntentClassification (fr)', 'MassiveIntentClassification (he)', 'MassiveIntentClassification (hi)', 'MassiveIntentClassification (hu)', 'MassiveIntentClassification (hy)', 'MassiveIntentClassification (id)', 'MassiveIntentClassification (is)', 'MassiveIntentClassification (it)', 'MassiveIntentClassification (ja)', 'MassiveIntentClassification (jv)', 'MassiveIntentClassification (ka)', 'MassiveIntentClassification (km)', 'MassiveIntentClassification (kn)', 'MassiveIntentClassification (ko)', 'MassiveIntentClassification (lv)', 'MassiveIntentClassification (ml)', 'MassiveIntentClassification (mn)', 'MassiveIntentClassification (ms)', 'MassiveIntentClassification (my)', 'MassiveIntentClassification (nl)', 'MassiveIntentClassification (pt)', 'MassiveIntentClassification (ro)', 'MassiveIntentClassification (ru)', 'MassiveIntentClassification (sl)', 'MassiveIntentClassification (sq)', 'MassiveIntentClassification (sw)', 'MassiveIntentClassification (ta)', 'MassiveIntentClassification (te)', 'MassiveIntentClassification (th)', 'MassiveIntentClassification (tl)', 'MassiveIntentClassification (tr)', 'MassiveIntentClassification (ur)', 'MassiveIntentClassification (vi)', 'MassiveIntentClassification (zh-TW)', 'MassiveScenarioClassification (af)', 'MassiveScenarioClassification (am)', 'MassiveScenarioClassification (ar)', 'MassiveScenarioClassification (az)', 'MassiveScenarioClassification (bn)', 'MassiveScenarioClassification (cy)', 'MassiveScenarioClassification (de)', 'MassiveScenarioClassification (el)', 'MassiveScenarioClassification (es)', 'MassiveScenarioClassification (fa)', 'MassiveScenarioClassification (fi)', 'MassiveScenarioClassification (fr)', 'MassiveScenarioClassification (he)', 'MassiveScenarioClassification (hi)', 'MassiveScenarioClassification (hu)', 'MassiveScenarioClassification (hy)', 'MassiveScenarioClassification (id)', 'MassiveScenarioClassification (is)', 'MassiveScenarioClassification (it)', 'MassiveScenarioClassification (ja)', 'MassiveScenarioClassification (jv)', 'MassiveScenarioClassification (ka)', 'MassiveScenarioClassification (km)', 'MassiveScenarioClassification (kn)', 'MassiveScenarioClassification (ko)', 'MassiveScenarioClassification (lv)', 'MassiveScenarioClassification (ml)', 'MassiveScenarioClassification (mn)', 'MassiveScenarioClassification (ms)', 'MassiveScenarioClassification (my)', 'MassiveScenarioClassification (nl)', 'MassiveScenarioClassification (pt)', 'MassiveScenarioClassification (ro)', 'MassiveScenarioClassification (ru)', 'MassiveScenarioClassification (sl)', 'MassiveScenarioClassification (sq)', 'MassiveScenarioClassification (sw)', 'MassiveScenarioClassification (ta)', 'MassiveScenarioClassification (te)', 'MassiveScenarioClassification (th)', 'MassiveScenarioClassification (tl)', 'MassiveScenarioClassification (tr)', 'MassiveScenarioClassification (ur)', 'MassiveScenarioClassification (vi)', 'MassiveScenarioClassification (zh-TW)']
+  other-sts:
+    title: Other
+    language_long: "Arabic, Chinese, Dutch, English, French, German, Italian, Korean, Polish, Russian, Spanish (Only language combos not included in the other tabs)"
+    has_overall: false
+    acronym: null
+    icon: null
+    special_icons:
+      STS: "👽"
+    credits: null
+    tasks:
+      STS: ["STS17 (ar-ar)", "STS17 (en-ar)", "STS17 (en-de)", "STS17 (en-tr)", "STS17 (es-en)", "STS17 (es-es)", "STS17 (fr-en)", "STS17 (it-en)", "STS17 (ko-ko)", "STS17 (nl-en)", "STS22 (ar)", "STS22 (de)", "STS22 (de-en)", "STS22 (de-fr)", "STS22 (de-pl)", "STS22 (es)", "STS22 (es-en)", "STS22 (es-it)", "STS22 (fr)", "STS22 (fr-pl)", "STS22 (it)", "STS22 (pl)", "STS22 (pl-en)", "STS22 (ru)", "STS22 (tr)", "STS22 (zh-en)", "STSBenchmark"]
