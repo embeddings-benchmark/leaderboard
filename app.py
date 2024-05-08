@@ -17,6 +17,11 @@ TASKS_CONFIG = LEADERBOARD_CONFIG["tasks"]
 BOARDS_CONFIG = LEADERBOARD_CONFIG["boards"]
 
 TASKS = list(TASKS_CONFIG.keys())
+PRETTY_NAMES = {
+    "InstructionRetrieval": "Retrieval w/Instructions",
+    "PairClassification": "Pair Classification",
+    "BitextMining": "Bitext Mining",
+}
 
 TASK_TO_METRIC = {k:v["metric"] for k,v in TASKS_CONFIG.items()}
 
@@ -34,18 +39,30 @@ EXTERNAL_MODEL_TO_DIM = {k: v["dim"] for k,v in MODEL_META["model_meta"].items()
 EXTERNAL_MODEL_TO_SEQLEN = {k: v["seq_len"] for k,v in MODEL_META["model_meta"].items() if v.get("seq_len", False)}
 EXTERNAL_MODEL_TO_SIZE = {k: v["size"] for k,v in MODEL_META["model_meta"].items() if v.get("size", False)}
 PROPRIETARY_MODELS = {k for k,v in MODEL_META["model_meta"].items() if v.get("is_proprietary", False)}
+TASK_DESCRIPTIONS = {k: v["task_description"] for k,v in TASKS_CONFIG.items()}
+TASK_DESCRIPTIONS["Overall"] = "Overall performance across MTEB tasks."
 SENTENCE_TRANSFORMERS_COMPATIBLE_MODELS = {k for k,v in MODEL_META["model_meta"].items() if v.get("is_sentence_transformers_compatible", False)}
 MODELS_TO_SKIP = MODEL_META["models_to_skip"]
+CROSS_ENCODERS = MODEL_META["cross_encoders"]
+BI_ENCODERS = [k for k, _ in MODEL_META["model_meta"].items() if k not in CROSS_ENCODERS + ["bm25"]]
 
 PROPRIETARY_MODELS = {
     make_clickable_model(model, link=EXTERNAL_MODEL_TO_LINK.get(model, f"https://huggingface.co/spaces/{REPO_ID}"))
     for model in PROPRIETARY_MODELS
 }
-
 SENTENCE_TRANSFORMERS_COMPATIBLE_MODELS = {
     make_clickable_model(model, link=EXTERNAL_MODEL_TO_LINK.get(model, f"https://huggingface.co/spaces/{REPO_ID}"))
     for model in SENTENCE_TRANSFORMERS_COMPATIBLE_MODELS
 }
+CROSS_ENCODERS = {
+    make_clickable_model(model, link=EXTERNAL_MODEL_TO_LINK.get(model, f"https://huggingface.co/spaces/{REPO_ID}"))
+    for model in CROSS_ENCODERS
+}
+BI_ENCODERS = {
+    make_clickable_model(model, link=EXTERNAL_MODEL_TO_LINK.get(model, f"https://huggingface.co/spaces/{REPO_ID}"))
+    for model in BI_ENCODERS
+}
+
 
 TASK_TO_TASK_TYPE = {task_category: [] for task_category in TASKS}
 for board_config in BOARDS_CONFIG.values():
@@ -164,7 +181,13 @@ def get_mteb_data(tasks=["Clustering"], langs=[], datasets=[], fillna=True, add_
     # Initialize list to models that we cannot fetch metadata from
     df_list = []
     for model in EXTERNAL_MODEL_RESULTS:
-        results_list = [res for task in tasks for res in EXTERNAL_MODEL_RESULTS[model][task][task_to_metric[task]]]
+        results_list = []
+        for task in tasks:
+            # Not all models have InstructionRetrieval, other new tasks
+            if task not in EXTERNAL_MODEL_RESULTS[model]:
+                continue
+            results_list += EXTERNAL_MODEL_RESULTS[model][task][task_to_metric[task]]
+        
         if len(datasets) > 0:
             res = {k: v for d in results_list for k, v in d.items() if (k == "Model") or any([x in k for x in datasets])}
         elif langs:
@@ -383,7 +406,10 @@ for task in TASKS:
     data[task] = {"metric": TASKS_CONFIG[task]["metric_description"], "data": []}
 
 for board, board_config in BOARDS_CONFIG.items():
-    board_pretty_name = f"{board_config['title']} leaderboard"
+    init_name = board_config["title"]
+    if init_name in PRETTY_NAMES:
+        init_name = PRETTY_NAMES[init_name]
+    board_pretty_name = f"{init_name} leaderboard"
     acronym = board_config.get("acronym", None)
     board_icon = board_config.get("icon", None)
     if board_icon is None:
@@ -439,7 +465,7 @@ function(goalUrlObject) {
 def update_url_task(event: gr.SelectData, current_task_language: dict, language_per_task: dict):
     current_task_language["task"] = event.target.id
     # Either use the cached language for this task or the 1st language
-    current_task_language["language"] = language_per_task.get(event.target.id, event.target.children[0].children[0].id)
+    current_task_language["language"] = language_per_task.get(event.target.id, event.target.children[1].children[0].id)
     return current_task_language, language_per_task
 
 def update_url_language(event: gr.SelectData, current_task_language: dict, language_per_task: dict):
@@ -461,6 +487,8 @@ MODEL_TYPES = [
     "Open",
     "Proprietary",
     "Sentence Transformers",
+    "Cross-Encoders",
+    "Bi-Encoders"
 ]
 
 def filter_data(search_query, model_types, model_sizes, *full_dataframes):
@@ -484,6 +512,10 @@ def filter_data(search_query, model_types, model_sizes, *full_dataframes):
                     masks.append(df["Model"].isin(PROPRIETARY_MODELS))
                 elif model_type == "Sentence Transformers":
                     masks.append(df["Model"].isin(SENTENCE_TRANSFORMERS_COMPATIBLE_MODELS))
+                elif model_type == "Cross-Encoders":
+                    masks.append(df["Model"].isin(CROSS_ENCODERS))
+                elif model_type == "Bi-Encoders":
+                    masks.append(df["Model"].isin(BI_ENCODERS))
             if masks:
                 df = df[reduce(lambda a, b: a | b, masks)]
             else:
@@ -535,16 +567,16 @@ with gr.Blocks(css=css) as block:
     with gr.Tabs() as outer_tabs:
         # Store the tabs for updating them on load based on URL parameters
         tabs.append(outer_tabs)
-
         for task, task_values in data.items():
             metric = task_values["metric"]
             task_tab_id = task.lower().replace(" ", "-")
 
             # Overall, Bitext Mining, Classification, etc.
-            with gr.Tab(task, id=task_tab_id) as task_tab:
+            pretty_task_name = task if task not in PRETTY_NAMES.keys() else PRETTY_NAMES[task]
+            with gr.Tab(pretty_task_name, id=task_tab_id) as task_tab:
                 # For updating the 'task' in the URL
                 task_tab.select(update_url_task, [current_task_language, language_per_task], [current_task_language, language_per_task]).then(None, [current_task_language], [], js=set_window_url_params)
-
+                gr.Markdown(TASK_DESCRIPTIONS[task])
                 with gr.Tabs() as task_tabs:
                     # Store the task tabs for updating them on load based on URL parameters
                     tabs.append(task_tabs)

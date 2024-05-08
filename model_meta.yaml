@@ -47,6 +47,20 @@ model_meta:
     is_external: true
     is_proprietary: false
     is_sentence_transformers_compatible: true
+  FollowIR-7B:
+    link: https://huggingface.co/jhu-clsp/FollowIR-7B
+    seq_len: 4096
+    size: 7240
+    is_external: true
+    is_propietary: false
+    is_sentence_transformer_compatible: false
+  GritLM-7B:
+    link: https://huggingface.co/GritLM/GritLM-7B
+    seq_len: 4096
+    size: 7240
+    is_external: true
+    is_propietary: false
+    is_sentence_transformer_compatible: false
   LASER2:
     link: https://github.com/facebookresearch/LASER
     seq_len: N/A
@@ -263,6 +277,12 @@ model_meta:
     is_external: true
     is_proprietary: false
     is_sentence_transformers_compatible: true
+  bm25: 
+    link: https://en.wikipedia.org/wiki/Okapi_BM25
+    size: 0
+    is_external: true
+    is_proprietary: false
+    is_sentence_transformers_compatible: false
   camembert-base:
     link: https://huggingface.co/almanach/camembert-base
     seq_len: 512
@@ -359,11 +379,27 @@ model_meta:
     is_external: true
     is_proprietary: false
     is_sentence_transformers_compatible: true
+  e5-base-v2:
+    link: https://huggingface.co/intfloat/e5-base-v2
+    seq_len: 512
+    size: 110
+    dim: 768
+    is_external: true
+    is_proprietary: false
+    is_sentence_transformers_compatible: true
   e5-base:
     link: https://huggingface.co/intfloat/e5-base
     seq_len: 512
     size: 110
     dim: 768
+    is_external: true
+    is_proprietary: false
+    is_sentence_transformers_compatible: true
+  e5-large-v2:
+    link: https://huggingface.co/intfloat/e5-large-v2
+    seq_len: 512
+    size: 335
+    dim: 1024
     is_external: true
     is_proprietary: false
     is_sentence_transformers_compatible: true
@@ -404,6 +440,22 @@ model_meta:
     seq_len: 512
     size: 16
     dim: 256
+    is_external: true
+    is_proprietary: false
+    is_sentence_transformers_compatible: true
+  flan-t5-base:
+    link: https://huggingface.co/google/flan-t5-base
+    seq_len: 512
+    size: 220
+    dim: -1
+    is_external: true
+    is_proprietary: false
+    is_sentence_transformers_compatible: true
+  flan-t5-large:
+    link: https://huggingface.co/google/flan-t5-large
+    seq_len: 512
+    size: 770
+    dim: -1
     is_external: true
     is_proprietary: false
     is_sentence_transformers_compatible: true
@@ -535,6 +587,22 @@ model_meta:
     is_external: true
     is_proprietary: false
     is_sentence_transformers_compatible: true
+  instructor-base:
+    link: https://huggingface.co/hkunlp/instructor-base
+    seq_len: N/A
+    size: 110
+    dim: 768
+    is_external: true
+    is_proprietary: false
+    is_sentence_transformers_compatible: true
+  instructor-xl:
+    link: https://huggingface.co/hkunlp/instructor-xl
+    seq_len: N/A
+    size: 1241
+    dim: 768
+    is_external: true
+    is_proprietary: false
+    is_sentence_transformers_compatible: true
   komninos:
     link: https://huggingface.co/sentence-transformers/average_word_embeddings_komninos
     seq_len: N/A
@@ -543,6 +611,14 @@ model_meta:
     is_external: true
     is_proprietary: false
     is_sentence_transformers_compatible: true
+  llama-2-7b-chat:
+    link: https://huggingface.co/meta-llama/Llama-2-7b-chat-hf
+    seq_len: 4096
+    size: 7000
+    dim: -1
+    is_external: true
+    is_proprietary: false
+    is_sentence_transformers_compatible: false
   luotuo-bert-medium:
     link: https://huggingface.co/silk-road/luotuo-bert-medium
     seq_len: 512
@@ -567,6 +643,14 @@ model_meta:
     is_external: true
     is_proprietary: false
     is_sentence_transformers_compatible: true
+  mistral-7b-instruct-v0.2:
+    link: https://huggingface.co/mistralai/Mistral-7B-Instruct-v0.2
+    seq_len: 4096
+    size: 7240
+    dim: -1
+    is_external: true
+    is_proprietary: false
+    is_sentence_transformers_compatible: false
   mistral-embed:
     link: https://docs.mistral.ai/guides/embeddings
     seq_len: null
@@ -574,6 +658,30 @@ model_meta:
     dim: 1024
     is_external: true
     is_proprietary: true
+    is_sentence_transformers_compatible: false
+  monobert-large-msmarco:
+    link: https://huggingface.co/castorini/monobert-large-msmarco
+    seq_len: 512
+    size: 770
+    dim: -1
+    is_external: true
+    is_proprietary: false
+    is_sentence_transformers_compatible: false
+  monot5-3b-msmarco-10k:
+    link: https://huggingface.co/castorini/monot5-3b-msmarco-10k
+    seq_len: 512
+    size: 2480
+    dim: -1
+    is_external: true
+    is_proprietary: false
+    is_sentence_transformers_compatible: false
+  monot5-base-msmarco-10k:
+    link: https://huggingface.co/castorini/monot5-base-msmarco-10k
+    seq_len: 512
+    size: 220
+    dim: -1
+    is_external: true
+    is_proprietary: false
     is_sentence_transformers_compatible: false
   msmarco-bert-co-condensor:
     link: https://huggingface.co/sentence-transformers/msmarco-bert-co-condensor
@@ -903,6 +1011,22 @@ model_meta:
     is_external: true
     is_proprietary: true
     is_sentence_transformers_compatible: false
+  tart-dual-contriever-msmarco:
+    link: https://huggingface.co/orionweller/tart-dual-contriever-msmarco
+    seq_len: 512
+    size: 110
+    dim: 768
+    is_external: true
+    is_proprietary: false
+    is_sentence_transformers_compatible: false
+  tart-full-flan-t5-xl:
+    link: https://huggingface.co/facebook/tart-full-flan-t5-xl
+    seq_len: 512
+    size: 2480
+    dim: -1
+    is_external: true
+    is_proprietary: false
+    is_sentence_transformers_compatible: false
   text2vec-base-chinese:
     link: https://huggingface.co/shibing624/text2vec-base-chinese
     seq_len: 512
@@ -1184,3 +1308,13 @@ models_to_skip:
 - michaelfeil/ct2fast-gte-large
 - gizmo-ai/Cohere-embed-multilingual-v3.0
 - McGill-NLP/LLM2Vec-Llama-2-7b-chat-hf-mntp-unsup-simcse
+cross_encoders:
+- FollowIR-7B
+- flan-t5-base
+- flan-t5-large
+- monobert-large-msmarco
+- monot5-3b-msmarco-10k
+- monot5-base-msmarco-10k
+- llama-2-7b-chat
+- mistral-7b-instruct-v0.2
+- tart-full-flan-t5-xl

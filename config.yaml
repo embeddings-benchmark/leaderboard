@@ -7,34 +7,47 @@ tasks:
     icon: "🎌"
     metric: f1
     metric_description: "[F1](https://huggingface.co/spaces/evaluate-metric/f1)"
+    task_description: "Bitext mining is the task of finding parallel sentences in two languages."
   Classification:
     icon: "❤️"
     metric: accuracy
     metric_description: "[Accuracy](https://huggingface.co/spaces/evaluate-metric/accuracy)"
+    task_description: "Classification is the task of assigning a label to a text."
   Clustering:
     icon: "✨"
     metric: v_measure
     metric_description: "Validity Measure (v_measure)"
+    task_description: "Clustering is the task of grouping similar documents together."
   PairClassification:
     icon: "🎭"
     metric: cos_sim_ap
     metric_description: "Average Precision based on Cosine Similarities (cos_sim_ap)"
+    task_description: "Pair classification is the task of determining whether two texts are similar."
   Reranking: 
     icon: "🥈"
     metric: map
     metric_description: "Mean Average Precision (MAP)"
+    task_description: "Reranking is the task of reordering a list of documents to improve relevance."
   Retrieval:
     icon: "🔎"
     metric: ndcg_at_10
     metric_description: "Normalized Discounted Cumulative Gain @ k (ndcg_at_10)"
+    task_description: "Retrieval is the task of finding relevant documents for a query."
   STS:
     icon: "🤖"
     metric: cos_sim_spearman
     metric_description: "Spearman correlation based on cosine similarity"
+    task_description: "Semantic Textual Similarity is the task of determining how similar two texts are."
   Summarization:
     icon: "📜"
     metric: cos_sim_spearman
     metric_description: "Spearman correlation	based on cosine similarity"
+    task_description: "Summarization is the task of generating a summary of a text."
+  InstructionRetrieval:
+    icon: "🔎📋"
+    metric: "p-MRR"
+    metric_description: "paired mean reciprocal rank"
+    task_description: "Retrieval w/Instructions is the task of finding relevant documents for a query that has detailed instructions."
 boards:
   en:
     title: English
@@ -250,6 +263,18 @@ boards:
         - MassiveIntentClassification (nb)
         - MassiveScenarioClassification (nb)
         - ScalaNbClassification
+  instructions:
+    title: English
+    language_long: "English"
+    has_overall: false
+    acronym: null
+    icon: null
+    credits: "[Orion Weller, FollowIR](https://arxiv.org/abs/2403.15246)"
+    tasks:
+      InstructionRetrieval:
+      - Robust04InstructionRetrieval
+      - News21InstructionRetrieval
+      - Core17InstructionRetrieval
   law:
     title: Law
     language_long: "English, German, Chinese"
