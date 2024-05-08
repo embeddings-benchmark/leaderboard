@@ -465,7 +465,11 @@ function(goalUrlObject) {
 def update_url_task(event: gr.SelectData, current_task_language: dict, language_per_task: dict):
     current_task_language["task"] = event.target.id
     # Either use the cached language for this task or the 1st language
-    current_task_language["language"] = language_per_task.get(event.target.id, event.target.children[1].children[0].id)
+    try:
+        current_task_language["language"] = language_per_task.get(event.target.id, event.target.children[1].children[0].id)
+    except Exception as e: # is Overall tab, no description
+        current_task_language["language"] = language_per_task.get(event.target.id, event.target.children[0].children[0].id)
+
     return current_task_language, language_per_task
 
 def update_url_language(event: gr.SelectData, current_task_language: dict, language_per_task: dict):
@@ -576,7 +580,8 @@ with gr.Blocks(css=css) as block:
             with gr.Tab(pretty_task_name, id=task_tab_id) as task_tab:
                 # For updating the 'task' in the URL
                 task_tab.select(update_url_task, [current_task_language, language_per_task], [current_task_language, language_per_task]).then(None, [current_task_language], [], js=set_window_url_params)
-                gr.Markdown(TASK_DESCRIPTIONS[task])
+                if "Overall" != task:
+                    gr.Markdown(TASK_DESCRIPTIONS[task])
                 with gr.Tabs() as task_tabs:
                     # Store the task tabs for updating them on load based on URL parameters
                     tabs.append(task_tabs)
