@@ -1308,6 +1308,7 @@ models_to_skip:
 - michaelfeil/ct2fast-gte-large
 - gizmo-ai/Cohere-embed-multilingual-v3.0
 - McGill-NLP/LLM2Vec-Llama-2-7b-chat-hf-mntp-unsup-simcse
+- Kenknight1999/tungdd7_ft_e5
 cross_encoders:
 - FollowIR-7B
 - flan-t5-base
