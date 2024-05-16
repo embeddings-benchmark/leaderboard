@@ -1309,6 +1309,12 @@ models_to_skip:
 - gizmo-ai/Cohere-embed-multilingual-v3.0
 - McGill-NLP/LLM2Vec-Llama-2-7b-chat-hf-mntp-unsup-simcse
 - Kenknight1999/tungdd7_ft_e5
+- joteqwork/new_gsev0
+- vantagediscovery/jina-embeddings-v2-base-en
+- vantagediscovery/nomic-embed-text-v1
+- vantagediscovery/nomic-embed-text-v1.5
+- srikanthmalla/hkunlp-instructor-xl
+- afrideva/GIST-all-MiniLM-L6-v2-GGUF
 cross_encoders:
 - FollowIR-7B
 - flan-t5-base
