@@ -1315,6 +1315,7 @@ models_to_skip:
 - vantagediscovery/nomic-embed-text-v1.5
 - srikanthmalla/hkunlp-instructor-xl
 - afrideva/GIST-all-MiniLM-L6-v2-GGUF
+- nadeem1362/mxbai-embed-large-v1-Q4_K_M-GGUF
 cross_encoders:
 - FollowIR-7B
 - flan-t5-base
