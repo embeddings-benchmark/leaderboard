@@ -1325,6 +1325,7 @@ models_to_skip:
 - ekorman-strive/bge-large-en-v1.5
 - raghavlight/SE_v1
 - liddlefish/privacyembeddingv2_bge_small
+- ahmet1338/finetuned_embedder
 cross_encoders:
 - FollowIR-7B
 - flan-t5-base
