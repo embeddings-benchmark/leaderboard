@@ -269,6 +269,14 @@ model_meta:
     is_external: true
     is_proprietary: false
     is_sentence_transformers_compatible: true
+  bge-m3:
+    link: https://huggingface.co/BAAI/bge-m3
+    seq_len: 8192
+    size: 2270
+    dim: 1024
+    is_external: true
+    is_proprietary: false
+    is_sentence_transformers_compatible: false    
   bge-small-zh-v1.5:
     link: https://huggingface.co/BAAI/bge-small-zh-v1.5
     seq_len: 512
@@ -376,6 +384,14 @@ model_meta:
     seq_len: 512
     size: 135
     dim: 512
+    is_external: true
+    is_proprietary: false
+    is_sentence_transformers_compatible: true
+  e5-base-4k:
+    link: https://huggingface.co/dwzhu/e5-base-4k
+    seq_len: 512
+    size: 110
+    dim: 768
     is_external: true
     is_proprietary: false
     is_sentence_transformers_compatible: true
@@ -602,12 +618,20 @@ model_meta:
     is_sentence_transformers_compatible: true
   instructor-xl:
     link: https://huggingface.co/hkunlp/instructor-xl
-    seq_len: N/A
+    seq_len: 512
     size: 1241
     dim: 768
     is_external: true
     is_proprietary: false
     is_sentence_transformers_compatible: true
+  jina-embeddings-v2-base-en:
+    link: https://huggingface.co/jinaai/jina-embeddings-v2-base-en
+    seq_len: 8192
+    size: 275
+    dim: 768
+    is_external: true
+    is_proprietary: false
+    is_sentence_transformers_compatible: true  
   komninos:
     link: https://huggingface.co/sentence-transformers/average_word_embeddings_komninos
     seq_len: N/A
@@ -741,6 +765,14 @@ model_meta:
     seq_len: 512
     size: 355
     dim: 1024
+    is_external: true
+    is_proprietary: false
+    is_sentence_transformers_compatible: true
+  nomic-embed-text-v1:
+    link: https://huggingface.co/nomic-ai/nomic-embed-text-v1
+    seq_len: 8192
+    size: 547
+    dim: 768
     is_external: true
     is_proprietary: false
     is_sentence_transformers_compatible: true

@@ -293,6 +293,22 @@ boards:
         - LegalBenchCorporateLobbying
         - LegalQuAD
         - LegalSummarization
+  longembed:
+    title: LongEmbed
+    language_long: "English"
+    has_overall: false
+    acronym: null
+    icon: "📚"
+    special_icons: null
+    credits: "[LongEmbed](https://arxiv.org/abs/2404.12096v2)"
+    tasks:
+      Retrieval:
+        - LEMBNarrativeQARetrieval
+        - LEMBNeedleRetrieval
+        - LEMBPasskeyRetrieval
+        - LEMBQMSumRetrieval
+        - LEMBSummScreenFDRetrieval
+        - LEMBWikimQARetrieval
   de:
     title: German
     language_long: "German"
