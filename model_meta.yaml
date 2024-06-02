@@ -1326,6 +1326,7 @@ models_to_skip:
 - raghavlight/SE_v1
 - liddlefish/privacyembeddingv2_bge_small
 - ahmet1338/finetuned_embedder
+- radia/snowflake-arctic-embed-l-Q4_K_M-GGUF
 cross_encoders:
 - FollowIR-7B
 - flan-t5-base
