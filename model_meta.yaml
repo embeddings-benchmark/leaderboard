@@ -1323,6 +1323,7 @@ models_to_skip:
 - nadeem1362/mxbai-embed-large-v1-Q4_K_M-GGUF
 - agier9/gte-Qwen1.5-7B-instruct-Q5_K_M-GGUF
 - ekorman-strive/bge-large-en-v1.5
+- raghavlight/SE_v1
 cross_encoders:
 - FollowIR-7B
 - flan-t5-base
