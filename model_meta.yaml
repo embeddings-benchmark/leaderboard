@@ -1359,6 +1359,8 @@ models_to_skip:
 - liddlefish/privacyembeddingv2_bge_small
 - ahmet1338/finetuned_embedder
 - radia/snowflake-arctic-embed-l-Q4_K_M-GGUF
+- GregorBiswanger/GritLM-7B-Q4_K_M-GGUF
+- powermove72/GritLM-7B-Q4_K_M-GGUF
 cross_encoders:
 - FollowIR-7B
 - flan-t5-base
