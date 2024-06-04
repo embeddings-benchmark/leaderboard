@@ -461,6 +461,9 @@ model_meta:
     is_sentence_transformers_compatible: true
   elser-v2:
     link: https://www.elastic.co/guide/en/machine-learning/current/ml-nlp-elser.html
+    seq_len: 512
+    size: 110
+    dim: 30522
     is_external: true
     is_proprietary: false
     is_sentence_transformers_compatible: false    
