@@ -399,6 +399,11 @@ def get_refresh_function(task_category, task_list):
         return data_task_category
     return _refresh
 
+
+def get_refresh_overall_function(tasks):
+    return lambda: get_mteb_average(tasks)[0]
+
+
 data = {
     "Overall": {"metric": "Various, refer to task tabs", "data": []}
 }
@@ -425,7 +430,7 @@ for board, board_config in BOARDS_CONFIG.items():
             "language_long": board_config["language_long"],
             "description": f"**Overall MTEB {overall_pretty_name}** 🔮{board_icon}",
             "data": boards_data[board]["data_overall"],
-            "refresh": lambda: get_mteb_average(board_config["tasks"])[0],#partial(get_mteb_average, board_config["tasks"]),
+            "refresh": get_refresh_overall_function(board_config["tasks"]),
             "credits": credits,
         })
     for task_category, task_category_list in board_config["tasks"].items():
