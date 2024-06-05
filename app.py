@@ -143,6 +143,10 @@ def get_dim_seq_size(model):
         if not dim:
             dim = config.get("hidden_dim", config.get("hidden_size", config.get("d_model", "")))
         seq = config.get("n_positions", config.get("max_position_embeddings", config.get("n_ctx", config.get("seq_length", ""))))
+    
+    if dim == "" or seq == "":
+        raise Exception(f"Could not find dim or seq for model {model.modelId}")
+    
     # Get model file size without downloading. Parameters in million parameters and memory in GB
     parameters, memory = get_model_parameters_memory(model)
     return dim, seq, parameters, memory
@@ -244,13 +248,22 @@ def get_mteb_data(tasks=["Clustering"], langs=[], datasets=[], fillna=True, add_
         # Model & at least one result
         if len(out) > 1:
             if add_emb_dim:
+                # The except clause triggers on gated repos, we can use external metadata for those
                 try:
-                    # Fails on gated repos, so we only include scores for them
                     if "dim_seq_size" not in MODEL_INFOS[model.modelId] or refresh:
                         MODEL_INFOS[model.modelId]["dim_seq_size"] = list(get_dim_seq_size(model))
-                    out["Embedding Dimensions"], out["Max Tokens"], out["Model Size (Million Parameters)"], out["Memory Usage (GB, fp32)"] = tuple(MODEL_INFOS[model.modelId]["dim_seq_size"])
                 except:
-                    MODEL_INFOS[model.modelId]["dim_seq_size"] = "", "", "", ""
+                    name_without_org = model.modelId.split("/")[-1]
+                    # EXTERNAL_MODEL_TO_SIZE[name_without_org] refers to millions of parameters, so for memory usage
+                    # we multiply by 1e6 to get just the number of parameters, then by 4 to get the number of bytes
+                    # given fp32 precision (4 bytes per float), then divide by 1024**3 to get the number of GB
+                    MODEL_INFOS[model.modelId]["dim_seq_size"] = (
+                        EXTERNAL_MODEL_TO_DIM.get(name_without_org, ""),
+                        EXTERNAL_MODEL_TO_SEQLEN.get(name_without_org, ""),
+                        EXTERNAL_MODEL_TO_SIZE.get(name_without_org, ""),
+                        round(EXTERNAL_MODEL_TO_SIZE[name_without_org] * 1e6 * 4 / 1024**3, 2) if name_without_org in EXTERNAL_MODEL_TO_SIZE else "",
+                    )
+                out["Embedding Dimensions"], out["Max Tokens"], out["Model Size (Million Parameters)"], out["Memory Usage (GB, fp32)"] = tuple(MODEL_INFOS[model.modelId]["dim_seq_size"])
             df_list.append(out)
         if model.library_name == "sentence-transformers" or "sentence-transformers" in model.tags or "modules.json" in {file.rfilename for file in model.siblings}:
             SENTENCE_TRANSFORMERS_COMPATIBLE_MODELS.add(out["Model"])

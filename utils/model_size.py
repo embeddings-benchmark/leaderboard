@@ -40,4 +40,4 @@ def get_model_parameters_memory(model_info: ModelInfo):
         if ("metadata" in size) and ("total_size" in size["metadata"]):
             return round(size["metadata"]["total_size"] / bytes_per_param / 1e6), round(size["metadata"]["total_size"] / 1024**3, 2)
 
-    return None, None
+    raise Exception(f"Could not find the model parameters for {model_info.id}")
