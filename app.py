@@ -521,7 +521,7 @@ def filter_data(search_query, model_types, model_sizes, *full_dataframes):
             names = df["Model"].map(lambda x: re.match("<a .+?>(.+)</a>", x).group(1))
             masks = []
             for query in search_query.split(";"):
-                masks.append(names.str.contains(query))
+                masks.append(names.str.lower().str.contains(query.lower()))
             df = df[reduce(lambda a, b: a | b, masks)]
 
         # Apply the model type filtering
