@@ -1173,7 +1173,7 @@ model_meta:
     is_sentence_transformers_compatible: false
   voyage-law-2:
     link: https://docs.voyageai.com/embeddings/
-    seq_len: 4000
+    seq_len: 16000
     size: null
     dim: 1024
     is_external: true
