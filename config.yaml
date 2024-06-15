@@ -224,8 +224,8 @@ boards:
         - AlloProfClusteringP2P
         - AlloProfClusteringS2S
         - HALClusteringS2S
-        - MLSUMClusteringP2P
-        - MLSUMClusteringS2S
+        - MLSUMClusteringP2P (fr)
+        - MLSUMClusteringS2S (fr)
         - MasakhaNEWSClusteringP2P (fra)
         - MasakhaNEWSClusteringS2S (fra)
       PairClassification:

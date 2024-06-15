@@ -1,4 +1,4 @@
-from functools import partial, reduce
+from functools import reduce
 import json
 import os
 import re
@@ -23,7 +23,7 @@ PRETTY_NAMES = {
     "BitextMining": "Bitext Mining",
 }
 
-TASK_TO_METRIC = {k:v["metric"] for k,v in TASKS_CONFIG.items()}
+TASK_TO_METRIC = {k: v["metric"] for k, v in TASKS_CONFIG.items()}
 
 def make_clickable_model(model_name, link=None):
     if link is None:
@@ -93,6 +93,17 @@ def add_task(examples):
         examples["mteb_task"] = "Unknown"
     return examples
 
+def filter_metric_external(x, task, metric):
+    # This is a hack for the passkey and needle retrieval test, which reports ndcg_at_1 (i.e. accuracy), rather than the ndcg_at_10 that is commonly used for retrieval tasks. 
+    if x['mteb_dataset_name'] in ['LEMBNeedleRetrieval', 'LEMBPasskeyRetrieval']:
+        return x["mteb_task"] == task and x['metric'] == 'ndcg_at_1'
+    else:
+        return x["mteb_task"] == task and x["metric"] == metric
+
+def filter_metric_fetched(name, metric, expected_metric):
+    # This is a hack for the passkey and needle retrieval test, which reports ndcg_at_1 (i.e. accuracy), rather than the ndcg_at_10 that is commonly used for retrieval tasks. 
+    return metric == 'ndcg_at_1' if name in ['LEMBNeedleRetrieval', 'LEMBPasskeyRetrieval'] else metric == expected_metric
+
 if os.path.exists("EXTERNAL_MODEL_RESULTS.json"):
     with open("EXTERNAL_MODEL_RESULTS.json") as f:
         EXTERNAL_MODEL_RESULTS = json.load(f)
@@ -115,17 +126,9 @@ for model in pbar:
     ds = ds.map(add_lang)
     ds = ds.map(add_task)
     base_dict = {"Model": make_clickable_model(model, link=EXTERNAL_MODEL_TO_LINK.get(model, f"https://huggingface.co/spaces/{REPO_ID}"))}
-    # For now only one metric per task - Could add more metrics lateron
-    
-    def filter_function(x, task, metric):
-        # This is a hack for the passkey and needle retrieval test, which reports ndcg_at_1 (i.e. accuracy), rather than the ndcg_at_10 that is commonly used for retrieval tasks. 
-        if x['mteb_dataset_name'] in ['LEMBNeedleRetrieval', 'LEMBPasskeyRetrieval']:
-            return x["mteb_task"] == task and x['metric'] == 'ndcg_at_1'
-        else:
-            return x["mteb_task"] == task and x["metric"] == metric
-    
+
     for task, metric in TASK_TO_METRIC.items():
-        ds_dict = ds.filter(lambda x: filter_function(x, task, metric))["test"].to_dict()
+        ds_dict = ds.filter(lambda x: filter_metric_external(x, task, metric))["test"].to_dict()
         ds_dict = {k: round(v, 2) for k, v in zip(ds_dict["mteb_dataset_name_with_lang"], ds_dict["score"])}
         EXTERNAL_MODEL_RESULTS[model][task][metric].append({**base_dict, **ds_dict})
 
@@ -190,6 +193,11 @@ def get_mteb_data(tasks=["Clustering"], langs=[], datasets=[], fillna=True, add_
     global MODEL_INFOS
     api = API
     models = api.list_models(filter="mteb")
+    # Legacy names changes; Also fetch the old results & merge later
+    if ('MLSUMClusteringP2P (fr)' in datasets):
+        datasets.append('MLSUMClusteringP2P')
+    if ('MLSUMClusteringS2S (fr)' in datasets):
+        datasets.append('MLSUMClusteringS2S')
     # Initialize list to models that we cannot fetch metadata from
     df_list = []
     for model in EXTERNAL_MODEL_RESULTS:
@@ -253,7 +261,7 @@ def get_mteb_data(tasks=["Clustering"], langs=[], datasets=[], fillna=True, add_
         # if model.modelId == "w601sxs/b1ade-embed-kd_3":
         #     import pdb; pdb.set_trace()
         try:
-            out = [{res["dataset"]["name"].replace("MTEB ", ""): [round(score["value"], 2) for score in res["metrics"] if score["type"] == task_to_metric.get(res["task"]["type"])][0]} for res in task_results]
+            out = [{res["dataset"]["name"].replace("MTEB ", ""): [round(score["value"], 2) for score in res["metrics"] if filter_metric_fetched(res["dataset"]["name"].replace("MTEB ", ""), score["type"], task_to_metric.get(res["task"]["type"]))][0]} for res in task_results]
         except:
             print("ERROR", model.modelId)
             continue
@@ -281,7 +289,7 @@ def get_mteb_data(tasks=["Clustering"], langs=[], datasets=[], fillna=True, add_
             df_list.append(out)
         if model.library_name == "sentence-transformers" or "sentence-transformers" in model.tags or "modules.json" in {file.rfilename for file in model.siblings}:
             SENTENCE_TRANSFORMERS_COMPATIBLE_MODELS.add(out["Model"])
-            
+
     # Save & cache MODEL_INFOS
     with open("model_infos.json", "w") as f:
         json.dump(MODEL_INFOS, f)
@@ -294,7 +302,18 @@ def get_mteb_data(tasks=["Clustering"], langs=[], datasets=[], fillna=True, add_
     cols = sorted(list(df.columns))
     base_columns = ["Model", "Model Size (Million Parameters)", "Memory Usage (GB, fp32)", "Embedding Dimensions", "Max Tokens"]
     if len(datasets) > 0:
-        #filter invalid columns
+        # Update legacy column names to be merged with newer ones
+        # Update 'MLSUMClusteringP2P (fr)' with values from 'MLSUMClusteringP2P'
+        #if ('MLSUMClusteringP2P (fr)' in datasets):
+        #    import pdb; pdb.set_trace()
+        if ('MLSUMClusteringP2P (fr)' in datasets) and ('MLSUMClusteringP2P' in cols):
+            #import pdb; pdb.set_trace()
+            df['MLSUMClusteringP2P (fr)'] = df['MLSUMClusteringP2P (fr)'].fillna(df['MLSUMClusteringP2P'])
+            datasets.remove('MLSUMClusteringP2P')
+        if ('MLSUMClusteringS2S (fr)' in datasets) and ('MLSUMClusteringS2S' in cols):
+            df['MLSUMClusteringS2S (fr)'] = df['MLSUMClusteringS2S (fr)'].fillna(df['MLSUMClusteringS2S'])
+            datasets.remove('MLSUMClusteringS2S')
+        # Filter invalid columns
         cols = [col for col in cols if col in base_columns + datasets]
     i = 0
     for column in base_columns:
@@ -447,6 +466,7 @@ for board, board_config in BOARDS_CONFIG.items():
     if board_icon is None:
         board_icon = ""
     credits = board_config.get("credits", None)
+    metric = board_config.get("metric", None)
 
     if board_config["has_overall"]:
         overall_pretty_name = board_pretty_name
@@ -459,6 +479,7 @@ for board, board_config in BOARDS_CONFIG.items():
             "data": boards_data[board]["data_overall"],
             "refresh": get_refresh_overall_function(board_config["tasks"]),
             "credits": credits,
+            "metric": metric,
         })
     for task_category, task_category_list in board_config["tasks"].items():
         task_icon = TASKS_CONFIG[task_category]['icon']
@@ -471,7 +492,7 @@ for board, board_config in BOARDS_CONFIG.items():
             "data": boards_data[board]["data_tasks"][task_category],
             "refresh": get_refresh_function(task_category, task_category_list),
             "credits": credits,
-            "metric": board_config.get("metric", None),
+            "metric": metric,
         })
 
 dataframes = []
@@ -635,7 +656,7 @@ with gr.Blocks(css=css) as block:
                                 gr.Markdown(f"""
                                 {item['description']}
 
-                                - **Metric:** {specific_metric}
+                                - **Metric:** {item.get('metric', metric)}
                                 - **Languages:** {item['language_long'] if 'language_long' in item else item['language']}
                                 {"- **Credits:** " + item['credits'] if ("credits" in item and item["credits"] is not None) else ''}
                                 """)
