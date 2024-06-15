@@ -116,8 +116,16 @@ for model in pbar:
     ds = ds.map(add_task)
     base_dict = {"Model": make_clickable_model(model, link=EXTERNAL_MODEL_TO_LINK.get(model, f"https://huggingface.co/spaces/{REPO_ID}"))}
     # For now only one metric per task - Could add more metrics lateron
+    
+    def filter_function(x, task, metric):
+        # This is a hack for the passkey and needle retrieval test, which reports ndcg_at_1 (i.e. accuracy), rather than the ndcg_at_10 that is commonly used for retrieval tasks. 
+        if x['mteb_dataset_name'] in ['LEMBNeedleRetrieval', 'LEMBPasskeyRetrieval']:
+            return x["mteb_task"] == task and x['metric'] == 'ndcg_at_1'
+        else:
+            return x["mteb_task"] == task and x["metric"] == metric
+    
     for task, metric in TASK_TO_METRIC.items():
-        ds_dict = ds.filter(lambda x: (x["mteb_task"] == task) and (x["metric"] == metric))["test"].to_dict()
+        ds_dict = ds.filter(lambda x: filter_function(x, task, metric))["test"].to_dict()
         ds_dict = {k: round(v, 2) for k, v in zip(ds_dict["mteb_dataset_name_with_lang"], ds_dict["score"])}
         EXTERNAL_MODEL_RESULTS[model][task][metric].append({**base_dict, **ds_dict})
 
@@ -463,6 +471,7 @@ for board, board_config in BOARDS_CONFIG.items():
             "data": boards_data[board]["data_tasks"][task_category],
             "refresh": get_refresh_function(task_category, task_category_list),
             "credits": credits,
+            "metric": board_config.get("metric", None),
         })
 
 dataframes = []
@@ -618,11 +627,15 @@ with gr.Blocks(css=css) as block:
                             # For updating the 'language' in the URL
                             item_tab.select(update_url_language, [current_task_language, language_per_task], [current_task_language, language_per_task], trigger_mode="always_last").then(None, [current_task_language], [], js=set_window_url_params)
 
+                            specific_metric = metric
+                            if item.get("metric", None) is not None:
+                                specific_metric = item['metric']
+                            
                             with gr.Row():
                                 gr.Markdown(f"""
                                 {item['description']}
 
-                                - **Metric:** {metric}
+                                - **Metric:** {specific_metric}
                                 - **Languages:** {item['language_long'] if 'language_long' in item else item['language']}
                                 {"- **Credits:** " + item['credits'] if ("credits" in item and item["credits"] is not None) else ''}
                                 """)

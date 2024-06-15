@@ -301,6 +301,7 @@ boards:
     icon: "📚"
     special_icons: null
     credits: "[LongEmbed](https://arxiv.org/abs/2404.12096v2)"
+    metric: nDCG@10 (for NarrativeQA, QMSum, SummScreenFD, WikimQA) & nDCG@1 (for passkey and needle)
     tasks:
       Retrieval:
         - LEMBNarrativeQARetrieval
