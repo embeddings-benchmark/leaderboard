@@ -266,13 +266,10 @@ def get_mteb_data(tasks=["Clustering"], langs=[], datasets=[], fillna=True, add_
             task_results = [sub_res for sub_res in meta["model-index"][0]["results"] if (sub_res.get("task", {}).get("type", "") in tasks) and (sub_res.get("dataset", {}).get("config", "default") in ("default", *langs))]
         else:
             task_results = [sub_res for sub_res in meta["model-index"][0]["results"] if (sub_res.get("task", {}).get("type", "") in tasks)]
-        # if model.modelId == "w601sxs/b1ade-embed-kd_3":
-        #     import pdb; pdb.set_trace()
         try:
             out = [{res["dataset"]["name"].replace("MTEB ", ""): [round(score["value"], 2) for score in res["metrics"] if filter_metric_fetched(res["dataset"]["name"].replace("MTEB ", ""), score["type"], task_to_metric.get(res["task"]["type"]))][0]} for res in task_results]
         except Exception as e:
-            import pdb; pdb.set_trace()
-            print("ERROR", model.modelId)
+            print("ERROR", model.modelId, e)
             continue
         out = {k: v for d in out for k, v in d.items()}
         out["Model"] = make_clickable_model(model.modelId)
