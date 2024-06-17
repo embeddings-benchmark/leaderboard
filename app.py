@@ -23,7 +23,15 @@ PRETTY_NAMES = {
     "BitextMining": "Bitext Mining",
 }
 
-TASK_TO_METRIC = {k: v["metric"] for k, v in TASKS_CONFIG.items()}
+TASK_TO_METRIC = {k: [v["metric"]] for k, v in TASKS_CONFIG.items()}
+# Add legacy metric names
+TASK_TO_METRIC["STS"].append("cos_sim_spearman")
+TASK_TO_METRIC["STS"].append("cosine_spearman")
+TASK_TO_METRIC["Summarization"].append("cos_sim_spearman")
+TASK_TO_METRIC["Summarization"].append("cosine_spearman")
+TASK_TO_METRIC["PairClassification"].append("cos_sim_ap")
+TASK_TO_METRIC["PairClassification"].append("cosine_ap")
+
 
 def make_clickable_model(model_name, link=None):
     if link is None:
@@ -93,16 +101,16 @@ def add_task(examples):
         examples["mteb_task"] = "Unknown"
     return examples
 
-def filter_metric_external(x, task, metric):
+def filter_metric_external(x, task, metrics):
     # This is a hack for the passkey and needle retrieval test, which reports ndcg_at_1 (i.e. accuracy), rather than the ndcg_at_10 that is commonly used for retrieval tasks. 
     if x['mteb_dataset_name'] in ['LEMBNeedleRetrieval', 'LEMBPasskeyRetrieval']:
         return x["mteb_task"] == task and x['metric'] == 'ndcg_at_1'
     else:
-        return x["mteb_task"] == task and x["metric"] == metric
+        return x["mteb_task"] == task and x["metric"] in metrics
 
-def filter_metric_fetched(name, metric, expected_metric):
+def filter_metric_fetched(name, metric, expected_metrics):
     # This is a hack for the passkey and needle retrieval test, which reports ndcg_at_1 (i.e. accuracy), rather than the ndcg_at_10 that is commonly used for retrieval tasks. 
-    return metric == 'ndcg_at_1' if name in ['LEMBNeedleRetrieval', 'LEMBPasskeyRetrieval'] else metric == expected_metric
+    return metric == 'ndcg_at_1' if name in ['LEMBNeedleRetrieval', 'LEMBPasskeyRetrieval'] else metric in expected_metrics
 
 if os.path.exists("EXTERNAL_MODEL_RESULTS.json"):
     with open("EXTERNAL_MODEL_RESULTS.json") as f:
@@ -112,9 +120,9 @@ if os.path.exists("EXTERNAL_MODEL_RESULTS.json"):
     for model in EXTERNAL_MODELS:
         if model not in EXTERNAL_MODEL_RESULTS:
             models_to_run.append(model)
-            EXTERNAL_MODEL_RESULTS[model] = {k: {v: []} for k, v in TASK_TO_METRIC.items()}
+            EXTERNAL_MODEL_RESULTS[model] = {k: {v[0]: []} for k, v in TASK_TO_METRIC.items()}
 else:
-    EXTERNAL_MODEL_RESULTS = {model: {k: {v: []} for k, v in TASK_TO_METRIC.items()} for model in EXTERNAL_MODELS}
+    EXTERNAL_MODEL_RESULTS = {model: {k: {v[0]: []} for k, v in TASK_TO_METRIC.items()} for model in EXTERNAL_MODELS}
     models_to_run = EXTERNAL_MODELS
 
 pbar = tqdm(models_to_run, desc="Fetching external model results")
@@ -127,10 +135,11 @@ for model in pbar:
     ds = ds.map(add_task)
     base_dict = {"Model": make_clickable_model(model, link=EXTERNAL_MODEL_TO_LINK.get(model, f"https://huggingface.co/spaces/{REPO_ID}"))}
 
-    for task, metric in TASK_TO_METRIC.items():
-        ds_dict = ds.filter(lambda x: filter_metric_external(x, task, metric))["test"].to_dict()
+    for task, metrics in TASK_TO_METRIC.items():
+        ds_dict = ds.filter(lambda x: filter_metric_external(x, task, metrics))["test"].to_dict()
         ds_dict = {k: round(v, 2) for k, v in zip(ds_dict["mteb_dataset_name_with_lang"], ds_dict["score"])}
-        EXTERNAL_MODEL_RESULTS[model][task][metric].append({**base_dict, **ds_dict})
+        # metrics[0] is the main name for this metric; other names in the list are legacy for backward-compat
+        EXTERNAL_MODEL_RESULTS[model][task][metrics[0]].append({**base_dict, **ds_dict})
 
 # Save & cache EXTERNAL_MODEL_RESULTS
 with open("EXTERNAL_MODEL_RESULTS.json", "w") as f:
@@ -204,9 +213,8 @@ def get_mteb_data(tasks=["Clustering"], langs=[], datasets=[], fillna=True, add_
         results_list = []
         for task in tasks:
             # Not all models have InstructionRetrieval, other new tasks
-            if task not in EXTERNAL_MODEL_RESULTS[model]:
-                continue
-            results_list += EXTERNAL_MODEL_RESULTS[model][task][task_to_metric[task]]
+            if task not in EXTERNAL_MODEL_RESULTS[model]: continue
+            results_list += EXTERNAL_MODEL_RESULTS[model][task][task_to_metric[task][0]]
         
         if len(datasets) > 0:
             res = {k: v for d in results_list for k, v in d.items() if (k == "Model") or any([x in k for x in datasets])}
@@ -262,7 +270,8 @@ def get_mteb_data(tasks=["Clustering"], langs=[], datasets=[], fillna=True, add_
         #     import pdb; pdb.set_trace()
         try:
             out = [{res["dataset"]["name"].replace("MTEB ", ""): [round(score["value"], 2) for score in res["metrics"] if filter_metric_fetched(res["dataset"]["name"].replace("MTEB ", ""), score["type"], task_to_metric.get(res["task"]["type"]))][0]} for res in task_results]
-        except:
+        except Exception as e:
+            import pdb; pdb.set_trace()
             print("ERROR", model.modelId)
             continue
         out = {k: v for d in out for k, v in d.items()}
@@ -304,10 +313,7 @@ def get_mteb_data(tasks=["Clustering"], langs=[], datasets=[], fillna=True, add_
     if len(datasets) > 0:
         # Update legacy column names to be merged with newer ones
         # Update 'MLSUMClusteringP2P (fr)' with values from 'MLSUMClusteringP2P'
-        #if ('MLSUMClusteringP2P (fr)' in datasets):
-        #    import pdb; pdb.set_trace()
         if ('MLSUMClusteringP2P (fr)' in datasets) and ('MLSUMClusteringP2P' in cols):
-            #import pdb; pdb.set_trace()
             df['MLSUMClusteringP2P (fr)'] = df['MLSUMClusteringP2P (fr)'].fillna(df['MLSUMClusteringP2P'])
             datasets.remove('MLSUMClusteringP2P')
         if ('MLSUMClusteringS2S (fr)' in datasets) and ('MLSUMClusteringS2S' in cols):
@@ -656,7 +662,7 @@ with gr.Blocks(css=css) as block:
                                 gr.Markdown(f"""
                                 {item['description']}
 
-                                - **Metric:** {item.get('metric', metric)}
+                                - **Metric:** {specific_metric}
                                 - **Languages:** {item['language_long'] if 'language_long' in item else item['language']}
                                 {"- **Credits:** " + item['credits'] if ("credits" in item and item["credits"] is not None) else ''}
                                 """)

@@ -16,12 +16,12 @@ tasks:
   Clustering:
     icon: "✨"
     metric: v_measure
-    metric_description: "Validity Measure (v_measure)"
+    metric_description: "Validity Measure (V-measure)"
     task_description: "Clustering is the task of grouping similar documents together."
   PairClassification:
     icon: "🎭"
-    metric: cos_sim_ap
-    metric_description: "Average Precision based on Cosine Similarities (cos_sim_ap)"
+    metric: ap
+    metric_description: "Average Precision (AP) based on the models similarity metric (usually cosine)"
     task_description: "Pair classification is the task of determining whether two texts are similar."
   Reranking: 
     icon: "🥈"
@@ -31,22 +31,22 @@ tasks:
   Retrieval:
     icon: "🔎"
     metric: ndcg_at_10
-    metric_description: "Normalized Discounted Cumulative Gain @ k (ndcg_at_10)"
+    metric_description: "Normalized Discounted Cumulative Gain @ 10 (nDCG@10)"
     task_description: "Retrieval is the task of finding relevant documents for a query."
   STS:
     icon: "☘️"
-    metric: cos_sim_spearman
-    metric_description: "Spearman correlation based on cosine similarity"
+    metric: spearman
+    metric_description: "Spearman correlation based on the model's similarity metric (usually cosine)"
     task_description: "Semantic Textual Similarity is the task of determining how similar two texts are."
   Summarization:
     icon: "📜"
-    metric: cos_sim_spearman
-    metric_description: "Spearman correlation	based on cosine similarity"
+    metric: spearman
+    metric_description: "Spearman correlation based on the model's similarity metric (usually cosine)"
     task_description: "Summarization is the task of generating a summary of a text."
   InstructionRetrieval:
     icon: "🔎📋"
     metric: "p-MRR"
-    metric_description: "paired mean reciprocal rank"
+    metric_description: "paired mean reciprocal rank (p-MRR)"
     task_description: "Retrieval w/Instructions is the task of finding relevant documents for a query that has detailed instructions."
 boards:
   en:
