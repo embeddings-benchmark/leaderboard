@@ -1388,6 +1388,7 @@ models_to_skip:
 - radia/snowflake-arctic-embed-l-Q4_K_M-GGUF
 - GregorBiswanger/GritLM-7B-Q4_K_M-GGUF
 - powermove72/GritLM-7B-Q4_K_M-GGUF
+- sunzx0810/gte-Qwen2-7B-instruct-Q5_K_M-GGUF
 cross_encoders:
 - FollowIR-7B
 - flan-t5-base
