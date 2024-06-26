@@ -1390,6 +1390,7 @@ models_to_skip:
 - powermove72/GritLM-7B-Q4_K_M-GGUF
 - sunzx0810/gte-Qwen2-7B-instruct-Q5_K_M-GGUF
 - nazimali/gte-Qwen2-7B-instruct-Q6_K-GGUF
+- nazimali/gte-Qwen2-7B-instruct-Q6_K-GGUF
 cross_encoders:
 - FollowIR-7B
 - flan-t5-base
