@@ -1391,6 +1391,10 @@ models_to_skip:
 - sunzx0810/gte-Qwen2-7B-instruct-Q5_K_M-GGUF
 - nazimali/gte-Qwen2-7B-instruct-Q6_K-GGUF
 - nazimali/gte-Qwen2-7B-instruct-Q6_K-GGUF
+- fishbone64/gte-Qwen2-7B-instruct-Q8_0-GGUF
+- liddlefish/privacy_embedding_rag
+- liddlefish/privacy_embedding_rag_10k_tmp
+- liddlefish/privacy_embedding_bge_small_synthetic
 cross_encoders:
 - FollowIR-7B
 - flan-t5-base
