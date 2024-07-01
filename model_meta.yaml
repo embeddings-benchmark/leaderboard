@@ -1395,6 +1395,7 @@ models_to_skip:
 - liddlefish/privacy_embedding_rag
 - liddlefish/privacy_embedding_rag_10k_tmp
 - liddlefish/privacy_embedding_bge_small_synthetic
+- mxs980/gte-Qwen2-1.5B-instruct-Q8_0-GGUF
 cross_encoders:
 - FollowIR-7B
 - flan-t5-base
