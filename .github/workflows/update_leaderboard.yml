@@ -1,0 +1,40 @@
+# This workflow will install Python dependencies, run tests and lint with a single version of Python
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-python-with-github-actions
+
+name: update_leaderboard_daily
+
+on:
+  schedule:
+    - cron: '30 2 * * *'
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v3
+      with:
+        fetch-depth: 0
+        lfs: true
+    - name: Set up Python 3.9
+      uses: actions/setup-python@v4
+      with:
+        python-version: 3.9
+    - name: Install requirements
+      run: |
+        pip install -r requirements.txt
+    - name: Run leaderboard updating code
+      run: |
+        python refresh.py
+    - name: Commit updates
+      uses: stefanzweifel/git-auto-commit-action@v4
+      with:
+        commit_message: Automated Leaderboard Update
+        file_pattern: '*.pkl *.json'
+    - name: Push to hub
+      env:
+        HF_TOKEN: ${{ secrets.HF_TOKEN }}
+      run: git push https://mteb:$HF_TOKEN@huggingface.co/spaces/mteb/leaderboard-in-progress main
