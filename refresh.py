@@ -14,7 +14,7 @@ from utils.model_size import get_model_parameters_memory
 from envs import LEADERBOARD_CONFIG, MODEL_META, REPO_ID, RESULTS_REPO, API
 
 
-
+MODEL_CACHE = {}
 TASKS_CONFIG = LEADERBOARD_CONFIG["tasks"]
 BOARDS_CONFIG = LEADERBOARD_CONFIG["boards"]
 
@@ -187,6 +187,20 @@ def get_external_model_results():
     return EXTERNAL_MODEL_RESULTS
 
 
+def download_or_use_cache(modelId):
+    global MODEL_CACHE
+    if modelId in MODEL_CACHE:
+        return MODEL_CACHE[modelId]
+    try:
+        readme_path = hf_hub_download(modelId, filename="README.md", etag_timeout=30)
+    except Exception:
+        print(f"ERROR: Could not fetch metadata for {modelId}, trying again")
+        readme_path = hf_hub_download(modelId, filename="README.md", etag_timeout=30)
+    meta = metadata_load(readme_path)
+    MODEL_CACHE[modelId] = meta
+    return meta
+
+
 def get_mteb_data(tasks=["Clustering"], langs=[], datasets=[], fillna=True, add_emb_dim=True, task_to_metric=TASK_TO_METRIC, rank=True):
     global MODEL_INFOS
 
@@ -230,16 +244,10 @@ def get_mteb_data(tasks=["Clustering"], langs=[], datasets=[], fillna=True, add_
     for model in pbar:
         if model.modelId in MODELS_TO_SKIP: continue
         pbar.set_description(f"Fetching {model.modelId!r} metadata")
-        try:
-            readme_path = hf_hub_download(model.modelId, filename="README.md", etag_timeout=30)
-        except Exception:
-            print(f"ERROR: Could not fetch metadata for {model.modelId}, trying again")
-            readme_path = hf_hub_download(model.modelId, filename="README.md", etag_timeout=30)
-        meta = metadata_load(readme_path)
+        meta = download_or_use_cache(model.modelId)
         MODEL_INFOS[model.modelId] = {
             "metadata": meta
         }
-        meta = MODEL_INFOS[model.modelId]["metadata"]
         if "model-index" not in meta:
             continue
         # meta['model-index'][0]["results"] is list of elements like:
