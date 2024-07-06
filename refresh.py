@@ -230,7 +230,11 @@ def get_mteb_data(tasks=["Clustering"], langs=[], datasets=[], fillna=True, add_
     for model in pbar:
         if model.modelId in MODELS_TO_SKIP: continue
         pbar.set_description(f"Fetching {model.modelId!r} metadata")
-        readme_path = hf_hub_download(model.modelId, filename="README.md")
+        try:
+            readme_path = hf_hub_download(model.modelId, filename="README.md", etag_timeout=30)
+        except Exception:
+            print(f"ERROR: Could not fetch metadata for {model.modelId}, trying again")
+            readme_path = hf_hub_download(model.modelId, filename="README.md", etag_timeout=30)
         meta = metadata_load(readme_path)
         MODEL_INFOS[model.modelId] = {
             "metadata": meta
