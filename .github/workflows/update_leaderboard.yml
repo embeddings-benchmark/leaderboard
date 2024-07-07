@@ -34,6 +34,10 @@ jobs:
       with:
         commit_message: Automated Leaderboard Update
         file_pattern: '*.json boards_data/* all_data_tasks/*'
+        # Needed so that it can override the PR settings
+        commit_user_name: Orion Weller
+        commit_user_email: wellerorion@gmail.com
+        commit_author: Orion Weller <wellerorion@gmail.com>
     - name: Push to hub
       env:
         HF_TOKEN: ${{ secrets.HF_TOKEN }}
