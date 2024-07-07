@@ -446,7 +446,8 @@ def write_out_results(item: dict, item_name: str):
     elif isinstance(item, pd.DataFrame):
         print(f"Saving {main_folder} to {main_folder}/default.jsonl")
         os.makedirs(main_folder, exist_ok=True)
-        item.to_json(f"{main_folder}/default.jsonl", orient="records", lines=True)
+        
+        item.reset_index().to_json(f"{main_folder}/default.jsonl", orient="records", lines=True)
 
     elif isinstance(item, str):
         print(f"Saving {main_folder} to {main_folder}/default.txt")
@@ -492,7 +493,11 @@ def load_results(data_path):
                 return {file_name: load_results(os.path.join(data_path, file_name)) for file_name in all_files_in_dir}
         
     elif data_path.endswith(".jsonl"):
-        return pd.read_json(data_path, orient="records", lines=True)
+        df = pd.read_json(data_path, orient="records", lines=True)
+        if "index" in df.columns:
+            df = df.set_index("index")
+        return df
+    
     else:
         with open(data_path, "r") as f:
             data = f.read()
