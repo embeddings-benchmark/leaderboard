@@ -9,7 +9,7 @@ import pandas as pd
 from tqdm.autonotebook import tqdm
 
 from utils.model_size import get_model_parameters_memory
-from refresh import TASK_TO_METRIC, TASKS, PRETTY_NAMES, TASKS_CONFIG, BOARDS_CONFIG
+from refresh import TASK_TO_METRIC, TASKS, PRETTY_NAMES, TASKS_CONFIG, BOARDS_CONFIG, load_results
 from envs import REPO_ID
 from refresh import PROPRIETARY_MODELS, SENTENCE_TRANSFORMERS_COMPATIBLE_MODELS, CROSS_ENCODERS, BI_ENCODERS, TASK_DESCRIPTIONS, EXTERNAL_MODEL_TO_LINK, make_clickable_model
 
@@ -90,11 +90,8 @@ Each inner tab can have the following keys:
 
 # load in the pre-calculated `all_data_tasks` and `boards_data`
 print(f"Loading pre-calculated data....")
-with open("all_data_tasks.pkl", "rb") as f:
-    all_data_tasks = pickle.load(f)
-
-with open("boards_data.pkl", "rb") as f:
-    boards_data = pickle.load(f)
+all_data_tasks = load_results("all_data_tasks")
+boards_data = load_results("boards_data")
 
 #### Caclulate Metadata
 # Exact, add all non-nan integer values for every dataset

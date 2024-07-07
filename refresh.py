@@ -386,7 +386,8 @@ def refresh_leaderboard():
     """
 
     # get external model results and cache them
-    external_results = get_external_model_results()
+    # NOTE: if your model results have changed, use this function to refresh them (see inside for details)
+    get_external_model_results()
 
     boards_data = {}
     all_data_tasks = []
@@ -414,14 +415,109 @@ def refresh_leaderboard():
 
 
 
+def write_out_results(item: dict, item_name: str):
+    """
+    Due to their complex structure, let's recursively create subfolders until we reach the end
+        of the item and then save the DFs as jsonl files
+
+    Args:
+        item (dict): The item to save
+        item_name (str): The name of the item
+    
+    Returns:
+        None
+    """
+    main_folder = item_name
+
+    if isinstance(item, list): 
+        for i, v in enumerate(item):
+            write_out_results(v, os.path.join(main_folder, str(i)))
+
+    elif isinstance(item, dict):
+        for key, value in item.items():
+            if isinstance(value, dict):
+                write_out_results(value, os.path.join(main_folder, key))
+            elif isinstance(value, list):
+                for i, v in enumerate(value):
+                    write_out_results(v, os.path.join(main_folder, key + str(i)))
+            else:
+                write_out_results(value, os.path.join(main_folder, key))
+
+    elif isinstance(item, pd.DataFrame):
+        print(f"Saving {main_folder} to {main_folder}/default.jsonl")
+        os.makedirs(main_folder, exist_ok=True)
+        
+        item.reset_index().to_json(f"{main_folder}/default.jsonl", orient="records", lines=True)
+
+    elif isinstance(item, str):
+        print(f"Saving {main_folder} to {main_folder}/default.txt")
+        os.makedirs(main_folder, exist_ok=True)
+        with open(f"{main_folder}/default.txt", "w") as f:
+            f.write(item)
+
+    elif item is None:
+        # write out an empty file
+        print(f"Saving {main_folder} to {main_folder}/default.txt")
+        os.makedirs(main_folder, exist_ok=True)
+        with open(f"{main_folder}/default.txt", "w") as f:
+            f.write("")
+
+    else:
+        raise Exception(f"Unknown type {type(item)}")
+
+
+def load_results(data_path):
+    """
+    Do the reverse of `write_out_results` to reconstruct the item
+
+    Args:
+        data_path (str): The path to the data to load
+
+    Returns:
+        dict: The loaded data
+    """
+    if os.path.isdir(data_path):
+        # if the folder just has numbers from 0 to N, load as a list
+        all_files_in_dir = list(os.listdir(data_path))
+        if set(all_files_in_dir) == set([str(i) for i in range(len(all_files_in_dir))]):
+            ### the list case
+            return [load_results(os.path.join(data_path, str(i))) for i in range(len(os.listdir(data_path)))]
+        else:
+            if len(all_files_in_dir) == 1:
+                file_name = all_files_in_dir[0]
+                if file_name == "default.jsonl": 
+                    return load_results(os.path.join(data_path, file_name))
+                else: ### the dict case
+                    return {file_name: load_results(os.path.join(data_path, file_name))}
+            else:
+                return {file_name: load_results(os.path.join(data_path, file_name)) for file_name in all_files_in_dir}
+        
+    elif data_path.endswith(".jsonl"):
+        df = pd.read_json(data_path, orient="records", lines=True)
+        if "index" in df.columns:
+            df = df.set_index("index")
+        return df
+    
+    else:
+        with open(data_path, "r") as f:
+            data = f.read()
+        if data == "":
+            return None
+        else:
+            return data
+
+
+
 if __name__ == "__main__":
     print(f"Refreshing leaderboard statistics...")
     all_data_tasks, boards_data = refresh_leaderboard()
-
     print(f"Done calculating, saving...")
-    # save them so that the leaderboard can use them, as pickles because they're quite complex objects
-    with open("all_data_tasks.pkl", "wb") as f:
-        pickle.dump(all_data_tasks, f)
+    # save them so that the leaderboard can use them.  They're quite complex though
+    #   but we can't use pickle files because of git-lfs. 
+    write_out_results(all_data_tasks, "all_data_tasks")
+    write_out_results(boards_data, "boards_data")
 
-    with open("boards_data.pkl", "wb") as f:
-        pickle.dump(boards_data, f)
+    # to load them use
+    # all_data_tasks = load_results("all_data_tasks")
+    # boards_data = load_results("boards_data")
+    print("Done saving results!")

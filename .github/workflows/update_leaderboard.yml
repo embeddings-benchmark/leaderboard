@@ -33,7 +33,7 @@ jobs:
       uses: stefanzweifel/git-auto-commit-action@v4
       with:
         commit_message: Automated Leaderboard Update
-        file_pattern: '*.pkl *.json'
+        file_pattern: '*.json boards_data/* all_data_tasks/*'
     - name: Push to hub
       env:
         HF_TOKEN: ${{ secrets.HF_TOKEN }}
