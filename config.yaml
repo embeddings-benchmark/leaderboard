@@ -230,7 +230,7 @@ boards:
         - MasakhaNEWSClusteringS2S (fra)
       PairClassification:
         - OpusparcusPC (fr)
-        - PawsX (fr)
+        - PawsXPairClassification (fr)
       Reranking:
         - AlloprofReranking
         - SyntecReranking

@@ -214,6 +214,8 @@ def get_mteb_data(tasks=["Clustering"], langs=[], datasets=[], fillna=True, add_
         datasets.append('MLSUMClusteringP2P')
     if ('MLSUMClusteringS2S (fr)' in datasets):
         datasets.append('MLSUMClusteringS2S')
+    if ('PawsX (fr)' in datasets):
+        datasets.append('PawsXPairClassification (fr)')
     # Initialize list to models that we cannot fetch metadata from
     df_list = []
     for model in external_model_results:
