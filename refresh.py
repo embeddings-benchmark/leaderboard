@@ -323,7 +323,10 @@ def get_mteb_data(tasks=["Clustering"], langs=[], datasets=[], fillna=True, add_
             df['MLSUMClusteringS2S (fr)'] = df['MLSUMClusteringS2S (fr)'].fillna(df['MLSUMClusteringS2S'])
             datasets.remove('MLSUMClusteringS2S')
         if ('PawsXPairClassification (fr)' in datasets) and ('PawsX (fr)' in cols):
-            df['PawsXPairClassification (fr)'] = df['PawsXPairClassification (fr)'].fillna(df['PawsX (fr)'])
+            if 'PawsXPairClassification (fr)' in cols:
+                df['PawsXPairClassification (fr)'] = df['PawsXPairClassification (fr)'].fillna(df['PawsX (fr)'])
+            else:
+                df['PawsXPairClassification (fr)'] = df['PawsX (fr)']
             datasets.remove('PawsX (fr)')
         # Filter invalid columns
         cols = [col for col in cols if col in base_columns + datasets]
