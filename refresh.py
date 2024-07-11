@@ -356,8 +356,10 @@ def get_mteb_average(task_dict: dict):
     )
     # Debugging:
     # DATA_OVERALL.to_csv("overall.csv")
-    
-    DATA_OVERALL.insert(1, f"Average ({len(all_tasks)} datasets)", DATA_OVERALL[all_tasks].mean(axis=1, skipna=False))
+    try:
+        DATA_OVERALL.insert(1, f"Average ({len(all_tasks)} datasets)", DATA_OVERALL[all_tasks].mean(axis=1, skipna=False))
+    except Exception as e:
+        breakpoint()
     for i, (task_category, task_category_list) in enumerate(task_dict.items()):
         DATA_OVERALL.insert(i+2, f"{task_category} Average ({len(task_category_list)} datasets)", DATA_OVERALL[task_category_list].mean(axis=1, skipna=False))
     DATA_OVERALL.sort_values(f"Average ({len(all_tasks)} datasets)", ascending=False, inplace=True)
@@ -423,7 +425,7 @@ def refresh_leaderboard():
 
 
 
-def write_out_results(item: dict, item_name: str):
+def write_out_results(item, item_name: str):
     """
     Due to their complex structure, let's recursively create subfolders until we reach the end
         of the item and then save the DFs as jsonl files
