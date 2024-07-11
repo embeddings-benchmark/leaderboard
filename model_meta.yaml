@@ -1,12 +1,4 @@
 model_meta:
-  gte-Qwen2-7B-instruct:
-    link: https://huggingface.co/Alibaba-NLP/gte-Qwen2-7B-instruct
-    seq_len: 32768
-    size: 7099
-    dim: 4096
-    is_external: true
-    is_proprietary: false
-    is_sentence_transformers_compatible: true
   gte-Qwen1.5-7B-instruct:
     link: https://huggingface.co/Alibaba-NLP/gte-Qwen1.5-7B-instruct
     seq_len: 32768
