@@ -1222,7 +1222,7 @@ model_meta:
   NV-Retriever-v1:
     link: https://huggingface.co/nvidia/NV-Retriever-v1
     seq_len: 512
-    size: 7851
+    size: 7111
     dim: 4096
     is_external: false
     is_proprietary: false
