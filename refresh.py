@@ -323,11 +323,17 @@ def get_mteb_data(tasks=["Clustering"], langs=[], datasets=[], fillna=True, add_
             df['MLSUMClusteringS2S (fr)'] = df['MLSUMClusteringS2S (fr)'].fillna(df['MLSUMClusteringS2S'])
             datasets.remove('MLSUMClusteringS2S')
         if ('PawsXPairClassification (fr)' in datasets) and ('PawsX (fr)' in cols):
-            if 'PawsXPairClassification (fr)' in cols:
-                df['PawsXPairClassification (fr)'] = df['PawsXPairClassification (fr)'].fillna(df['PawsX (fr)'])
-            else:
+             # for the first bit no model has it, hence no column for it. We can remove this in a month or so
+            if "PawsXPairClassification (fr)" not in cols:
                 df['PawsXPairClassification (fr)'] = df['PawsX (fr)']
+            else:
+                df['PawsXPairClassification (fr)'] = df['PawsXPairClassification (fr)'].fillna(df['PawsX (fr)'])
+            # make all the columns the same
             datasets.remove('PawsX (fr)')
+            cols.remove('PawsX (fr)')
+            df.drop(columns=['PawsX (fr)'], inplace=True)
+            cols.append('PawsXPairClassification (fr)')
+            
         # Filter invalid columns
         cols = [col for col in cols if col in base_columns + datasets]
     i = 0
@@ -356,10 +362,7 @@ def get_mteb_average(task_dict: dict):
     )
     # Debugging:
     # DATA_OVERALL.to_csv("overall.csv")
-    try:
-        DATA_OVERALL.insert(1, f"Average ({len(all_tasks)} datasets)", DATA_OVERALL[all_tasks].mean(axis=1, skipna=False))
-    except Exception as e:
-        breakpoint()
+    DATA_OVERALL.insert(1, f"Average ({len(all_tasks)} datasets)", DATA_OVERALL[all_tasks].mean(axis=1, skipna=False))
     for i, (task_category, task_category_list) in enumerate(task_dict.items()):
         DATA_OVERALL.insert(i+2, f"{task_category} Average ({len(task_category_list)} datasets)", DATA_OVERALL[task_category_list].mean(axis=1, skipna=False))
     DATA_OVERALL.sort_values(f"Average ({len(all_tasks)} datasets)", ascending=False, inplace=True)
