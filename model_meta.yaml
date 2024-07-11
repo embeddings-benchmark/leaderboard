@@ -1219,6 +1219,14 @@ model_meta:
     is_external: true
     is_proprietary: false
     is_sentence_transformers_compatible: true
+  NV-Retriever-v1:
+    link: https://huggingface.co/nvidia/NV-Retriever-v1
+    seq_len: 512
+    size: 7851
+    dim: 4096
+    is_external: false
+    is_proprietary: false
+    is_sentence_transformers_compatible: false
   NV-Embed-v1:
     link: https://huggingface.co/nvidia/NV-Embed-v1
     seq_len: 32768
