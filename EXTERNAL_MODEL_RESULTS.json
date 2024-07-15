@@ -879,127 +879,6 @@
             ]
         }
     },
-    "all-mpnet-base-v2": {
-        "BitextMining": {
-            "f1": [
-                {
-                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/sentence-transformers/all-mpnet-base-v2\">all-mpnet-base-v2</a>"
-                }
-            ]
-        },
-        "Classification": {
-            "accuracy": [
-                {
-                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/sentence-transformers/all-mpnet-base-v2\">all-mpnet-base-v2</a>",
-                    "AmazonCounterfactualClassification (en)": 65.27,
-                    "AmazonPolarityClassification": 67.13,
-                    "AmazonReviewsClassification (en)": 31.92,
-                    "Banking77Classification": 81.86,
-                    "EmotionClassification": 39.72,
-                    "ImdbClassification": 70.72,
-                    "MTOPDomainClassification (en)": 92.08,
-                    "MTOPIntentClassification (en)": 70.21,
-                    "MassiveIntentClassification (en)": 69.57,
-                    "MassiveScenarioClassification (en)": 76.01,
-                    "ToxicConversationsClassification": 60.86,
-                    "TweetSentimentExtractionClassification": 55.46
-                }
-            ]
-        },
-        "Clustering": {
-            "v_measure": [
-                {
-                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/sentence-transformers/all-mpnet-base-v2\">all-mpnet-base-v2</a>",
-                    "ArxivClusteringP2P": 48.38,
-                    "ArxivClusteringS2S": 39.72,
-                    "BiorxivClusteringP2P": 39.62,
-                    "BiorxivClusteringS2S": 35.02,
-                    "MedrxivClusteringP2P": 35.58,
-                    "MedrxivClusteringS2S": 32.87,
-                    "RedditClustering": 54.82,
-                    "RedditClusteringP2P": 56.77,
-                    "StackExchangeClustering": 53.8,
-                    "StackExchangeClusteringP2P": 34.28,
-                    "TwentyNewsgroupsClustering": 49.74
-                }
-            ]
-        },
-        "PairClassification": {
-            "ap": [
-                {
-                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/sentence-transformers/all-mpnet-base-v2\">all-mpnet-base-v2</a>",
-                    "SprintDuplicateQuestions": 90.15,
-                    "TwitterSemEval2015": 73.85,
-                    "TwitterURLCorpus": 85.11
-                }
-            ]
-        },
-        "Reranking": {
-            "map": [
-                {
-                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/sentence-transformers/all-mpnet-base-v2\">all-mpnet-base-v2</a>",
-                    "AskUbuntuDupQuestions": 65.85,
-                    "MindSmallReranking": 30.97,
-                    "SciDocsRR": 88.65,
-                    "StackOverflowDupQuestions": 51.98
-                }
-            ]
-        },
-        "Retrieval": {
-            "ndcg_at_10": [
-                {
-                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/sentence-transformers/all-mpnet-base-v2\">all-mpnet-base-v2</a>",
-                    "ArguAna": 46.52,
-                    "CQADupstackRetrieval": 44.96,
-                    "ClimateFEVER": 21.97,
-                    "DBPedia": 32.09,
-                    "FEVER": 50.86,
-                    "FiQA2018": 49.96,
-                    "HotpotQA": 39.29,
-                    "MSMARCO": 39.75,
-                    "NFCorpus": 33.29,
-                    "NQ": 50.45,
-                    "QuoraRetrieval": 87.46,
-                    "SCIDOCS": 23.76,
-                    "SciFact": 65.57,
-                    "TRECCOVID": 51.33,
-                    "Touche2020": 19.93
-                }
-            ]
-        },
-        "STS": {
-            "spearman": [
-                {
-                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/sentence-transformers/all-mpnet-base-v2\">all-mpnet-base-v2</a>",
-                    "BIOSSES": 80.43,
-                    "SICK-R": 80.59,
-                    "STS12": 72.63,
-                    "STS13": 83.48,
-                    "STS14": 78.0,
-                    "STS15": 85.66,
-                    "STS16": 80.03,
-                    "STS17 (en-en)": 90.6,
-                    "STS22 (en)": 67.95,
-                    "STSBenchmark": 83.42
-                }
-            ]
-        },
-        "Summarization": {
-            "spearman": [
-                {
-                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/sentence-transformers/all-mpnet-base-v2\">all-mpnet-base-v2</a>",
-                    "SummEval": 27.49
-                }
-            ]
-        },
-        "InstructionRetrieval": {
-            "p-MRR": [
-                {
-                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/sentence-transformers/all-mpnet-base-v2\">all-mpnet-base-v2</a>"
-                }
-            ]
-        }
-    },
     "nb-bert-large": {
         "BitextMining": {
             "f1": [
@@ -1361,82 +1240,6 @@
             "p-MRR": [
                 {
                     "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/BAAI/bge-small-zh-v1.5\">bge-small-zh-v1.5</a>"
-                }
-            ]
-        }
-    },
-    "Cohere-embed-english-v3.0": {
-        "BitextMining": {
-            "f1": [
-                {
-                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/Cohere/Cohere-embed-english-v3.0\">Cohere-embed-english-v3.0</a>"
-                }
-            ]
-        },
-        "Classification": {
-            "accuracy": [
-                {
-                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/Cohere/Cohere-embed-english-v3.0\">Cohere-embed-english-v3.0</a>"
-                }
-            ]
-        },
-        "Clustering": {
-            "v_measure": [
-                {
-                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/Cohere/Cohere-embed-english-v3.0\">Cohere-embed-english-v3.0</a>"
-                }
-            ]
-        },
-        "PairClassification": {
-            "ap": [
-                {
-                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/Cohere/Cohere-embed-english-v3.0\">Cohere-embed-english-v3.0</a>"
-                }
-            ]
-        },
-        "Reranking": {
-            "map": [
-                {
-                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/Cohere/Cohere-embed-english-v3.0\">Cohere-embed-english-v3.0</a>"
-                }
-            ]
-        },
-        "Retrieval": {
-            "ndcg_at_10": [
-                {
-                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/Cohere/Cohere-embed-english-v3.0\">Cohere-embed-english-v3.0</a>",
-                    "AILACasedocs": 31.54,
-                    "AILAStatutes": 27.15,
-                    "GerDaLIRSmall": 6.05,
-                    "LeCaRDv2": 21.02,
-                    "LegalBenchConsumerContractsQA": 77.12,
-                    "LegalBenchCorporateLobbying": 93.68,
-                    "LegalQuAD": 26.08,
-                    "LegalSummarization": 61.7
-                }
-            ]
-        },
-        "STS": {
-            "spearman": [
-                {
-                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/Cohere/Cohere-embed-english-v3.0\">Cohere-embed-english-v3.0</a>"
-                }
-            ]
-        },
-        "Summarization": {
-            "spearman": [
-                {
-                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/Cohere/Cohere-embed-english-v3.0\">Cohere-embed-english-v3.0</a>"
-                }
-            ]
-        },
-        "InstructionRetrieval": {
-            "p-MRR": [
-                {
-                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/Cohere/Cohere-embed-english-v3.0\">Cohere-embed-english-v3.0</a>",
-                    "Core17InstructionRetrieval": 2.8,
-                    "News21InstructionRetrieval": 0.2,
-                    "Robust04InstructionRetrieval": -3.63
                 }
             ]
         }
@@ -2773,79 +2576,6 @@
             "p-MRR": [
                 {
                     "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/sentence-transformers/average_word_embeddings_komninos\">komninos</a>"
-                }
-            ]
-        }
-    },
-    "bge-large-en-v1.5": {
-        "BitextMining": {
-            "f1": [
-                {
-                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/BAAI/bge-large-en-v1.5\">bge-large-en-v1.5</a>"
-                }
-            ]
-        },
-        "Classification": {
-            "accuracy": [
-                {
-                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/BAAI/bge-large-en-v1.5\">bge-large-en-v1.5</a>"
-                }
-            ]
-        },
-        "Clustering": {
-            "v_measure": [
-                {
-                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/BAAI/bge-large-en-v1.5\">bge-large-en-v1.5</a>"
-                }
-            ]
-        },
-        "PairClassification": {
-            "ap": [
-                {
-                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/BAAI/bge-large-en-v1.5\">bge-large-en-v1.5</a>"
-                }
-            ]
-        },
-        "Reranking": {
-            "map": [
-                {
-                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/BAAI/bge-large-en-v1.5\">bge-large-en-v1.5</a>"
-                }
-            ]
-        },
-        "Retrieval": {
-            "ndcg_at_10": [
-                {
-                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/BAAI/bge-large-en-v1.5\">bge-large-en-v1.5</a>",
-                    "AILACasedocs": 25.15,
-                    "AILAStatutes": 20.74,
-                    "GerDaLIRSmall": 3.96,
-                    "LeCaRDv2": 22.68,
-                    "LegalBenchConsumerContractsQA": 73.52,
-                    "LegalBenchCorporateLobbying": 91.51,
-                    "LegalQuAD": 16.22,
-                    "LegalSummarization": 59.99
-                }
-            ]
-        },
-        "STS": {
-            "spearman": [
-                {
-                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/BAAI/bge-large-en-v1.5\">bge-large-en-v1.5</a>"
-                }
-            ]
-        },
-        "Summarization": {
-            "spearman": [
-                {
-                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/BAAI/bge-large-en-v1.5\">bge-large-en-v1.5</a>"
-                }
-            ]
-        },
-        "InstructionRetrieval": {
-            "p-MRR": [
-                {
-                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/BAAI/bge-large-en-v1.5\">bge-large-en-v1.5</a>"
                 }
             ]
         }
@@ -6811,127 +6541,6 @@
             ]
         }
     },
-    "voyage-large-2-instruct": {
-        "BitextMining": {
-            "f1": [
-                {
-                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://docs.voyageai.com/embeddings/\">voyage-large-2-instruct</a>"
-                }
-            ]
-        },
-        "Classification": {
-            "accuracy": [
-                {
-                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://docs.voyageai.com/embeddings/\">voyage-large-2-instruct</a>",
-                    "AmazonCounterfactualClassification (en)": 77.6,
-                    "AmazonPolarityClassification": 96.58,
-                    "AmazonReviewsClassification (en)": 50.77,
-                    "Banking77Classification": 86.96,
-                    "EmotionClassification": 59.81,
-                    "ImdbClassification": 96.13,
-                    "MTOPDomainClassification (en)": 98.86,
-                    "MTOPIntentClassification (en)": 86.97,
-                    "MassiveIntentClassification (en)": 81.08,
-                    "MassiveScenarioClassification (en)": 87.95,
-                    "ToxicConversationsClassification": 83.58,
-                    "TweetSentimentExtractionClassification": 71.55
-                }
-            ]
-        },
-        "Clustering": {
-            "v_measure": [
-                {
-                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://docs.voyageai.com/embeddings/\">voyage-large-2-instruct</a>",
-                    "ArxivClusteringP2P": 51.81,
-                    "ArxivClusteringS2S": 44.73,
-                    "BiorxivClusteringP2P": 46.07,
-                    "BiorxivClusteringS2S": 40.64,
-                    "MedrxivClusteringP2P": 42.94,
-                    "MedrxivClusteringS2S": 41.44,
-                    "RedditClustering": 68.5,
-                    "RedditClusteringP2P": 64.86,
-                    "StackExchangeClustering": 74.16,
-                    "StackExchangeClusteringP2P": 45.1,
-                    "TwentyNewsgroupsClustering": 66.62
-                }
-            ]
-        },
-        "PairClassification": {
-            "ap": [
-                {
-                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://docs.voyageai.com/embeddings/\">voyage-large-2-instruct</a>",
-                    "SprintDuplicateQuestions": 94.5,
-                    "TwitterSemEval2015": 86.32,
-                    "TwitterURLCorpus": 86.9
-                }
-            ]
-        },
-        "Reranking": {
-            "map": [
-                {
-                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://docs.voyageai.com/embeddings/\">voyage-large-2-instruct</a>",
-                    "AskUbuntuDupQuestions": 64.92,
-                    "MindSmallReranking": 30.97,
-                    "SciDocsRR": 89.34,
-                    "StackOverflowDupQuestions": 55.11
-                }
-            ]
-        },
-        "Retrieval": {
-            "ndcg_at_10": [
-                {
-                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://docs.voyageai.com/embeddings/\">voyage-large-2-instruct</a>",
-                    "ArguAna": 64.06,
-                    "CQADupstackRetrieval": 46.6,
-                    "ClimateFEVER": 32.65,
-                    "DBPedia": 46.03,
-                    "FEVER": 91.47,
-                    "FiQA2018": 59.76,
-                    "HotpotQA": 70.86,
-                    "MSMARCO": 40.6,
-                    "NFCorpus": 40.32,
-                    "NQ": 65.92,
-                    "QuoraRetrieval": 87.4,
-                    "SCIDOCS": 24.32,
-                    "SciFact": 79.99,
-                    "TRECCOVID": 85.07,
-                    "Touche2020": 39.16
-                }
-            ]
-        },
-        "STS": {
-            "spearman": [
-                {
-                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://docs.voyageai.com/embeddings/\">voyage-large-2-instruct</a>",
-                    "BIOSSES": 89.12,
-                    "SICK-R": 83.16,
-                    "STS12": 76.15,
-                    "STS13": 88.49,
-                    "STS14": 86.49,
-                    "STS15": 91.13,
-                    "STS16": 85.68,
-                    "STS17 (en-en)": 90.06,
-                    "STS22 (en)": 66.32,
-                    "STSBenchmark": 89.22
-                }
-            ]
-        },
-        "Summarization": {
-            "spearman": [
-                {
-                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://docs.voyageai.com/embeddings/\">voyage-large-2-instruct</a>",
-                    "SummEval": 30.84
-                }
-            ]
-        },
-        "InstructionRetrieval": {
-            "p-MRR": [
-                {
-                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://docs.voyageai.com/embeddings/\">voyage-large-2-instruct</a>"
-                }
-            ]
-        }
-    },
     "udever-bloom-560m": {
         "BitextMining": {
             "f1": [
@@ -8221,130 +7830,6 @@
             "p-MRR": [
                 {
                     "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/sentence-transformers/sentence-t5-xl\">sentence-t5-xl</a>"
-                }
-            ]
-        }
-    },
-    "google-gecko.text-embedding-preview-0409": {
-        "BitextMining": {
-            "f1": [
-                {
-                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://cloud.google.com/vertex-ai/generative-ai/docs/embeddings/get-text-embeddings#latest_models\">google-gecko.text-embedding-preview-0409</a>"
-                }
-            ]
-        },
-        "Classification": {
-            "accuracy": [
-                {
-                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://cloud.google.com/vertex-ai/generative-ai/docs/embeddings/get-text-embeddings#latest_models\">google-gecko.text-embedding-preview-0409</a>",
-                    "AmazonCounterfactualClassification (en)": 75.34,
-                    "AmazonPolarityClassification": 97.34,
-                    "AmazonReviewsClassification (en)": 51.17,
-                    "Banking77Classification": 88.62,
-                    "EmotionClassification": 52.51,
-                    "ImdbClassification": 95.65,
-                    "MTOPDomainClassification (en)": 98.35,
-                    "MTOPIntentClassification (en)": 83.43,
-                    "MassiveIntentClassification (en)": 80.22,
-                    "MassiveScenarioClassification (en)": 87.19,
-                    "ToxicConversationsClassification": 89.67,
-                    "TweetSentimentExtractionClassification": 74.52
-                }
-            ]
-        },
-        "Clustering": {
-            "v_measure": [
-                {
-                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://cloud.google.com/vertex-ai/generative-ai/docs/embeddings/get-text-embeddings#latest_models\">google-gecko.text-embedding-preview-0409</a>",
-                    "ArxivClusteringP2P": 46.27,
-                    "ArxivClusteringS2S": 38.36,
-                    "BiorxivClusteringP2P": 37.87,
-                    "BiorxivClusteringS2S": 35.67,
-                    "MedrxivClusteringP2P": 33.11,
-                    "MedrxivClusteringS2S": 31.54,
-                    "RedditClustering": 65.81,
-                    "RedditClusteringP2P": 66.62,
-                    "StackExchangeClustering": 74.52,
-                    "StackExchangeClusteringP2P": 37.63,
-                    "TwentyNewsgroupsClustering": 54.87
-                }
-            ]
-        },
-        "PairClassification": {
-            "ap": [
-                {
-                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://cloud.google.com/vertex-ai/generative-ai/docs/embeddings/get-text-embeddings#latest_models\">google-gecko.text-embedding-preview-0409</a>",
-                    "SprintDuplicateQuestions": 96.26,
-                    "TwitterSemEval2015": 79.04,
-                    "TwitterURLCorpus": 87.53
-                }
-            ]
-        },
-        "Reranking": {
-            "map": [
-                {
-                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://cloud.google.com/vertex-ai/generative-ai/docs/embeddings/get-text-embeddings#latest_models\">google-gecko.text-embedding-preview-0409</a>",
-                    "AskUbuntuDupQuestions": 64.4,
-                    "MindSmallReranking": 33.07,
-                    "SciDocsRR": 83.59,
-                    "StackOverflowDupQuestions": 54.56
-                }
-            ]
-        },
-        "Retrieval": {
-            "ndcg_at_10": [
-                {
-                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://cloud.google.com/vertex-ai/generative-ai/docs/embeddings/get-text-embeddings#latest_models\">google-gecko.text-embedding-preview-0409</a>",
-                    "ArguAna": 62.18,
-                    "CQADupstackRetrieval": 48.89,
-                    "ClimateFEVER": 33.21,
-                    "DBPedia": 47.12,
-                    "FEVER": 86.96,
-                    "FiQA2018": 59.24,
-                    "HotpotQA": 71.33,
-                    "MSMARCO": 32.58,
-                    "NFCorpus": 40.33,
-                    "NQ": 61.28,
-                    "QuoraRetrieval": 88.18,
-                    "SCIDOCS": 20.34,
-                    "SciFact": 75.42,
-                    "TRECCOVID": 82.62,
-                    "Touche2020": 25.86
-                }
-            ]
-        },
-        "STS": {
-            "spearman": [
-                {
-                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://cloud.google.com/vertex-ai/generative-ai/docs/embeddings/get-text-embeddings#latest_models\">google-gecko.text-embedding-preview-0409</a>",
-                    "BIOSSES": 89.46,
-                    "SICK-R": 81.93,
-                    "STS12": 77.59,
-                    "STS13": 90.36,
-                    "STS14": 85.25,
-                    "STS15": 89.66,
-                    "STS16": 87.34,
-                    "STS17 (en-en)": 92.06,
-                    "STS22 (en)": 68.02,
-                    "STSBenchmark": 88.99
-                }
-            ]
-        },
-        "Summarization": {
-            "spearman": [
-                {
-                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://cloud.google.com/vertex-ai/generative-ai/docs/embeddings/get-text-embeddings#latest_models\">google-gecko.text-embedding-preview-0409</a>",
-                    "SummEval": 32.63
-                }
-            ]
-        },
-        "InstructionRetrieval": {
-            "p-MRR": [
-                {
-                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://cloud.google.com/vertex-ai/generative-ai/docs/embeddings/get-text-embeddings#latest_models\">google-gecko.text-embedding-preview-0409</a>",
-                    "Core17InstructionRetrieval": 5.44,
-                    "News21InstructionRetrieval": 3.94,
-                    "Robust04InstructionRetrieval": -2.4
                 }
             ]
         }
@@ -11313,74 +10798,6 @@
             ]
         }
     },
-    "GritLM-7B": {
-        "BitextMining": {
-            "f1": [
-                {
-                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/GritLM/GritLM-7B\">GritLM-7B</a>"
-                }
-            ]
-        },
-        "Classification": {
-            "accuracy": [
-                {
-                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/GritLM/GritLM-7B\">GritLM-7B</a>"
-                }
-            ]
-        },
-        "Clustering": {
-            "v_measure": [
-                {
-                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/GritLM/GritLM-7B\">GritLM-7B</a>"
-                }
-            ]
-        },
-        "PairClassification": {
-            "ap": [
-                {
-                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/GritLM/GritLM-7B\">GritLM-7B</a>"
-                }
-            ]
-        },
-        "Reranking": {
-            "map": [
-                {
-                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/GritLM/GritLM-7B\">GritLM-7B</a>"
-                }
-            ]
-        },
-        "Retrieval": {
-            "ndcg_at_10": [
-                {
-                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/GritLM/GritLM-7B\">GritLM-7B</a>"
-                }
-            ]
-        },
-        "STS": {
-            "spearman": [
-                {
-                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/GritLM/GritLM-7B\">GritLM-7B</a>"
-                }
-            ]
-        },
-        "Summarization": {
-            "spearman": [
-                {
-                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/GritLM/GritLM-7B\">GritLM-7B</a>"
-                }
-            ]
-        },
-        "InstructionRetrieval": {
-            "p-MRR": [
-                {
-                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/GritLM/GritLM-7B\">GritLM-7B</a>",
-                    "Core17InstructionRetrieval": 2.62,
-                    "News21InstructionRetrieval": -1.01,
-                    "Robust04InstructionRetrieval": -1.68
-                }
-            ]
-        }
-    },
     "text2vec-base-multilingual": {
         "BitextMining": {
             "f1": [
@@ -12616,74 +12033,6 @@
             ]
         }
     },
-    "instructor-xl": {
-        "BitextMining": {
-            "f1": [
-                {
-                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/hkunlp/instructor-xl\">instructor-xl</a>"
-                }
-            ]
-        },
-        "Classification": {
-            "accuracy": [
-                {
-                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/hkunlp/instructor-xl\">instructor-xl</a>"
-                }
-            ]
-        },
-        "Clustering": {
-            "v_measure": [
-                {
-                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/hkunlp/instructor-xl\">instructor-xl</a>"
-                }
-            ]
-        },
-        "PairClassification": {
-            "ap": [
-                {
-                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/hkunlp/instructor-xl\">instructor-xl</a>"
-                }
-            ]
-        },
-        "Reranking": {
-            "map": [
-                {
-                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/hkunlp/instructor-xl\">instructor-xl</a>"
-                }
-            ]
-        },
-        "Retrieval": {
-            "ndcg_at_10": [
-                {
-                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/hkunlp/instructor-xl\">instructor-xl</a>"
-                }
-            ]
-        },
-        "STS": {
-            "spearman": [
-                {
-                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/hkunlp/instructor-xl\">instructor-xl</a>"
-                }
-            ]
-        },
-        "Summarization": {
-            "spearman": [
-                {
-                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/hkunlp/instructor-xl\">instructor-xl</a>"
-                }
-            ]
-        },
-        "InstructionRetrieval": {
-            "p-MRR": [
-                {
-                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/hkunlp/instructor-xl\">instructor-xl</a>",
-                    "Core17InstructionRetrieval": 0.69,
-                    "News21InstructionRetrieval": -0.9,
-                    "Robust04InstructionRetrieval": -8.08
-                }
-            ]
-        }
-    },
     "instructor-base": {
         "BitextMining": {
             "f1": [
@@ -13460,74 +12809,6 @@
             "p-MRR": [
                 {
                     "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/McGill-NLP/LLM2Vec-Llama-2-7b-chat-hf-mntp-supervised\">LLM2Vec-Llama-2-supervised</a>"
-                }
-            ]
-        }
-    },
-    "bm25": {
-        "BitextMining": {
-            "f1": [
-                {
-                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://en.wikipedia.org/wiki/Okapi_BM25\">bm25</a>"
-                }
-            ]
-        },
-        "Classification": {
-            "accuracy": [
-                {
-                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://en.wikipedia.org/wiki/Okapi_BM25\">bm25</a>"
-                }
-            ]
-        },
-        "Clustering": {
-            "v_measure": [
-                {
-                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://en.wikipedia.org/wiki/Okapi_BM25\">bm25</a>"
-                }
-            ]
-        },
-        "PairClassification": {
-            "ap": [
-                {
-                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://en.wikipedia.org/wiki/Okapi_BM25\">bm25</a>"
-                }
-            ]
-        },
-        "Reranking": {
-            "map": [
-                {
-                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://en.wikipedia.org/wiki/Okapi_BM25\">bm25</a>"
-                }
-            ]
-        },
-        "Retrieval": {
-            "ndcg_at_10": [
-                {
-                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://en.wikipedia.org/wiki/Okapi_BM25\">bm25</a>"
-                }
-            ]
-        },
-        "STS": {
-            "spearman": [
-                {
-                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://en.wikipedia.org/wiki/Okapi_BM25\">bm25</a>"
-                }
-            ]
-        },
-        "Summarization": {
-            "spearman": [
-                {
-                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://en.wikipedia.org/wiki/Okapi_BM25\">bm25</a>"
-                }
-            ]
-        },
-        "InstructionRetrieval": {
-            "p-MRR": [
-                {
-                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://en.wikipedia.org/wiki/Okapi_BM25\">bm25</a>",
-                    "Core17InstructionRetrieval": -1.06,
-                    "News21InstructionRetrieval": -2.15,
-                    "Robust04InstructionRetrieval": -3.06
                 }
             ]
         }
@@ -15969,161 +15250,6 @@
             ]
         }
     },
-    "gte-Qwen1.5-7B-instruct": {
-        "BitextMining": {
-            "f1": [
-                {
-                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/Alibaba-NLP/gte-Qwen1.5-7B-instruct\">gte-Qwen1.5-7B-instruct</a>"
-                }
-            ]
-        },
-        "Classification": {
-            "accuracy": [
-                {
-                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/Alibaba-NLP/gte-Qwen1.5-7B-instruct\">gte-Qwen1.5-7B-instruct</a>",
-                    "AmazonCounterfactualClassification (en)": 83.16,
-                    "AmazonPolarityClassification": 96.7,
-                    "AmazonReviewsClassification (en)": 62.17,
-                    "AmazonReviewsClassification (zh)": 52.95,
-                    "Banking77Classification": 81.68,
-                    "EmotionClassification": 54.53,
-                    "IFlyTek": 53.77,
-                    "ImdbClassification": 95.58,
-                    "JDReview": 88.2,
-                    "MTOPDomainClassification (en)": 95.75,
-                    "MTOPIntentClassification (en)": 84.26,
-                    "MassiveIntentClassification (zh-CN)": 76.25,
-                    "MassiveIntentClassification (en)": 78.47,
-                    "MassiveScenarioClassification (en)": 78.19,
-                    "MassiveScenarioClassification (zh-CN)": 77.26,
-                    "MultilingualSentiment": 77.42,
-                    "OnlineShopping": 94.48,
-                    "TNews": 51.24,
-                    "ToxicConversationsClassification": 78.75,
-                    "TweetSentimentExtractionClassification": 66.0,
-                    "Waimai": 88.63
-                }
-            ]
-        },
-        "Clustering": {
-            "v_measure": [
-                {
-                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/Alibaba-NLP/gte-Qwen1.5-7B-instruct\">gte-Qwen1.5-7B-instruct</a>",
-                    "ArxivClusteringP2P": 56.4,
-                    "ArxivClusteringS2S": 51.45,
-                    "BiorxivClusteringP2P": 49.01,
-                    "BiorxivClusteringS2S": 45.06,
-                    "CLSClusteringP2P": 47.21,
-                    "CLSClusteringS2S": 45.79,
-                    "MedrxivClusteringP2P": 44.37,
-                    "MedrxivClusteringS2S": 42.0,
-                    "RedditClustering": 73.37,
-                    "RedditClusteringP2P": 72.51,
-                    "StackExchangeClustering": 79.07,
-                    "StackExchangeClusteringP2P": 49.57,
-                    "ThuNewsClusteringP2P": 87.43,
-                    "ThuNewsClusteringS2S": 87.9,
-                    "TwentyNewsgroupsClustering": 51.31
-                }
-            ]
-        },
-        "PairClassification": {
-            "ap": [
-                {
-                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/Alibaba-NLP/gte-Qwen1.5-7B-instruct\">gte-Qwen1.5-7B-instruct</a>",
-                    "Cmnli": 91.81,
-                    "Ocnli": 85.22,
-                    "SprintDuplicateQuestions": 95.99,
-                    "TwitterSemEval2015": 79.36,
-                    "TwitterURLCorpus": 86.79
-                }
-            ]
-        },
-        "Reranking": {
-            "map": [
-                {
-                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/Alibaba-NLP/gte-Qwen1.5-7B-instruct\">gte-Qwen1.5-7B-instruct</a>",
-                    "AskUbuntuDupQuestions": 66.0,
-                    "CMedQAv1": 86.37,
-                    "CMedQAv2": 87.41,
-                    "MindSmallReranking": 32.71,
-                    "SciDocsRR": 87.89,
-                    "StackOverflowDupQuestions": 53.93,
-                    "T2Reranking": 68.11
-                }
-            ]
-        },
-        "Retrieval": {
-            "ndcg_at_10": [
-                {
-                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/Alibaba-NLP/gte-Qwen1.5-7B-instruct\">gte-Qwen1.5-7B-instruct</a>",
-                    "ArguAna": 62.65,
-                    "CQADupstackRetrieval": 40.64,
-                    "ClimateFEVER": 44.0,
-                    "CmedqaRetrieval": 43.47,
-                    "CovidRetrieval": 80.87,
-                    "DBPedia": 48.04,
-                    "DuRetrieval": 86.01,
-                    "EcomRetrieval": 66.46,
-                    "FEVER": 93.35,
-                    "FiQA2018": 55.31,
-                    "HotpotQA": 72.25,
-                    "MMarcoRetrieval": 73.83,
-                    "MSMARCO": 41.68,
-                    "MedicalRetrieval": 61.33,
-                    "NFCorpus": 38.25,
-                    "NQ": 61.79,
-                    "QuoraRetrieval": 89.61,
-                    "SCIDOCS": 27.69,
-                    "SciFact": 75.31,
-                    "T2Retrieval": 83.58,
-                    "TRECCOVID": 72.72,
-                    "Touche2020": 20.3,
-                    "VideoRetrieval": 69.41
-                }
-            ]
-        },
-        "STS": {
-            "spearman": [
-                {
-                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/Alibaba-NLP/gte-Qwen1.5-7B-instruct\">gte-Qwen1.5-7B-instruct</a>",
-                    "AFQMC": 58.47,
-                    "ATEC": 55.46,
-                    "BIOSSES": 81.12,
-                    "BQ": 77.59,
-                    "LCQMC": 76.29,
-                    "PAWSX": 50.22,
-                    "QBQTC": 31.82,
-                    "SICK-R": 79.15,
-                    "STS12": 76.52,
-                    "STS13": 88.63,
-                    "STS14": 83.32,
-                    "STS15": 87.5,
-                    "STS16": 86.39,
-                    "STS17 (en-en)": 87.79,
-                    "STS22 (en)": 66.4,
-                    "STS22 (zh)": 67.36,
-                    "STSB": 81.37,
-                    "STSBenchmark": 87.35
-                }
-            ]
-        },
-        "Summarization": {
-            "spearman": [
-                {
-                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/Alibaba-NLP/gte-Qwen1.5-7B-instruct\">gte-Qwen1.5-7B-instruct</a>",
-                    "SummEval": 31.46
-                }
-            ]
-        },
-        "InstructionRetrieval": {
-            "p-MRR": [
-                {
-                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/Alibaba-NLP/gte-Qwen1.5-7B-instruct\">gte-Qwen1.5-7B-instruct</a>"
-                }
-            ]
-        }
-    },
     "elser-v2": {
         "BitextMining": {
             "f1": [
@@ -16241,114 +15367,6 @@
             "p-MRR": [
                 {
                     "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://www.elastic.co/guide/en/machine-learning/current/ml-nlp-elser.html\">elser-v2</a>"
-                }
-            ]
-        }
-    },
-    "e5-mistral-7b-instruct": {
-        "BitextMining": {
-            "f1": [
-                {
-                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/intfloat/e5-mistral-7b-instruct\">e5-mistral-7b-instruct</a>"
-                }
-            ]
-        },
-        "Classification": {
-            "accuracy": [
-                {
-                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/intfloat/e5-mistral-7b-instruct\">e5-mistral-7b-instruct</a>",
-                    "AmazonReviewsClassification (fr)": 36.71,
-                    "MTOPDomainClassification (fr)": 74.8,
-                    "MTOPIntentClassification (fr)": 53.97,
-                    "MasakhaNEWSClassification (fra)": 80.59,
-                    "MassiveIntentClassification (fr)": 46.39,
-                    "MassiveScenarioClassification (fr)": 53.86
-                }
-            ]
-        },
-        "Clustering": {
-            "v_measure": [
-                {
-                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/intfloat/e5-mistral-7b-instruct\">e5-mistral-7b-instruct</a>",
-                    "AlloProfClusteringP2P": 61.06,
-                    "AlloProfClusteringS2S": 28.12,
-                    "HALClusteringS2S": 19.69,
-                    "MLSUMClusteringP2P": 45.59,
-                    "MLSUMClusteringS2S": 32.0,
-                    "MasakhaNEWSClusteringP2P (fra)": 52.47,
-                    "MasakhaNEWSClusteringS2S (fra)": 49.2
-                }
-            ]
-        },
-        "PairClassification": {
-            "ap": [
-                {
-                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/intfloat/e5-mistral-7b-instruct\">e5-mistral-7b-instruct</a>",
-                    "OpusparcusPC (fr)": 88.5,
-                    "PawsX (fr)": 63.65
-                }
-            ]
-        },
-        "Reranking": {
-            "map": [
-                {
-                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/intfloat/e5-mistral-7b-instruct\">e5-mistral-7b-instruct</a>",
-                    "AlloprofReranking": 47.36,
-                    "SyntecReranking": 77.05
-                }
-            ]
-        },
-        "Retrieval": {
-            "ndcg_at_10": [
-                {
-                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/intfloat/e5-mistral-7b-instruct\">e5-mistral-7b-instruct</a>",
-                    "AILACasedocs": 38.76,
-                    "AILAStatutes": 38.07,
-                    "AlloprofRetrieval": 16.46,
-                    "BSARDRetrieval": 0.0,
-                    "GerDaLIRSmall": 37.18,
-                    "LEMBNarrativeQARetrieval": 44.62,
-                    "LEMBNeedleRetrieval": 48.25,
-                    "LEMBPasskeyRetrieval": 71.0,
-                    "LEMBQMSumRetrieval": 43.63,
-                    "LEMBSummScreenFDRetrieval": 96.82,
-                    "LEMBWikimQARetrieval": 82.11,
-                    "LeCaRDv2": 68.56,
-                    "LegalBenchConsumerContractsQA": 75.46,
-                    "LegalBenchCorporateLobbying": 94.01,
-                    "LegalQuAD": 59.64,
-                    "LegalSummarization": 66.51,
-                    "MintakaRetrieval (fr)": 3.57,
-                    "SyntecRetrieval": 55.9,
-                    "XPQARetrieval (fr)": 41.29
-                }
-            ]
-        },
-        "STS": {
-            "spearman": [
-                {
-                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/intfloat/e5-mistral-7b-instruct\">e5-mistral-7b-instruct</a>",
-                    "SICKFr": 64.39,
-                    "STS22 (fr)": 69.82,
-                    "STSBenchmarkMultilingualSTS (fr)": 61.87
-                }
-            ]
-        },
-        "Summarization": {
-            "spearman": [
-                {
-                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/intfloat/e5-mistral-7b-instruct\">e5-mistral-7b-instruct</a>",
-                    "SummEvalFr": 32.22
-                }
-            ]
-        },
-        "InstructionRetrieval": {
-            "p-MRR": [
-                {
-                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/intfloat/e5-mistral-7b-instruct\">e5-mistral-7b-instruct</a>",
-                    "Core17InstructionRetrieval": 0.09,
-                    "News21InstructionRetrieval": -0.86,
-                    "Robust04InstructionRetrieval": -9.59
                 }
             ]
         }
@@ -16663,144 +15681,6 @@
             ]
         }
     },
-    "text-embedding-3-large": {
-        "BitextMining": {
-            "f1": [
-                {
-                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://openai.com/blog/new-embedding-models-and-api-updates\">text-embedding-3-large</a>"
-                }
-            ]
-        },
-        "Classification": {
-            "accuracy": [
-                {
-                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://openai.com/blog/new-embedding-models-and-api-updates\">text-embedding-3-large</a>",
-                    "AmazonCounterfactualClassification (en)": 78.93,
-                    "AmazonPolarityClassification": 92.85,
-                    "AmazonReviewsClassification (en)": 48.7,
-                    "Banking77Classification": 85.69,
-                    "EmotionClassification": 51.58,
-                    "ImdbClassification": 87.67,
-                    "MTOPDomainClassification (en)": 95.36,
-                    "MTOPIntentClassification (en)": 75.07,
-                    "MassiveIntentClassification (en)": 74.64,
-                    "MassiveScenarioClassification (en)": 79.79,
-                    "ToxicConversationsClassification": 72.92,
-                    "TweetSentimentExtractionClassification": 62.22
-                }
-            ]
-        },
-        "Clustering": {
-            "v_measure": [
-                {
-                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://openai.com/blog/new-embedding-models-and-api-updates\">text-embedding-3-large</a>",
-                    "ArxivClusteringP2P": 49.01,
-                    "ArxivClusteringS2S": 44.45,
-                    "BiorxivClusteringP2P": 38.03,
-                    "BiorxivClusteringS2S": 36.53,
-                    "MedrxivClusteringP2P": 32.7,
-                    "MedrxivClusteringS2S": 31.27,
-                    "RedditClustering": 67.84,
-                    "RedditClusteringP2P": 67.96,
-                    "StackExchangeClustering": 76.26,
-                    "StackExchangeClusteringP2P": 36.88,
-                    "TwentyNewsgroupsClustering": 58.14
-                }
-            ]
-        },
-        "PairClassification": {
-            "ap": [
-                {
-                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://openai.com/blog/new-embedding-models-and-api-updates\">text-embedding-3-large</a>",
-                    "SprintDuplicateQuestions": 92.25,
-                    "TwitterSemEval2015": 77.13,
-                    "TwitterURLCorpus": 87.78
-                }
-            ]
-        },
-        "Reranking": {
-            "map": [
-                {
-                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://openai.com/blog/new-embedding-models-and-api-updates\">text-embedding-3-large</a>",
-                    "AskUbuntuDupQuestions": 65.03,
-                    "MindSmallReranking": 29.86,
-                    "SciDocsRR": 86.66,
-                    "StackOverflowDupQuestions": 55.08
-                }
-            ]
-        },
-        "Retrieval": {
-            "ndcg_at_10": [
-                {
-                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://openai.com/blog/new-embedding-models-and-api-updates\">text-embedding-3-large</a>",
-                    "AILACasedocs": 39.0,
-                    "AILAStatutes": 41.31,
-                    "ArguAna": 58.05,
-                    "CQADupstackRetrieval": 47.54,
-                    "ClimateFEVER": 30.27,
-                    "DBPedia": 44.76,
-                    "FEVER": 87.94,
-                    "FiQA2018": 55.0,
-                    "GerDaLIRSmall": 32.77,
-                    "HotpotQA": 71.58,
-                    "LEMBNarrativeQARetrieval": 44.09,
-                    "LEMBNeedleRetrieval": 29.25,
-                    "LEMBPasskeyRetrieval": 63.0,
-                    "LEMBQMSumRetrieval": 32.49,
-                    "LEMBSummScreenFDRetrieval": 84.8,
-                    "LEMBWikimQARetrieval": 54.16,
-                    "LeCaRDv2": 57.2,
-                    "LegalBenchConsumerContractsQA": 79.39,
-                    "LegalBenchCorporateLobbying": 95.09,
-                    "LegalQuAD": 57.47,
-                    "LegalSummarization": 71.55,
-                    "MSMARCO": 40.24,
-                    "NFCorpus": 42.07,
-                    "NQ": 61.27,
-                    "QuoraRetrieval": 89.05,
-                    "SCIDOCS": 23.11,
-                    "SciFact": 77.77,
-                    "TRECCOVID": 79.56,
-                    "Touche2020": 23.35
-                }
-            ]
-        },
-        "STS": {
-            "spearman": [
-                {
-                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://openai.com/blog/new-embedding-models-and-api-updates\">text-embedding-3-large</a>",
-                    "BIOSSES": 84.68,
-                    "SICK-R": 79.0,
-                    "STS12": 72.84,
-                    "STS13": 86.1,
-                    "STS14": 81.15,
-                    "STS15": 88.49,
-                    "STS16": 85.08,
-                    "STS17 (en-en)": 90.22,
-                    "STS22 (en)": 66.14,
-                    "STSBenchmark": 83.56
-                }
-            ]
-        },
-        "Summarization": {
-            "spearman": [
-                {
-                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://openai.com/blog/new-embedding-models-and-api-updates\">text-embedding-3-large</a>",
-                    "SummEval": 29.92
-                }
-            ]
-        },
-        "InstructionRetrieval": {
-            "p-MRR": [
-                {
-                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://openai.com/blog/new-embedding-models-and-api-updates\">text-embedding-3-large</a>",
-                    "Core17InstructionRetrieval": -0.2,
-                    "News21InstructionRetrieval": -2.03,
-                    "Robust04InstructionRetrieval": -5.81
-                }
-            ]
-        }
-    },
     "e5-base": {
         "BitextMining": {
             "f1": [
@@ -17060,6 +15940,2409 @@
             "p-MRR": [
                 {
                     "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://docs.voyageai.com/embeddings/\">voyage-law-2</a>"
+                }
+            ]
+        }
+    },
+    "SFR-Embedding-Mistral": {
+        "BitextMining": {
+            "f1": [
+                {
+                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/Salesforce/SFR-Embedding-Mistral\">SFR-Embedding-Mistral</a>"
+                }
+            ]
+        },
+        "Classification": {
+            "accuracy": [
+                {
+                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/Salesforce/SFR-Embedding-Mistral\">SFR-Embedding-Mistral</a>"
+                }
+            ]
+        },
+        "Clustering": {
+            "v_measure": [
+                {
+                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/Salesforce/SFR-Embedding-Mistral\">SFR-Embedding-Mistral</a>"
+                }
+            ]
+        },
+        "PairClassification": {
+            "ap": [
+                {
+                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/Salesforce/SFR-Embedding-Mistral\">SFR-Embedding-Mistral</a>"
+                }
+            ]
+        },
+        "Reranking": {
+            "map": [
+                {
+                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/Salesforce/SFR-Embedding-Mistral\">SFR-Embedding-Mistral</a>"
+                }
+            ]
+        },
+        "Retrieval": {
+            "ndcg_at_10": [
+                {
+                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/Salesforce/SFR-Embedding-Mistral\">SFR-Embedding-Mistral</a>",
+                    "BrightRetrieval (sustainable_living)": 19.79,
+                    "BrightRetrieval (economics)": 17.84,
+                    "BrightRetrieval (theoremqa_theorems)": 24.05,
+                    "BrightRetrieval (aops)": 7.43,
+                    "BrightRetrieval (theoremqa_questions)": 23.05,
+                    "BrightRetrieval (psychology)": 18.97,
+                    "BrightRetrieval (stackoverflow)": 12.72,
+                    "BrightRetrieval (pony)": 1.97,
+                    "BrightRetrieval (leetcode)": 27.35,
+                    "BrightRetrieval (biology)": 19.49,
+                    "BrightRetrieval (earth_science)": 26.63,
+                    "BrightRetrieval (robotics)": 16.7
+                }
+            ]
+        },
+        "STS": {
+            "spearman": [
+                {
+                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/Salesforce/SFR-Embedding-Mistral\">SFR-Embedding-Mistral</a>"
+                }
+            ]
+        },
+        "Summarization": {
+            "spearman": [
+                {
+                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/Salesforce/SFR-Embedding-Mistral\">SFR-Embedding-Mistral</a>"
+                }
+            ]
+        },
+        "InstructionRetrieval": {
+            "p-MRR": [
+                {
+                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/Salesforce/SFR-Embedding-Mistral\">SFR-Embedding-Mistral</a>"
+                }
+            ]
+        }
+    },
+    "gte-Qwen2-7B-instruct": {
+        "BitextMining": {
+            "f1": [
+                {
+                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/Alibaba-NLP/gte-Qwen2-7B-instruct\">gte-Qwen2-7B-instruct</a>"
+                }
+            ]
+        },
+        "Classification": {
+            "accuracy": [
+                {
+                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/Alibaba-NLP/gte-Qwen2-7B-instruct\">gte-Qwen2-7B-instruct</a>"
+                }
+            ]
+        },
+        "Clustering": {
+            "v_measure": [
+                {
+                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/Alibaba-NLP/gte-Qwen2-7B-instruct\">gte-Qwen2-7B-instruct</a>"
+                }
+            ]
+        },
+        "PairClassification": {
+            "ap": [
+                {
+                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/Alibaba-NLP/gte-Qwen2-7B-instruct\">gte-Qwen2-7B-instruct</a>"
+                }
+            ]
+        },
+        "Reranking": {
+            "map": [
+                {
+                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/Alibaba-NLP/gte-Qwen2-7B-instruct\">gte-Qwen2-7B-instruct</a>"
+                }
+            ]
+        },
+        "Retrieval": {
+            "ndcg_at_10": [
+                {
+                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/Alibaba-NLP/gte-Qwen2-7B-instruct\">gte-Qwen2-7B-instruct</a>",
+                    "BrightRetrieval (earth_science)": 40.66,
+                    "BrightRetrieval (sustainable_living)": 20.82,
+                    "BrightRetrieval (theoremqa_theorems)": 28.15,
+                    "BrightRetrieval (aops)": 15.1,
+                    "BrightRetrieval (economics)": 16.18,
+                    "BrightRetrieval (pony)": 1.25,
+                    "BrightRetrieval (stackoverflow)": 13.95,
+                    "BrightRetrieval (leetcode)": 31.07,
+                    "BrightRetrieval (biology)": 32.09,
+                    "BrightRetrieval (theoremqa_questions)": 29.9,
+                    "BrightRetrieval (robotics)": 12.82,
+                    "BrightRetrieval (psychology)": 26.58
+                }
+            ]
+        },
+        "STS": {
+            "spearman": [
+                {
+                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/Alibaba-NLP/gte-Qwen2-7B-instruct\">gte-Qwen2-7B-instruct</a>"
+                }
+            ]
+        },
+        "Summarization": {
+            "spearman": [
+                {
+                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/Alibaba-NLP/gte-Qwen2-7B-instruct\">gte-Qwen2-7B-instruct</a>"
+                }
+            ]
+        },
+        "InstructionRetrieval": {
+            "p-MRR": [
+                {
+                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/Alibaba-NLP/gte-Qwen2-7B-instruct\">gte-Qwen2-7B-instruct</a>"
+                }
+            ]
+        }
+    },
+    "google-gecko.text-embedding-preview-0409": {
+        "BitextMining": {
+            "f1": [
+                {
+                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://cloud.google.com/vertex-ai/generative-ai/docs/embeddings/get-text-embeddings#latest_models\">google-gecko.text-embedding-preview-0409</a>"
+                }
+            ]
+        },
+        "Classification": {
+            "accuracy": [
+                {
+                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://cloud.google.com/vertex-ai/generative-ai/docs/embeddings/get-text-embeddings#latest_models\">google-gecko.text-embedding-preview-0409</a>",
+                    "AmazonCounterfactualClassification (en)": 75.34,
+                    "AmazonPolarityClassification": 97.34,
+                    "AmazonReviewsClassification (en)": 51.17,
+                    "Banking77Classification": 88.62,
+                    "EmotionClassification": 52.51,
+                    "ImdbClassification": 95.65,
+                    "MTOPDomainClassification (en)": 98.35,
+                    "MTOPIntentClassification (en)": 83.43,
+                    "MassiveIntentClassification (en)": 80.22,
+                    "MassiveScenarioClassification (en)": 87.19,
+                    "ToxicConversationsClassification": 89.67,
+                    "TweetSentimentExtractionClassification": 74.52
+                }
+            ]
+        },
+        "Clustering": {
+            "v_measure": [
+                {
+                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://cloud.google.com/vertex-ai/generative-ai/docs/embeddings/get-text-embeddings#latest_models\">google-gecko.text-embedding-preview-0409</a>",
+                    "ArxivClusteringP2P": 46.27,
+                    "ArxivClusteringS2S": 38.36,
+                    "BiorxivClusteringP2P": 37.87,
+                    "BiorxivClusteringS2S": 35.67,
+                    "MedrxivClusteringP2P": 33.11,
+                    "MedrxivClusteringS2S": 31.54,
+                    "RedditClustering": 65.81,
+                    "RedditClusteringP2P": 66.62,
+                    "StackExchangeClustering": 74.52,
+                    "StackExchangeClusteringP2P": 37.63,
+                    "TwentyNewsgroupsClustering": 54.87
+                }
+            ]
+        },
+        "PairClassification": {
+            "ap": [
+                {
+                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://cloud.google.com/vertex-ai/generative-ai/docs/embeddings/get-text-embeddings#latest_models\">google-gecko.text-embedding-preview-0409</a>",
+                    "SprintDuplicateQuestions": 96.26,
+                    "TwitterSemEval2015": 79.04,
+                    "TwitterURLCorpus": 87.53
+                }
+            ]
+        },
+        "Reranking": {
+            "map": [
+                {
+                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://cloud.google.com/vertex-ai/generative-ai/docs/embeddings/get-text-embeddings#latest_models\">google-gecko.text-embedding-preview-0409</a>",
+                    "AskUbuntuDupQuestions": 64.4,
+                    "MindSmallReranking": 33.07,
+                    "SciDocsRR": 83.59,
+                    "StackOverflowDupQuestions": 54.56
+                }
+            ]
+        },
+        "Retrieval": {
+            "ndcg_at_10": [
+                {
+                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://cloud.google.com/vertex-ai/generative-ai/docs/embeddings/get-text-embeddings#latest_models\">google-gecko.text-embedding-preview-0409</a>",
+                    "ArguAna": 62.18,
+                    "BrightRetrieval (earth_science)": 34.38,
+                    "BrightRetrieval (leetcode)": 29.64,
+                    "BrightRetrieval (theoremqa_questions)": 21.51,
+                    "BrightRetrieval (aops)": 9.33,
+                    "BrightRetrieval (sustainable_living)": 17.25,
+                    "BrightRetrieval (pony)": 3.59,
+                    "BrightRetrieval (theoremqa_theorems)": 16.77,
+                    "BrightRetrieval (stackoverflow)": 17.93,
+                    "BrightRetrieval (biology)": 22.98,
+                    "BrightRetrieval (robotics)": 15.98,
+                    "BrightRetrieval (economics)": 19.5,
+                    "BrightRetrieval (psychology)": 27.86,
+                    "CQADupstackRetrieval": 48.89,
+                    "ClimateFEVER": 33.21,
+                    "DBPedia": 47.12,
+                    "FEVER": 86.96,
+                    "FiQA2018": 59.24,
+                    "HotpotQA": 71.33,
+                    "MSMARCO": 32.58,
+                    "NFCorpus": 40.33,
+                    "NQ": 61.28,
+                    "QuoraRetrieval": 88.18,
+                    "SCIDOCS": 20.34,
+                    "SciFact": 75.42,
+                    "TRECCOVID": 82.62,
+                    "Touche2020": 25.86
+                }
+            ]
+        },
+        "STS": {
+            "spearman": [
+                {
+                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://cloud.google.com/vertex-ai/generative-ai/docs/embeddings/get-text-embeddings#latest_models\">google-gecko.text-embedding-preview-0409</a>",
+                    "BIOSSES": 89.46,
+                    "SICK-R": 81.93,
+                    "STS12": 77.59,
+                    "STS13": 90.36,
+                    "STS14": 85.25,
+                    "STS15": 89.66,
+                    "STS16": 87.34,
+                    "STS17 (en-en)": 92.06,
+                    "STS22 (en)": 68.02,
+                    "STSBenchmark": 88.99
+                }
+            ]
+        },
+        "Summarization": {
+            "spearman": [
+                {
+                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://cloud.google.com/vertex-ai/generative-ai/docs/embeddings/get-text-embeddings#latest_models\">google-gecko.text-embedding-preview-0409</a>",
+                    "SummEval": 32.63
+                }
+            ]
+        },
+        "InstructionRetrieval": {
+            "p-MRR": [
+                {
+                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://cloud.google.com/vertex-ai/generative-ai/docs/embeddings/get-text-embeddings#latest_models\">google-gecko.text-embedding-preview-0409</a>",
+                    "Core17InstructionRetrieval": 5.44,
+                    "News21InstructionRetrieval": 3.94,
+                    "Robust04InstructionRetrieval": -2.4
+                }
+            ]
+        }
+    },
+    "instructor-xl": {
+        "BitextMining": {
+            "f1": [
+                {
+                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/hkunlp/instructor-xl\">instructor-xl</a>"
+                }
+            ]
+        },
+        "Classification": {
+            "accuracy": [
+                {
+                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/hkunlp/instructor-xl\">instructor-xl</a>"
+                }
+            ]
+        },
+        "Clustering": {
+            "v_measure": [
+                {
+                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/hkunlp/instructor-xl\">instructor-xl</a>"
+                }
+            ]
+        },
+        "PairClassification": {
+            "ap": [
+                {
+                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/hkunlp/instructor-xl\">instructor-xl</a>"
+                }
+            ]
+        },
+        "Reranking": {
+            "map": [
+                {
+                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/hkunlp/instructor-xl\">instructor-xl</a>"
+                }
+            ]
+        },
+        "Retrieval": {
+            "ndcg_at_10": [
+                {
+                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/hkunlp/instructor-xl\">instructor-xl</a>",
+                    "BrightRetrieval (aops)": 8.26,
+                    "BrightRetrieval (robotics)": 17.39,
+                    "BrightRetrieval (economics)": 22.81,
+                    "BrightRetrieval (stackoverflow)": 19.06,
+                    "BrightRetrieval (leetcode)": 27.5,
+                    "BrightRetrieval (theoremqa_questions)": 14.59,
+                    "BrightRetrieval (psychology)": 27.43,
+                    "BrightRetrieval (biology)": 21.91,
+                    "BrightRetrieval (theoremqa_theorems)": 6.5,
+                    "BrightRetrieval (earth_science)": 34.35,
+                    "BrightRetrieval (sustainable_living)": 18.82,
+                    "BrightRetrieval (pony)": 5.02
+                }
+            ]
+        },
+        "STS": {
+            "spearman": [
+                {
+                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/hkunlp/instructor-xl\">instructor-xl</a>"
+                }
+            ]
+        },
+        "Summarization": {
+            "spearman": [
+                {
+                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/hkunlp/instructor-xl\">instructor-xl</a>"
+                }
+            ]
+        },
+        "InstructionRetrieval": {
+            "p-MRR": [
+                {
+                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/hkunlp/instructor-xl\">instructor-xl</a>",
+                    "Core17InstructionRetrieval": 0.69,
+                    "News21InstructionRetrieval": -0.9,
+                    "Robust04InstructionRetrieval": -8.08
+                }
+            ]
+        }
+    },
+    "all-mpnet-base-v2": {
+        "BitextMining": {
+            "f1": [
+                {
+                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/sentence-transformers/all-mpnet-base-v2\">all-mpnet-base-v2</a>",
+                    "BornholmBitextMining (dan-Latn)": 27.44,
+                    "Tatoeba (pol-Latn_eng-Latn)": 4.09,
+                    "Tatoeba (ita-Latn_eng-Latn)": 11.1,
+                    "Tatoeba (cat-Latn_eng-Latn)": 9.44,
+                    "Tatoeba (aze-Latn_eng-Latn)": 1.49,
+                    "Tatoeba (eus-Latn_eng-Latn)": 3.94,
+                    "Tatoeba (epo-Latn_eng-Latn)": 7.15,
+                    "Tatoeba (lit-Latn_eng-Latn)": 1.02,
+                    "Tatoeba (ast-Latn_eng-Latn)": 9.78,
+                    "Tatoeba (bul-Cyrl_eng-Latn)": 0.35,
+                    "Tatoeba (ceb-Latn_eng-Latn)": 4.41,
+                    "Tatoeba (mkd-Cyrl_eng-Latn)": 0.0,
+                    "Tatoeba (tzl-Latn_eng-Latn)": 3.55,
+                    "Tatoeba (zsm-Latn_eng-Latn)": 4.75,
+                    "Tatoeba (mhr-Cyrl_eng-Latn)": 0.17,
+                    "Tatoeba (pam-Latn_eng-Latn)": 4.32,
+                    "Tatoeba (amh-Ethi_eng-Latn)": 0.0,
+                    "Tatoeba (slv-Latn_eng-Latn)": 3.73,
+                    "Tatoeba (lvs-Latn_eng-Latn)": 2.98,
+                    "Tatoeba (sqi-Latn_eng-Latn)": 3.45,
+                    "Tatoeba (orv-Cyrl_eng-Latn)": 0.0,
+                    "Tatoeba (vie-Latn_eng-Latn)": 4.96,
+                    "Tatoeba (pes-Arab_eng-Latn)": 0.2,
+                    "Tatoeba (por-Latn_eng-Latn)": 10.48,
+                    "Tatoeba (dtp-Latn_eng-Latn)": 3.54,
+                    "Tatoeba (yid-Hebr_eng-Latn)": 0.08,
+                    "Tatoeba (isl-Latn_eng-Latn)": 3.86,
+                    "Tatoeba (cha-Latn_eng-Latn)": 12.2,
+                    "Tatoeba (ron-Latn_eng-Latn)": 7.34,
+                    "Tatoeba (hye-Armn_eng-Latn)": 0.14,
+                    "Tatoeba (mar-Deva_eng-Latn)": 0.11,
+                    "Tatoeba (hin-Deva_eng-Latn)": 0.02,
+                    "Tatoeba (kor-Hang_eng-Latn)": 0.32,
+                    "Tatoeba (srp-Cyrl_eng-Latn)": 1.89,
+                    "Tatoeba (csb-Latn_eng-Latn)": 4.19,
+                    "Tatoeba (jpn-Jpan_eng-Latn)": 1.71,
+                    "Tatoeba (ber-Tfng_eng-Latn)": 4.56,
+                    "Tatoeba (wuu-Hans_eng-Latn)": 0.91,
+                    "Tatoeba (jav-Latn_eng-Latn)": 3.17,
+                    "Tatoeba (nob-Latn_eng-Latn)": 4.37,
+                    "Tatoeba (bre-Latn_eng-Latn)": 3.65,
+                    "Tatoeba (kzj-Latn_eng-Latn)": 3.62,
+                    "Tatoeba (urd-Arab_eng-Latn)": 0.0,
+                    "Tatoeba (ces-Latn_eng-Latn)": 3.56,
+                    "Tatoeba (cbk-Latn_eng-Latn)": 9.33,
+                    "Tatoeba (gla-Latn_eng-Latn)": 2.04,
+                    "Tatoeba (war-Latn_eng-Latn)": 5.14,
+                    "Tatoeba (swh-Latn_eng-Latn)": 6.01,
+                    "Tatoeba (swg-Latn_eng-Latn)": 7.86,
+                    "Tatoeba (glg-Latn_eng-Latn)": 12.0,
+                    "Tatoeba (fao-Latn_eng-Latn)": 7.08,
+                    "Tatoeba (gsw-Latn_eng-Latn)": 10.67,
+                    "Tatoeba (rus-Cyrl_eng-Latn)": 0.14,
+                    "Tatoeba (kaz-Cyrl_eng-Latn)": 0.52,
+                    "Tatoeba (gle-Latn_eng-Latn)": 2.19,
+                    "Tatoeba (slk-Latn_eng-Latn)": 3.4,
+                    "Tatoeba (nno-Latn_eng-Latn)": 5.75,
+                    "Tatoeba (cor-Latn_eng-Latn)": 2.42,
+                    "Tatoeba (nov-Latn_eng-Latn)": 16.61,
+                    "Tatoeba (swe-Latn_eng-Latn)": 6.55,
+                    "Tatoeba (max-Deva_eng-Latn)": 6.46,
+                    "Tatoeba (oci-Latn_eng-Latn)": 8.57,
+                    "Tatoeba (lfn-Latn_eng-Latn)": 6.1,
+                    "Tatoeba (fra-Latn_eng-Latn)": 16.9,
+                    "Tatoeba (ben-Beng_eng-Latn)": 0.0,
+                    "Tatoeba (bel-Cyrl_eng-Latn)": 0.65,
+                    "Tatoeba (lat-Latn_eng-Latn)": 5.78,
+                    "Tatoeba (cmn-Hans_eng-Latn)": 2.22,
+                    "Tatoeba (kat-Geor_eng-Latn)": 0.43,
+                    "Tatoeba (bos-Latn_eng-Latn)": 4.6,
+                    "Tatoeba (xho-Latn_eng-Latn)": 3.3,
+                    "Tatoeba (tha-Thai_eng-Latn)": 0.0,
+                    "Tatoeba (cym-Latn_eng-Latn)": 4.88,
+                    "Tatoeba (deu-Latn_eng-Latn)": 11.46,
+                    "Tatoeba (awa-Deva_eng-Latn)": 0.44,
+                    "Tatoeba (ido-Latn_eng-Latn)": 9.84,
+                    "Tatoeba (tat-Cyrl_eng-Latn)": 0.24,
+                    "Tatoeba (kab-Latn_eng-Latn)": 1.31,
+                    "Tatoeba (uzb-Latn_eng-Latn)": 1.98,
+                    "Tatoeba (heb-Hebr_eng-Latn)": 0.28,
+                    "Tatoeba (ara-Arab_eng-Latn)": 0.1,
+                    "Tatoeba (fry-Latn_eng-Latn)": 12.43,
+                    "Tatoeba (afr-Latn_eng-Latn)": 6.08,
+                    "Tatoeba (kur-Latn_eng-Latn)": 3.65,
+                    "Tatoeba (pms-Latn_eng-Latn)": 7.63,
+                    "Tatoeba (ell-Grek_eng-Latn)": 0.0,
+                    "Tatoeba (spa-Latn_eng-Latn)": 10.12,
+                    "Tatoeba (dsb-Latn_eng-Latn)": 2.96,
+                    "Tatoeba (uig-Arab_eng-Latn)": 0.33,
+                    "Tatoeba (nld-Latn_eng-Latn)": 9.29,
+                    "Tatoeba (tel-Telu_eng-Latn)": 0.73,
+                    "Tatoeba (hrv-Latn_eng-Latn)": 3.77,
+                    "Tatoeba (nds-Latn_eng-Latn)": 10.96,
+                    "Tatoeba (hun-Latn_eng-Latn)": 3.23,
+                    "Tatoeba (est-Latn_eng-Latn)": 2.35,
+                    "Tatoeba (mal-Mlym_eng-Latn)": 0.15,
+                    "Tatoeba (khm-Khmr_eng-Latn)": 0.28,
+                    "Tatoeba (hsb-Latn_eng-Latn)": 3.12,
+                    "Tatoeba (tgl-Latn_eng-Latn)": 4.06,
+                    "Tatoeba (ang-Latn_eng-Latn)": 9.77,
+                    "Tatoeba (tur-Latn_eng-Latn)": 3.16,
+                    "Tatoeba (tuk-Latn_eng-Latn)": 2.23,
+                    "Tatoeba (ile-Latn_eng-Latn)": 17.84,
+                    "Tatoeba (mon-Cyrl_eng-Latn)": 0.81,
+                    "Tatoeba (yue-Hant_eng-Latn)": 1.16,
+                    "Tatoeba (ina-Latn_eng-Latn)": 22.55,
+                    "Tatoeba (tam-Taml_eng-Latn)": 0.73,
+                    "Tatoeba (ukr-Cyrl_eng-Latn)": 0.5,
+                    "Tatoeba (dan-Latn_eng-Latn)": 10.01,
+                    "Tatoeba (arq-Arab_eng-Latn)": 0.33,
+                    "Tatoeba (arz-Arab_eng-Latn)": 0.0,
+                    "Tatoeba (fin-Latn_eng-Latn)": 3.82,
+                    "Tatoeba (ind-Latn_eng-Latn)": 4.88
+                }
+            ]
+        },
+        "Classification": {
+            "accuracy": [
+                {
+                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/sentence-transformers/all-mpnet-base-v2\">all-mpnet-base-v2</a>",
+                    "AllegroReviews (pol-Latn)": 22.99,
+                    "AmazonCounterfactualClassification (en-ext)": 67.5,
+                    "AmazonCounterfactualClassification (en)": 65.03,
+                    "AmazonCounterfactualClassification (deu-Latn)": 55.66,
+                    "AmazonCounterfactualClassification (jpn-Jpan)": 60.69,
+                    "AmazonPolarityClassification (default)": 67.14,
+                    "AmazonReviewsClassification (en)": 31.44,
+                    "AmazonReviewsClassification (deu-Latn)": 26.05,
+                    "AmazonReviewsClassification (spa-Latn)": 27.73,
+                    "AmazonReviewsClassification (fra-Latn)": 28.49,
+                    "AmazonReviewsClassification (jpn-Jpan)": 23.65,
+                    "AmazonReviewsClassification (cmn-Hans)": 23.62,
+                    "AngryTweetsClassification (dan-Latn)": 44.13,
+                    "Banking77Classification (default)": 81.7,
+                    "CBD (pol-Latn)": 50.25,
+                    "DanishPoliticalCommentsClassification (dan-Latn)": 28.31,
+                    "EmotionClassification (default)": 42.22,
+                    "IFlyTek (cmn-Hans)": 17.18,
+                    "ImdbClassification (default)": 71.17,
+                    "JDReview (cmn-Hans)": 60.19,
+                    "LccSentimentClassification (dan-Latn)": 39.27,
+                    "MTOPDomainClassification (en)": 91.89,
+                    "MTOPDomainClassification (deu-Latn)": 71.86,
+                    "MTOPDomainClassification (spa-Latn)": 71.3,
+                    "MTOPDomainClassification (fra-Latn)": 74.88,
+                    "MTOPDomainClassification (hin-Deva)": 39.93,
+                    "MTOPDomainClassification (tha-Thai)": 17.54,
+                    "MTOPIntentClassification (en)": 68.27,
+                    "MTOPIntentClassification (deu-Latn)": 44.36,
+                    "MTOPIntentClassification (spa-Latn)": 39.48,
+                    "MTOPIntentClassification (fra-Latn)": 37.57,
+                    "MTOPIntentClassification (hin-Deva)": 18.63,
+                    "MTOPIntentClassification (tha-Thai)": 5.42,
+                    "MasakhaNEWSClassification (amh-Ethi)": 36.49,
+                    "MasakhaNEWSClassification (eng)": 79.75,
+                    "MasakhaNEWSClassification (fra-Latn)": 77.77,
+                    "MasakhaNEWSClassification (hau-Latn)": 59.22,
+                    "MasakhaNEWSClassification (ibo-Latn)": 61.64,
+                    "MasakhaNEWSClassification (lin-Latn)": 74.0,
+                    "MasakhaNEWSClassification (lug-Latn)": 58.43,
+                    "MasakhaNEWSClassification (orm-Ethi)": 48.15,
+                    "MasakhaNEWSClassification (pcm-Latn)": 92.2,
+                    "MasakhaNEWSClassification (run-Latn)": 64.72,
+                    "MasakhaNEWSClassification (sna-Latn)": 73.69,
+                    "MasakhaNEWSClassification (som-Latn)": 49.97,
+                    "MasakhaNEWSClassification (swa-Latn)": 55.15,
+                    "MasakhaNEWSClassification (tir-Ethi)": 27.46,
+                    "MasakhaNEWSClassification (xho-Latn)": 60.98,
+                    "MasakhaNEWSClassification (yor-Latn)": 63.33,
+                    "MassiveIntentClassification (en)": 69.76,
+                    "MassiveIntentClassification (jav-Latn)": 31.75,
+                    "MassiveIntentClassification (fra-Latn)": 44.27,
+                    "MassiveIntentClassification (msa-Latn)": 30.53,
+                    "MassiveIntentClassification (hun-Latn)": 34.38,
+                    "MassiveIntentClassification (pol-Latn)": 34.26,
+                    "MassiveIntentClassification (nld-Latn)": 38.49,
+                    "MassiveIntentClassification (tha-Thai)": 8.51,
+                    "MassiveIntentClassification (tur-Latn)": 32.02,
+                    "MassiveIntentClassification (tam-Taml)": 9.25,
+                    "MassiveIntentClassification (hye-Armn)": 10.11,
+                    "MassiveIntentClassification (khm-Khmr)": 4.74,
+                    "MassiveIntentClassification (lav-Latn)": 35.08,
+                    "MassiveIntentClassification (deu-Latn)": 44.54,
+                    "MassiveIntentClassification (spa-Latn)": 39.75,
+                    "MassiveIntentClassification (ben-Beng)": 12.35,
+                    "MassiveIntentClassification (por-Latn)": 42.83,
+                    "MassiveIntentClassification (ara-Arab)": 20.42,
+                    "MassiveIntentClassification (cym-Latn)": 30.82,
+                    "MassiveIntentClassification (dan-Latn)": 42.36,
+                    "MassiveIntentClassification (mya-Mymr)": 4.6,
+                    "MassiveIntentClassification (heb-Hebr)": 23.6,
+                    "MassiveIntentClassification (kan-Knda)": 3.76,
+                    "MassiveIntentClassification (swa-Latn)": 31.82,
+                    "MassiveIntentClassification (fas-Arab)": 22.45,
+                    "MassiveIntentClassification (hin-Deva)": 17.68,
+                    "MassiveIntentClassification (kat-Geor)": 7.66,
+                    "MassiveIntentClassification (mal-Mlym)": 2.64,
+                    "MassiveIntentClassification (fin-Latn)": 34.58,
+                    "MassiveIntentClassification (slv-Latn)": 34.49,
+                    "MassiveIntentClassification (afr-Latn)": 36.49,
+                    "MassiveIntentClassification (urd-Arab)": 12.86,
+                    "MassiveIntentClassification (ron-Latn)": 38.07,
+                    "MassiveIntentClassification (sqi-Latn)": 37.26,
+                    "MassiveIntentClassification (cmo-Hant)": 22.43,
+                    "MassiveIntentClassification (ita-Latn)": 40.29,
+                    "MassiveIntentClassification (ind-Latn)": 36.31,
+                    "MassiveIntentClassification (nob-Latn)": 39.3,
+                    "MassiveIntentClassification (jpn-Jpan)": 33.13,
+                    "MassiveIntentClassification (aze-Latn)": 28.92,
+                    "MassiveIntentClassification (mon-Cyrl)": 19.65,
+                    "MassiveIntentClassification (ell-Grek)": 24.52,
+                    "MassiveIntentClassification (rus-Cyrl)": 23.98,
+                    "MassiveIntentClassification (kor-Kore)": 13.35,
+                    "MassiveIntentClassification (cmo-Hans)": 24.36,
+                    "MassiveIntentClassification (isl-Latn)": 31.46,
+                    "MassiveIntentClassification (swe-Latn)": 39.02,
+                    "MassiveIntentClassification (tel-Telu)": 2.26,
+                    "MassiveIntentClassification (vie-Latn)": 31.47,
+                    "MassiveIntentClassification (tgl-Latn)": 36.33,
+                    "MassiveIntentClassification (amh-Ethi)": 2.39,
+                    "MassiveScenarioClassification (en)": 75.67,
+                    "MassiveScenarioClassification (tur-Latn)": 39.11,
+                    "MassiveScenarioClassification (kat-Geor)": 13.45,
+                    "MassiveScenarioClassification (jpn-Jpan)": 40.57,
+                    "MassiveScenarioClassification (spa-Latn)": 50.92,
+                    "MassiveScenarioClassification (fas-Arab)": 27.8,
+                    "MassiveScenarioClassification (hun-Latn)": 41.01,
+                    "MassiveScenarioClassification (jav-Latn)": 40.0,
+                    "MassiveScenarioClassification (por-Latn)": 52.06,
+                    "MassiveScenarioClassification (sqi-Latn)": 44.67,
+                    "MassiveScenarioClassification (lav-Latn)": 39.28,
+                    "MassiveScenarioClassification (deu-Latn)": 54.09,
+                    "MassiveScenarioClassification (nld-Latn)": 47.79,
+                    "MassiveScenarioClassification (mon-Cyrl)": 25.58,
+                    "MassiveScenarioClassification (swa-Latn)": 40.34,
+                    "MassiveScenarioClassification (ben-Beng)": 17.49,
+                    "MassiveScenarioClassification (cym-Latn)": 34.82,
+                    "MassiveScenarioClassification (swe-Latn)": 44.53,
+                    "MassiveScenarioClassification (rus-Cyrl)": 28.71,
+                    "MassiveScenarioClassification (fra-Latn)": 54.26,
+                    "MassiveScenarioClassification (dan-Latn)": 49.45,
+                    "MassiveScenarioClassification (mya-Mymr)": 10.8,
+                    "MassiveScenarioClassification (ron-Latn)": 47.86,
+                    "MassiveScenarioClassification (cmo-Hans)": 35.33,
+                    "MassiveScenarioClassification (hin-Deva)": 23.13,
+                    "MassiveScenarioClassification (cmo-Hant)": 31.7,
+                    "MassiveScenarioClassification (afr-Latn)": 43.63,
+                    "MassiveScenarioClassification (aze-Latn)": 36.42,
+                    "MassiveScenarioClassification (msa-Latn)": 37.28,
+                    "MassiveScenarioClassification (ell-Grek)": 33.85,
+                    "MassiveScenarioClassification (isl-Latn)": 39.36,
+                    "MassiveScenarioClassification (fin-Latn)": 38.41,
+                    "MassiveScenarioClassification (ind-Latn)": 43.05,
+                    "MassiveScenarioClassification (pol-Latn)": 42.66,
+                    "MassiveScenarioClassification (tam-Taml)": 14.55,
+                    "MassiveScenarioClassification (ita-Latn)": 51.37,
+                    "MassiveScenarioClassification (urd-Arab)": 20.0,
+                    "MassiveScenarioClassification (kan-Knda)": 8.34,
+                    "MassiveScenarioClassification (tel-Telu)": 7.81,
+                    "MassiveScenarioClassification (mal-Mlym)": 7.69,
+                    "MassiveScenarioClassification (ara-Arab)": 27.8,
+                    "MassiveScenarioClassification (kor-Kore)": 17.28,
+                    "MassiveScenarioClassification (vie-Latn)": 35.9,
+                    "MassiveScenarioClassification (amh-Ethi)": 7.43,
+                    "MassiveScenarioClassification (heb-Hebr)": 25.49,
+                    "MassiveScenarioClassification (hye-Armn)": 16.86,
+                    "MassiveScenarioClassification (khm-Khmr)": 9.63,
+                    "MassiveScenarioClassification (slv-Latn)": 39.88,
+                    "MassiveScenarioClassification (tgl-Latn)": 47.04,
+                    "MassiveScenarioClassification (nob-Latn)": 45.75,
+                    "MassiveScenarioClassification (tha-Thai)": 17.01,
+                    "MultilingualSentiment (cmn-Hans)": 41.2,
+                    "NoRecClassification (nob-Latn)": 38.34,
+                    "NordicLangClassification (nob-Latn_nno-Latn_dan-Latn_swe-Latn_isl-Latn_fao-Latn)": 50.15,
+                    "OnlineShopping (cmn-Hans)": 56.94,
+                    "PAC (pol-Latn)": 62.1,
+                    "PolEmo2.0-IN (pol-Latn)": 41.63,
+                    "PolEmo2.0-OUT (pol-Latn)": 25.0,
+                    "TNews (cmn-Hans)": 21.05,
+                    "ToxicConversationsClassification (default)": 61.05,
+                    "TweetSentimentExtractionClassification (default)": 55.05,
+                    "Waimai (cmn-Hans)": 63.31
+                }
+            ]
+        },
+        "Clustering": {
+            "v_measure": [
+                {
+                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/sentence-transformers/all-mpnet-base-v2\">all-mpnet-base-v2</a>",
+                    "ArxivClusteringP2P": 48.38,
+                    "ArxivClusteringS2S": 39.72,
+                    "BiorxivClusteringP2P": 39.62,
+                    "BiorxivClusteringS2S": 35.02,
+                    "MasakhaNEWSClusteringP2P (amh-Ethi)": 42.49,
+                    "MasakhaNEWSClusteringP2P (eng)": 67.24,
+                    "MasakhaNEWSClusteringP2P (fra-Latn)": 61.99,
+                    "MasakhaNEWSClusteringP2P (hau-Latn)": 37.17,
+                    "MasakhaNEWSClusteringP2P (ibo-Latn)": 52.0,
+                    "MasakhaNEWSClusteringP2P (lin-Latn)": 69.68,
+                    "MasakhaNEWSClusteringP2P (lug-Latn)": 50.96,
+                    "MasakhaNEWSClusteringP2P (orm-Ethi)": 28.42,
+                    "MasakhaNEWSClusteringP2P (pcm-Latn)": 64.01,
+                    "MasakhaNEWSClusteringP2P (run-Latn)": 57.6,
+                    "MasakhaNEWSClusteringP2P (sna-Latn)": 54.99,
+                    "MasakhaNEWSClusteringP2P (som-Latn)": 31.16,
+                    "MasakhaNEWSClusteringP2P (swa-Latn)": 28.29,
+                    "MasakhaNEWSClusteringP2P (tir-Ethi)": 41.85,
+                    "MasakhaNEWSClusteringP2P (xho-Latn)": 35.24,
+                    "MasakhaNEWSClusteringP2P (yor-Latn)": 42.15,
+                    "MasakhaNEWSClusteringS2S (amh-Ethi)": 44.48,
+                    "MasakhaNEWSClusteringS2S (eng)": 35.69,
+                    "MasakhaNEWSClusteringS2S (fra-Latn)": 41.05,
+                    "MasakhaNEWSClusteringS2S (hau-Latn)": 16.64,
+                    "MasakhaNEWSClusteringS2S (ibo-Latn)": 38.63,
+                    "MasakhaNEWSClusteringS2S (lin-Latn)": 70.72,
+                    "MasakhaNEWSClusteringS2S (lug-Latn)": 46.97,
+                    "MasakhaNEWSClusteringS2S (orm-Ethi)": 23.85,
+                    "MasakhaNEWSClusteringS2S (pcm-Latn)": 68.7,
+                    "MasakhaNEWSClusteringS2S (run-Latn)": 52.27,
+                    "MasakhaNEWSClusteringS2S (sna-Latn)": 47.64,
+                    "MasakhaNEWSClusteringS2S (som-Latn)": 30.94,
+                    "MasakhaNEWSClusteringS2S (swa-Latn)": 17.12,
+                    "MasakhaNEWSClusteringS2S (tir-Ethi)": 42.01,
+                    "MasakhaNEWSClusteringS2S (xho-Latn)": 24.16,
+                    "MasakhaNEWSClusteringS2S (yor-Latn)": 35.04,
+                    "MedrxivClusteringP2P": 35.58,
+                    "MedrxivClusteringS2S": 32.87,
+                    "RedditClustering": 54.82,
+                    "RedditClusteringP2P": 56.77,
+                    "StackExchangeClustering": 53.8,
+                    "StackExchangeClusteringP2P": 34.28,
+                    "TwentyNewsgroupsClustering": 49.74
+                }
+            ]
+        },
+        "PairClassification": {
+            "ap": [
+                {
+                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/sentence-transformers/all-mpnet-base-v2\">all-mpnet-base-v2</a>",
+                    "CDSC-E (pol-Latn)": 45.37,
+                    "OpusparcusPC (deu-Latn)": 89.78,
+                    "OpusparcusPC (en)": 97.75,
+                    "OpusparcusPC (fin-Latn)": 85.82,
+                    "OpusparcusPC (fra-Latn)": 86.61,
+                    "OpusparcusPC (rus-Cyrl)": 79.85,
+                    "OpusparcusPC (swe-Latn)": 81.81,
+                    "PSC (pol-Latn)": 83.28,
+                    "PawsXPairClassification (deu-Latn)": 52.17,
+                    "PawsXPairClassification (en)": 61.99,
+                    "PawsXPairClassification (spa-Latn)": 55.06,
+                    "PawsXPairClassification (fra-Latn)": 56.42,
+                    "PawsXPairClassification (jpn-Hira)": 47.43,
+                    "PawsXPairClassification (kor-Hang)": 49.75,
+                    "PawsXPairClassification (cmn-Hans)": 52.47,
+                    "SICK-E-PL (pol-Latn)": 46.51,
+                    "SprintDuplicateQuestions (default)": 90.15,
+                    "TwitterSemEval2015 (default)": 73.85,
+                    "TwitterURLCorpus (default)": 85.11
+                }
+            ]
+        },
+        "Reranking": {
+            "map": [
+                {
+                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/sentence-transformers/all-mpnet-base-v2\">all-mpnet-base-v2</a>",
+                    "AlloprofReranking (fra-Latn)": 69.63,
+                    "AskUbuntuDupQuestions (default)": 65.85,
+                    "MMarcoReranking (cmn-Hans)": 4.65,
+                    "MindSmallReranking (default)": 30.97,
+                    "SciDocsRR (default)": 88.65,
+                    "StackOverflowDupQuestions (default)": 51.98,
+                    "SyntecReranking (fra-Latn)": 66.12,
+                    "T2Reranking (cmn-Hans)": 58.3
+                }
+            ]
+        },
+        "Retrieval": {
+            "ndcg_at_10": [
+                {
+                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/sentence-transformers/all-mpnet-base-v2\">all-mpnet-base-v2</a>",
+                    "AILACasedocs (default)": 22.51,
+                    "AILAStatutes (default)": 21.27,
+                    "AlloprofRetrieval (fra-Latn)": 34.27,
+                    "ArguAna": 46.52,
+                    "ArguAna (default)": 46.52,
+                    "ArguAna-PL (pol-Latn)": 14.72,
+                    "BSARDRetrieval (fra-Latn)": 6.98,
+                    "BrightRetrieval (robotics)": 8.36,
+                    "BrightRetrieval (psychology)": 22.63,
+                    "BrightRetrieval (leetcode)": 26.4,
+                    "BrightRetrieval (biology)": 15.52,
+                    "BrightRetrieval (theoremqa_questions)": 18.49,
+                    "BrightRetrieval (economics)": 16.64,
+                    "BrightRetrieval (stackoverflow)": 9.48,
+                    "BrightRetrieval (pony)": 6.95,
+                    "BrightRetrieval (earth_science)": 20.11,
+                    "BrightRetrieval (theoremqa_theorems)": 12.38,
+                    "BrightRetrieval (sustainable_living)": 15.34,
+                    "BrightRetrieval (aops)": 5.32,
+                    "CQADupstackRetrieval": 44.96,
+                    "ClimateFEVER": 21.97,
+                    "CmedqaRetrieval (cmn-Hans)": 2.0,
+                    "CovidRetrieval (cmn-Hans)": 3.7,
+                    "DBPedia": 32.09,
+                    "DuRetrieval (cmn-Hans)": 4.92,
+                    "EcomRetrieval (cmn-Hans)": 3.94,
+                    "FEVER": 50.86,
+                    "FiQA-PL (pol-Latn)": 3.6,
+                    "FiQA2018": 49.96,
+                    "FiQA2018 (default)": 49.96,
+                    "GerDaLIRSmall (deu-Latn)": 3.78,
+                    "HotpotQA": 39.29,
+                    "LEMBNarrativeQARetrieval (default)": 19.34,
+                    "LEMBNeedleRetrieval": 16.0,
+                    "LEMBPasskeyRetrieval": 24.5,
+                    "LEMBQMSumRetrieval (default)": 21.54,
+                    "LEMBSummScreenFDRetrieval (default)": 60.43,
+                    "LEMBWikimQARetrieval (default)": 44.92,
+                    "LeCaRDv2 (zho-Hans)": 18.09,
+                    "LegalBenchConsumerContractsQA (default)": 75.25,
+                    "LegalBenchCorporateLobbying (default)": 89.04,
+                    "LegalQuAD (deu-Latn)": 10.67,
+                    "LegalSummarization (default)": 58.55,
+                    "MMarcoRetrieval (cmn-Hans)": 7.13,
+                    "MSMARCO": 39.75,
+                    "MedicalRetrieval (cmn-Hans)": 1.71,
+                    "MintakaRetrieval (ara-Arab)": 1.97,
+                    "MintakaRetrieval (deu-Latn)": 17.21,
+                    "MintakaRetrieval (spa-Latn)": 10.11,
+                    "MintakaRetrieval (fra-Latn)": 12.93,
+                    "MintakaRetrieval (hin-Deva)": 2.05,
+                    "MintakaRetrieval (ita-Latn)": 5.63,
+                    "MintakaRetrieval (jpn-Hira)": 6.72,
+                    "MintakaRetrieval (por-Latn)": 8.05,
+                    "NFCorpus": 33.29,
+                    "NFCorpus (default)": 33.29,
+                    "NFCorpus-PL (pol-Latn)": 8.77,
+                    "NQ": 50.45,
+                    "QuoraRetrieval": 87.46,
+                    "SCIDOCS": 23.76,
+                    "SCIDOCS (default)": 23.76,
+                    "SCIDOCS-PL (pol-Latn)": 4.02,
+                    "SciFact": 65.57,
+                    "SciFact (default)": 65.57,
+                    "SciFact-PL (pol-Latn)": 13.31,
+                    "SyntecRetrieval (fra-Latn)": 57.39,
+                    "T2Retrieval (cmn-Hans)": 2.98,
+                    "TRECCOVID": 51.33,
+                    "TRECCOVID (default)": 51.33,
+                    "TRECCOVID-PL (pol-Latn)": 12.12,
+                    "Touche2020": 19.93,
+                    "Touche2020 (default)": 19.93,
+                    "VideoRetrieval (cmn-Hans)": 8.48,
+                    "XPQARetrieval (ara-Arab_ara-Arab)": 9.42,
+                    "XPQARetrieval (eng-Latn_ara-Arab)": 2.39,
+                    "XPQARetrieval (ara-Arab_eng-Latn)": 8.98,
+                    "XPQARetrieval (deu-Latn_deu-Latn)": 55.82,
+                    "XPQARetrieval (eng-Latn_deu-Latn)": 11.74,
+                    "XPQARetrieval (deu-Latn_eng-Latn)": 30.44,
+                    "XPQARetrieval (spa-Latn_spa-Latn)": 40.01,
+                    "XPQARetrieval (eng-Latn_spa-Latn)": 6.12,
+                    "XPQARetrieval (spa-Latn_eng-Latn)": 29.44,
+                    "XPQARetrieval (fra-Latn_fra-Latn)": 51.94,
+                    "XPQARetrieval (eng-Latn_fra-Latn)": 11.48,
+                    "XPQARetrieval (fra-Latn_eng-Latn)": 32.52,
+                    "XPQARetrieval (hin-Deva_hin-Deva)": 37.48,
+                    "XPQARetrieval (eng-Latn_hin-Deva)": 5.11,
+                    "XPQARetrieval (hin-Deva_eng-Latn)": 7.37,
+                    "XPQARetrieval (ita-Latn_ita-Latn)": 54.2,
+                    "XPQARetrieval (eng-Latn_ita-Latn)": 6.08,
+                    "XPQARetrieval (ita-Latn_eng-Latn)": 30.32,
+                    "XPQARetrieval (jpn-Hira_jpn-Hira)": 37.45,
+                    "XPQARetrieval (eng-Latn_jpn-Hira)": 5.79,
+                    "XPQARetrieval (jpn-Hira_eng-Latn)": 14.77,
+                    "XPQARetrieval (kor-Hang_kor-Hang)": 10.4,
+                    "XPQARetrieval (eng-Latn_kor-Hang)": 7.09,
+                    "XPQARetrieval (kor-Hang_eng-Latn)": 6.95,
+                    "XPQARetrieval (pol-Latn_pol-Latn)": 23.67,
+                    "XPQARetrieval (eng-Latn_pol-Latn)": 8.83,
+                    "XPQARetrieval (pol-Latn_eng-Latn)": 15.94,
+                    "XPQARetrieval (por-Latn_por-Latn)": 33.56,
+                    "XPQARetrieval (eng-Latn_por-Latn)": 3.76,
+                    "XPQARetrieval (por-Latn_eng-Latn)": 23.45,
+                    "XPQARetrieval (tam-Taml_tam-Taml)": 5.53,
+                    "XPQARetrieval (eng-Latn_tam-Taml)": 3.3,
+                    "XPQARetrieval (tam-Taml_eng-Latn)": 4.0,
+                    "XPQARetrieval (cmn-Hans_cmn-Hans)": 23.84,
+                    "XPQARetrieval (eng-Latn_cmn-Hans)": 7.2,
+                    "XPQARetrieval (cmn-Hans_eng-Latn)": 12.84
+                }
+            ]
+        },
+        "STS": {
+            "spearman": [
+                {
+                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/sentence-transformers/all-mpnet-base-v2\">all-mpnet-base-v2</a>",
+                    "AFQMC (cmn-Hans)": 8.01,
+                    "ATEC (cmn-Hans)": 14.03,
+                    "BIOSSES (default)": 80.43,
+                    "BQ (cmn-Hans)": 21.39,
+                    "CDSC-R (pol-Latn)": 77.04,
+                    "LCQMC (cmn-Hans)": 22.84,
+                    "PAWSX (cmn-Hans)": 6.44,
+                    "SICK-R (default)": 80.59,
+                    "SICK-R-PL (pol-Latn)": 50.2,
+                    "SICKFr (fra-Latn)": 67.05,
+                    "STS12 (default)": 72.63,
+                    "STS13 (default)": 83.48,
+                    "STS14 (default)": 78.0,
+                    "STS15 (default)": 85.66,
+                    "STS16 (default)": 80.03,
+                    "STS17 (en-en)": 90.6,
+                    "STS17 (eng-Latn_ara-Arab)": 6.76,
+                    "STS17 (fra-Latn_eng-Latn)": 41.64,
+                    "STS17 (eng-Latn_tur-Latn)": -4.58,
+                    "STS17 (eng-Latn_deu-Latn)": 35.5,
+                    "STS17 (spa-Latn_eng-Latn)": 25.28,
+                    "STS17 (ita-Latn_eng-Latn)": 31.8,
+                    "STS17 (spa-Latn)": 78.4,
+                    "STS17 (kor-Hang)": 39.11,
+                    "STS17 (ara-Arab)": 55.42,
+                    "STS17 (nld-Latn_eng-Latn)": 32.89,
+                    "STS22 (en)": 68.39,
+                    "STS22 (spa-Latn_eng-Latn)": 55.09,
+                    "STS22 (deu-Latn_pol-Latn)": 23.53,
+                    "STS22 (cmn-Hans_eng-Latn)": 40.47,
+                    "STS22 (pol-Latn)": 24.21,
+                    "STS22 (tur-Latn)": 29.35,
+                    "STS22 (spa-Latn_ita-Latn)": 41.61,
+                    "STS22 (fra-Latn_pol-Latn)": 73.25,
+                    "STS22 (rus-Cyrl)": 15.83,
+                    "STS22 (deu-Latn)": 27.0,
+                    "STS22 (spa-Latn)": 55.98,
+                    "STS22 (pol-Latn_eng-Latn)": 51.07,
+                    "STS22 (fra-Latn)": 77.1,
+                    "STS22 (deu-Latn_eng-Latn)": 49.73,
+                    "STS22 (ara-Arab)": 38.96,
+                    "STS22 (deu-Latn_fra-Latn)": 31.39,
+                    "STS22 (ita-Latn)": 58.02,
+                    "STS22 (cmn-Hans)": 42.24,
+                    "STSB (cmn-Hans)": 37.7,
+                    "STSBenchmark (default)": 83.42,
+                    "STSBenchmarkMultilingualSTS (nld-Latn)": 57.01,
+                    "STSBenchmarkMultilingualSTS (rus-Cyrl)": 55.54,
+                    "STSBenchmarkMultilingualSTS (fra-Latn)": 65.15,
+                    "STSBenchmarkMultilingualSTS (ita-Latn)": 62.72,
+                    "STSBenchmarkMultilingualSTS (spa-Latn)": 65.78,
+                    "STSBenchmarkMultilingualSTS (en)": 83.42,
+                    "STSBenchmarkMultilingualSTS (deu-Latn)": 61.43,
+                    "STSBenchmarkMultilingualSTS (por-Latn)": 62.12,
+                    "STSBenchmarkMultilingualSTS (cmn-Hans)": 39.43,
+                    "STSBenchmarkMultilingualSTS (pol-Latn)": 52.36
+                }
+            ]
+        },
+        "Summarization": {
+            "spearman": [
+                {
+                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/sentence-transformers/all-mpnet-base-v2\">all-mpnet-base-v2</a>",
+                    "SummEval (default)": 27.49,
+                    "SummEvalFr (fra-Latn)": 28.11
+                }
+            ]
+        },
+        "InstructionRetrieval": {
+            "p-MRR": [
+                {
+                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/sentence-transformers/all-mpnet-base-v2\">all-mpnet-base-v2</a>"
+                }
+            ]
+        }
+    },
+    "Cohere-embed-english-v3.0": {
+        "BitextMining": {
+            "f1": [
+                {
+                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/Cohere/Cohere-embed-english-v3.0\">Cohere-embed-english-v3.0</a>"
+                }
+            ]
+        },
+        "Classification": {
+            "accuracy": [
+                {
+                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/Cohere/Cohere-embed-english-v3.0\">Cohere-embed-english-v3.0</a>"
+                }
+            ]
+        },
+        "Clustering": {
+            "v_measure": [
+                {
+                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/Cohere/Cohere-embed-english-v3.0\">Cohere-embed-english-v3.0</a>"
+                }
+            ]
+        },
+        "PairClassification": {
+            "ap": [
+                {
+                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/Cohere/Cohere-embed-english-v3.0\">Cohere-embed-english-v3.0</a>"
+                }
+            ]
+        },
+        "Reranking": {
+            "map": [
+                {
+                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/Cohere/Cohere-embed-english-v3.0\">Cohere-embed-english-v3.0</a>"
+                }
+            ]
+        },
+        "Retrieval": {
+            "ndcg_at_10": [
+                {
+                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/Cohere/Cohere-embed-english-v3.0\">Cohere-embed-english-v3.0</a>",
+                    "AILACasedocs": 31.54,
+                    "AILAStatutes": 27.15,
+                    "BrightRetrieval (psychology)": 21.82,
+                    "BrightRetrieval (economics)": 20.18,
+                    "BrightRetrieval (robotics)": 16.21,
+                    "BrightRetrieval (biology)": 18.98,
+                    "BrightRetrieval (stackoverflow)": 16.47,
+                    "BrightRetrieval (theoremqa_theorems)": 6.04,
+                    "BrightRetrieval (pony)": 1.77,
+                    "BrightRetrieval (sustainable_living)": 17.69,
+                    "BrightRetrieval (aops)": 6.46,
+                    "BrightRetrieval (theoremqa_questions)": 15.07,
+                    "BrightRetrieval (leetcode)": 26.78,
+                    "BrightRetrieval (earth_science)": 27.45,
+                    "GerDaLIRSmall": 6.05,
+                    "LeCaRDv2": 21.02,
+                    "LegalBenchConsumerContractsQA": 77.12,
+                    "LegalBenchCorporateLobbying": 93.68,
+                    "LegalQuAD": 26.08,
+                    "LegalSummarization": 61.7
+                }
+            ]
+        },
+        "STS": {
+            "spearman": [
+                {
+                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/Cohere/Cohere-embed-english-v3.0\">Cohere-embed-english-v3.0</a>"
+                }
+            ]
+        },
+        "Summarization": {
+            "spearman": [
+                {
+                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/Cohere/Cohere-embed-english-v3.0\">Cohere-embed-english-v3.0</a>"
+                }
+            ]
+        },
+        "InstructionRetrieval": {
+            "p-MRR": [
+                {
+                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/Cohere/Cohere-embed-english-v3.0\">Cohere-embed-english-v3.0</a>",
+                    "Core17InstructionRetrieval": 2.8,
+                    "News21InstructionRetrieval": 0.2,
+                    "Robust04InstructionRetrieval": -3.63
+                }
+            ]
+        }
+    },
+    "bge-large-en-v1.5": {
+        "BitextMining": {
+            "f1": [
+                {
+                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/BAAI/bge-large-en-v1.5\">bge-large-en-v1.5</a>"
+                }
+            ]
+        },
+        "Classification": {
+            "accuracy": [
+                {
+                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/BAAI/bge-large-en-v1.5\">bge-large-en-v1.5</a>"
+                }
+            ]
+        },
+        "Clustering": {
+            "v_measure": [
+                {
+                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/BAAI/bge-large-en-v1.5\">bge-large-en-v1.5</a>"
+                }
+            ]
+        },
+        "PairClassification": {
+            "ap": [
+                {
+                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/BAAI/bge-large-en-v1.5\">bge-large-en-v1.5</a>"
+                }
+            ]
+        },
+        "Reranking": {
+            "map": [
+                {
+                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/BAAI/bge-large-en-v1.5\">bge-large-en-v1.5</a>"
+                }
+            ]
+        },
+        "Retrieval": {
+            "ndcg_at_10": [
+                {
+                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/BAAI/bge-large-en-v1.5\">bge-large-en-v1.5</a>",
+                    "AILACasedocs": 25.15,
+                    "AILAStatutes": 20.74,
+                    "BrightRetrieval (stackoverflow)": 9.51,
+                    "BrightRetrieval (earth_science)": 24.15,
+                    "BrightRetrieval (aops)": 6.08,
+                    "BrightRetrieval (sustainable_living)": 13.27,
+                    "BrightRetrieval (psychology)": 17.44,
+                    "BrightRetrieval (robotics)": 12.21,
+                    "BrightRetrieval (theoremqa_theorems)": 5.51,
+                    "BrightRetrieval (pony)": 5.64,
+                    "BrightRetrieval (biology)": 11.96,
+                    "BrightRetrieval (theoremqa_questions)": 12.56,
+                    "BrightRetrieval (leetcode)": 26.68,
+                    "BrightRetrieval (economics)": 16.59,
+                    "GerDaLIRSmall": 3.96,
+                    "LeCaRDv2": 22.68,
+                    "LegalBenchConsumerContractsQA": 73.52,
+                    "LegalBenchCorporateLobbying": 91.51,
+                    "LegalQuAD": 16.22,
+                    "LegalSummarization": 59.99
+                }
+            ]
+        },
+        "STS": {
+            "spearman": [
+                {
+                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/BAAI/bge-large-en-v1.5\">bge-large-en-v1.5</a>"
+                }
+            ]
+        },
+        "Summarization": {
+            "spearman": [
+                {
+                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/BAAI/bge-large-en-v1.5\">bge-large-en-v1.5</a>"
+                }
+            ]
+        },
+        "InstructionRetrieval": {
+            "p-MRR": [
+                {
+                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/BAAI/bge-large-en-v1.5\">bge-large-en-v1.5</a>"
+                }
+            ]
+        }
+    },
+    "GritLM-7B": {
+        "BitextMining": {
+            "f1": [
+                {
+                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/GritLM/GritLM-7B\">GritLM-7B</a>",
+                    "BornholmBitextMining (dan-Latn)": 45.13,
+                    "Tatoeba (csb-Latn_eng-Latn)": 50.13,
+                    "Tatoeba (ceb-Latn_eng-Latn)": 33.5,
+                    "Tatoeba (cmn-Hans_eng-Latn)": 94.08,
+                    "Tatoeba (uzb-Latn_eng-Latn)": 41.69,
+                    "Tatoeba (kur-Latn_eng-Latn)": 27.94,
+                    "Tatoeba (ita-Latn_eng-Latn)": 91.2,
+                    "Tatoeba (lvs-Latn_eng-Latn)": 53.54,
+                    "Tatoeba (yid-Hebr_eng-Latn)": 17.13,
+                    "Tatoeba (gle-Latn_eng-Latn)": 48.14,
+                    "Tatoeba (ast-Latn_eng-Latn)": 79.11,
+                    "Tatoeba (ang-Latn_eng-Latn)": 76.84,
+                    "Tatoeba (jav-Latn_eng-Latn)": 26.6,
+                    "Tatoeba (ina-Latn_eng-Latn)": 91.24,
+                    "Tatoeba (nob-Latn_eng-Latn)": 93.53,
+                    "Tatoeba (swe-Latn_eng-Latn)": 90.43,
+                    "Tatoeba (lfn-Latn_eng-Latn)": 62.23,
+                    "Tatoeba (fin-Latn_eng-Latn)": 85.76,
+                    "Tatoeba (fry-Latn_eng-Latn)": 61.16,
+                    "Tatoeba (gsw-Latn_eng-Latn)": 53.28,
+                    "Tatoeba (rus-Cyrl_eng-Latn)": 91.82,
+                    "Tatoeba (tat-Cyrl_eng-Latn)": 24.46,
+                    "Tatoeba (mal-Mlym_eng-Latn)": 33.79,
+                    "Tatoeba (hrv-Latn_eng-Latn)": 91.04,
+                    "Tatoeba (ind-Latn_eng-Latn)": 90.05,
+                    "Tatoeba (tam-Taml_eng-Latn)": 46.27,
+                    "Tatoeba (kaz-Cyrl_eng-Latn)": 36.27,
+                    "Tatoeba (uig-Arab_eng-Latn)": 22.6,
+                    "Tatoeba (slv-Latn_eng-Latn)": 82.71,
+                    "Tatoeba (pms-Latn_eng-Latn)": 50.41,
+                    "Tatoeba (lit-Latn_eng-Latn)": 56.36,
+                    "Tatoeba (cha-Latn_eng-Latn)": 34.69,
+                    "Tatoeba (est-Latn_eng-Latn)": 46.73,
+                    "Tatoeba (mhr-Cyrl_eng-Latn)": 10.8,
+                    "Tatoeba (dan-Latn_eng-Latn)": 92.01,
+                    "Tatoeba (pol-Latn_eng-Latn)": 95.6,
+                    "Tatoeba (nov-Latn_eng-Latn)": 64.85,
+                    "Tatoeba (swh-Latn_eng-Latn)": 46.09,
+                    "Tatoeba (tha-Thai_eng-Latn)": 81.25,
+                    "Tatoeba (arz-Arab_eng-Latn)": 52.97,
+                    "Tatoeba (epo-Latn_eng-Latn)": 76.87,
+                    "Tatoeba (deu-Latn_eng-Latn)": 98.02,
+                    "Tatoeba (hye-Armn_eng-Latn)": 35.94,
+                    "Tatoeba (afr-Latn_eng-Latn)": 79.17,
+                    "Tatoeba (gla-Latn_eng-Latn)": 40.8,
+                    "Tatoeba (isl-Latn_eng-Latn)": 74.94,
+                    "Tatoeba (awa-Deva_eng-Latn)": 44.31,
+                    "Tatoeba (ido-Latn_eng-Latn)": 65.69,
+                    "Tatoeba (kor-Hang_eng-Latn)": 87.43,
+                    "Tatoeba (amh-Ethi_eng-Latn)": 6.18,
+                    "Tatoeba (eus-Latn_eng-Latn)": 31.88,
+                    "Tatoeba (mkd-Cyrl_eng-Latn)": 73.82,
+                    "Tatoeba (tur-Latn_eng-Latn)": 86.62,
+                    "Tatoeba (pes-Arab_eng-Latn)": 78.98,
+                    "Tatoeba (heb-Hebr_eng-Latn)": 61.75,
+                    "Tatoeba (aze-Latn_eng-Latn)": 64.11,
+                    "Tatoeba (hun-Latn_eng-Latn)": 88.54,
+                    "Tatoeba (bul-Cyrl_eng-Latn)": 90.37,
+                    "Tatoeba (kab-Latn_eng-Latn)": 2.9,
+                    "Tatoeba (cat-Latn_eng-Latn)": 90.66,
+                    "Tatoeba (dsb-Latn_eng-Latn)": 51.72,
+                    "Tatoeba (kat-Geor_eng-Latn)": 38.42,
+                    "Tatoeba (urd-Arab_eng-Latn)": 68.02,
+                    "Tatoeba (wuu-Hans_eng-Latn)": 80.28,
+                    "Tatoeba (oci-Latn_eng-Latn)": 58.12,
+                    "Tatoeba (arq-Arab_eng-Latn)": 30.52,
+                    "Tatoeba (ron-Latn_eng-Latn)": 90.29,
+                    "Tatoeba (bos-Latn_eng-Latn)": 87.33,
+                    "Tatoeba (nds-Latn_eng-Latn)": 64.54,
+                    "Tatoeba (tgl-Latn_eng-Latn)": 83.24,
+                    "Tatoeba (glg-Latn_eng-Latn)": 86.69,
+                    "Tatoeba (ben-Beng_eng-Latn)": 61.32,
+                    "Tatoeba (khm-Khmr_eng-Latn)": 16.4,
+                    "Tatoeba (ukr-Cyrl_eng-Latn)": 90.19,
+                    "Tatoeba (max-Deva_eng-Latn)": 51.87,
+                    "Tatoeba (lat-Latn_eng-Latn)": 80.43,
+                    "Tatoeba (xho-Latn_eng-Latn)": 28.43,
+                    "Tatoeba (spa-Latn_eng-Latn)": 96.75,
+                    "Tatoeba (tzl-Latn_eng-Latn)": 42.85,
+                    "Tatoeba (ara-Arab_eng-Latn)": 76.77,
+                    "Tatoeba (vie-Latn_eng-Latn)": 91.32,
+                    "Tatoeba (ces-Latn_eng-Latn)": 92.02,
+                    "Tatoeba (jpn-Jpan_eng-Latn)": 91.9,
+                    "Tatoeba (bel-Cyrl_eng-Latn)": 76.21,
+                    "Tatoeba (mon-Cyrl_eng-Latn)": 27.38,
+                    "Tatoeba (nld-Latn_eng-Latn)": 94.96,
+                    "Tatoeba (war-Latn_eng-Latn)": 27.75,
+                    "Tatoeba (bre-Latn_eng-Latn)": 12.59,
+                    "Tatoeba (por-Latn_eng-Latn)": 93.41,
+                    "Tatoeba (ile-Latn_eng-Latn)": 76.72,
+                    "Tatoeba (mar-Deva_eng-Latn)": 51.54,
+                    "Tatoeba (fao-Latn_eng-Latn)": 62.03,
+                    "Tatoeba (slk-Latn_eng-Latn)": 84.96,
+                    "Tatoeba (tel-Telu_eng-Latn)": 24.26,
+                    "Tatoeba (cym-Latn_eng-Latn)": 50.03,
+                    "Tatoeba (srp-Cyrl_eng-Latn)": 88.45,
+                    "Tatoeba (swg-Latn_eng-Latn)": 52.09,
+                    "Tatoeba (hin-Deva_eng-Latn)": 84.19,
+                    "Tatoeba (yue-Hant_eng-Latn)": 79.5,
+                    "Tatoeba (fra-Latn_eng-Latn)": 92.47,
+                    "Tatoeba (cor-Latn_eng-Latn)": 6.97,
+                    "Tatoeba (hsb-Latn_eng-Latn)": 64.48,
+                    "Tatoeba (zsm-Latn_eng-Latn)": 90.06,
+                    "Tatoeba (ber-Tfng_eng-Latn)": 6.2,
+                    "Tatoeba (pam-Latn_eng-Latn)": 12.11,
+                    "Tatoeba (kzj-Latn_eng-Latn)": 9.61,
+                    "Tatoeba (dtp-Latn_eng-Latn)": 8.37,
+                    "Tatoeba (nno-Latn_eng-Latn)": 80.89,
+                    "Tatoeba (ell-Grek_eng-Latn)": 80.13,
+                    "Tatoeba (orv-Cyrl_eng-Latn)": 45.88,
+                    "Tatoeba (sqi-Latn_eng-Latn)": 54.37,
+                    "Tatoeba (tuk-Latn_eng-Latn)": 30.47,
+                    "Tatoeba (cbk-Latn_eng-Latn)": 67.64
+                }
+            ]
+        },
+        "Classification": {
+            "accuracy": [
+                {
+                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/GritLM/GritLM-7B\">GritLM-7B</a>",
+                    "AllegroReviews (pol-Latn)": 37.32,
+                    "AmazonCounterfactualClassification (en-ext)": 70.34,
+                    "AmazonCounterfactualClassification (en)": 71.1,
+                    "AmazonCounterfactualClassification (deu-Latn)": 67.63,
+                    "AmazonCounterfactualClassification (jpn-Jpan)": 73.3,
+                    "AmazonPolarityClassification (default)": 86.69,
+                    "AmazonReviewsClassification (en)": 45.51,
+                    "AmazonReviewsClassification (deu-Latn)": 43.77,
+                    "AmazonReviewsClassification (spa-Latn)": 43.0,
+                    "AmazonReviewsClassification (fra-Latn)": 44.15,
+                    "AmazonReviewsClassification (jpn-Jpan)": 41.49,
+                    "AmazonReviewsClassification (cmn-Hans)": 35.34,
+                    "AngryTweetsClassification (dan-Latn)": 54.68,
+                    "Banking77Classification (default)": 79.36,
+                    "CBD (pol-Latn)": 70.98,
+                    "DanishPoliticalCommentsClassification (dan-Latn)": 37.69,
+                    "EmotionClassification (default)": 48.79,
+                    "IFlyTek (cmn-Hans)": 48.49,
+                    "ImdbClassification (default)": 82.25,
+                    "JDReview (cmn-Hans)": 84.02,
+                    "LccSentimentClassification (dan-Latn)": 57.2,
+                    "MTOPDomainClassification (en)": 92.67,
+                    "MTOPDomainClassification (deu-Latn)": 88.32,
+                    "MTOPDomainClassification (spa-Latn)": 88.45,
+                    "MTOPDomainClassification (fra-Latn)": 88.44,
+                    "MTOPDomainClassification (hin-Deva)": 86.89,
+                    "MTOPDomainClassification (tha-Thai)": 82.97,
+                    "MTOPIntentClassification (en)": 69.77,
+                    "MTOPIntentClassification (deu-Latn)": 69.53,
+                    "MTOPIntentClassification (spa-Latn)": 67.49,
+                    "MTOPIntentClassification (fra-Latn)": 65.93,
+                    "MTOPIntentClassification (hin-Deva)": 59.47,
+                    "MTOPIntentClassification (tha-Thai)": 65.14,
+                    "MasakhaNEWSClassification (amh-Ethi)": 53.06,
+                    "MasakhaNEWSClassification (eng)": 77.57,
+                    "MasakhaNEWSClassification (fra-Latn)": 77.39,
+                    "MasakhaNEWSClassification (hau-Latn)": 74.66,
+                    "MasakhaNEWSClassification (ibo-Latn)": 68.64,
+                    "MasakhaNEWSClassification (lin-Latn)": 74.23,
+                    "MasakhaNEWSClassification (lug-Latn)": 72.33,
+                    "MasakhaNEWSClassification (orm-Ethi)": 77.6,
+                    "MasakhaNEWSClassification (pcm-Latn)": 91.28,
+                    "MasakhaNEWSClassification (run-Latn)": 76.3,
+                    "MasakhaNEWSClassification (sna-Latn)": 85.99,
+                    "MasakhaNEWSClassification (som-Latn)": 63.71,
+                    "MasakhaNEWSClassification (swa-Latn)": 73.4,
+                    "MasakhaNEWSClassification (tir-Ethi)": 34.41,
+                    "MasakhaNEWSClassification (xho-Latn)": 83.27,
+                    "MasakhaNEWSClassification (yor-Latn)": 80.92,
+                    "MassiveIntentClassification (mya-Mymr)": 36.92,
+                    "MassiveIntentClassification (en)": 71.52,
+                    "MassiveIntentClassification (slv-Latn)": 63.08,
+                    "MassiveIntentClassification (sqi-Latn)": 50.98,
+                    "MassiveIntentClassification (kor-Kore)": 65.71,
+                    "MassiveIntentClassification (aze-Latn)": 56.24,
+                    "MassiveIntentClassification (isl-Latn)": 51.96,
+                    "MassiveIntentClassification (hin-Deva)": 61.18,
+                    "MassiveIntentClassification (dan-Latn)": 65.39,
+                    "MassiveIntentClassification (vie-Latn)": 62.05,
+                    "MassiveIntentClassification (heb-Hebr)": 57.71,
+                    "MassiveIntentClassification (tur-Latn)": 65.26,
+                    "MassiveIntentClassification (cmo-Hans)": 67.43,
+                    "MassiveIntentClassification (khm-Khmr)": 38.86,
+                    "MassiveIntentClassification (deu-Latn)": 67.75,
+                    "MassiveIntentClassification (fas-Arab)": 65.98,
+                    "MassiveIntentClassification (jav-Latn)": 50.25,
+                    "MassiveIntentClassification (nld-Latn)": 66.82,
+                    "MassiveIntentClassification (jpn-Jpan)": 68.56,
+                    "MassiveIntentClassification (ita-Latn)": 68.04,
+                    "MassiveIntentClassification (cym-Latn)": 48.59,
+                    "MassiveIntentClassification (pol-Latn)": 67.97,
+                    "MassiveIntentClassification (fin-Latn)": 60.55,
+                    "MassiveIntentClassification (tha-Thai)": 58.99,
+                    "MassiveIntentClassification (lav-Latn)": 51.12,
+                    "MassiveIntentClassification (mal-Mlym)": 43.57,
+                    "MassiveIntentClassification (hun-Latn)": 63.48,
+                    "MassiveIntentClassification (ind-Latn)": 65.58,
+                    "MassiveIntentClassification (por-Latn)": 67.76,
+                    "MassiveIntentClassification (tel-Telu)": 44.73,
+                    "MassiveIntentClassification (amh-Ethi)": 34.73,
+                    "MassiveIntentClassification (kan-Knda)": 44.51,
+                    "MassiveIntentClassification (spa-Latn)": 66.45,
+                    "MassiveIntentClassification (urd-Arab)": 54.11,
+                    "MassiveIntentClassification (kat-Geor)": 42.01,
+                    "MassiveIntentClassification (tam-Taml)": 43.48,
+                    "MassiveIntentClassification (afr-Latn)": 59.48,
+                    "MassiveIntentClassification (rus-Cyrl)": 69.41,
+                    "MassiveIntentClassification (tgl-Latn)": 61.83,
+                    "MassiveIntentClassification (ell-Grek)": 60.45,
+                    "MassiveIntentClassification (hye-Armn)": 43.12,
+                    "MassiveIntentClassification (ara-Arab)": 54.46,
+                    "MassiveIntentClassification (fra-Latn)": 67.69,
+                    "MassiveIntentClassification (mon-Cyrl)": 40.84,
+                    "MassiveIntentClassification (msa-Latn)": 62.61,
+                    "MassiveIntentClassification (nob-Latn)": 63.58,
+                    "MassiveIntentClassification (ben-Beng)": 52.6,
+                    "MassiveIntentClassification (cmo-Hant)": 62.06,
+                    "MassiveIntentClassification (ron-Latn)": 62.45,
+                    "MassiveIntentClassification (swe-Latn)": 67.73,
+                    "MassiveIntentClassification (swa-Latn)": 50.1,
+                    "MassiveScenarioClassification (cmo-Hant)": 67.7,
+                    "MassiveScenarioClassification (kat-Geor)": 49.31,
+                    "MassiveScenarioClassification (ind-Latn)": 72.36,
+                    "MassiveScenarioClassification (amh-Ethi)": 42.0,
+                    "MassiveScenarioClassification (ita-Latn)": 71.86,
+                    "MassiveScenarioClassification (tur-Latn)": 68.71,
+                    "MassiveScenarioClassification (tel-Telu)": 50.8,
+                    "MassiveScenarioClassification (ell-Grek)": 67.42,
+                    "MassiveScenarioClassification (deu-Latn)": 73.64,
+                    "MassiveScenarioClassification (sqi-Latn)": 57.5,
+                    "MassiveScenarioClassification (cym-Latn)": 57.36,
+                    "MassiveScenarioClassification (spa-Latn)": 71.12,
+                    "MassiveScenarioClassification (nld-Latn)": 72.47,
+                    "MassiveScenarioClassification (swa-Latn)": 58.93,
+                    "MassiveScenarioClassification (cmo-Hans)": 71.91,
+                    "MassiveScenarioClassification (fin-Latn)": 65.91,
+                    "MassiveScenarioClassification (por-Latn)": 70.99,
+                    "MassiveScenarioClassification (hun-Latn)": 69.68,
+                    "MassiveScenarioClassification (slv-Latn)": 70.25,
+                    "MassiveScenarioClassification (urd-Arab)": 62.48,
+                    "MassiveScenarioClassification (hye-Armn)": 49.32,
+                    "MassiveScenarioClassification (pol-Latn)": 71.86,
+                    "MassiveScenarioClassification (khm-Khmr)": 45.52,
+                    "MassiveScenarioClassification (kan-Knda)": 49.51,
+                    "MassiveScenarioClassification (hin-Deva)": 66.18,
+                    "MassiveScenarioClassification (heb-Hebr)": 63.3,
+                    "MassiveScenarioClassification (rus-Cyrl)": 73.87,
+                    "MassiveScenarioClassification (mal-Mlym)": 48.53,
+                    "MassiveScenarioClassification (afr-Latn)": 67.34,
+                    "MassiveScenarioClassification (vie-Latn)": 69.19,
+                    "MassiveScenarioClassification (fra-Latn)": 70.79,
+                    "MassiveScenarioClassification (ben-Beng)": 58.75,
+                    "MassiveScenarioClassification (lav-Latn)": 57.3,
+                    "MassiveScenarioClassification (tam-Taml)": 50.9,
+                    "MassiveScenarioClassification (en)": 73.87,
+                    "MassiveScenarioClassification (aze-Latn)": 61.74,
+                    "MassiveScenarioClassification (swe-Latn)": 73.24,
+                    "MassiveScenarioClassification (kor-Kore)": 70.76,
+                    "MassiveScenarioClassification (ron-Latn)": 68.54,
+                    "MassiveScenarioClassification (msa-Latn)": 69.72,
+                    "MassiveScenarioClassification (mya-Mymr)": 44.25,
+                    "MassiveScenarioClassification (fas-Arab)": 70.5,
+                    "MassiveScenarioClassification (tha-Thai)": 64.51,
+                    "MassiveScenarioClassification (jpn-Jpan)": 72.81,
+                    "MassiveScenarioClassification (nob-Latn)": 69.75,
+                    "MassiveScenarioClassification (tgl-Latn)": 69.0,
+                    "MassiveScenarioClassification (dan-Latn)": 71.51,
+                    "MassiveScenarioClassification (ara-Arab)": 61.51,
+                    "MassiveScenarioClassification (jav-Latn)": 58.24,
+                    "MassiveScenarioClassification (isl-Latn)": 61.61,
+                    "MassiveScenarioClassification (mon-Cyrl)": 46.6,
+                    "MultilingualSentiment (cmn-Hans)": 68.13,
+                    "NoRecClassification (nob-Latn)": 52.05,
+                    "NordicLangClassification (nob-Latn_nno-Latn_dan-Latn_swe-Latn_isl-Latn_fao-Latn)": 63.6,
+                    "OnlineShopping (cmn-Hans)": 86.99,
+                    "PAC (pol-Latn)": 68.09,
+                    "PolEmo2.0-IN (pol-Latn)": 66.07,
+                    "PolEmo2.0-OUT (pol-Latn)": 32.94,
+                    "TNews (cmn-Hans)": 49.94,
+                    "ToxicConversationsClassification (default)": 63.9,
+                    "TweetSentimentExtractionClassification (default)": 57.14,
+                    "Waimai (cmn-Hans)": 84.92
+                }
+            ]
+        },
+        "Clustering": {
+            "v_measure": [
+                {
+                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/GritLM/GritLM-7B\">GritLM-7B</a>",
+                    "MasakhaNEWSClusteringP2P (amh-Ethi)": 45.2,
+                    "MasakhaNEWSClusteringP2P (eng)": 70.5,
+                    "MasakhaNEWSClusteringP2P (fra-Latn)": 73.54,
+                    "MasakhaNEWSClusteringP2P (hau-Latn)": 51.33,
+                    "MasakhaNEWSClusteringP2P (ibo-Latn)": 66.75,
+                    "MasakhaNEWSClusteringP2P (lin-Latn)": 59.57,
+                    "MasakhaNEWSClusteringP2P (lug-Latn)": 58.93,
+                    "MasakhaNEWSClusteringP2P (orm-Ethi)": 54.38,
+                    "MasakhaNEWSClusteringP2P (pcm-Latn)": 92.67,
+                    "MasakhaNEWSClusteringP2P (run-Latn)": 59.51,
+                    "MasakhaNEWSClusteringP2P (sna-Latn)": 68.86,
+                    "MasakhaNEWSClusteringP2P (som-Latn)": 41.42,
+                    "MasakhaNEWSClusteringP2P (swa-Latn)": 33.61,
+                    "MasakhaNEWSClusteringP2P (tir-Ethi)": 51.68,
+                    "MasakhaNEWSClusteringP2P (xho-Latn)": 46.65,
+                    "MasakhaNEWSClusteringP2P (yor-Latn)": 52.39,
+                    "MasakhaNEWSClusteringS2S (amh-Ethi)": 43.39,
+                    "MasakhaNEWSClusteringS2S (eng)": 65.85,
+                    "MasakhaNEWSClusteringS2S (fra-Latn)": 68.87,
+                    "MasakhaNEWSClusteringS2S (hau-Latn)": 33.02,
+                    "MasakhaNEWSClusteringS2S (ibo-Latn)": 64.55,
+                    "MasakhaNEWSClusteringS2S (lin-Latn)": 72.01,
+                    "MasakhaNEWSClusteringS2S (lug-Latn)": 47.42,
+                    "MasakhaNEWSClusteringS2S (orm-Ethi)": 32.59,
+                    "MasakhaNEWSClusteringS2S (pcm-Latn)": 97.82,
+                    "MasakhaNEWSClusteringS2S (run-Latn)": 59.41,
+                    "MasakhaNEWSClusteringS2S (sna-Latn)": 71.58,
+                    "MasakhaNEWSClusteringS2S (som-Latn)": 40.91,
+                    "MasakhaNEWSClusteringS2S (swa-Latn)": 33.54,
+                    "MasakhaNEWSClusteringS2S (tir-Ethi)": 45.32,
+                    "MasakhaNEWSClusteringS2S (xho-Latn)": 28.94,
+                    "MasakhaNEWSClusteringS2S (yor-Latn)": 63.26
+                }
+            ]
+        },
+        "PairClassification": {
+            "ap": [
+                {
+                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/GritLM/GritLM-7B\">GritLM-7B</a>",
+                    "CDSC-E (pol-Latn)": 72.65,
+                    "OpusparcusPC (deu-Latn)": 96.65,
+                    "OpusparcusPC (en)": 98.57,
+                    "OpusparcusPC (fin-Latn)": 90.41,
+                    "OpusparcusPC (fra-Latn)": 93.41,
+                    "OpusparcusPC (rus-Cyrl)": 88.63,
+                    "OpusparcusPC (swe-Latn)": 94.04,
+                    "PSC (pol-Latn)": 99.43,
+                    "PawsXPairClassification (deu-Latn)": 58.5,
+                    "PawsXPairClassification (en)": 63.78,
+                    "PawsXPairClassification (spa-Latn)": 59.15,
+                    "PawsXPairClassification (fra-Latn)": 61.89,
+                    "PawsXPairClassification (jpn-Hira)": 51.46,
+                    "PawsXPairClassification (kor-Hang)": 52.15,
+                    "PawsXPairClassification (cmn-Hans)": 57.66,
+                    "SICK-E-PL (pol-Latn)": 75.98,
+                    "SprintDuplicateQuestions (default)": 93.06,
+                    "TwitterSemEval2015 (default)": 71.24,
+                    "TwitterURLCorpus (default)": 84.54
+                }
+            ]
+        },
+        "Reranking": {
+            "map": [
+                {
+                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/GritLM/GritLM-7B\">GritLM-7B</a>",
+                    "AlloprofReranking (fra-Latn)": 77.95,
+                    "AskUbuntuDupQuestions (default)": 61.11,
+                    "MMarcoReranking (cmn-Hans)": 21.7,
+                    "MindSmallReranking (default)": 31.53,
+                    "SciDocsRR (default)": 84.78,
+                    "StackOverflowDupQuestions (default)": 50.95,
+                    "SyntecReranking (fra-Latn)": 83.32,
+                    "T2Reranking (cmn-Hans)": 65.63
+                }
+            ]
+        },
+        "Retrieval": {
+            "ndcg_at_10": [
+                {
+                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/GritLM/GritLM-7B\">GritLM-7B</a>",
+                    "AILACasedocs (default)": 35.31,
+                    "AILAStatutes (default)": 41.8,
+                    "AlloprofRetrieval (fra-Latn)": 55.42,
+                    "ArguAna (default)": 63.17,
+                    "ArguAna-PL (pol-Latn)": 48.89,
+                    "BSARDRetrieval (fra-Latn)": 26.63,
+                    "BrightRetrieval (pony)": 21.98,
+                    "BrightRetrieval (robotics)": 17.31,
+                    "BrightRetrieval (economics)": 19.0,
+                    "BrightRetrieval (theoremqa_questions)": 23.34,
+                    "BrightRetrieval (leetcode)": 29.85,
+                    "BrightRetrieval (earth_science)": 32.77,
+                    "BrightRetrieval (stackoverflow)": 11.62,
+                    "BrightRetrieval (sustainable_living)": 18.04,
+                    "BrightRetrieval (biology)": 25.04,
+                    "BrightRetrieval (psychology)": 19.92,
+                    "BrightRetrieval (theoremqa_theorems)": 17.41,
+                    "BrightRetrieval (aops)": 8.91,
+                    "CmedqaRetrieval (cmn-Hans)": 35.58,
+                    "CovidRetrieval (cmn-Hans)": 73.47,
+                    "DuRetrieval (cmn-Hans)": 88.18,
+                    "EcomRetrieval (cmn-Hans)": 54.33,
+                    "FiQA-PL (pol-Latn)": 38.04,
+                    "FiQA2018 (default)": 59.91,
+                    "GerDaLIRSmall (deu-Latn)": 20.61,
+                    "LEMBNarrativeQARetrieval (default)": 41.46,
+                    "LEMBNeedleRetrieval": 33.25,
+                    "LEMBPasskeyRetrieval": 38.25,
+                    "LEMBQMSumRetrieval (default)": 30.32,
+                    "LEMBSummScreenFDRetrieval (default)": 78.49,
+                    "LEMBWikimQARetrieval (default)": 60.8,
+                    "LeCaRDv2 (zho-Hans)": 64.05,
+                    "LegalBenchConsumerContractsQA (default)": 82.1,
+                    "LegalBenchCorporateLobbying (default)": 95.0,
+                    "LegalQuAD (deu-Latn)": 44.18,
+                    "LegalSummarization (default)": 70.64,
+                    "MMarcoRetrieval (cmn-Hans)": 76.54,
+                    "MedicalRetrieval (cmn-Hans)": 55.81,
+                    "MintakaRetrieval (ara-Arab)": 25.88,
+                    "MintakaRetrieval (deu-Latn)": 55.66,
+                    "MintakaRetrieval (spa-Latn)": 53.36,
+                    "MintakaRetrieval (fra-Latn)": 51.68,
+                    "MintakaRetrieval (hin-Deva)": 26.06,
+                    "MintakaRetrieval (ita-Latn)": 54.91,
+                    "MintakaRetrieval (jpn-Hira)": 34.1,
+                    "MintakaRetrieval (por-Latn)": 54.91,
+                    "NFCorpus (default)": 40.86,
+                    "NFCorpus-PL (pol-Latn)": 32.88,
+                    "SCIDOCS (default)": 24.4,
+                    "SCIDOCS-PL (pol-Latn)": 18.39,
+                    "SciFact (default)": 79.13,
+                    "SciFact-PL (pol-Latn)": 73.22,
+                    "SyntecRetrieval (fra-Latn)": 89.48,
+                    "T2Retrieval (cmn-Hans)": 82.96,
+                    "TRECCOVID (default)": 74.36,
+                    "TRECCOVID-PL (pol-Latn)": 58.01,
+                    "Touche2020 (default)": 27.81,
+                    "VideoRetrieval (cmn-Hans)": 53.85,
+                    "XPQARetrieval (ara-Arab_ara-Arab)": 45.21,
+                    "XPQARetrieval (eng-Latn_ara-Arab)": 27.32,
+                    "XPQARetrieval (ara-Arab_eng-Latn)": 39.43,
+                    "XPQARetrieval (deu-Latn_deu-Latn)": 76.58,
+                    "XPQARetrieval (eng-Latn_deu-Latn)": 55.44,
+                    "XPQARetrieval (deu-Latn_eng-Latn)": 72.56,
+                    "XPQARetrieval (spa-Latn_spa-Latn)": 64.55,
+                    "XPQARetrieval (eng-Latn_spa-Latn)": 45.49,
+                    "XPQARetrieval (spa-Latn_eng-Latn)": 61.03,
+                    "XPQARetrieval (fra-Latn_fra-Latn)": 70.85,
+                    "XPQARetrieval (eng-Latn_fra-Latn)": 48.14,
+                    "XPQARetrieval (fra-Latn_eng-Latn)": 66.96,
+                    "XPQARetrieval (hin-Deva_hin-Deva)": 74.75,
+                    "XPQARetrieval (eng-Latn_hin-Deva)": 25.61,
+                    "XPQARetrieval (hin-Deva_eng-Latn)": 63.9,
+                    "XPQARetrieval (ita-Latn_ita-Latn)": 76.53,
+                    "XPQARetrieval (eng-Latn_ita-Latn)": 46.88,
+                    "XPQARetrieval (ita-Latn_eng-Latn)": 71.03,
+                    "XPQARetrieval (jpn-Hira_jpn-Hira)": 72.27,
+                    "XPQARetrieval (eng-Latn_jpn-Hira)": 41.94,
+                    "XPQARetrieval (jpn-Hira_eng-Latn)": 69.42,
+                    "XPQARetrieval (kor-Hang_kor-Hang)": 40.64,
+                    "XPQARetrieval (eng-Latn_kor-Hang)": 32.68,
+                    "XPQARetrieval (kor-Hang_eng-Latn)": 36.0,
+                    "XPQARetrieval (pol-Latn_pol-Latn)": 50.74,
+                    "XPQARetrieval (eng-Latn_pol-Latn)": 33.14,
+                    "XPQARetrieval (pol-Latn_eng-Latn)": 48.06,
+                    "XPQARetrieval (por-Latn_por-Latn)": 49.86,
+                    "XPQARetrieval (eng-Latn_por-Latn)": 33.01,
+                    "XPQARetrieval (por-Latn_eng-Latn)": 48.45,
+                    "XPQARetrieval (tam-Taml_tam-Taml)": 41.78,
+                    "XPQARetrieval (eng-Latn_tam-Taml)": 10.95,
+                    "XPQARetrieval (tam-Taml_eng-Latn)": 21.28,
+                    "XPQARetrieval (cmn-Hans_cmn-Hans)": 65.29,
+                    "XPQARetrieval (eng-Latn_cmn-Hans)": 35.86,
+                    "XPQARetrieval (cmn-Hans_eng-Latn)": 58.12
+                }
+            ]
+        },
+        "STS": {
+            "spearman": [
+                {
+                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/GritLM/GritLM-7B\">GritLM-7B</a>",
+                    "AFQMC (cmn-Hans)": 32.65,
+                    "ATEC (cmn-Hans)": 37.34,
+                    "BIOSSES (default)": 85.01,
+                    "BQ (cmn-Hans)": 38.03,
+                    "CDSC-R (pol-Latn)": 92.23,
+                    "LCQMC (cmn-Hans)": 71.38,
+                    "PAWSX (cmn-Hans)": 16.4,
+                    "SICK-R (default)": 81.47,
+                    "SICK-R-PL (pol-Latn)": 72.78,
+                    "SICKFr (fra-Latn)": 76.91,
+                    "STS12 (default)": 65.84,
+                    "STS13 (default)": 78.37,
+                    "STS14 (default)": 77.52,
+                    "STS15 (default)": 85.43,
+                    "STS16 (default)": 79.94,
+                    "STS17 (ita-Latn_eng-Latn)": 88.42,
+                    "STS17 (fra-Latn_eng-Latn)": 87.9,
+                    "STS17 (kor-Hang)": 78.74,
+                    "STS17 (en-en)": 90.12,
+                    "STS17 (nld-Latn_eng-Latn)": 88.29,
+                    "STS17 (ara-Arab)": 79.28,
+                    "STS17 (eng-Latn_deu-Latn)": 88.92,
+                    "STS17 (spa-Latn)": 87.12,
+                    "STS17 (eng-Latn_tur-Latn)": 77.47,
+                    "STS17 (spa-Latn_eng-Latn)": 87.47,
+                    "STS17 (eng-Latn_ara-Arab)": 74.45,
+                    "STS22 (spa-Latn_eng-Latn)": 80.76,
+                    "STS22 (ara-Arab)": 55.45,
+                    "STS22 (pol-Latn_eng-Latn)": 77.77,
+                    "STS22 (deu-Latn_pol-Latn)": 55.09,
+                    "STS22 (en)": 68.59,
+                    "STS22 (rus-Cyrl)": 68.46,
+                    "STS22 (deu-Latn_eng-Latn)": 62.33,
+                    "STS22 (cmn-Hans)": 72.29,
+                    "STS22 (pol-Latn)": 48.07,
+                    "STS22 (fra-Latn)": 83.09,
+                    "STS22 (cmn-Hans_eng-Latn)": 72.73,
+                    "STS22 (deu-Latn_fra-Latn)": 62.14,
+                    "STS22 (spa-Latn_ita-Latn)": 77.63,
+                    "STS22 (fra-Latn_pol-Latn)": 84.52,
+                    "STS22 (ita-Latn)": 77.58,
+                    "STS22 (spa-Latn)": 72.24,
+                    "STS22 (deu-Latn)": 59.34,
+                    "STS22 (tur-Latn)": 70.83,
+                    "STSB (cmn-Hans)": 74.11,
+                    "STSBenchmark (default)": 83.1,
+                    "STSBenchmarkMultilingualSTS (spa-Latn)": 79.51,
+                    "STSBenchmarkMultilingualSTS (ita-Latn)": 76.24,
+                    "STSBenchmarkMultilingualSTS (por-Latn)": 76.61,
+                    "STSBenchmarkMultilingualSTS (fra-Latn)": 77.48,
+                    "STSBenchmarkMultilingualSTS (deu-Latn)": 77.57,
+                    "STSBenchmarkMultilingualSTS (en)": 83.12,
+                    "STSBenchmarkMultilingualSTS (nld-Latn)": 74.83,
+                    "STSBenchmarkMultilingualSTS (pol-Latn)": 74.67,
+                    "STSBenchmarkMultilingualSTS (cmn-Hans)": 75.27,
+                    "STSBenchmarkMultilingualSTS (rus-Cyrl)": 76.19
+                }
+            ]
+        },
+        "Summarization": {
+            "spearman": [
+                {
+                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/GritLM/GritLM-7B\">GritLM-7B</a>",
+                    "SummEval (default)": 30.26,
+                    "SummEvalFr (fra-Latn)": 29.97
+                }
+            ]
+        },
+        "InstructionRetrieval": {
+            "p-MRR": [
+                {
+                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/GritLM/GritLM-7B\">GritLM-7B</a>",
+                    "Core17InstructionRetrieval": 2.62,
+                    "News21InstructionRetrieval": -1.01,
+                    "Robust04InstructionRetrieval": -1.68
+                }
+            ]
+        }
+    },
+    "gte-Qwen1.5-7B-instruct": {
+        "BitextMining": {
+            "f1": [
+                {
+                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/Alibaba-NLP/gte-Qwen1.5-7B-instruct\">gte-Qwen1.5-7B-instruct</a>"
+                }
+            ]
+        },
+        "Classification": {
+            "accuracy": [
+                {
+                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/Alibaba-NLP/gte-Qwen1.5-7B-instruct\">gte-Qwen1.5-7B-instruct</a>",
+                    "AmazonCounterfactualClassification (en)": 83.16,
+                    "AmazonPolarityClassification": 96.7,
+                    "AmazonReviewsClassification (en)": 62.17,
+                    "AmazonReviewsClassification (zh)": 52.95,
+                    "Banking77Classification": 81.68,
+                    "EmotionClassification": 54.53,
+                    "IFlyTek": 53.77,
+                    "ImdbClassification": 95.58,
+                    "JDReview": 88.2,
+                    "MTOPDomainClassification (en)": 95.75,
+                    "MTOPIntentClassification (en)": 84.26,
+                    "MassiveIntentClassification (zh-CN)": 76.25,
+                    "MassiveIntentClassification (en)": 78.47,
+                    "MassiveScenarioClassification (en)": 78.19,
+                    "MassiveScenarioClassification (zh-CN)": 77.26,
+                    "MultilingualSentiment": 77.42,
+                    "OnlineShopping": 94.48,
+                    "TNews": 51.24,
+                    "ToxicConversationsClassification": 78.75,
+                    "TweetSentimentExtractionClassification": 66.0,
+                    "Waimai": 88.63
+                }
+            ]
+        },
+        "Clustering": {
+            "v_measure": [
+                {
+                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/Alibaba-NLP/gte-Qwen1.5-7B-instruct\">gte-Qwen1.5-7B-instruct</a>",
+                    "ArxivClusteringP2P": 56.4,
+                    "ArxivClusteringS2S": 51.45,
+                    "BiorxivClusteringP2P": 49.01,
+                    "BiorxivClusteringS2S": 45.06,
+                    "CLSClusteringP2P": 47.21,
+                    "CLSClusteringS2S": 45.79,
+                    "MedrxivClusteringP2P": 44.37,
+                    "MedrxivClusteringS2S": 42.0,
+                    "RedditClustering": 73.37,
+                    "RedditClusteringP2P": 72.51,
+                    "StackExchangeClustering": 79.07,
+                    "StackExchangeClusteringP2P": 49.57,
+                    "ThuNewsClusteringP2P": 87.43,
+                    "ThuNewsClusteringS2S": 87.9,
+                    "TwentyNewsgroupsClustering": 51.31
+                }
+            ]
+        },
+        "PairClassification": {
+            "ap": [
+                {
+                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/Alibaba-NLP/gte-Qwen1.5-7B-instruct\">gte-Qwen1.5-7B-instruct</a>",
+                    "Cmnli": 91.81,
+                    "Ocnli": 85.22,
+                    "SprintDuplicateQuestions": 95.99,
+                    "TwitterSemEval2015": 79.36,
+                    "TwitterURLCorpus": 86.79
+                }
+            ]
+        },
+        "Reranking": {
+            "map": [
+                {
+                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/Alibaba-NLP/gte-Qwen1.5-7B-instruct\">gte-Qwen1.5-7B-instruct</a>",
+                    "AskUbuntuDupQuestions": 66.0,
+                    "CMedQAv1": 86.37,
+                    "CMedQAv2": 87.41,
+                    "MindSmallReranking": 32.71,
+                    "SciDocsRR": 87.89,
+                    "StackOverflowDupQuestions": 53.93,
+                    "T2Reranking": 68.11
+                }
+            ]
+        },
+        "Retrieval": {
+            "ndcg_at_10": [
+                {
+                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/Alibaba-NLP/gte-Qwen1.5-7B-instruct\">gte-Qwen1.5-7B-instruct</a>",
+                    "ArguAna": 62.65,
+                    "BrightRetrieval (stackoverflow)": 19.85,
+                    "BrightRetrieval (earth_science)": 36.22,
+                    "BrightRetrieval (leetcode)": 25.46,
+                    "BrightRetrieval (theoremqa_questions)": 26.97,
+                    "BrightRetrieval (economics)": 17.72,
+                    "BrightRetrieval (robotics)": 13.47,
+                    "BrightRetrieval (pony)": 9.79,
+                    "BrightRetrieval (aops)": 14.36,
+                    "BrightRetrieval (psychology)": 24.61,
+                    "BrightRetrieval (theoremqa_theorems)": 26.66,
+                    "BrightRetrieval (biology)": 30.92,
+                    "BrightRetrieval (sustainable_living)": 14.93,
+                    "CQADupstackRetrieval": 40.64,
+                    "ClimateFEVER": 44.0,
+                    "CmedqaRetrieval": 43.47,
+                    "CovidRetrieval": 80.87,
+                    "DBPedia": 48.04,
+                    "DuRetrieval": 86.01,
+                    "EcomRetrieval": 66.46,
+                    "FEVER": 93.35,
+                    "FiQA2018": 55.31,
+                    "HotpotQA": 72.25,
+                    "MMarcoRetrieval": 73.83,
+                    "MSMARCO": 41.68,
+                    "MedicalRetrieval": 61.33,
+                    "NFCorpus": 38.25,
+                    "NQ": 61.79,
+                    "QuoraRetrieval": 89.61,
+                    "SCIDOCS": 27.69,
+                    "SciFact": 75.31,
+                    "T2Retrieval": 83.58,
+                    "TRECCOVID": 72.72,
+                    "Touche2020": 20.3,
+                    "VideoRetrieval": 69.41
+                }
+            ]
+        },
+        "STS": {
+            "spearman": [
+                {
+                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/Alibaba-NLP/gte-Qwen1.5-7B-instruct\">gte-Qwen1.5-7B-instruct</a>",
+                    "AFQMC": 58.47,
+                    "ATEC": 55.46,
+                    "BIOSSES": 81.12,
+                    "BQ": 77.59,
+                    "LCQMC": 76.29,
+                    "PAWSX": 50.22,
+                    "QBQTC": 31.82,
+                    "SICK-R": 79.15,
+                    "STS12": 76.52,
+                    "STS13": 88.63,
+                    "STS14": 83.32,
+                    "STS15": 87.5,
+                    "STS16": 86.39,
+                    "STS17 (en-en)": 87.79,
+                    "STS22 (en)": 66.4,
+                    "STS22 (zh)": 67.36,
+                    "STSB": 81.37,
+                    "STSBenchmark": 87.35
+                }
+            ]
+        },
+        "Summarization": {
+            "spearman": [
+                {
+                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/Alibaba-NLP/gte-Qwen1.5-7B-instruct\">gte-Qwen1.5-7B-instruct</a>",
+                    "SummEval": 31.46
+                }
+            ]
+        },
+        "InstructionRetrieval": {
+            "p-MRR": [
+                {
+                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/Alibaba-NLP/gte-Qwen1.5-7B-instruct\">gte-Qwen1.5-7B-instruct</a>"
+                }
+            ]
+        }
+    },
+    "voyage-large-2-instruct": {
+        "BitextMining": {
+            "f1": [
+                {
+                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://docs.voyageai.com/embeddings/\">voyage-large-2-instruct</a>"
+                }
+            ]
+        },
+        "Classification": {
+            "accuracy": [
+                {
+                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://docs.voyageai.com/embeddings/\">voyage-large-2-instruct</a>",
+                    "AmazonCounterfactualClassification (en)": 77.6,
+                    "AmazonPolarityClassification": 96.58,
+                    "AmazonReviewsClassification (en)": 50.77,
+                    "Banking77Classification": 86.96,
+                    "EmotionClassification": 59.81,
+                    "ImdbClassification": 96.13,
+                    "MTOPDomainClassification (en)": 98.86,
+                    "MTOPIntentClassification (en)": 86.97,
+                    "MassiveIntentClassification (en)": 81.08,
+                    "MassiveScenarioClassification (en)": 87.95,
+                    "ToxicConversationsClassification": 83.58,
+                    "TweetSentimentExtractionClassification": 71.55
+                }
+            ]
+        },
+        "Clustering": {
+            "v_measure": [
+                {
+                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://docs.voyageai.com/embeddings/\">voyage-large-2-instruct</a>",
+                    "ArxivClusteringP2P": 51.81,
+                    "ArxivClusteringS2S": 44.73,
+                    "BiorxivClusteringP2P": 46.07,
+                    "BiorxivClusteringS2S": 40.64,
+                    "MedrxivClusteringP2P": 42.94,
+                    "MedrxivClusteringS2S": 41.44,
+                    "RedditClustering": 68.5,
+                    "RedditClusteringP2P": 64.86,
+                    "StackExchangeClustering": 74.16,
+                    "StackExchangeClusteringP2P": 45.1,
+                    "TwentyNewsgroupsClustering": 66.62
+                }
+            ]
+        },
+        "PairClassification": {
+            "ap": [
+                {
+                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://docs.voyageai.com/embeddings/\">voyage-large-2-instruct</a>",
+                    "SprintDuplicateQuestions": 94.5,
+                    "TwitterSemEval2015": 86.32,
+                    "TwitterURLCorpus": 86.9
+                }
+            ]
+        },
+        "Reranking": {
+            "map": [
+                {
+                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://docs.voyageai.com/embeddings/\">voyage-large-2-instruct</a>",
+                    "AskUbuntuDupQuestions": 64.92,
+                    "MindSmallReranking": 30.97,
+                    "SciDocsRR": 89.34,
+                    "StackOverflowDupQuestions": 55.11
+                }
+            ]
+        },
+        "Retrieval": {
+            "ndcg_at_10": [
+                {
+                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://docs.voyageai.com/embeddings/\">voyage-large-2-instruct</a>",
+                    "ArguAna": 64.06,
+                    "BrightRetrieval (theoremqa_questions)": 26.06,
+                    "BrightRetrieval (earth_science)": 25.09,
+                    "BrightRetrieval (leetcode)": 30.6,
+                    "BrightRetrieval (economics)": 19.85,
+                    "BrightRetrieval (robotics)": 11.21,
+                    "BrightRetrieval (psychology)": 24.79,
+                    "BrightRetrieval (aops)": 7.45,
+                    "BrightRetrieval (sustainable_living)": 15.58,
+                    "BrightRetrieval (pony)": 1.48,
+                    "BrightRetrieval (theoremqa_theorems)": 10.13,
+                    "BrightRetrieval (biology)": 23.55,
+                    "BrightRetrieval (stackoverflow)": 15.03,
+                    "CQADupstackRetrieval": 46.6,
+                    "ClimateFEVER": 32.65,
+                    "DBPedia": 46.03,
+                    "FEVER": 91.47,
+                    "FiQA2018": 59.76,
+                    "HotpotQA": 70.86,
+                    "MSMARCO": 40.6,
+                    "NFCorpus": 40.32,
+                    "NQ": 65.92,
+                    "QuoraRetrieval": 87.4,
+                    "SCIDOCS": 24.32,
+                    "SciFact": 79.99,
+                    "TRECCOVID": 85.07,
+                    "Touche2020": 39.16
+                }
+            ]
+        },
+        "STS": {
+            "spearman": [
+                {
+                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://docs.voyageai.com/embeddings/\">voyage-large-2-instruct</a>",
+                    "BIOSSES": 89.12,
+                    "BIOSSES (default)": 89.24,
+                    "SICK-R": 83.16,
+                    "STS12": 76.15,
+                    "STS12 (default)": 73.34,
+                    "STS13": 88.49,
+                    "STS14": 86.49,
+                    "STS15": 91.13,
+                    "STS16": 85.68,
+                    "STS17 (en-en)": 90.06,
+                    "STS22 (en)": 66.32,
+                    "STSBenchmark": 89.22
+                }
+            ]
+        },
+        "Summarization": {
+            "spearman": [
+                {
+                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://docs.voyageai.com/embeddings/\">voyage-large-2-instruct</a>",
+                    "SummEval": 30.84
+                }
+            ]
+        },
+        "InstructionRetrieval": {
+            "p-MRR": [
+                {
+                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://docs.voyageai.com/embeddings/\">voyage-large-2-instruct</a>"
+                }
+            ]
+        }
+    },
+    "e5-mistral-7b-instruct": {
+        "BitextMining": {
+            "f1": [
+                {
+                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/intfloat/e5-mistral-7b-instruct\">e5-mistral-7b-instruct</a>"
+                }
+            ]
+        },
+        "Classification": {
+            "accuracy": [
+                {
+                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/intfloat/e5-mistral-7b-instruct\">e5-mistral-7b-instruct</a>",
+                    "AmazonReviewsClassification (fr)": 36.71,
+                    "MTOPDomainClassification (fr)": 74.8,
+                    "MTOPIntentClassification (fr)": 53.97,
+                    "MasakhaNEWSClassification (fra)": 80.59,
+                    "MassiveIntentClassification (fr)": 46.39,
+                    "MassiveScenarioClassification (fr)": 53.86
+                }
+            ]
+        },
+        "Clustering": {
+            "v_measure": [
+                {
+                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/intfloat/e5-mistral-7b-instruct\">e5-mistral-7b-instruct</a>",
+                    "AlloProfClusteringP2P": 61.06,
+                    "AlloProfClusteringS2S": 28.12,
+                    "HALClusteringS2S": 19.69,
+                    "MLSUMClusteringP2P": 45.59,
+                    "MLSUMClusteringS2S": 32.0,
+                    "MasakhaNEWSClusteringP2P (fra)": 52.47,
+                    "MasakhaNEWSClusteringS2S (fra)": 49.2
+                }
+            ]
+        },
+        "PairClassification": {
+            "ap": [
+                {
+                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/intfloat/e5-mistral-7b-instruct\">e5-mistral-7b-instruct</a>",
+                    "OpusparcusPC (fr)": 88.5,
+                    "PawsXPairClassification (fr)": 63.65
+                }
+            ]
+        },
+        "Reranking": {
+            "map": [
+                {
+                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/intfloat/e5-mistral-7b-instruct\">e5-mistral-7b-instruct</a>",
+                    "AlloprofReranking": 47.36,
+                    "SyntecReranking": 77.05
+                }
+            ]
+        },
+        "Retrieval": {
+            "ndcg_at_10": [
+                {
+                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/intfloat/e5-mistral-7b-instruct\">e5-mistral-7b-instruct</a>",
+                    "AILACasedocs": 38.76,
+                    "AILAStatutes": 38.07,
+                    "AlloprofRetrieval": 16.46,
+                    "BSARDRetrieval": 0.0,
+                    "BrightRetrieval (sustainable_living)": 18.51,
+                    "BrightRetrieval (economics)": 15.49,
+                    "BrightRetrieval (theoremqa_theorems)": 23.78,
+                    "BrightRetrieval (aops)": 7.1,
+                    "BrightRetrieval (theoremqa_questions)": 23.94,
+                    "BrightRetrieval (stackoverflow)": 9.83,
+                    "BrightRetrieval (psychology)": 15.79,
+                    "BrightRetrieval (pony)": 4.81,
+                    "BrightRetrieval (leetcode)": 28.72,
+                    "BrightRetrieval (biology)": 18.84,
+                    "BrightRetrieval (earth_science)": 25.96,
+                    "BrightRetrieval (robotics)": 16.37,
+                    "GerDaLIRSmall": 37.18,
+                    "LEMBNarrativeQARetrieval": 44.62,
+                    "LEMBNeedleRetrieval": 48.25,
+                    "LEMBPasskeyRetrieval": 71.0,
+                    "LEMBQMSumRetrieval": 43.63,
+                    "LEMBSummScreenFDRetrieval": 96.82,
+                    "LEMBWikimQARetrieval": 82.11,
+                    "LeCaRDv2": 68.56,
+                    "LegalBenchConsumerContractsQA": 75.46,
+                    "LegalBenchCorporateLobbying": 94.01,
+                    "LegalQuAD": 59.64,
+                    "LegalSummarization": 66.51,
+                    "MintakaRetrieval (fr)": 3.57,
+                    "SyntecRetrieval": 55.9,
+                    "XPQARetrieval (fr)": 41.29
+                }
+            ]
+        },
+        "STS": {
+            "spearman": [
+                {
+                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/intfloat/e5-mistral-7b-instruct\">e5-mistral-7b-instruct</a>",
+                    "SICKFr": 64.39,
+                    "STS22 (fr)": 69.82,
+                    "STSBenchmarkMultilingualSTS (fr)": 61.87
+                }
+            ]
+        },
+        "Summarization": {
+            "spearman": [
+                {
+                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/intfloat/e5-mistral-7b-instruct\">e5-mistral-7b-instruct</a>",
+                    "SummEvalFr": 32.22
+                }
+            ]
+        },
+        "InstructionRetrieval": {
+            "p-MRR": [
+                {
+                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/intfloat/e5-mistral-7b-instruct\">e5-mistral-7b-instruct</a>",
+                    "Core17InstructionRetrieval": 0.09,
+                    "News21InstructionRetrieval": -0.86,
+                    "Robust04InstructionRetrieval": -9.59
+                }
+            ]
+        }
+    },
+    "bm25": {
+        "BitextMining": {
+            "f1": [
+                {
+                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://en.wikipedia.org/wiki/Okapi_BM25\">bm25</a>"
+                }
+            ]
+        },
+        "Classification": {
+            "accuracy": [
+                {
+                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://en.wikipedia.org/wiki/Okapi_BM25\">bm25</a>"
+                }
+            ]
+        },
+        "Clustering": {
+            "v_measure": [
+                {
+                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://en.wikipedia.org/wiki/Okapi_BM25\">bm25</a>"
+                }
+            ]
+        },
+        "PairClassification": {
+            "ap": [
+                {
+                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://en.wikipedia.org/wiki/Okapi_BM25\">bm25</a>"
+                }
+            ]
+        },
+        "Reranking": {
+            "map": [
+                {
+                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://en.wikipedia.org/wiki/Okapi_BM25\">bm25</a>"
+                }
+            ]
+        },
+        "Retrieval": {
+            "ndcg_at_10": [
+                {
+                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://en.wikipedia.org/wiki/Okapi_BM25\">bm25</a>",
+                    "BrightRetrieval (robotics)": 13.53,
+                    "BrightRetrieval (pony)": 7.93,
+                    "BrightRetrieval (leetcode)": 24.37,
+                    "BrightRetrieval (earth_science)": 27.06,
+                    "BrightRetrieval (stackoverflow)": 16.55,
+                    "BrightRetrieval (economics)": 14.87,
+                    "BrightRetrieval (theoremqa_questions)": 9.78,
+                    "BrightRetrieval (theoremqa_theorems)": 4.25,
+                    "BrightRetrieval (psychology)": 12.51,
+                    "BrightRetrieval (sustainable_living)": 15.22,
+                    "BrightRetrieval (biology)": 19.19,
+                    "BrightRetrieval (aops)": 6.2
+                }
+            ]
+        },
+        "STS": {
+            "spearman": [
+                {
+                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://en.wikipedia.org/wiki/Okapi_BM25\">bm25</a>"
+                }
+            ]
+        },
+        "Summarization": {
+            "spearman": [
+                {
+                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://en.wikipedia.org/wiki/Okapi_BM25\">bm25</a>"
+                }
+            ]
+        },
+        "InstructionRetrieval": {
+            "p-MRR": [
+                {
+                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://en.wikipedia.org/wiki/Okapi_BM25\">bm25</a>",
+                    "Core17InstructionRetrieval": -1.06,
+                    "News21InstructionRetrieval": -2.15,
+                    "Robust04InstructionRetrieval": -3.06
+                }
+            ]
+        }
+    },
+    "text-embedding-3-large": {
+        "BitextMining": {
+            "f1": [
+                {
+                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://openai.com/blog/new-embedding-models-and-api-updates\">text-embedding-3-large</a>"
+                }
+            ]
+        },
+        "Classification": {
+            "accuracy": [
+                {
+                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://openai.com/blog/new-embedding-models-and-api-updates\">text-embedding-3-large</a>",
+                    "AmazonCounterfactualClassification (en)": 78.93,
+                    "AmazonPolarityClassification": 92.85,
+                    "AmazonReviewsClassification (en)": 48.7,
+                    "Banking77Classification": 85.69,
+                    "EmotionClassification": 51.58,
+                    "ImdbClassification": 87.67,
+                    "MTOPDomainClassification (en)": 95.36,
+                    "MTOPIntentClassification (en)": 75.07,
+                    "MassiveIntentClassification (en)": 74.64,
+                    "MassiveScenarioClassification (en)": 79.79,
+                    "ToxicConversationsClassification": 72.92,
+                    "TweetSentimentExtractionClassification": 62.22
+                }
+            ]
+        },
+        "Clustering": {
+            "v_measure": [
+                {
+                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://openai.com/blog/new-embedding-models-and-api-updates\">text-embedding-3-large</a>",
+                    "ArxivClusteringP2P": 49.01,
+                    "ArxivClusteringS2S": 44.45,
+                    "BiorxivClusteringP2P": 38.03,
+                    "BiorxivClusteringS2S": 36.53,
+                    "MedrxivClusteringP2P": 32.7,
+                    "MedrxivClusteringS2S": 31.27,
+                    "RedditClustering": 67.84,
+                    "RedditClusteringP2P": 67.96,
+                    "StackExchangeClustering": 76.26,
+                    "StackExchangeClusteringP2P": 36.88,
+                    "TwentyNewsgroupsClustering": 58.14
+                }
+            ]
+        },
+        "PairClassification": {
+            "ap": [
+                {
+                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://openai.com/blog/new-embedding-models-and-api-updates\">text-embedding-3-large</a>",
+                    "SprintDuplicateQuestions": 92.25,
+                    "TwitterSemEval2015": 77.13,
+                    "TwitterURLCorpus": 87.78
+                }
+            ]
+        },
+        "Reranking": {
+            "map": [
+                {
+                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://openai.com/blog/new-embedding-models-and-api-updates\">text-embedding-3-large</a>",
+                    "AskUbuntuDupQuestions": 65.03,
+                    "MindSmallReranking": 29.86,
+                    "SciDocsRR": 86.66,
+                    "StackOverflowDupQuestions": 55.08
+                }
+            ]
+        },
+        "Retrieval": {
+            "ndcg_at_10": [
+                {
+                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://openai.com/blog/new-embedding-models-and-api-updates\">text-embedding-3-large</a>",
+                    "AILACasedocs": 39.0,
+                    "AILAStatutes": 41.31,
+                    "ArguAna": 58.05,
+                    "BrightRetrieval (theoremqa_questions)": 22.22,
+                    "BrightRetrieval (leetcode)": 23.65,
+                    "BrightRetrieval (earth_science)": 26.27,
+                    "BrightRetrieval (psychology)": 27.52,
+                    "BrightRetrieval (robotics)": 12.93,
+                    "BrightRetrieval (economics)": 19.98,
+                    "BrightRetrieval (stackoverflow)": 12.49,
+                    "BrightRetrieval (biology)": 23.67,
+                    "BrightRetrieval (theoremqa_theorems)": 9.25,
+                    "BrightRetrieval (pony)": 2.45,
+                    "BrightRetrieval (sustainable_living)": 20.32,
+                    "BrightRetrieval (aops)": 8.45,
+                    "CQADupstackRetrieval": 47.54,
+                    "ClimateFEVER": 30.27,
+                    "DBPedia": 44.76,
+                    "FEVER": 87.94,
+                    "FiQA2018": 55.0,
+                    "GerDaLIRSmall": 32.77,
+                    "HotpotQA": 71.58,
+                    "LEMBNarrativeQARetrieval": 44.09,
+                    "LEMBNeedleRetrieval": 29.25,
+                    "LEMBPasskeyRetrieval": 63.0,
+                    "LEMBQMSumRetrieval": 32.49,
+                    "LEMBSummScreenFDRetrieval": 84.8,
+                    "LEMBWikimQARetrieval": 54.16,
+                    "LeCaRDv2": 57.2,
+                    "LegalBenchConsumerContractsQA": 79.39,
+                    "LegalBenchCorporateLobbying": 95.09,
+                    "LegalQuAD": 57.47,
+                    "LegalSummarization": 71.55,
+                    "MSMARCO": 40.24,
+                    "NFCorpus": 42.07,
+                    "NQ": 61.27,
+                    "QuoraRetrieval": 89.05,
+                    "SCIDOCS": 23.11,
+                    "SciFact": 77.77,
+                    "TRECCOVID": 79.56,
+                    "Touche2020": 23.35
+                }
+            ]
+        },
+        "STS": {
+            "spearman": [
+                {
+                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://openai.com/blog/new-embedding-models-and-api-updates\">text-embedding-3-large</a>",
+                    "BIOSSES": 84.68,
+                    "SICK-R": 79.0,
+                    "STS12": 72.84,
+                    "STS13": 86.1,
+                    "STS14": 81.15,
+                    "STS15": 88.49,
+                    "STS16": 85.08,
+                    "STS17 (en-en)": 90.22,
+                    "STS22 (en)": 66.14,
+                    "STSBenchmark": 83.56
+                }
+            ]
+        },
+        "Summarization": {
+            "spearman": [
+                {
+                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://openai.com/blog/new-embedding-models-and-api-updates\">text-embedding-3-large</a>",
+                    "SummEval": 29.92
+                }
+            ]
+        },
+        "InstructionRetrieval": {
+            "p-MRR": [
+                {
+                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://openai.com/blog/new-embedding-models-and-api-updates\">text-embedding-3-large</a>",
+                    "Core17InstructionRetrieval": -0.2,
+                    "News21InstructionRetrieval": -2.03,
+                    "Robust04InstructionRetrieval": -5.81
+                }
+            ]
+        }
+    },
+    "instructor-large": {
+        "BitextMining": {
+            "f1": [
+                {
+                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/hkunlp/instructor-large\">instructor-large</a>"
+                }
+            ]
+        },
+        "Classification": {
+            "accuracy": [
+                {
+                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/hkunlp/instructor-large\">instructor-large</a>"
+                }
+            ]
+        },
+        "Clustering": {
+            "v_measure": [
+                {
+                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/hkunlp/instructor-large\">instructor-large</a>"
+                }
+            ]
+        },
+        "PairClassification": {
+            "ap": [
+                {
+                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/hkunlp/instructor-large\">instructor-large</a>"
+                }
+            ]
+        },
+        "Reranking": {
+            "map": [
+                {
+                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/hkunlp/instructor-large\">instructor-large</a>"
+                }
+            ]
+        },
+        "Retrieval": {
+            "ndcg_at_10": [
+                {
+                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/hkunlp/instructor-large\">instructor-large</a>",
+                    "BrightRetrieval (pony)": 1.32,
+                    "BrightRetrieval (sustainable_living)": 13.16,
+                    "BrightRetrieval (aops)": 7.94,
+                    "BrightRetrieval (biology)": 15.61,
+                    "BrightRetrieval (stackoverflow)": 11.21,
+                    "BrightRetrieval (theoremqa_theorems)": 9.29,
+                    "BrightRetrieval (psychology)": 21.94,
+                    "BrightRetrieval (economics)": 15.99,
+                    "BrightRetrieval (robotics)": 11.45,
+                    "BrightRetrieval (leetcode)": 20.0,
+                    "BrightRetrieval (earth_science)": 21.52,
+                    "BrightRetrieval (theoremqa_questions)": 20.07
+                }
+            ]
+        },
+        "STS": {
+            "spearman": [
+                {
+                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/hkunlp/instructor-large\">instructor-large</a>"
+                }
+            ]
+        },
+        "Summarization": {
+            "spearman": [
+                {
+                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/hkunlp/instructor-large\">instructor-large</a>"
+                }
+            ]
+        },
+        "InstructionRetrieval": {
+            "p-MRR": [
+                {
+                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/hkunlp/instructor-large\">instructor-large</a>"
                 }
             ]
         }

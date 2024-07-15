@@ -403,3 +403,26 @@ boards:
     credits: null
     tasks:
       STS: ["STS17 (ar-ar)", "STS17 (en-ar)", "STS17 (en-de)", "STS17 (en-tr)", "STS17 (es-en)", "STS17 (es-es)", "STS17 (fr-en)", "STS17 (it-en)", "STS17 (ko-ko)", "STS17 (nl-en)", "STS22 (ar)", "STS22 (de)", "STS22 (de-en)", "STS22 (de-fr)", "STS22 (de-pl)", "STS22 (es)", "STS22 (es-en)", "STS22 (es-it)", "STS22 (fr)", "STS22 (fr-pl)", "STS22 (it)", "STS22 (pl)", "STS22 (pl-en)", "STS22 (ru)", "STS22 (tr)", "STS22 (zh-en)", "STSBenchmark"]
+  bright:
+    title: BRIGHT
+    language_long: "English"
+    has_overall: false
+    acronym: null
+    icon: "🌟"
+    special_icons: null
+    credits: "[BRIGHT (Hongjin Su, Howard Yen, Mengzhou Xia et al.)](https://brightbenchmark.github.io/)"
+    metric: nDCG@10
+    tasks:
+      Retrieval:
+        - BrightRetrieval (biology)
+        - BrightRetrieval (earth_science)
+        - BrightRetrieval (economics)
+        - BrightRetrieval (psychology)
+        - BrightRetrieval (robotics)
+        - BrightRetrieval (stackoverflow)
+        - BrightRetrieval (sustainable_living)
+        - BrightRetrieval (pony)
+        - BrightRetrieval (leetcode)
+        - BrightRetrieval (aops)
+        - BrightRetrieval (theoremqa_theorems)
+        - BrightRetrieval (theoremqa_questions)

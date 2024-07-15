@@ -406,6 +406,8 @@ def refresh_leaderboard():
     all_data_tasks = []
     pbar_tasks = tqdm(BOARDS_CONFIG.items(), desc="Fetching leaderboard results for ???", total=len(BOARDS_CONFIG), leave=True)
     for board, board_config in pbar_tasks:
+        # To add only a single new board, you can uncomment the below to be faster
+        # if board != "new_board_name": continue
         boards_data[board] = {
             "data_overall": None,
             "data_tasks": {}

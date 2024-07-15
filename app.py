@@ -1,18 +1,12 @@
 from functools import reduce
-import json
-import pickle
-import os
 import re
 
 import gradio as gr
 import pandas as pd
-from tqdm.autonotebook import tqdm
 
-from utils.model_size import get_model_parameters_memory
-from refresh import TASK_TO_METRIC, TASKS, PRETTY_NAMES, TASKS_CONFIG, BOARDS_CONFIG, load_results
 from envs import REPO_ID
-from refresh import PROPRIETARY_MODELS, SENTENCE_TRANSFORMERS_COMPATIBLE_MODELS, CROSS_ENCODERS, BI_ENCODERS, TASK_DESCRIPTIONS, EXTERNAL_MODEL_TO_LINK, make_clickable_model
-
+from refresh import BOARDS_CONFIG, TASKS, TASKS_CONFIG, TASK_DESCRIPTIONS, PRETTY_NAMES, load_results, make_clickable_model
+from refresh import PROPRIETARY_MODELS, SENTENCE_TRANSFORMERS_COMPATIBLE_MODELS, CROSS_ENCODERS, BI_ENCODERS, EXTERNAL_MODEL_TO_LINK
 
 
 PROPRIETARY_MODELS = {
@@ -33,7 +27,6 @@ BI_ENCODERS = {
 }
 
 
-
 def make_datasets_clickable(df):
     """Does not work"""
     if "BornholmBitextMining" in df.columns:
@@ -41,7 +34,6 @@ def make_datasets_clickable(df):
         df = df.rename(
             columns={f'BornholmBitextMining': '<a target="_blank" style="text-decoration: underline" href="{link}">BornholmBitextMining</a>',})
     return df
-
 
 
 # 1. Force headers to wrap
