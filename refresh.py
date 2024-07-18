@@ -1,7 +1,6 @@
 from functools import reduce
 import json
 import os
-import pickle
 import re
 
 from datasets import load_dataset
@@ -47,6 +46,8 @@ SENTENCE_TRANSFORMERS_COMPATIBLE_MODELS = {k for k,v in MODEL_META["model_meta"]
 MODELS_TO_SKIP = MODEL_META["models_to_skip"]
 CROSS_ENCODERS = MODEL_META["cross_encoders"]
 BI_ENCODERS = [k for k, _ in MODEL_META["model_meta"].items() if k not in CROSS_ENCODERS + ["bm25"]]
+INSTRUCT_MODELS = {k for k,v in MODEL_META["model_meta"].items() if v.get("uses_instruct", False)}
+NOINSTRUCT_MODELS = {k for k,v in MODEL_META["model_meta"].items() if not v.get("uses_instruct", False)}
 
 
 
@@ -87,7 +88,7 @@ def make_clickable_model(model_name, link=None):
 
 
 def add_lang(examples):
-    if not(examples["eval_language"]):
+    if not(examples["eval_language"]) or (examples["eval_language"] == "default"):
         examples["mteb_dataset_name_with_lang"] = examples["mteb_dataset_name"]
     else:
         examples["mteb_dataset_name_with_lang"] = examples["mteb_dataset_name"] + f' ({examples["eval_language"]})'
@@ -407,7 +408,7 @@ def refresh_leaderboard():
     pbar_tasks = tqdm(BOARDS_CONFIG.items(), desc="Fetching leaderboard results for ???", total=len(BOARDS_CONFIG), leave=True)
     for board, board_config in pbar_tasks:
         # To add only a single new board, you can uncomment the below to be faster
-        # if board != "new_board_name": continue
+        if board != "rar-b": continue
         boards_data[board] = {
             "data_overall": None,
             "data_tasks": {}
