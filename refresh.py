@@ -300,7 +300,8 @@ def get_mteb_data(tasks=["Clustering"], langs=[], datasets=[], fillna=True, add_
                     )
                 out["Embedding Dimensions"], out["Max Tokens"], out["Model Size (Million Parameters)"], out["Memory Usage (GB, fp32)"] = tuple(MODEL_INFOS[model.modelId]["dim_seq_size"])
             df_list.append(out)
-        if model.library_name == "sentence-transformers" or "sentence-transformers" in model.tags or "modules.json" in {file.rfilename for file in model.siblings}:
+        model_siblings = model.siblings or []
+        if model.library_name == "sentence-transformers" or "sentence-transformers" in model.tags or "modules.json" in {file.rfilename for file in model_siblings}:
             SENTENCE_TRANSFORMERS_COMPATIBLE_MODELS.add(out["Model"])
 
     # # Save & cache MODEL_INFOS
