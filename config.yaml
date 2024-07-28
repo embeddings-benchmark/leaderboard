@@ -1,6 +1,7 @@
 config:
   REPO_ID: "mteb/leaderboard"
-  RESULTS_REPO: mteb/results
+  RESULTS_REPO: "/home/samoed/Desktop/mteb/mteb-results/results.py"
+#  RESULTS_REPO: mteb/results
   LEADERBOARD_NAME: "MTEB Leaderboard"
 tasks:
   BitextMining:
@@ -452,3 +453,34 @@ boards:
         - BrightRetrieval (aops)
         - BrightRetrieval (theoremqa_theorems)
         - BrightRetrieval (theoremqa_questions)
+  ru:
+    title: Russian
+    language_long: "Russian"
+    has_overall: true
+    acronym: null
+    icon: "🇷🇺"
+    special_icons: null
+    credits: "[Roman Solomatin](https://github.com/Samoed) and SaluteDevices: [Alena Fenogenova](https://github.com/Alenush), [Aleksandr Abramov](https://github.com/Ab1992ao), [Artem Snegirev](https://github.com/artemsnegirev), [Anna Maksimova](https://github.com/anpalmak2003), [Maria Tikhonova](https://github.com/MariyaTikhonova)"
+    tasks:
+      Classification:
+        - GeoreviewClassification
+        - HeadlineClassification
+        - InappropriatenessClassification
+        - KinopoiskClassification
+        - RuReviewsClassification
+        - RuSciBenchGRNTIClassification
+        - RuSciBenchOECDClassification
+      Clustering:
+        - GeoreviewClusteringP2P
+        - RuSciBenchGRNTIClusteringP2P
+        - RuSciBenchOECDClusteringP2P
+      PairClassification:
+        - TERRa
+      Reranking:
+        - RuBQReranking
+      Retrieval:
+        - RiaNewsRetrieval
+        - RuBQRetrieval
+      STS:
+        - RUParaPhraserSTS
+        - RuSTSBenchmarkSTS

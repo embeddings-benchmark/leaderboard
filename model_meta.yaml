@@ -519,7 +519,7 @@ model_meta:
     seq_len: 512
     size: 355
     dim: 1024
-    is_external: true
+    is_external: false  # no result in results repo
     is_proprietary: false
     is_sentence_transformers_compatible: true
     uses_instruct: false
@@ -1593,7 +1593,124 @@ model_meta:
     is_external: true
     is_proprietary: false
     is_sentence_transformers_compatible: true
-    uses_instruct: false    
+    uses_instruct: false
+  rubert-tiny:
+    link: https://huggingface.co/cointegrated/rubert-tiny
+    seq_len: 514
+    size: 12
+    dim: 512
+    is_external: true
+    is_proprietary: false
+    is_sentence_transformers_compatible: true
+    uses_instruct: false
+  rubert-tiny2:
+    link: https://huggingface.co/cointegrated/rubert-tiny2
+    seq_len: 514
+    size: 29
+    dim: 2048
+    is_external: true
+    is_proprietary: false
+    is_sentence_transformers_compatible: true
+    uses_instruct: false
+  sbert_large_mt_nlu_ru:
+    link: https://huggingface.co/ai-forever/sbert_large_mt_nlu_ru
+    seq_len: 514
+    size: 427
+    dim: 1024
+    is_external: true
+    is_proprietary: false
+    is_sentence_transformers_compatible: true
+    uses_instruct: false
+  sbert_large_nlu_ru:
+    link: https://huggingface.co/ai-forever/sbert_large_nlu_ru
+    seq_len: 512
+    size: 427
+    dim: 1024
+    is_external: true
+    is_proprietary: false
+    is_sentence_transformers_compatible: true
+    uses_instruct: false
+  USER-base:
+    link: https://huggingface.co/deepvk/USER-base
+    seq_len: 512
+    size: 124
+    dim: 768
+    is_external: true
+    is_proprietary: false
+    is_sentence_transformers_compatible: true
+    uses_instruct: false
+  USER-bge-m3:
+    link: https://huggingface.co/deepvk/USER-bge-m3
+    seq_len: 8192
+    size: 359
+    dim: 1024
+    is_external: true
+    is_proprietary: false
+    is_sentence_transformers_compatible: true
+    uses_instruct: false
+  deberta-v1-base:
+    link: https://huggingface.co/deepvk/deberta-v1-base
+    seq_len: 512
+    size: 124
+    dim: 768
+    is_external: true
+    is_proprietary: false
+    is_sentence_transformers_compatible: true
+    uses_instruct: false
+  rubert-tiny-turbo:
+    link: https://huggingface.co/sergeyzh/rubert-tiny-turbo
+    seq_len: 2048
+    size: 29
+    dim: 312
+    is_external: true
+    is_proprietary: false
+    is_sentence_transformers_compatible: true
+    uses_instruct: false
+  LaBSE-ru-turbo:
+    link: https://huggingface.co/sergeyzh/LaBSE-ru-turbo
+    seq_len: 512
+    size: 128
+    dim: 768
+    is_external: true
+    is_proprietary: false
+    is_sentence_transformers_compatible: true
+    uses_instruct: false
+  distilrubert-small-cased-conversational:
+    link: https://huggingface.co/DeepPavlov/distilrubert-small-cased-conversational
+    seq_len: 512
+    size: 106
+    dim: 768
+    is_external: true
+    is_proprietary: false
+    is_sentence_transformers_compatible: true
+    uses_instruct: false
+  rubert-base-cased:
+    link: https://huggingface.co/DeepPavlov/rubert-base-cased
+    seq_len: 512
+    size: 180
+    dim: 768
+    is_external: true
+    is_proprietary: false
+    is_sentence_transformers_compatible: true
+    uses_instruct: false
+  rubert-base-cased-sentence:
+    link: https://huggingface.co/DeepPavlov/rubert-base-cased-sentence
+    seq_len: 512
+    size: 180
+    dim: 768
+    is_external: true
+    is_proprietary: false
+    is_sentence_transformers_compatible: true
+    uses_instruct: false
+  LaBSE-en-ru:
+    link: https://huggingface.co/cointegrated/LaBSE-en-ru
+    seq_len: 512
+    size: 129
+    dim: 768
+    is_external: true
+    is_proprietary: false
+    is_sentence_transformers_compatible: true
+    uses_instruct: false
 models_to_skip:
 - michaelfeil/ct2fast-e5-large-v2
 - McGill-NLP/LLM2Vec-Sheared-LLaMA-mntp-unsup-simcse

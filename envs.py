@@ -23,8 +23,10 @@ def get_config(name, default):
         return default
     return res
 
+
 def str2bool(v):
-  return str(v).lower() in ("yes", "true", "t", "1")
+    return str(v).lower() in ("yes", "true", "t", "1")
+
 
 # clone / pull the lmeh eval data
 HF_TOKEN = get_config("HF_TOKEN", None)
@@ -34,7 +36,7 @@ LEADERBOARD_NAME = get_config("LEADERBOARD_NAME", "MTEB Leaderboard")
 REPO_ID = get_config("REPO_ID", "mteb/leaderboard")
 RESULTS_REPO = get_config("RESULTS_REPO", "mteb/results")
 
-CACHE_PATH=get_config("HF_HOME", ".")
+CACHE_PATH = get_config("HF_HOME", ".")
 os.environ["HF_HOME"] = CACHE_PATH
 
 # Check if it is using persistent storage

@@ -33,23 +33,20 @@ TASK_TO_METRIC["Summarization"].append("cosine_spearman")
 TASK_TO_METRIC["PairClassification"].append("cos_sim_ap")
 TASK_TO_METRIC["PairClassification"].append("cosine_ap")
 
-
-EXTERNAL_MODELS = {k for k,v in MODEL_META["model_meta"].items() if v.get("is_external", False)}
-EXTERNAL_MODEL_TO_LINK = {k: v["link"] for k,v in MODEL_META["model_meta"].items() if v.get("link", False)}
-EXTERNAL_MODEL_TO_DIM = {k: v["dim"] for k,v in MODEL_META["model_meta"].items() if v.get("dim", False)}
-EXTERNAL_MODEL_TO_SEQLEN = {k: v["seq_len"] for k,v in MODEL_META["model_meta"].items() if v.get("seq_len", False)}
-EXTERNAL_MODEL_TO_SIZE = {k: v["size"] for k,v in MODEL_META["model_meta"].items() if v.get("size", False)}
-PROPRIETARY_MODELS = {k for k,v in MODEL_META["model_meta"].items() if v.get("is_proprietary", False)}
-TASK_DESCRIPTIONS = {k: v["task_description"] for k,v in TASKS_CONFIG.items()}
+EXTERNAL_MODELS = {k for k, v in MODEL_META["model_meta"].items() if v.get("is_external", False)}
+EXTERNAL_MODEL_TO_LINK = {k: v["link"] for k, v in MODEL_META["model_meta"].items() if v.get("link", False)}
+EXTERNAL_MODEL_TO_DIM = {k: v["dim"] for k, v in MODEL_META["model_meta"].items() if v.get("dim", False)}
+EXTERNAL_MODEL_TO_SEQLEN = {k: v["seq_len"] for k, v in MODEL_META["model_meta"].items() if v.get("seq_len", False)}
+EXTERNAL_MODEL_TO_SIZE = {k: v["size"] for k, v in MODEL_META["model_meta"].items() if v.get("size", False)}
+PROPRIETARY_MODELS = {k for k, v in MODEL_META["model_meta"].items() if v.get("is_proprietary", False)}
+TASK_DESCRIPTIONS = {k: v["task_description"] for k, v in TASKS_CONFIG.items()}
 TASK_DESCRIPTIONS["Overall"] = "Overall performance across MTEB tasks."
-SENTENCE_TRANSFORMERS_COMPATIBLE_MODELS = {k for k,v in MODEL_META["model_meta"].items() if v.get("is_sentence_transformers_compatible", False)}
+SENTENCE_TRANSFORMERS_COMPATIBLE_MODELS = {k for k, v in MODEL_META["model_meta"].items() if v.get("is_sentence_transformers_compatible", False)}
 MODELS_TO_SKIP = MODEL_META["models_to_skip"]
 CROSS_ENCODERS = MODEL_META["cross_encoders"]
 BI_ENCODERS = [k for k, _ in MODEL_META["model_meta"].items() if k not in CROSS_ENCODERS + ["bm25"]]
-INSTRUCT_MODELS = {k for k,v in MODEL_META["model_meta"].items() if v.get("uses_instruct", False)}
-NOINSTRUCT_MODELS = {k for k,v in MODEL_META["model_meta"].items() if not v.get("uses_instruct", False)}
-
-
+INSTRUCT_MODELS = {k for k, v in MODEL_META["model_meta"].items() if v.get("uses_instruct", False)}
+NOINSTRUCT_MODELS = {k for k, v in MODEL_META["model_meta"].items() if not v.get("uses_instruct", False)}
 
 TASK_TO_TASK_TYPE = {task_category: [] for task_category in TASKS}
 for board_config in BOARDS_CONFIG.values():
@@ -88,13 +85,15 @@ def make_clickable_model(model_name, link=None):
 
 
 def add_lang(examples):
-    if not(examples["eval_language"]) or (examples["eval_language"] == "default"):
+    if not (examples["eval_language"]) or (examples["eval_language"] == "default"):
         examples["mteb_dataset_name_with_lang"] = examples["mteb_dataset_name"]
     else:
         examples["mteb_dataset_name_with_lang"] = examples["mteb_dataset_name"] + f' ({examples["eval_language"]})'
     return examples
 
+
 def norm(names): return set([name.split(" ")[0] for name in names])
+
 
 def add_task(examples):
     # Could be added to the dataset loading script instead
@@ -111,12 +110,14 @@ def add_task(examples):
         examples["mteb_task"] = "Unknown"
     return examples
 
+
 def filter_metric_external(x, task, metrics):
     # This is a hack for the passkey and needle retrieval test, which reports ndcg_at_1 (i.e. accuracy), rather than the ndcg_at_10 that is commonly used for retrieval tasks. 
     if x['mteb_dataset_name'] in ['LEMBNeedleRetrieval', 'LEMBPasskeyRetrieval']:
         return x["mteb_task"] == task and x['metric'] == 'ndcg_at_1'
     else:
         return x["mteb_task"] == task and x["metric"] in metrics
+
 
 def filter_metric_fetched(name, metric, expected_metrics):
     # This is a hack for the passkey and needle retrieval test, which reports ndcg_at_1 (i.e. accuracy), rather than the ndcg_at_10 that is commonly used for retrieval tasks. 
@@ -141,10 +142,10 @@ def get_dim_seq_size(model):
         if not dim:
             dim = config.get("hidden_dim", config.get("hidden_size", config.get("d_model", "")))
         seq = config.get("n_positions", config.get("max_position_embeddings", config.get("n_ctx", config.get("seq_length", ""))))
-    
+
     if dim == "" or seq == "":
         raise Exception(f"Could not find dim or seq for model {model.modelId}")
-    
+
     # Get model file size without downloading. Parameters in million parameters and memory in GB
     parameters, memory = get_model_parameters_memory(model)
     return dim, seq, parameters, memory
@@ -225,7 +226,7 @@ def get_mteb_data(tasks=["Clustering"], langs=[], datasets=[], fillna=True, add_
             # Not all models have InstructionRetrieval, other new tasks
             if task not in external_model_results[model]: continue
             results_list += external_model_results[model][task][task_to_metric[task][0]]
-        
+
         if len(datasets) > 0:
             res = {k: v for d in results_list for k, v in d.items() if (k == "Model") or any([x in k for x in datasets])}
         elif langs:
@@ -296,7 +297,7 @@ def get_mteb_data(tasks=["Clustering"], langs=[], datasets=[], fillna=True, add_
                         EXTERNAL_MODEL_TO_DIM.get(name_without_org, ""),
                         EXTERNAL_MODEL_TO_SEQLEN.get(name_without_org, ""),
                         EXTERNAL_MODEL_TO_SIZE.get(name_without_org, ""),
-                        round(EXTERNAL_MODEL_TO_SIZE[name_without_org] * 1e6 * 4 / 1024**3, 2) if name_without_org in EXTERNAL_MODEL_TO_SIZE else "",
+                        round(EXTERNAL_MODEL_TO_SIZE[name_without_org] * 1e6 * 4 / 1024 ** 3, 2) if name_without_org in EXTERNAL_MODEL_TO_SIZE else "",
                     )
                 out["Embedding Dimensions"], out["Max Tokens"], out["Model Size (Million Parameters)"], out["Memory Usage (GB, fp32)"] = tuple(MODEL_INFOS[model.modelId]["dim_seq_size"])
             df_list.append(out)
@@ -325,7 +326,7 @@ def get_mteb_data(tasks=["Clustering"], langs=[], datasets=[], fillna=True, add_
             df['MLSUMClusteringS2S (fr)'] = df['MLSUMClusteringS2S (fr)'].fillna(df['MLSUMClusteringS2S'])
             datasets.remove('MLSUMClusteringS2S')
         if ('PawsXPairClassification (fr)' in datasets) and ('PawsX (fr)' in cols):
-             # for the first bit no model has it, hence no column for it. We can remove this in a month or so
+            # for the first bit no model has it, hence no column for it. We can remove this in a month or so
             if "PawsXPairClassification (fr)" not in cols:
                 df['PawsXPairClassification (fr)'] = df['PawsX (fr)']
             else:
@@ -335,9 +336,9 @@ def get_mteb_data(tasks=["Clustering"], langs=[], datasets=[], fillna=True, add_
             cols.remove('PawsX (fr)')
             df.drop(columns=['PawsX (fr)'], inplace=True)
             cols.append('PawsXPairClassification (fr)')
-            
+
         # Filter invalid columns
-        cols = [col for col in cols if col in base_columns + datasets]
+        cols = [col for col in cols if col in base_columns + datasets or any([col.startswith(d) for d in datasets])]
     i = 0
     for column in base_columns:
         if column in cols:
@@ -345,10 +346,20 @@ def get_mteb_data(tasks=["Clustering"], langs=[], datasets=[], fillna=True, add_
             i += 1
     df = df[cols]
     if rank:
-        df = add_rank(df)       
+        df = add_rank(df)
     if fillna:
         df.fillna("", inplace=True)
     return df
+
+
+def find_tasks(df_columns: list[str], tasks: list[str]) -> list[str]:
+    # Some tasks have langs, but original tasks doesn't have languages, This function will find "Task (lang)" -> task
+    used_columns = []
+    for task in tasks:
+        for col_name in df_columns:
+            if col_name.startswith(task):
+                used_columns.append(col_name)
+    return used_columns
 
 
 # Get dict with a task list for each task category
@@ -364,9 +375,10 @@ def get_mteb_average(task_dict: dict):
     )
     # Debugging:
     # DATA_OVERALL.to_csv("overall.csv")
-    DATA_OVERALL.insert(1, f"Average ({len(all_tasks)} datasets)", DATA_OVERALL[all_tasks].mean(axis=1, skipna=False))
+
+    DATA_OVERALL.insert(1, f"Average ({len(all_tasks)} datasets)", DATA_OVERALL[find_tasks(DATA_OVERALL.columns, all_tasks)].mean(axis=1, skipna=False))
     for i, (task_category, task_category_list) in enumerate(task_dict.items()):
-        DATA_OVERALL.insert(i+2, f"{task_category} Average ({len(task_category_list)} datasets)", DATA_OVERALL[task_category_list].mean(axis=1, skipna=False))
+        DATA_OVERALL.insert(i + 2, f"{task_category} Average ({len(task_category_list)} datasets)", DATA_OVERALL[find_tasks(DATA_OVERALL.columns, task_category_list)].mean(axis=1, skipna=False))
     DATA_OVERALL.sort_values(f"Average ({len(all_tasks)} datasets)", ascending=False, inplace=True)
     # Start ranking from 1
     DATA_OVERALL.insert(0, "Rank", list(range(1, len(DATA_OVERALL) + 1)))
@@ -375,7 +387,7 @@ def get_mteb_average(task_dict: dict):
 
     DATA_TASKS = {}
     for task_category, task_category_list in task_dict.items():
-        DATA_TASKS[task_category] = add_rank(DATA_OVERALL[["Model", "Model Size (Million Parameters)", "Memory Usage (GB, fp32)"] + task_category_list])
+        DATA_TASKS[task_category] = add_rank(DATA_OVERALL[["Model", "Model Size (Million Parameters)", "Memory Usage (GB, fp32)"] + find_tasks(DATA_OVERALL.columns, task_category_list)])
         DATA_TASKS[task_category] = DATA_TASKS[task_category][DATA_TASKS[task_category].iloc[:, 4:].ne("").any(axis=1)]
 
     # Fill NaN after averaging
@@ -409,7 +421,8 @@ def refresh_leaderboard():
     pbar_tasks = tqdm(BOARDS_CONFIG.items(), desc="Fetching leaderboard results for ???", total=len(BOARDS_CONFIG), leave=True)
     for board, board_config in pbar_tasks:
         # To add only a single new board, you can uncomment the below to be faster
-        if board != "rar-b": continue
+        # if board != "rar-b": continue
+
         boards_data[board] = {
             "data_overall": None,
             "data_tasks": {}
@@ -431,7 +444,6 @@ def refresh_leaderboard():
     return all_data_tasks, boards_data
 
 
-
 def write_out_results(item, item_name: str):
     """
     Due to their complex structure, let's recursively create subfolders until we reach the end
@@ -446,7 +458,7 @@ def write_out_results(item, item_name: str):
     """
     main_folder = item_name
 
-    if isinstance(item, list): 
+    if isinstance(item, list):
         for i, v in enumerate(item):
             write_out_results(v, os.path.join(main_folder, str(i)))
 
@@ -463,7 +475,7 @@ def write_out_results(item, item_name: str):
     elif isinstance(item, pd.DataFrame):
         print(f"Saving {main_folder} to {main_folder}/default.jsonl")
         os.makedirs(main_folder, exist_ok=True)
-        
+
         item.reset_index().to_json(f"{main_folder}/default.jsonl", orient="records", lines=True)
 
     elif isinstance(item, str):
@@ -502,19 +514,19 @@ def load_results(data_path):
         else:
             if len(all_files_in_dir) == 1:
                 file_name = all_files_in_dir[0]
-                if file_name == "default.jsonl": 
+                if file_name == "default.jsonl":
                     return load_results(os.path.join(data_path, file_name))
-                else: ### the dict case
+                else:  ### the dict case
                     return {file_name: load_results(os.path.join(data_path, file_name))}
             else:
                 return {file_name: load_results(os.path.join(data_path, file_name)) for file_name in all_files_in_dir}
-        
+
     elif data_path.endswith(".jsonl"):
         df = pd.read_json(data_path, orient="records", lines=True)
         if "index" in df.columns:
             df = df.set_index("index")
         return df
-    
+
     else:
         with open(data_path, "r") as f:
             data = f.read()
@@ -522,7 +534,6 @@ def load_results(data_path):
             return None
         else:
             return data
-
 
 
 if __name__ == "__main__":
