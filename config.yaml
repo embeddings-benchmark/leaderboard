@@ -1,7 +1,6 @@
 config:
   REPO_ID: "mteb/leaderboard"
-  RESULTS_REPO: "/home/samoed/Desktop/mteb/mteb-results/results.py"
-#  RESULTS_REPO: mteb/results
+  RESULTS_REPO: mteb/results
   LEADERBOARD_NAME: "MTEB Leaderboard"
 tasks:
   BitextMining:
