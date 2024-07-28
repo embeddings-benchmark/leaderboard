@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 import json
 import os
 import re
@@ -117,7 +119,7 @@ def add_rank(df: pd.DataFrame) -> pd.DataFrame:
     return df
 
 
-def make_clickable_model(model_name: str, link: None | str=None) -> str:
+def make_clickable_model(model_name: str, link: None | str = None) -> str:
     if link is None:
         link = "https://huggingface.co/" + model_name
     # Remove user from model name
