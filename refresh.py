@@ -1,5 +1,6 @@
-import json
 from __future__ import annotations
+
+import json
 
 import os
 import re
@@ -136,8 +137,8 @@ def add_lang(examples):
     return examples
 
 
-def norm(names: str) -> set:
-    return set([name.split(" ")[0] for name in names])
+def norm(names: list[str]) -> list[str]:
+    return list(set([name.split(" ")[0] for name in names]))
 
 
 def add_task(examples):
@@ -508,7 +509,7 @@ def get_mteb_data(
             df.drop(columns=["PawsX (fr)"], inplace=True)
 
         # Filter invalid columns
-        cols = [col for col in cols if col in base_columns + datasets or any([col.startswith(d) for d in datasets])]
+        cols = [col for col in cols if col in base_columns + datasets or any([col.split()[0] == d for d in datasets])]
     i = 0
     for column in base_columns:
         if column in cols:
@@ -523,11 +524,15 @@ def get_mteb_data(
 
 
 def find_tasks(df_columns: list[str], tasks: list[str]) -> list[str]:
-    # Some tasks have langs, but original tasks doesn't have languages, This function will find "Task (lang)" -> task
+    """
+    Some tasks have langs, but original tasks doesn't have languages, This function will find task -> Task (lang)
+    """
     used_columns = []
     for task in tasks:
         for col_name in df_columns:
-            if col_name.startswith(task):
+            # some french datasets already have lang in their name
+            # if use starts with instead of split there can be duplicates
+            if col_name.split()[0] == task or col_name == task:
                 used_columns.append(col_name)
     return used_columns
 
@@ -670,8 +675,7 @@ def write_out_results(item: dict, item_name: str) -> None:
         print(f"Saving {main_folder} to {main_folder}/default.jsonl")
         os.makedirs(main_folder, exist_ok=True)
 
-        item.reset_index(inplace=True)
-        item.to_json(f"{main_folder}/default.jsonl", orient="records", lines=True)
+        item.reset_index(drop=True).to_json(f"{main_folder}/default.jsonl", orient="records", lines=True)
 
     elif isinstance(item, str):
         print(f"Saving {main_folder} to {main_folder}/default.txt")

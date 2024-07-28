@@ -255,7 +255,6 @@ def filter_data(search_query, model_types, model_sizes, *full_dataframes):
             sizes = df["Model Size (Million Parameters)"].replace('', 0)
             mask = sizes.apply(lambda size: any(numeric_interval.contains(size)))
             df = df[mask]
-        df.round(2)
         output_dataframes.append(df)
     return output_dataframes
 
@@ -334,8 +333,7 @@ with gr.Blocks(css=css) as block:
 
                             with gr.Row():
                                 datatype = ["number", "markdown"] + ["number"] * len(item["data"])
-                                # NOTE: some model memory usage added more float points (0.30000004 -> 0.3)
-                                dataframe = gr.Dataframe(item["data"].round(2), datatype=datatype, type="pandas", height=500)
+                                dataframe = gr.Dataframe(item["data"], datatype=datatype, type="pandas", height=500)
                                 dataframes.append(dataframe)
 
                                 full_dataframe = gr.Dataframe(item["data"], datatype=datatype, type="pandas", visible=False)
