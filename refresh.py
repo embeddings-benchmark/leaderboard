@@ -660,7 +660,7 @@ def write_out_results(item: dict, item_name: str) -> None:
         print(f"Saving {main_folder} to {main_folder}/default.jsonl")
         os.makedirs(main_folder, exist_ok=True)
 
-        item.reset_index().to_json(
+        item.reset_index(inplace=True).to_json(
             f"{main_folder}/default.jsonl", orient="records", lines=True
         )
 
