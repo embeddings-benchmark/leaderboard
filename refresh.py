@@ -506,7 +506,6 @@ def get_mteb_data(
             datasets.remove("PawsX (fr)")
             cols.remove("PawsX (fr)")
             df.drop(columns=["PawsX (fr)"], inplace=True)
-            cols.append("PawsXPairClassification (fr)")
 
         # Filter invalid columns
         cols = [col for col in cols if col in base_columns + datasets]
@@ -660,9 +659,8 @@ def write_out_results(item: dict, item_name: str) -> None:
         print(f"Saving {main_folder} to {main_folder}/default.jsonl")
         os.makedirs(main_folder, exist_ok=True)
 
-        item.reset_index(inplace=True).to_json(
-            f"{main_folder}/default.jsonl", orient="records", lines=True
-        )
+        item.reset_index(inplace=True)
+        item.to_json(f"{main_folder}/default.jsonl", orient="records", lines=True)
 
     elif isinstance(item, str):
         print(f"Saving {main_folder} to {main_folder}/default.txt")
