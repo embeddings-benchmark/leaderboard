@@ -175,7 +175,8 @@ def filter_metric_fetched(name: str, metric: str, expected_metrics) -> bool:
 
 
 def get_dim_seq_size(model):
-    filenames = [sib.rfilename for sib in model.siblings]
+    siblings = model.siblings or []
+    filenames = [sib.rfilename for sib in siblings]
     dim, seq = "", ""
     for filename in filenames:
         if re.match("\d+_Pooling/config.json", filename):
@@ -203,7 +204,7 @@ def get_dim_seq_size(model):
 
     if dim == "" or seq == "":
         raise Exception(f"Could not find dim or seq for model {model.modelId}")
-    
+
     # Get model file size without downloading. Parameters in million parameters and memory in GB
     parameters, memory = get_model_parameters_memory(model)
     return dim, seq, parameters, memory
@@ -303,7 +304,7 @@ def get_mteb_data(
         external_model_results = json.load(f)
 
     api = API
-    models = list(api.list_models(filter="mteb"))
+    models = list(api.list_models(filter="mteb", full=True))
     # Legacy names changes; Also fetch the old results & merge later
     if "MLSUMClusteringP2P (fr)" in datasets:
         datasets.append("MLSUMClusteringP2P")
@@ -428,9 +429,7 @@ def get_mteb_data(
             if add_emb_dim:
                 # The except clause triggers on gated repos, we can use external metadata for those
                 try:
-                    MODEL_INFOS[model.modelId]["dim_seq_size"] = list(
-                        get_dim_seq_size(model)
-                    )
+                    MODEL_INFOS[model.modelId]["dim_seq_size"] = list(get_dim_seq_size(model))
                 except:
                     name_without_org = model.modelId.split("/")[-1]
                     # EXTERNAL_MODEL_TO_SIZE[name_without_org] refers to millions of parameters, so for memory usage
@@ -675,7 +674,9 @@ def write_out_results(item: dict, item_name: str) -> None:
         print(f"Saving {main_folder} to {main_folder}/default.jsonl")
         os.makedirs(main_folder, exist_ok=True)
 
-        item.reset_index(drop=True).to_json(f"{main_folder}/default.jsonl", orient="records", lines=True)
+        if "index" not in item.columns:
+            item.reset_index(inplace=True)
+        item.to_json(f"{main_folder}/default.jsonl", orient="records", lines=True)
 
     elif isinstance(item, str):
         print(f"Saving {main_folder} to {main_folder}/default.txt")

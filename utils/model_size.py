@@ -1,5 +1,6 @@
 import json
 import re
+import traceback
 from huggingface_hub.hf_api import ModelInfo, get_safetensors_metadata, model_info as get_model_info, get_hf_file_metadata, hf_hub_url
 from huggingface_hub import hf_hub_download
 
@@ -13,10 +14,11 @@ def get_model_parameters_memory(model_info: ModelInfo):
     '''Get the size of the model in million of parameters.'''
     try:
         safetensors = get_safetensors_metadata(model_info.id)
-        num_parameters = sum(safetensors.parameter_count.values())
-        return round(num_parameters / 1e6), round(num_parameters * 4 / 1024**3, 2)
     except Exception as e:
         pass
+    else:
+        num_parameters = sum(safetensors.parameter_count.values())
+        return round(num_parameters / 1e6), round(num_parameters * 4 / 1024**3, 2)
 
     filenames = [sib.rfilename for sib in model_info.siblings]
     if "pytorch_model.bin" in filenames:
