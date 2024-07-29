@@ -174,7 +174,8 @@ def filter_metric_fetched(name: str, metric: str, expected_metrics) -> bool:
 
 
 def get_dim_seq_size(model):
-    filenames = [sib.rfilename for sib in model.siblings]
+    siblings = model.siblings or []
+    filenames = [sib.rfilename for sib in siblings]
     dim, seq = "", ""
     for filename in filenames:
         if re.match("\d+_Pooling/config.json", filename):
@@ -302,7 +303,7 @@ def get_mteb_data(
         external_model_results = json.load(f)
 
     api = API
-    models = list(api.list_models(filter="mteb"))
+    models = list(api.list_models(filter="mteb", full=True))
     # Legacy names changes; Also fetch the old results & merge later
     if "MLSUMClusteringP2P (fr)" in datasets:
         datasets.append("MLSUMClusteringP2P")
@@ -429,9 +430,7 @@ def get_mteb_data(
             if add_emb_dim:
                 # The except clause triggers on gated repos, we can use external metadata for those
                 try:
-                    MODEL_INFOS[model.modelId]["dim_seq_size"] = list(
-                        get_dim_seq_size(model)
-                    )
+                    MODEL_INFOS[model.modelId]["dim_seq_size"] = list(get_dim_seq_size(model))
                 except:
                     name_without_org = model.modelId.split("/")[-1]
                     # EXTERNAL_MODEL_TO_SIZE[name_without_org] refers to millions of parameters, so for memory usage

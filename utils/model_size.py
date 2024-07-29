@@ -15,7 +15,7 @@ def get_model_parameters_memory(model_info: ModelInfo):
     try:
         safetensors = get_safetensors_metadata(model_info.id)
     except Exception as e:
-        print(traceback.format_exc())
+        pass
     else:
         num_parameters = sum(safetensors.parameter_count.values())
         return round(num_parameters / 1e6), round(num_parameters * 4 / 1024**3, 2)
