@@ -395,7 +395,7 @@ model_meta:
   bge-m3:
     link: https://huggingface.co/BAAI/bge-m3
     seq_len: 8192
-    size: 2270
+    size: 567
     dim: 1024
     is_external: true
     is_proprietary: false
@@ -404,7 +404,7 @@ model_meta:
   bge-m3-instruct:
     link: https://huggingface.co/BAAI/bge-m3
     seq_len: 8192
-    size: 2270
+    size: 567
     dim: 1024
     is_external: true
     is_proprietary: false
