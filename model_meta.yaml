@@ -1763,6 +1763,18 @@ models_to_skip:
 - mxs980/b1ade-embed-Q8_0-GGUF
 - chihlunLee/NoInstruct-small-Embedding-v0-Q4_0-GGUF
 - bcastle/snowflake-arctic-embed-l-Q8_0-GGUF
+- niancheng/gte-Qwen2-1.5B-instruct-Q4_K_M-GGUF
+- brtaydin/gte-Qwen2-7B-instruct-Q5_K_M-GGUF
+- yishan-wang/snowflake-arctic-embed-s-Q8_0-GGUF
+- Pekarnick/e5-large-v2-Q4_K_M-GGUF
+- agier9/UAE-Large-V1-Q5_K_S-GGUF
+- archit28/bge-large-en-v1.5-Q4_K_S-GGUF
+- dimcha/mxbai-embed-large-v1-Q4_K_M-GGUF
+- djuna/jina-embeddings-v2-base-en-Q5_K_M-GGUF
+- djuna/jina-embeddings-v2-small-en-Q5_K_M-GGUF
+- djuna/stella-base-en-v2-Q5_K_M-GGUF
+- huoxu/bge-large-en-v1.5-Q8_0-GGUF
+- itod/UAE-Large-V1-Q8_0-GGUF
 cross_encoders:
 - FollowIR-7B
 - flan-t5-base
