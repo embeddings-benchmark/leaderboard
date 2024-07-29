@@ -358,8 +358,6 @@ def get_mteb_data(
     for model in pbar:
         if model.modelId in MODELS_TO_SKIP:
             continue
-        if "gguf" in model.tags:
-            continue
         pbar.set_description(f"Fetching {model.modelId!r} metadata")
         meta = download_or_use_cache(model.modelId)
         MODEL_INFOS[model.modelId] = {"metadata": meta}
