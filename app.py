@@ -100,6 +100,8 @@ DATASETS = []
 MODELS = []
 # LANGUAGES = []
 for d in all_data_tasks:
+    if isinstance(d, list) and len(d) == 0:
+        continue
     # NUM_SCORES += d.iloc[:, 1:].apply(lambda x: sum([1 for y in x if isinstance(y, float) and not np.isnan(y)]), axis=1).sum()
     cols_to_ignore = 4 if "Average" in d.columns else 3
     # Count number of scores including only non-nan floats & excluding the rank column
