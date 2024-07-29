@@ -24553,13 +24553,81 @@
             ]
         }
     },
+    "instructor-base": {
+        "BitextMining": {
+            "f1": [
+                {
+                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/hkunlp/instructor-base\">instructor-base</a>"
+                }
+            ]
+        },
+        "Classification": {
+            "accuracy": [
+                {
+                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/hkunlp/instructor-base\">instructor-base</a>"
+                }
+            ]
+        },
+        "Clustering": {
+            "v_measure": [
+                {
+                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/hkunlp/instructor-base\">instructor-base</a>"
+                }
+            ]
+        },
+        "PairClassification": {
+            "ap": [
+                {
+                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/hkunlp/instructor-base\">instructor-base</a>"
+                }
+            ]
+        },
+        "Reranking": {
+            "map": [
+                {
+                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/hkunlp/instructor-base\">instructor-base</a>"
+                }
+            ]
+        },
+        "Retrieval": {
+            "ndcg_at_10": [
+                {
+                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/hkunlp/instructor-base\">instructor-base</a>"
+                }
+            ]
+        },
+        "STS": {
+            "spearman": [
+                {
+                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/hkunlp/instructor-base\">instructor-base</a>"
+                }
+            ]
+        },
+        "Summarization": {
+            "spearman": [
+                {
+                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/hkunlp/instructor-base\">instructor-base</a>"
+                }
+            ]
+        },
+        "InstructionRetrieval": {
+            "p-MRR": [
+                {
+                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/hkunlp/instructor-base\">instructor-base</a>",
+                    "Core17InstructionRetrieval": -1.09,
+                    "News21InstructionRetrieval": -1.78,
+                    "Robust04InstructionRetrieval": -10.42
+                }
+            ]
+        }
+    },
     "multilingual-e5-base": {
         "BitextMining": {
             "f1": [
                 {
                     "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/intfloat/multilingual-e5-base\">multilingual-e5-base</a>",
-                    "BornholmBitextMining (dan-Latn)": 33.22,
                     "BornholmBitextMining": 46.4,
+                    "BornholmBitextMining (dan-Latn)": 33.22,
                     "Tatoeba (kzj-Latn_eng-Latn)": 6.26,
                     "Tatoeba (ina-Latn_eng-Latn)": 86.11,
                     "Tatoeba (bre-Latn_eng-Latn)": 5.44,
@@ -24679,54 +24747,55 @@
             "accuracy": [
                 {
                     "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/intfloat/multilingual-e5-base\">multilingual-e5-base</a>",
-                    "AllegroReviews (pol-Latn)": 40.78,
                     "AllegroReviews": 40.85,
+                    "AllegroReviews (pol-Latn)": 40.78,
                     "AmazonCounterfactualClassification (en-ext)": 76.91,
                     "AmazonCounterfactualClassification (en)": 77.36,
                     "AmazonCounterfactualClassification (deu-Latn)": 70.81,
                     "AmazonCounterfactualClassification (jpn-Jpan)": 72.02,
                     "AmazonPolarityClassification": 91.76,
+                    "AmazonReviewsClassification (fr)": 40.94,
                     "AmazonReviewsClassification (en)": 47.54,
                     "AmazonReviewsClassification (deu-Latn)": 44.37,
                     "AmazonReviewsClassification (spa-Latn)": 43.38,
                     "AmazonReviewsClassification (fra-Latn)": 41.55,
                     "AmazonReviewsClassification (jpn-Jpan)": 39.57,
                     "AmazonReviewsClassification (cmn-Hans)": 38.34,
-                    "AmazonReviewsClassification (fr)": 40.94,
-                    "AngryTweetsClassification (dan-Latn)": 56.28,
                     "AngryTweetsClassification": 54.65,
+                    "AngryTweetsClassification (dan-Latn)": 56.28,
                     "Banking77Classification": 73.53,
-                    "CBD (pol-Latn)": 62.6,
                     "CBD": 62.66,
+                    "CBD (pol-Latn)": 62.6,
                     "DKHateClassification": 63.53,
-                    "DanishPoliticalCommentsClassification (dan-Latn)": 36.41,
                     "DanishPoliticalCommentsClassification": 36.69,
+                    "DanishPoliticalCommentsClassification (dan-Latn)": 36.41,
                     "EmotionClassification": 45.68,
                     "GeoreviewClassification (rus-Cyrl)": 46.05,
                     "HeadlineClassification (rus-Cyrl)": 75.64,
-                    "IFlyTek (cmn-Hans)": 40.81,
                     "IFlyTek": 44.93,
+                    "IFlyTek (cmn-Hans)": 40.81,
                     "ImdbClassification": 84.29,
                     "InappropriatenessClassification (rus-Cyrl)": 58.78,
-                    "JDReview (cmn-Hans)": 75.72,
                     "JDReview": 76.21,
+                    "JDReview (cmn-Hans)": 75.72,
                     "KinopoiskClassification (rus-Cyrl)": 50.89,
-                    "LccSentimentClassification (dan-Latn)": 60.13,
                     "LccSentimentClassification": 59.67,
+                    "LccSentimentClassification (dan-Latn)": 60.13,
+                    "MTOPDomainClassification (fr)": 84.79,
                     "MTOPDomainClassification (en)": 90.9,
                     "MTOPDomainClassification (deu-Latn)": 87.94,
                     "MTOPDomainClassification (spa-Latn)": 85.96,
                     "MTOPDomainClassification (fra-Latn)": 82.88,
                     "MTOPDomainClassification (hin-Deva)": 83.92,
                     "MTOPDomainClassification (tha-Thai)": 83.94,
-                    "MTOPDomainClassification (fr)": 84.79,
+                    "MTOPIntentClassification (fr)": 55.51,
                     "MTOPIntentClassification (en)": 61.6,
                     "MTOPIntentClassification (deu-Latn)": 61.05,
                     "MTOPIntentClassification (spa-Latn)": 55.36,
                     "MTOPIntentClassification (fra-Latn)": 52.23,
                     "MTOPIntentClassification (hin-Deva)": 53.93,
                     "MTOPIntentClassification (tha-Thai)": 58.69,
-                    "MTOPIntentClassification (fr)": 55.51,
+                    "MasakhaNEWSClassification (fra)": 79.69,
                     "MasakhaNEWSClassification (amh-Ethi)": 83.8,
                     "MasakhaNEWSClassification (eng)": 76.49,
                     "MasakhaNEWSClassification (fra-Latn)": 76.35,
@@ -24743,7 +24812,10 @@
                     "MasakhaNEWSClassification (tir-Ethi)": 67.1,
                     "MasakhaNEWSClassification (xho-Latn)": 76.03,
                     "MasakhaNEWSClassification (yor-Latn)": 72.75,
-                    "MasakhaNEWSClassification (fra)": 79.69,
+                    "MassiveIntentClassification (da)": 60.16,
+                    "MassiveIntentClassification (nb)": 59.83,
+                    "MassiveIntentClassification (sv)": 61.78,
+                    "MassiveIntentClassification (pl)": 61.04,
                     "MassiveIntentClassification (tha-Thai)": 59.63,
                     "MassiveIntentClassification (tam-Taml)": 48.93,
                     "MassiveIntentClassification (fin-Latn)": 58.91,
@@ -24795,10 +24867,10 @@
                     "MassiveIntentClassification (fra-Latn)": 61.32,
                     "MassiveIntentClassification (swa-Latn)": 45.24,
                     "MassiveIntentClassification (spa-Latn)": 61.13,
-                    "MassiveIntentClassification (da)": 60.16,
-                    "MassiveIntentClassification (nb)": 59.83,
-                    "MassiveIntentClassification (sv)": 61.78,
-                    "MassiveIntentClassification (pl)": 61.04,
+                    "MassiveScenarioClassification (da)": 67.46,
+                    "MassiveScenarioClassification (nb)": 66.18,
+                    "MassiveScenarioClassification (sv)": 69.15,
+                    "MassiveScenarioClassification (pl)": 66.11,
                     "MassiveScenarioClassification (ind-Latn)": 63.6,
                     "MassiveScenarioClassification (tha-Thai)": 67.37,
                     "MassiveScenarioClassification (cmo-Hans)": 70.24,
@@ -24850,36 +24922,32 @@
                     "MassiveScenarioClassification (ita-Latn)": 66.17,
                     "MassiveScenarioClassification (kat-Geor)": 43.38,
                     "MassiveScenarioClassification (swe-Latn)": 69.35,
-                    "MassiveScenarioClassification (da)": 67.46,
-                    "MassiveScenarioClassification (nb)": 66.18,
-                    "MassiveScenarioClassification (sv)": 69.15,
-                    "MassiveScenarioClassification (pl)": 66.11,
-                    "MultilingualSentiment (cmn-Hans)": 67.56,
                     "MultilingualSentiment": 65.28,
-                    "NoRecClassification (nob-Latn)": 53.74,
+                    "MultilingualSentiment (cmn-Hans)": 67.56,
                     "NoRecClassification": 57.58,
-                    "NordicLangClassification (nob-Latn_nno-Latn_dan-Latn_swe-Latn_isl-Latn_fao-Latn)": 75.85,
+                    "NoRecClassification (nob-Latn)": 53.74,
                     "NordicLangClassification": 75.94,
+                    "NordicLangClassification (nob-Latn_nno-Latn_dan-Latn_swe-Latn_isl-Latn_fao-Latn)": 75.85,
                     "NorwegianParliament": 59.94,
-                    "OnlineShopping (cmn-Hans)": 88.66,
                     "OnlineShopping": 88.4,
-                    "PAC (pol-Latn)": 70.87,
+                    "OnlineShopping (cmn-Hans)": 88.66,
                     "PAC": 70.87,
-                    "PolEmo2.0-IN (pol-Latn)": 67.59,
+                    "PAC (pol-Latn)": 70.87,
                     "PolEmo2.0-IN": 67.66,
-                    "PolEmo2.0-OUT (pol-Latn)": 43.93,
+                    "PolEmo2.0-IN (pol-Latn)": 67.59,
                     "PolEmo2.0-OUT": 43.91,
+                    "PolEmo2.0-OUT (pol-Latn)": 43.93,
                     "RuReviewsClassification (rus-Cyrl)": 62.99,
                     "RuSciBenchGRNTIClassification (rus-Cyrl)": 56.28,
                     "RuSciBenchOECDClassification (rus-Cyrl)": 42.69,
                     "ScalaDaClassification": 50.79,
                     "ScalaNbClassification": 50.32,
-                    "TNews (cmn-Hans)": 47.52,
                     "TNews": 47.06,
+                    "TNews (cmn-Hans)": 47.52,
                     "ToxicConversationsClassification": 64.33,
                     "TweetSentimentExtractionClassification": 62.8,
-                    "Waimai (cmn-Hans)": 85.98,
-                    "Waimai": 84.42
+                    "Waimai": 84.42,
+                    "Waimai (cmn-Hans)": 85.98
                 }
             ]
         },
@@ -24898,10 +24966,9 @@
                     "CLSClusteringS2S": 36.99,
                     "GeoreviewClusteringP2P (rus-Cyrl)": 54.46,
                     "HALClusteringS2S": 22.48,
-                    "MLSUMClusteringP2P (rus-Cyrl)": 43.47,
                     "MLSUMClusteringP2P": 43.48,
-                    "MLSUMClusteringS2S (rus-Cyrl)": 40.87,
                     "MLSUMClusteringS2S": 38.53,
+                    "MasakhaNEWSClusteringP2P (fra)": 47.91,
                     "MasakhaNEWSClusteringP2P (amh-Ethi)": 58.05,
                     "MasakhaNEWSClusteringP2P (eng)": 43.8,
                     "MasakhaNEWSClusteringP2P (fra-Latn)": 58.28,
@@ -24918,7 +24985,7 @@
                     "MasakhaNEWSClusteringP2P (tir-Ethi)": 53.44,
                     "MasakhaNEWSClusteringP2P (xho-Latn)": 40.32,
                     "MasakhaNEWSClusteringP2P (yor-Latn)": 37.97,
-                    "MasakhaNEWSClusteringP2P (fra)": 47.91,
+                    "MasakhaNEWSClusteringS2S (fra)": 51.16,
                     "MasakhaNEWSClusteringS2S (amh-Ethi)": 49.38,
                     "MasakhaNEWSClusteringS2S (eng)": 45.76,
                     "MasakhaNEWSClusteringS2S (fra-Latn)": 55.43,
@@ -24935,7 +25002,6 @@
                     "MasakhaNEWSClusteringS2S (tir-Ethi)": 51.66,
                     "MasakhaNEWSClusteringS2S (xho-Latn)": 29.65,
                     "MasakhaNEWSClusteringS2S (yor-Latn)": 30.12,
-                    "MasakhaNEWSClusteringS2S (fra)": 51.16,
                     "MedrxivClusteringP2P": 30.6,
                     "MedrxivClusteringS2S": 28.73,
                     "RedditClustering": 43.15,
@@ -24954,20 +25020,21 @@
             "ap": [
                 {
                     "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/intfloat/multilingual-e5-base\">multilingual-e5-base</a>",
-                    "CDSC-E (pol-Latn)": 72.7,
                     "CDSC-E": 72.67,
+                    "CDSC-E (pol-Latn)": 72.7,
                     "Cmnli": 74.51,
                     "Ocnli": 59.63,
+                    "OpusparcusPC (fr)": 92.72,
                     "OpusparcusPC (deu-Latn)": 95.83,
                     "OpusparcusPC (en)": 98.71,
                     "OpusparcusPC (fin-Latn)": 90.3,
                     "OpusparcusPC (fra-Latn)": 92.12,
                     "OpusparcusPC (rus-Cyrl)": 86.82,
                     "OpusparcusPC (swe-Latn)": 93.05,
-                    "OpusparcusPC (fr)": 92.72,
                     "PPC": 88.01,
-                    "PSC (pol-Latn)": 99.14,
                     "PSC": 99.14,
+                    "PSC (pol-Latn)": 99.14,
+                    "PawsXPairClassification (fr)": 56.93,
                     "PawsXPairClassification (deu-Latn)": 54.11,
                     "PawsXPairClassification (en)": 55.79,
                     "PawsXPairClassification (spa-Latn)": 54.13,
@@ -24975,9 +25042,8 @@
                     "PawsXPairClassification (jpn-Hira)": 49.02,
                     "PawsXPairClassification (kor-Hang)": 51.01,
                     "PawsXPairClassification (cmn-Hans)": 55.13,
-                    "PawsXPairClassification (fr)": 56.93,
-                    "SICK-E-PL (pol-Latn)": 68.76,
                     "SICK-E-PL": 68.77,
+                    "SICK-E-PL (pol-Latn)": 68.76,
                     "SprintDuplicateQuestions": 93.02,
                     "TERRa (rus-Cyrl)": 54.96,
                     "TwitterSemEval2015": 72.21,
@@ -24989,21 +25055,21 @@
             "map": [
                 {
                     "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/intfloat/multilingual-e5-base\">multilingual-e5-base</a>",
-                    "AlloprofReranking (fra-Latn)": 65.9,
                     "AlloprofReranking": 58.1,
+                    "AlloprofReranking (fra-Latn)": 65.9,
                     "AskUbuntuDupQuestions": 59.28,
                     "CMedQAv1": 65.21,
                     "CMedQAv2": 66.06,
-                    "MMarcoReranking (cmn-Hans)": 30.52,
                     "MMarcoReranking": 21.76,
+                    "MMarcoReranking (cmn-Hans)": 30.52,
                     "MindSmallReranking": 29.28,
                     "RuBQReranking (rus-Cyrl)": 72.01,
                     "SciDocsRR": 81.81,
                     "StackOverflowDupQuestions": 49.75,
-                    "SyntecReranking (fra-Latn)": 85.31,
                     "SyntecReranking": 85.43,
-                    "T2Reranking (cmn-Hans)": 64.86,
-                    "T2Reranking": 64.39
+                    "SyntecReranking (fra-Latn)": 85.31,
+                    "T2Reranking": 64.39,
+                    "T2Reranking (cmn-Hans)": 64.86
                 }
             ]
         },
@@ -25014,25 +25080,25 @@
                     "AILACasedocs": 26.05,
                     "AILAStatutes": 20.37,
                     "ARCChallenge": 9.61,
-                    "AlloprofRetrieval (fra-Latn)": 34.45,
                     "AlloprofRetrieval": 36.21,
+                    "AlloprofRetrieval (fra-Latn)": 34.45,
                     "AlphaNLI": 16.44,
                     "ArguAna": 44.21,
-                    "ArguAna-PL (pol-Latn)": 42.86,
                     "ArguAna-PL": 42.81,
-                    "BSARDRetrieval (fra-Latn)": 18.83,
+                    "ArguAna-PL (pol-Latn)": 42.86,
                     "BSARDRetrieval": 0.0,
-                    "CmedqaRetrieval (cmn-Hans)": 27.2,
+                    "BSARDRetrieval (fra-Latn)": 18.83,
                     "CmedqaRetrieval": 27.2,
-                    "CovidRetrieval (cmn-Hans)": 73.48,
+                    "CmedqaRetrieval (cmn-Hans)": 27.2,
                     "CovidRetrieval": 73.45,
+                    "CovidRetrieval (cmn-Hans)": 73.48,
                     "DBPedia-PL": 30.23,
-                    "DuRetrieval (cmn-Hans)": 81.66,
                     "DuRetrieval": 81.64,
-                    "EcomRetrieval (cmn-Hans)": 54.01,
+                    "DuRetrieval (cmn-Hans)": 81.66,
                     "EcomRetrieval": 54.17,
-                    "FiQA-PL (pol-Latn)": 25.59,
+                    "EcomRetrieval (cmn-Hans)": 54.01,
                     "FiQA-PL": 25.52,
+                    "FiQA-PL (pol-Latn)": 25.59,
                     "FiQA2018": 38.15,
                     "GerDaLIRSmall (deu-Latn)": 15.3,
                     "HellaSwag": 24.79,
@@ -25048,11 +25114,12 @@
                     "LegalBenchCorporateLobbying": 88.97,
                     "LegalQuAD (deu-Latn)": 47.85,
                     "LegalSummarization": 61.69,
-                    "MMarcoRetrieval (cmn-Hans)": 76.01,
                     "MMarcoRetrieval": 76.04,
+                    "MMarcoRetrieval (cmn-Hans)": 76.01,
                     "MSMARCO-PL": 29.52,
-                    "MedicalRetrieval (cmn-Hans)": 48.33,
                     "MedicalRetrieval": 48.35,
+                    "MedicalRetrieval (cmn-Hans)": 48.33,
+                    "MintakaRetrieval (fr)": 23.46,
                     "MintakaRetrieval (ara-Arab)": 23.06,
                     "MintakaRetrieval (deu-Latn)": 29.8,
                     "MintakaRetrieval (spa-Latn)": 29.88,
@@ -25061,42 +25128,41 @@
                     "MintakaRetrieval (ita-Latn)": 29.77,
                     "MintakaRetrieval (jpn-Hira)": 22.98,
                     "MintakaRetrieval (por-Latn)": 30.62,
-                    "MintakaRetrieval (fr)": 23.46,
                     "NFCorpus": 32.49,
-                    "NFCorpus-PL (pol-Latn)": 25.99,
                     "NFCorpus-PL": 25.98,
+                    "NFCorpus-PL (pol-Latn)": 25.99,
                     "NQ-PL": 44.8,
                     "PIQA": 25.09,
                     "Quail": 3.52,
                     "Quora-PL": 81.22,
                     "RARbCode": 52.16,
                     "RARbMath": 65.35,
-                    "RiaNewsRetrieval (rus-Cyrl)": 70.24,
                     "RuBQRetrieval (rus-Cyrl)": 69.58,
                     "SCIDOCS": 17.17,
-                    "SCIDOCS-PL (pol-Latn)": 12.36,
                     "SCIDOCS-PL": 12.35,
+                    "SCIDOCS-PL (pol-Latn)": 12.36,
                     "SIQA": 3.72,
                     "SciFact": 69.39,
-                    "SciFact-PL (pol-Latn)": 62.26,
                     "SciFact-PL": 62.11,
+                    "SciFact-PL (pol-Latn)": 62.26,
                     "SpartQA": 7.91,
-                    "SyntecRetrieval (fra-Latn)": 82.86,
                     "SyntecRetrieval": 80.49,
-                    "T2Retrieval (cmn-Hans)": 70.77,
+                    "SyntecRetrieval (fra-Latn)": 82.86,
                     "T2Retrieval": 70.86,
+                    "T2Retrieval (cmn-Hans)": 70.77,
                     "TRECCOVID": 69.5,
-                    "TRECCOVID-PL (pol-Latn)": 65.94,
                     "TRECCOVID-PL": 66.06,
+                    "TRECCOVID-PL (pol-Latn)": 65.94,
                     "TempReasonL1": 0.72,
                     "TempReasonL2Fact": 38.76,
                     "TempReasonL2Pure": 1.63,
                     "TempReasonL3Fact": 35.85,
                     "TempReasonL3Pure": 7.11,
                     "Touche2020": 21.5,
-                    "VideoRetrieval (cmn-Hans)": 61.26,
                     "VideoRetrieval": 61.3,
+                    "VideoRetrieval (cmn-Hans)": 61.26,
                     "WinoGrande": 56.18,
+                    "XPQARetrieval (fr)": 65.81,
                     "XPQARetrieval (ara-Arab_ara-Arab)": 39.97,
                     "XPQARetrieval (eng-Latn_ara-Arab)": 17.23,
                     "XPQARetrieval (ara-Arab_eng-Latn)": 34.35,
@@ -25132,8 +25198,7 @@
                     "XPQARetrieval (tam-Taml_eng-Latn)": 26.73,
                     "XPQARetrieval (cmn-Hans_cmn-Hans)": 67.06,
                     "XPQARetrieval (eng-Latn_cmn-Hans)": 12.72,
-                    "XPQARetrieval (cmn-Hans_eng-Latn)": 53.53,
-                    "XPQARetrieval (fr)": 65.81
+                    "XPQARetrieval (cmn-Hans_eng-Latn)": 53.53
                 }
             ]
         },
@@ -25141,27 +25206,27 @@
             "spearman": [
                 {
                     "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/intfloat/multilingual-e5-base\">multilingual-e5-base</a>",
-                    "AFQMC (cmn-Hans)": 29.66,
                     "AFQMC": 29.67,
-                    "ATEC (cmn-Hans)": 37.01,
+                    "AFQMC (cmn-Hans)": 29.66,
                     "ATEC": 37.01,
+                    "ATEC (cmn-Hans)": 37.01,
                     "BIOSSES": 85.05,
-                    "BQ (cmn-Hans)": 45.45,
                     "BQ": 45.45,
-                    "CDSC-R (pol-Latn)": 90.09,
+                    "BQ (cmn-Hans)": 45.45,
                     "CDSC-R": 90.08,
-                    "LCQMC (cmn-Hans)": 74.15,
+                    "CDSC-R (pol-Latn)": 90.09,
                     "LCQMC": 74.15,
-                    "PAWSX (cmn-Hans)": 12.13,
+                    "LCQMC (cmn-Hans)": 74.15,
                     "PAWSX": 12.14,
+                    "PAWSX (cmn-Hans)": 12.13,
                     "QBQTC": 28.81,
                     "RUParaPhraserSTS (rus-Cyrl)": 70.17,
                     "RuSTSBenchmarkSTS (rus-Cyrl)": 79.64,
                     "SICK-R": 78.51,
-                    "SICK-R-PL (pol-Latn)": 71.23,
                     "SICK-R-PL": 71.23,
-                    "SICKFr (fra-Latn)": 75.76,
+                    "SICK-R-PL (pol-Latn)": 71.23,
                     "SICKFr": 76.23,
+                    "SICKFr (fra-Latn)": 75.76,
                     "STS12": 76.7,
                     "STS13": 78.02,
                     "STS14": 76.6,
@@ -25178,6 +25243,8 @@
                     "STS17 (ara-Arab)": 74.48,
                     "STS17 (nld-Latn_eng-Latn)": 79.29,
                     "STS17 (eng-Latn_deu-Latn)": 82.08,
+                    "STS22 (zh)": 65.64,
+                    "STS22 (pl)": 34.07,
                     "STS22 (fra-Latn)": 75.04,
                     "STS22 (ara-Arab)": 57.82,
                     "STS22 (en)": 62.26,
@@ -25196,11 +25263,10 @@
                     "STS22 (cmn-Hans)": 65.63,
                     "STS22 (deu-Latn_pol-Latn)": 39.35,
                     "STS22 (deu-Latn_eng-Latn)": 54.89,
-                    "STS22 (zh)": 65.64,
-                    "STS22 (pl)": 34.07,
-                    "STSB (cmn-Hans)": 79.04,
                     "STSB": 79.05,
+                    "STSB (cmn-Hans)": 79.04,
                     "STSBenchmark": 85.64,
+                    "STSBenchmarkMultilingualSTS (fr)": 80.62,
                     "STSBenchmarkMultilingualSTS (rus-Cyrl)": 79.33,
                     "STSBenchmarkMultilingualSTS (pol-Latn)": 74.93,
                     "STSBenchmarkMultilingualSTS (spa-Latn)": 81.75,
@@ -25210,8 +25276,7 @@
                     "STSBenchmarkMultilingualSTS (deu-Latn)": 79.68,
                     "STSBenchmarkMultilingualSTS (nld-Latn)": 75.96,
                     "STSBenchmarkMultilingualSTS (por-Latn)": 67.16,
-                    "STSBenchmarkMultilingualSTS (ita-Latn)": 78.09,
-                    "STSBenchmarkMultilingualSTS (fr)": 80.62
+                    "STSBenchmarkMultilingualSTS (ita-Latn)": 78.09
                 }
             ]
         },
@@ -25220,8 +25285,8 @@
                 {
                     "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/intfloat/multilingual-e5-base\">multilingual-e5-base</a>",
                     "SummEval": 30.23,
-                    "SummEvalFr (fra-Latn)": 32.96,
-                    "SummEvalFr": 30.76
+                    "SummEvalFr": 30.76,
+                    "SummEvalFr (fra-Latn)": 32.96
                 }
             ]
         },
@@ -25229,74 +25294,6 @@
             "p-MRR": [
                 {
                     "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/intfloat/multilingual-e5-base\">multilingual-e5-base</a>"
-                }
-            ]
-        }
-    },
-    "instructor-base": {
-        "BitextMining": {
-            "f1": [
-                {
-                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/hkunlp/instructor-base\">instructor-base</a>"
-                }
-            ]
-        },
-        "Classification": {
-            "accuracy": [
-                {
-                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/hkunlp/instructor-base\">instructor-base</a>"
-                }
-            ]
-        },
-        "Clustering": {
-            "v_measure": [
-                {
-                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/hkunlp/instructor-base\">instructor-base</a>"
-                }
-            ]
-        },
-        "PairClassification": {
-            "ap": [
-                {
-                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/hkunlp/instructor-base\">instructor-base</a>"
-                }
-            ]
-        },
-        "Reranking": {
-            "map": [
-                {
-                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/hkunlp/instructor-base\">instructor-base</a>"
-                }
-            ]
-        },
-        "Retrieval": {
-            "ndcg_at_10": [
-                {
-                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/hkunlp/instructor-base\">instructor-base</a>"
-                }
-            ]
-        },
-        "STS": {
-            "spearman": [
-                {
-                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/hkunlp/instructor-base\">instructor-base</a>"
-                }
-            ]
-        },
-        "Summarization": {
-            "spearman": [
-                {
-                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/hkunlp/instructor-base\">instructor-base</a>"
-                }
-            ]
-        },
-        "InstructionRetrieval": {
-            "p-MRR": [
-                {
-                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/hkunlp/instructor-base\">instructor-base</a>",
-                    "Core17InstructionRetrieval": -1.09,
-                    "News21InstructionRetrieval": -1.78,
-                    "Robust04InstructionRetrieval": -10.42
                 }
             ]
         }

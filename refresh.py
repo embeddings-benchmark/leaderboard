@@ -137,8 +137,8 @@ def add_lang(examples):
     return examples
 
 
-def norm(names: list[str]) -> list[str]:
-    return list(set([name.split(" ")[0] for name in names]))
+def norm(names: list[str]) -> set[str]:
+    return set([name.split()[0] for name in names])
 
 
 def add_task(examples):
@@ -508,7 +508,7 @@ def get_mteb_data(
             df.drop(columns=["PawsX (fr)"], inplace=True)
 
         # Filter invalid columns
-        cols = [col for col in cols if col in base_columns + datasets or any([col.split()[0] == d for d in datasets])]
+        cols = [col for col in cols if col in base_columns + datasets]
     i = 0
     for column in base_columns:
         if column in cols:
@@ -520,20 +520,6 @@ def get_mteb_data(
     if fillna:
         df.fillna("", inplace=True)
     return df
-
-
-def find_tasks(df_columns: list[str], tasks: list[str]) -> list[str]:
-    """
-    Some tasks have langs, but original tasks doesn't have languages, This function will find task -> Task (lang)
-    """
-    used_columns = []
-    for task in tasks:
-        for col_name in df_columns:
-            # some french datasets already have lang in their name
-            # if use starts with instead of split there can be duplicates
-            if col_name.split()[0] == task or col_name == task:
-                used_columns.append(col_name)
-    return used_columns
 
 
 # Get dict with a task list for each task category
@@ -552,14 +538,14 @@ def get_mteb_average(task_dict: dict) -> tuple[Any, dict]:
     DATA_OVERALL.insert(
         1,
         f"Average ({len(all_tasks)} datasets)",
-        DATA_OVERALL[find_tasks(DATA_OVERALL.columns, all_tasks)].mean(axis=1, skipna=False),
+        DATA_OVERALL[all_tasks].mean(axis=1, skipna=False),
     )
 
     for i, (task_category, task_category_list) in enumerate(task_dict.items()):
         DATA_OVERALL.insert(
             i + 2,
             f"{task_category} Average ({len(task_category_list)} datasets)",
-            DATA_OVERALL[find_tasks(DATA_OVERALL.columns, task_category_list)].mean(axis=1, skipna=False),
+            DATA_OVERALL[task_category_list].mean(axis=1, skipna=False),
         )
     DATA_OVERALL.sort_values(
         f"Average ({len(all_tasks)} datasets)", ascending=False, inplace=True
@@ -573,8 +559,7 @@ def get_mteb_average(task_dict: dict) -> tuple[Any, dict]:
     for task_category, task_category_list in task_dict.items():
         DATA_TASKS[task_category] = add_rank(
             DATA_OVERALL[
-                ["Model", "Model Size (Million Parameters)", "Memory Usage (GB, fp32)"]
-                + find_tasks(DATA_OVERALL.columns, task_category_list)
+                ["Model", "Model Size (Million Parameters)", "Memory Usage (GB, fp32)"] + task_category_list
             ]
         )
         DATA_TASKS[task_category] = DATA_TASKS[task_category][

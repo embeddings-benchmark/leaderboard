@@ -375,27 +375,27 @@ boards:
     credits: "[Roman Solomatin](https://github.com/Samoed) and SaluteDevices: [Alena Fenogenova](https://github.com/Alenush), [Aleksandr Abramov](https://github.com/Ab1992ao), [Artem Snegirev](https://github.com/artemsnegirev), [Anna Maksimova](https://github.com/anpalmak2003), [Maria Tikhonova](https://github.com/MariyaTikhonova)"
     tasks:
       Classification:
-        - GeoreviewClassification
-        - HeadlineClassification
-        - InappropriatenessClassification
-        - KinopoiskClassification
-        - RuReviewsClassification
-        - RuSciBenchGRNTIClassification
-        - RuSciBenchOECDClassification
+        - GeoreviewClassification (rus-Cyrl)
+        - HeadlineClassification (rus-Cyrl)
+        - InappropriatenessClassification (rus-Cyrl)
+        - KinopoiskClassification (rus-Cyrl)
+        - RuReviewsClassification (rus-Cyrl)
+        - RuSciBenchGRNTIClassification (rus-Cyrl)
+        - RuSciBenchOECDClassification (rus-Cyrl)
       Clustering:
-        - GeoreviewClusteringP2P
-        - RuSciBenchGRNTIClusteringP2P
-        - RuSciBenchOECDClusteringP2P
+        - GeoreviewClusteringP2P (rus-Cyrl)
+        - RuSciBenchGRNTIClusteringP2P (rus-Cyrl)
+        - RuSciBenchOECDClusteringP2P (rus-Cyrl)
       PairClassification:
-        - TERRa
+        - TERRa (rus-Cyrl)
       Reranking:
-        - RuBQReranking
+        - RuBQReranking (rus-Cyrl)
       Retrieval:
-        - RiaNewsRetrieval
-        - RuBQRetrieval
+        - RiaNewsRetrieval (rus-Cyrl)
+        - RuBQRetrieval (rus-Cyrl)
       STS:
-        - RUParaPhraserSTS
-        - RuSTSBenchmarkSTS
+        - RUParaPhraserSTS (rus-Cyrl)
+        - RuSTSBenchmarkSTS (rus-Cyrl)
   se:
     title: Swedish
     language_long: Swedish
