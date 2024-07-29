@@ -715,6 +715,8 @@ def load_results(data_path: str) -> list | dict | pd.DataFrame | str | None:
         df = pd.read_json(data_path, orient="records", lines=True)
         if "index" in df.columns:
             df = df.set_index("index")
+        if "Memory Usage (GB, fp32)" in df.columns:
+            df["Memory Usage (GB, fp32)"] = df["Memory Usage (GB, fp32)"].map(lambda value: round(value, 2) if isinstance(value, float) else value)
         return df
 
     else:
