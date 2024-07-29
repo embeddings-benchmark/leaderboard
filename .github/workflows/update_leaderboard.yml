@@ -8,6 +8,7 @@ on:
     - cron: '30 2 * * *'
   push:
     branches: [ main ]
+  workflow_dispatch: # Allows us to trigger the workflow manually via the GitHub UI
 
 jobs:
   build:
