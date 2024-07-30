@@ -20365,6 +20365,8 @@
             "ndcg_at_10": [
                 {
                     "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/GritLM/GritLM-7B\">GritLM-7B</a>",
+                    "ARCChallenge": 26.68,
+                    "AlphaNLI": 34.0,
                     "BrightRetrieval (pony)": 21.98,
                     "BrightRetrieval (robotics)": 17.31,
                     "BrightRetrieval (economics)": 19.0,
@@ -20376,7 +20378,20 @@
                     "BrightRetrieval (biology)": 25.04,
                     "BrightRetrieval (psychology)": 19.92,
                     "BrightRetrieval (theoremqa_theorems)": 17.41,
-                    "BrightRetrieval (aops)": 8.91
+                    "BrightRetrieval (aops)": 8.91,
+                    "HellaSwag": 39.45,
+                    "PIQA": 44.35,
+                    "Quail": 11.69,
+                    "RARbCode": 84.0,
+                    "RARbMath": 82.35,
+                    "SIQA": 7.23,
+                    "SpartQA": 9.29,
+                    "TempReasonL1": 7.15,
+                    "TempReasonL2Fact": 58.38,
+                    "TempReasonL2Pure": 11.22,
+                    "TempReasonL3Fact": 44.29,
+                    "TempReasonL3Pure": 14.15,
+                    "WinoGrande": 53.74
                 }
             ]
         },
