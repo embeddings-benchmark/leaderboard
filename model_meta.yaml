@@ -1940,6 +1940,9 @@ models_to_skip:
 - itod/UAE-Large-V1-Q8_0-GGUF
 - corto-ai/nomic-embed-text-v1
 - Intel/neural-embedding-v1
+- VenkatNDivi77/gte-Qwen2-7B-instruct-Q4_K_M-GGUF
+- barnowak/gte-Qwen2-7B-instruct-Q4_K_M-GGUF
+- arisylafeta/gte-Qwen2-1.5B-instruct-Q4_0-GGUF
 cross_encoders:
 - FollowIR-7B
 - flan-t5-base
