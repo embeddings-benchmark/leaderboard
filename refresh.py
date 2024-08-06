@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+
 import os
 import re
 from functools import reduce
@@ -136,8 +137,8 @@ def add_lang(examples):
     return examples
 
 
-def norm(names: str) -> set:
-    return set([name.split(" ")[0] for name in names])
+def norm(names: list[str]) -> set[str]:
+    return set([name.split()[0] for name in names])
 
 
 def add_task(examples):
@@ -539,6 +540,7 @@ def get_mteb_average(task_dict: dict) -> tuple[Any, dict]:
         f"Average ({len(all_tasks)} datasets)",
         DATA_OVERALL[all_tasks].mean(axis=1, skipna=False),
     )
+
     for i, (task_category, task_category_list) in enumerate(task_dict.items()):
         DATA_OVERALL.insert(
             i + 2,
@@ -557,8 +559,7 @@ def get_mteb_average(task_dict: dict) -> tuple[Any, dict]:
     for task_category, task_category_list in task_dict.items():
         DATA_TASKS[task_category] = add_rank(
             DATA_OVERALL[
-                ["Model", "Model Size (Million Parameters)", "Memory Usage (GB, fp32)"]
-                + task_category_list
+                ["Model", "Model Size (Million Parameters)", "Memory Usage (GB, fp32)"] + task_category_list
             ]
         )
         DATA_TASKS[task_category] = DATA_TASKS[task_category][

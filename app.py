@@ -257,7 +257,6 @@ def filter_data(search_query, model_types, model_sizes, *full_dataframes):
             sizes = df["Model Size (Million Parameters)"].replace('', 0)
             mask = sizes.apply(lambda size: any(numeric_interval.contains(size)))
             df = df[mask]
-
         output_dataframes.append(df)
     return output_dataframes
 

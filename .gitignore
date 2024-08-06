@@ -1,3 +1,4 @@
 *.pyc
 model_infos.json
 space
+.venv

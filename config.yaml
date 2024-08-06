@@ -365,6 +365,37 @@ boards:
         - CDSC-R
         - SICK-R-PL
         - STS22 (pl)
+  ru:
+    title: Russian
+    language_long: "Russian"
+    has_overall: true
+    acronym: null
+    icon: "🇷🇺"
+    special_icons: null
+    credits: "[Roman Solomatin](https://github.com/Samoed) and SaluteDevices: [Alena Fenogenova](https://github.com/Alenush), [Aleksandr Abramov](https://github.com/Ab1992ao), [Artem Snegirev](https://github.com/artemsnegirev), [Anna Maksimova](https://github.com/anpalmak2003), [Maria Tikhonova](https://github.com/MariyaTikhonova)"
+    tasks:
+      Classification:
+        - GeoreviewClassification (rus-Cyrl)
+        - HeadlineClassification (rus-Cyrl)
+        - InappropriatenessClassification (rus-Cyrl)
+        - KinopoiskClassification (rus-Cyrl)
+        - RuReviewsClassification (rus-Cyrl)
+        - RuSciBenchGRNTIClassification (rus-Cyrl)
+        - RuSciBenchOECDClassification (rus-Cyrl)
+      Clustering:
+        - GeoreviewClusteringP2P (rus-Cyrl)
+        - RuSciBenchGRNTIClusteringP2P (rus-Cyrl)
+        - RuSciBenchOECDClusteringP2P (rus-Cyrl)
+      PairClassification:
+        - TERRa (rus-Cyrl)
+      Reranking:
+        - RuBQReranking (rus-Cyrl)
+      Retrieval:
+        - RiaNewsRetrieval (rus-Cyrl)
+        - RuBQRetrieval (rus-Cyrl)
+      STS:
+        - RUParaPhraserSTS (rus-Cyrl)
+        - RuSTSBenchmarkSTS (rus-Cyrl)
   se:
     title: Swedish
     language_long: Swedish
