@@ -27,8 +27,15 @@ This repository contains the code for pushing and updating the MTEB leaderboard 
 
 To setup the repository:
 
-```         
-git clone {repo_url}
-# potentially create virtual environment using python 3.9
+```bash
+git clone https://github.com/embeddings-benchmark/leaderboard.git
+cd leaderboard
+# install requirements
 pip install -r requirements.txt
+# fetch new results
+# python refresh.py
+# if you'd like to add results to previously cached models, you may have to remove these models in `EXTERNAL_MODEL_RESULTS.json`
+# you can also directly delete `EXTERNAL_MODEL_RESULTS.json` and it will recreate it (but be much slower)
+# run the leaderboard
+python app.py
 ```
