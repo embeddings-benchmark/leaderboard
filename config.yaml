@@ -43,6 +43,11 @@ tasks:
     metric: spearman
     metric_description: "Spearman correlation based on the model's similarity metric (usually cosine)"
     task_description: "Summarization is the task of generating a summary of a text."
+  MultilabelClassification:
+    icon: "🏷️"
+    metric: accuracy
+    metric_description: "Accuracy"
+    task_description: "Multilabel classification is the task of assigning multiple labels to a text."
   InstructionRetrieval:
     icon: "🔎📋"
     metric: "p-MRR"
@@ -382,6 +387,8 @@ boards:
         - RuReviewsClassification (rus-Cyrl)
         - RuSciBenchGRNTIClassification (rus-Cyrl)
         - RuSciBenchOECDClassification (rus-Cyrl)
+        - MassiveIntentClassification (rus-Cyrl)
+        - MassiveScenarioClassification (rus-Cyrl)
       Clustering:
         - GeoreviewClusteringP2P (rus-Cyrl)
         - RuSciBenchGRNTIClusteringP2P (rus-Cyrl)
@@ -390,12 +397,18 @@ boards:
         - TERRa (rus-Cyrl)
       Reranking:
         - RuBQReranking (rus-Cyrl)
+        - MIRACLReranking (rus-Cyrl)
       Retrieval:
         - RiaNewsRetrieval (rus-Cyrl)
         - RuBQRetrieval (rus-Cyrl)
+        - MIRACLRetrieval (rus-Cyrl)
       STS:
         - RUParaPhraserSTS (rus-Cyrl)
         - RuSTSBenchmarkSTS (rus-Cyrl)
+        - STS22 (rus-Cyrl)
+      MultilabelClassification:
+        - CEDRClassification (rus-Cyrl)
+        - SensitiveTopicsClassification (rus-Cyrl)
   se:
     title: Swedish
     language_long: Swedish

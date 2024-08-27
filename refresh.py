@@ -161,6 +161,8 @@ def filter_metric_external(x, task, metrics) -> bool:
     # This is a hack for the passkey and needle retrieval test, which reports ndcg_at_1 (i.e. accuracy), rather than the ndcg_at_10 that is commonly used for retrieval tasks.
     if x["mteb_dataset_name"] in ["LEMBNeedleRetrieval", "LEMBPasskeyRetrieval"]:
         return bool(x["mteb_task"] == task and x["metric"] == "ndcg_at_1")
+    elif x["mteb_dataset_name"] == "MIRACLReranking":
+        return bool(x["mteb_task"] == task and x["metric"] in ["NDCG@10(MIRACL)"])
     else:
         return bool(x["mteb_task"] == task and x["metric"] in metrics)
 
@@ -534,7 +536,7 @@ def get_mteb_average(task_dict: dict) -> tuple[Any, dict]:
         rank=False,
     )
     # Debugging:
-    # DATA_OVERALL.to_csv("overall.csv")
+    DATA_OVERALL.to_csv("overall.csv")
     DATA_OVERALL.insert(
         1,
         f"Average ({len(all_tasks)} datasets)",
@@ -608,6 +610,8 @@ def refresh_leaderboard() -> tuple[list, dict]:
         leave=True,
     )
     for board, board_config in pbar_tasks:
+        if board == "longembed":
+            pass
         boards_data[board] = {"data_overall": None, "data_tasks": {}}
         pbar_tasks.set_description(f"Fetching leaderboard results for {board!r}")
         pbar_tasks.refresh()
