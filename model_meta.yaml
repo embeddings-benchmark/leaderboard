@@ -185,6 +185,15 @@ model_meta:
     is_proprietary: false
     is_sentence_transformers_compatible: false
     uses_instruct: true
+  NV-Embed-v2:
+    link: https://huggingface.co/nvidia/NV-Embed-v2
+    seq_len: 32768
+    size: 7851
+    dim: 4096
+    is_external: false
+    is_proprietary: false
+    is_sentence_transformers_compatible: true
+    uses_instruct: true
   NV-Retriever-v1:
     link: https://huggingface.co/nvidia/NV-Retriever-v1
     seq_len: 512
