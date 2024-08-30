@@ -1943,6 +1943,11 @@ models_to_skip:
 - VenkatNDivi77/gte-Qwen2-7B-instruct-Q4_K_M-GGUF
 - barnowak/gte-Qwen2-7B-instruct-Q4_K_M-GGUF
 - arisylafeta/gte-Qwen2-1.5B-instruct-Q4_0-GGUF
+- KeyurRamoliya/gte-Qwen2-7B-instruct-Q4_K_M-GGUF
+- cedarwud/gte-Qwen2-7B-instruct-Q4_K_M-GGUF
+- KeyurRamoliya/gte-Qwen2-7B-instruct-GGUF
+- agier9/gte-Qwen2-1.5B-instruct-Q4_K_M-GGUF
+- dopeba/gte-Qwen2-1.5B-instruct-Q8_0-GGUF
 cross_encoders:
 - FollowIR-7B
 - flan-t5-base
