@@ -72,6 +72,7 @@ Each inner tab can have the following keys:
 - language_long: [optional] The long form of the language
 - description: The description of the leaderboard
 - credits: [optional] The credits for the leaderboard
+- desc: [optional] The description of the leaderboard
 - data: The data for the leaderboard
 """
 
@@ -133,6 +134,7 @@ for board, board_config in BOARDS_CONFIG.items():
         board_icon = ""
     credits = board_config.get("credits", None)
     metric = board_config.get("metric", None)
+    desc = board_config.get("desc", None)
 
     if board_config["has_overall"]:
         overall_pretty_name = board_pretty_name
@@ -146,6 +148,7 @@ for board, board_config in BOARDS_CONFIG.items():
             # "refresh": get_refresh_overall_function(board_config["tasks"]),
             "credits": credits,
             "metric": metric,
+            "desc": desc,
         })
     for task_category, task_category_list in board_config["tasks"].items():
         task_icon = TASKS_CONFIG[task_category]['icon']
@@ -159,6 +162,7 @@ for board, board_config in BOARDS_CONFIG.items():
             # "refresh": get_refresh_function(task_category, task_category_list),
             "credits": credits,
             "metric": metric,
+            "desc": desc,
         })
 
 dataframes = []
@@ -331,6 +335,7 @@ with gr.Blocks(css=css) as block:
                                 - **Metric:** {specific_metric}
                                 - **Languages:** {item['language_long'] if 'language_long' in item else item['language']}
                                 {"- **Credits:** " + item['credits'] if ("credits" in item and item["credits"] is not None) else ''}
+                                {"- **Description:** " + item['desc'] if ("desc" in item and item["desc"] is not None) else ''}
                                 """)
 
                             with gr.Row():
