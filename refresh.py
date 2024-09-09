@@ -238,7 +238,7 @@ def get_external_model_results():
         }
         models_to_run = EXTERNAL_MODELS
 
-    pbar = tqdm(models_to_run, desc="Fetching external model results")
+    pbar = tqdm(models_to_run[:10], desc="Fetching external model results")
     for model in pbar:
         pbar.set_description(f"Fetching external model results for {model!r}")
         try:
@@ -596,7 +596,7 @@ def get_mteb_average(task_dict: dict) -> tuple[Any, dict]:
     for task_category, task_category_list in task_dict.items():
         DATA_TASKS[task_category] = add_rank(
             DATA_OVERALL[
-                ["Model", "Model Size (Million Parameters)", "Memory Usage (GB, fp32)"] + task_category_list
+                ["Model", "Model Size (Million Parameters)", "Memory Usage (GB, fp32)", "Embedding Dimensions", "Max Tokens"] + task_category_list
             ]
         )
         DATA_TASKS[task_category] = DATA_TASKS[task_category][
@@ -663,9 +663,9 @@ def refresh_leaderboard() -> tuple[list, dict]:
                 data_task_category = get_mteb_data(
                     tasks=[task_category], datasets=task_category_list
                 )
-                data_task_category.drop(
-                    columns=["Embedding Dimensions", "Max Tokens"], inplace=True
-                )
+                # data_task_category.drop(
+                #     columns=["Embedding Dimensions", "Max Tokens"], inplace=True
+                # )
                 boards_data[board]["data_tasks"][task_category] = data_task_category
                 all_data_tasks.append(data_task_category)
         if board == "bright_long":
@@ -777,8 +777,8 @@ if __name__ == "__main__":
     print("Done calculating, saving...")
     # save them so that the leaderboard can use them.  They're quite complex though
     #   but we can't use pickle files because of git-lfs.
-    write_out_results(all_data_tasks, "all_data_tasks")
-    write_out_results(boards_data, "boards_data")
+    write_out_results(all_data_tasks, "all_data_tasks_temp2")
+    write_out_results(boards_data, "boards_data_temp2")
 
     # to load them use
     # all_data_tasks = load_results("all_data_tasks")
