@@ -238,7 +238,7 @@ def get_external_model_results():
         }
         models_to_run = EXTERNAL_MODELS
 
-    pbar = tqdm(models_to_run[:10], desc="Fetching external model results")
+    pbar = tqdm(models_to_run, desc="Fetching external model results")
     for model in pbar:
         pbar.set_description(f"Fetching external model results for {model!r}")
         try:
