@@ -280,41 +280,6 @@ boards:
       - Robust04InstructionRetrieval
       - News21InstructionRetrieval
       - Core17InstructionRetrieval
-  law:
-    title: Law
-    language_long: "English, German, Chinese"
-    has_overall: false
-    acronym: null
-    icon: "⚖️"
-    special_icons: null
-    credits: "[Voyage AI](https://www.voyageai.com/)"
-    tasks:
-      Retrieval:
-        - AILACasedocs
-        - AILAStatutes
-        - GerDaLIRSmall
-        - LeCaRDv2
-        - LegalBenchConsumerContractsQA
-        - LegalBenchCorporateLobbying
-        - LegalQuAD
-        - LegalSummarization
-  longembed:
-    title: LongEmbed
-    language_long: "English"
-    has_overall: false
-    acronym: null
-    icon: "📚"
-    special_icons: null
-    credits: "[LongEmbed](https://arxiv.org/abs/2404.12096v2)"
-    metric: nDCG@10 (for NarrativeQA, QMSum, SummScreenFD, WikimQA) & nDCG@1 (for passkey and needle)
-    tasks:
-      Retrieval:
-        - LEMBNarrativeQARetrieval
-        - LEMBNeedleRetrieval
-        - LEMBPasskeyRetrieval
-        - LEMBQMSumRetrieval
-        - LEMBSummScreenFDRetrieval
-        - LEMBWikimQARetrieval
   de:
     title: German
     language_long: "German"
@@ -447,6 +412,41 @@ boards:
     credits: null
     tasks:
       STS: ["STS17 (ar-ar)", "STS17 (en-ar)", "STS17 (en-de)", "STS17 (en-tr)", "STS17 (es-en)", "STS17 (es-es)", "STS17 (fr-en)", "STS17 (it-en)", "STS17 (ko-ko)", "STS17 (nl-en)", "STS22 (ar)", "STS22 (de)", "STS22 (de-en)", "STS22 (de-fr)", "STS22 (de-pl)", "STS22 (es)", "STS22 (es-en)", "STS22 (es-it)", "STS22 (fr)", "STS22 (fr-pl)", "STS22 (it)", "STS22 (pl)", "STS22 (pl-en)", "STS22 (ru)", "STS22 (tr)", "STS22 (zh-en)", "STSBenchmark"]
+  law:
+    title: Law
+    language_long: "English, German, Chinese"
+    has_overall: false
+    acronym: null
+    icon: "⚖️"
+    special_icons: null
+    credits: "[Voyage AI](https://www.voyageai.com/)"
+    tasks:
+      Retrieval:
+        - AILACasedocs
+        - AILAStatutes
+        - GerDaLIRSmall
+        - LeCaRDv2
+        - LegalBenchConsumerContractsQA
+        - LegalBenchCorporateLobbying
+        - LegalQuAD
+        - LegalSummarization
+  longembed:
+    title: LongEmbed
+    language_long: "English"
+    has_overall: false
+    acronym: null
+    icon: "📚"
+    special_icons: null
+    credits: "[LongEmbed (Dawei Zhu et al.)](https://arxiv.org/abs/2404.12096v2)"
+    metric: nDCG@10 (for NarrativeQA, QMSum, SummScreenFD, WikimQA) & nDCG@1 (for passkey and needle)
+    tasks:
+      Retrieval:
+        - LEMBNarrativeQARetrieval
+        - LEMBNeedleRetrieval
+        - LEMBPasskeyRetrieval
+        - LEMBQMSumRetrieval
+        - LEMBSummScreenFDRetrieval
+        - LEMBWikimQARetrieval
   rar-b:
     title: RAR-b
     language_long: "English"
@@ -454,7 +454,7 @@ boards:
     acronym: null
     icon: "📚"
     special_icons: null
-    credits: "[RAR-b (Xiao et al.)](https://arxiv.org/abs/2404.06347/)"
+    credits: "[RAR-b (Chenghao Xiao et al.)](https://arxiv.org/abs/2404.06347/)"
     metric: nDCG@10
     tasks:
       Retrieval:
@@ -482,6 +482,8 @@ boards:
     special_icons: null
     credits: "[BRIGHT (Hongjin Su, Howard Yen, Mengzhou Xia et al.)](https://brightbenchmark.github.io/)"
     metric: nDCG@10
+    split: standard
+    desc: This tab only allows submissions with the original queries; not results from LLM rewritten queries or using reranking.
     tasks:
       Retrieval:
         - BrightRetrieval (biology)
@@ -496,3 +498,45 @@ boards:
         - BrightRetrieval (aops)
         - BrightRetrieval (theoremqa_theorems)
         - BrightRetrieval (theoremqa_questions)
+  bright_long:
+    title: BRIGHT Long
+    language_long: "English"
+    has_overall: false
+    acronym: null
+    icon: "🌟"
+    special_icons: null
+    credits: "[BRIGHT (Hongjin Su, Howard Yen, Mengzhou Xia et al.)](https://brightbenchmark.github.io/)"
+    metric: Recall@1
+    split: long
+    desc: This tab is for the long document setting of BRIGHT.
+    tasks:
+      Retrieval:
+        - BrightRetrieval (biology)
+        - BrightRetrieval (earth_science)
+        - BrightRetrieval (economics)
+        - BrightRetrieval (psychology)
+        - BrightRetrieval (robotics)
+        - BrightRetrieval (stackoverflow)
+        - BrightRetrieval (sustainable_living)
+        - BrightRetrieval (pony)
+  coir:
+    title: CoIR
+    language_long: "Code"
+    has_overall: false
+    acronym: null
+    icon: "💻"
+    special_icons: null
+    credits: "[Samoed](https://github.com/Samoed) and [monikernemo](https://github.com/monikernemo) and [CoIR (Xiangyang Li, Kuicai Dong, Yi Quan Lee et al.)](https://arxiv.org/abs/2407.02883)"
+    metric: nDCG@10
+    tasks:
+      Retrieval:
+        - AppsRetrieval
+        - CodeFeedbackMT
+        - CodeFeedbackST
+        - CodeSearchNetCCRetrieval
+        - CodeSearchNetRetrieval
+        - CodeTransOceanContest
+        - CodeTransOceanDL
+        - CosQA
+        - StackOverflowQA
+        - SyntheticText2SQL

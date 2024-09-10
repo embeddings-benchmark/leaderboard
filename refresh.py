@@ -78,9 +78,12 @@ NOINSTRUCT_MODELS = {
 
 
 TASK_TO_TASK_TYPE = {task_category: [] for task_category in TASKS}
-for board_config in BOARDS_CONFIG.values():
+TASK_TO_SPLIT = {}
+for k, board_config in BOARDS_CONFIG.items():
     for task_category, task_list in board_config["tasks"].items():
         TASK_TO_TASK_TYPE[task_category].extend(task_list)
+        if "split" in board_config:
+            TASK_TO_SPLIT[k] = board_config["split"]
 
 
 ## Don't cache this because we want to re-compute every time
@@ -161,19 +164,22 @@ def filter_metric_external(x, task, metrics) -> bool:
     # This is a hack for the passkey and needle retrieval test, which reports ndcg_at_1 (i.e. accuracy), rather than the ndcg_at_10 that is commonly used for retrieval tasks.
     if x["mteb_dataset_name"] in ["LEMBNeedleRetrieval", "LEMBPasskeyRetrieval"]:
         return bool(x["mteb_task"] == task and x["metric"] == "ndcg_at_1")
+    elif (x["mteb_dataset_name"].startswith("BrightRetrieval") and (x["split"] == "long")):
+        return bool(x["mteb_task"] == task and x["metric"] in ["recall_at_1"])
     elif x["mteb_dataset_name"] == "MIRACLReranking":
         return bool(x["mteb_task"] == task and x["metric"] in ["NDCG@10(MIRACL)"])
     else:
         return bool(x["mteb_task"] == task and x["metric"] in metrics)
 
 
-def filter_metric_fetched(name: str, metric: str, expected_metrics) -> bool:
+def filter_metric_fetched(name: str, metric: str, expected_metrics, split: str) -> bool:
     # This is a hack for the passkey and needle retrieval test, which reports ndcg_at_1 (i.e. accuracy), rather than the ndcg_at_10 that is commonly used for retrieval tasks.
-    return bool(
-        metric == "ndcg_at_1"
-        if name in ["LEMBNeedleRetrieval", "LEMBPasskeyRetrieval"]
-        else metric in expected_metrics
-    )
+    if name in ["LEMBNeedleRetrieval", "LEMBPasskeyRetrieval"]:
+        return bool(metric == "ndcg_at_1")
+    elif (name.startswith("BrightRetrieval") and (split == "long")):
+        return bool(metric in ["recall_at_1"])
+    else:
+        return bool(metric in expected_metrics)
 
 
 def get_dim_seq_size(model):
@@ -237,13 +243,23 @@ def get_external_model_results():
     pbar = tqdm(models_to_run, desc="Fetching external model results")
     for model in pbar:
         pbar.set_description(f"Fetching external model results for {model!r}")
-        ds = load_dataset(
-            RESULTS_REPO,
-            model,
-            trust_remote_code=True,
-            download_mode="force_redownload",
-            verification_mode="no_checks",
-        )
+        try:
+            ds = load_dataset(
+                RESULTS_REPO,
+                model,
+                trust_remote_code=True,
+                download_mode="force_redownload",
+                verification_mode="no_checks",
+            )
+        except KeyError as e:
+            model_tmp = "__".join(MODEL_META["model_meta"][model]["link"].split("/")[-2:])
+            ds = load_dataset(
+                RESULTS_REPO,
+                model_tmp,
+                trust_remote_code=True,
+                download_mode="force_redownload",
+                verification_mode="no_checks",
+            )
         ds = ds.map(add_lang)
         ds = ds.map(add_task)
         base_dict = {
@@ -256,19 +272,39 @@ def get_external_model_results():
         }
 
         for task, metrics in TASK_TO_METRIC.items():
-            ds_dict = ds.filter(lambda x: filter_metric_external(x, task, metrics))[
+            ds_sub = ds.filter(lambda x: filter_metric_external(x, task, metrics))[
                 "test"
-            ].to_dict()
-            ds_dict = {
-                k: round(v, 2)
-                for k, v in zip(
-                    ds_dict["mteb_dataset_name_with_lang"], ds_dict["score"]
+            ]
+            metrics = ds_sub.unique("metric")
+            for metric in metrics:
+                ds_dict = ds_sub.filter(lambda x: x["metric"] == metric).to_dict()
+                ds_dict = {
+                    k: round(v, 2)
+                    for k, v in zip(
+                        ds_dict["mteb_dataset_name_with_lang"], ds_dict["score"]
+                    )
+                }
+                # metrics[0] is the main name for this metric; other names in the list are legacy for backward-compat
+                # except for recall_at_1, which is the main name for BrightRetrieval (Long)
+                metric = metrics[0] if metric != "recall_at_1" else metric
+                if metric not in EXTERNAL_MODEL_RESULTS[model][task]:
+                    EXTERNAL_MODEL_RESULTS[model][task][metric] = []
+                EXTERNAL_MODEL_RESULTS[model][task][metric].append(
+                    {**base_dict, **ds_dict}
                 )
-            }
-            # metrics[0] is the main name for this metric; other names in the list are legacy for backward-compat
-            EXTERNAL_MODEL_RESULTS[model][task][metrics[0]].append(
-                {**base_dict, **ds_dict}
-            )
+            #ds_dict = ds.filter(lambda x: filter_metric_external(x, task, metrics))[
+            #    "test"
+            #].to_dict()
+            #ds_dict = {
+            #    k: round(v, 2)
+            #    for k, v in zip(
+            #        ds_dict["mteb_dataset_name_with_lang"], ds_dict["score"]
+            #    )
+            #}
+            ## metrics[0] is the main name for this metric; other names in the list are legacy for backward-compat
+            #EXTERNAL_MODEL_RESULTS[model][task][metrics[0]].append(
+            #    {**base_dict, **ds_dict}
+            #)
 
     # Save & cache EXTERNAL_MODEL_RESULTS
     with open("EXTERNAL_MODEL_RESULTS.json", "w") as f:
@@ -320,8 +356,8 @@ def get_mteb_data(
         results_list = []
         for task in tasks:
             # Not all models have InstructionRetrieval, other new tasks
-            if task not in external_model_results[model]:
-                continue
+            if task not in external_model_results[model]: continue
+            if task_to_metric[task][0] not in external_model_results[model][task]: continue
             results_list += external_model_results[model][task][task_to_metric[task][0]]
 
         if len(datasets) > 0:
@@ -416,6 +452,7 @@ def get_mteb_data(
                             res["dataset"]["name"].replace("MTEB ", ""),
                             score["type"],
                             task_to_metric.get(res["task"]["type"]),
+                            res["dataset"]["split"],
                         )
                     ][0]
                 }
@@ -536,7 +573,7 @@ def get_mteb_average(task_dict: dict) -> tuple[Any, dict]:
         rank=False,
     )
     # Debugging:
-    DATA_OVERALL.to_csv("overall.csv")
+    # DATA_OVERALL.to_csv("overall.csv")
     DATA_OVERALL.insert(
         1,
         f"Average ({len(all_tasks)} datasets)",
@@ -610,8 +647,11 @@ def refresh_leaderboard() -> tuple[list, dict]:
         leave=True,
     )
     for board, board_config in pbar_tasks:
-        if board == "longembed":
-            pass
+        # Optional fetch only for a specific board
+        # if board != "bright_long": continue
+        # Very hacky - should fix this as soon as possible
+        if board == "bright_long":
+            TASK_TO_METRIC["Retrieval"] = ["recall_at_1"]
         boards_data[board] = {"data_overall": None, "data_tasks": {}}
         pbar_tasks.set_description(f"Fetching leaderboard results for {board!r}")
         pbar_tasks.refresh()
@@ -630,9 +670,9 @@ def refresh_leaderboard() -> tuple[list, dict]:
                 )
                 boards_data[board]["data_tasks"][task_category] = data_task_category
                 all_data_tasks.append(data_task_category)
-
+        if board == "bright_long":
+            TASK_TO_METRIC["Retrieval"] = ["ndcg_at_10"]
     return all_data_tasks, boards_data
-
 
 def write_out_results(item: dict, item_name: str) -> None:
     """

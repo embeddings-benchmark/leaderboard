@@ -185,6 +185,15 @@ model_meta:
     is_proprietary: false
     is_sentence_transformers_compatible: false
     uses_instruct: true
+  NV-Embed-v2:
+    link: https://huggingface.co/nvidia/NV-Embed-v2
+    seq_len: 32768
+    size: 7851
+    dim: 4096
+    is_external: false
+    is_proprietary: false
+    is_sentence_transformers_compatible: true
+    uses_instruct: true
   NV-Retriever-v1:
     link: https://huggingface.co/nvidia/NV-Retriever-v1
     seq_len: 512
@@ -1943,6 +1952,19 @@ models_to_skip:
 - VenkatNDivi77/gte-Qwen2-7B-instruct-Q4_K_M-GGUF
 - barnowak/gte-Qwen2-7B-instruct-Q4_K_M-GGUF
 - arisylafeta/gte-Qwen2-1.5B-instruct-Q4_0-GGUF
+- KeyurRamoliya/gte-Qwen2-7B-instruct-Q4_K_M-GGUF
+- cedarwud/gte-Qwen2-7B-instruct-Q4_K_M-GGUF
+- KeyurRamoliya/gte-Qwen2-7B-instruct-GGUF
+- agier9/gte-Qwen2-1.5B-instruct-Q4_K_M-GGUF
+- dopeba/gte-Qwen2-1.5B-instruct-Q8_0-GGUF
+- Yingda/gte-Qwen2-7B-instruct-Q5_K_M-GGUF
+- soichisumi/gte-Qwen2-7B-instruct-Q8_0-GGUF
+- Bearsaerker/gte-Qwen2-7B-instruct-Q5_K_M-GGUF
+- redshiva/gte-Qwen2-7B-instruct-Q8_0-GGUF
+- qaz-t/gte-Qwen2-7B-instruct-Q8_0-GGUF
+- biggunnyso4/stella_en_400M_v5_cpu
+- PotatoOff/mxbai-embed-large-safetensors
+- KeyurRamoliya/multilingual-e5-large-instruct-GGUF
 cross_encoders:
 - FollowIR-7B
 - flan-t5-base
