@@ -774,8 +774,8 @@ if __name__ == "__main__":
     print("Done calculating, saving...")
     # save them so that the leaderboard can use them.  They're quite complex though
     #   but we can't use pickle files because of git-lfs.
-    write_out_results(all_data_tasks, "all_data_tasks_temp2")
-    write_out_results(boards_data, "boards_data_temp2")
+    write_out_results(all_data_tasks, "all_data_tasks")
+    write_out_results(boards_data, "boards_data")
 
     # to load them use
     # all_data_tasks = load_results("all_data_tasks")
