@@ -663,9 +663,6 @@ def refresh_leaderboard() -> tuple[list, dict]:
                 data_task_category = get_mteb_data(
                     tasks=[task_category], datasets=task_category_list
                 )
-                # data_task_category.drop(
-                #     columns=["Embedding Dimensions", "Max Tokens"], inplace=True
-                # )
                 boards_data[board]["data_tasks"][task_category] = data_task_category
                 all_data_tasks.append(data_task_category)
         if board == "bright_long":
