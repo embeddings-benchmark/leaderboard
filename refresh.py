@@ -30,9 +30,10 @@ PRETTY_NAMES = {
 TASK_TO_METRIC = {k: [v["metric"]] for k, v in TASKS_CONFIG.items()}
 # Add legacy metric names
 TASK_TO_METRIC["STS"].append("cos_sim_spearman")
-TASK_TO_METRIC["STS"].append("cosine_spearman")
+TASK_TO_METRIC["STS"].append("spearman")
 TASK_TO_METRIC["Summarization"].append("cos_sim_spearman")
-TASK_TO_METRIC["Summarization"].append("cosine_spearman")
+TASK_TO_METRIC["Summarization"].append("spearman")
+TASK_TO_METRIC["PairClassification"].append("ap")
 TASK_TO_METRIC["PairClassification"].append("cos_sim_ap")
 TASK_TO_METRIC["PairClassification"].append("cosine_ap")
 
