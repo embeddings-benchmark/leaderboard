@@ -69,14 +69,14 @@ model_meta:
     is_propietary: false
     is_sentence_transformer_compatible: false
     uses_instruct: true
-  GritLM-7B-noinstruct:
-    link: https://huggingface.co/GritLM/GritLM-7B
-    seq_len: 4096
-    size: 7240
-    is_external: true
-    is_propietary: false
-    is_sentence_transformer_compatible: false
-    uses_instruct: false
+#  GritLM-7B-noinstruct:
+#    link: https://huggingface.co/GritLM/GritLM-7B
+#    seq_len: 4096
+#    size: 7240
+#    is_external: true
+#    is_propietary: false
+#    is_sentence_transformer_compatible: false
+#    uses_instruct: false
   LASER2:
     link: https://github.com/facebookresearch/LASER
     seq_len: N/A

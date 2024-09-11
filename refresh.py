@@ -275,8 +275,8 @@ def get_external_model_results():
             ds_sub = ds.filter(lambda x: filter_metric_external(x, task, metrics))[
                 "test"
             ]
-            metrics = ds_sub.unique("metric")
-            for metric in metrics:
+            curent_task_metrics = ds_sub.unique("metric")
+            for metric in curent_task_metrics:
                 ds_dict = ds_sub.filter(lambda x: x["metric"] == metric).to_dict()
                 ds_dict = {
                     k: round(v, 2)
