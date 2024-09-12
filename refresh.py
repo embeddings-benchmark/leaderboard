@@ -261,6 +261,10 @@ def get_external_model_results():
                 download_mode="force_redownload",
                 verification_mode="no_checks",
             )
+        except ValueError as e:
+            print(f"Can't fined model {model} in results repository. Exception: {e}")
+            continue
+
         ds = ds.map(add_lang)
         ds = ds.map(add_task)
         base_dict = {

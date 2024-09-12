@@ -24900,5 +24900,37 @@
                 }
             ]
         }
+    },
+    "GritLM-7B-noinstruct": {
+        "BitextMining": {
+            "f1": []
+        },
+        "Classification": {
+            "accuracy": []
+        },
+        "Clustering": {
+            "v_measure": []
+        },
+        "PairClassification": {
+            "max_ap": []
+        },
+        "Reranking": {
+            "map": []
+        },
+        "Retrieval": {
+            "ndcg_at_10": []
+        },
+        "STS": {
+            "cosine_spearman": []
+        },
+        "Summarization": {
+            "cosine_spearman": []
+        },
+        "MultilabelClassification": {
+            "accuracy": []
+        },
+        "InstructionRetrieval": {
+            "p-MRR": []
+        }
     }
 }
