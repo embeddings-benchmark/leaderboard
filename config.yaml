@@ -23,7 +23,7 @@ tasks:
     metric: max_ap
     metric_description: "Average Precision (AP) based on the models similarity metric (usually cosine)"
     task_description: "Pair classification is the task of determining whether two texts are similar."
-  Reranking: 
+  Reranking:
     icon: "🥈"
     metric: map
     metric_description: "Mean Average Precision (MAP)"
@@ -345,35 +345,35 @@ boards:
     credits: "[Roman Solomatin](https://github.com/Samoed) and SaluteDevices: [Alena Fenogenova](https://github.com/Alenush), [Aleksandr Abramov](https://github.com/Ab1992ao), [Artem Snegirev](https://github.com/artemsnegirev), [Anna Maksimova](https://github.com/anpalmak2003), [Maria Tikhonova](https://github.com/MariyaTikhonova)"
     tasks:
       Classification:
-        - GeoreviewClassification (rus-Cyrl)
-        - HeadlineClassification (rus-Cyrl)
-        - InappropriatenessClassification (rus-Cyrl)
-        - KinopoiskClassification (rus-Cyrl)
-        - RuReviewsClassification (rus-Cyrl)
-        - RuSciBenchGRNTIClassification (rus-Cyrl)
-        - RuSciBenchOECDClassification (rus-Cyrl)
-        - MassiveIntentClassification (rus-Cyrl)
-        - MassiveScenarioClassification (rus-Cyrl)
+        - GeoreviewClassification
+        - HeadlineClassification
+        - InappropriatenessClassification
+        - KinopoiskClassification
+        - RuReviewsClassification
+        - RuSciBenchGRNTIClassification
+        - RuSciBenchOECDClassification
+        - MassiveIntentClassification (ru)
+        - MassiveScenarioClassification (ru)
       Clustering:
-        - GeoreviewClusteringP2P (rus-Cyrl)
-        - RuSciBenchGRNTIClusteringP2P (rus-Cyrl)
-        - RuSciBenchOECDClusteringP2P (rus-Cyrl)
+        - GeoreviewClusteringP2P
+        - RuSciBenchGRNTIClusteringP2P
+        - RuSciBenchOECDClusteringP2P
       PairClassification:
-        - TERRa (rus-Cyrl)
+        - TERRa
       Reranking:
-        - RuBQReranking (rus-Cyrl)
-        - MIRACLReranking (rus-Cyrl)
+        - RuBQReranking
+        - MIRACLReranking (ru)
       Retrieval:
-        - RiaNewsRetrieval (rus-Cyrl)
-        - RuBQRetrieval (rus-Cyrl)
-        - MIRACLRetrieval (rus-Cyrl)
+        - RiaNewsRetrieval
+        - RuBQRetrieval
+        - MIRACLRetrieval (ru)
       STS:
-        - RUParaPhraserSTS (rus-Cyrl)
-        - RuSTSBenchmarkSTS (rus-Cyrl)
-        - STS22 (rus-Cyrl)
+        - RUParaPhraserSTS
+        - RuSTSBenchmarkSTS
+        - STS22 (ru)
       MultilabelClassification:
-        - CEDRClassification (rus-Cyrl)
-        - SensitiveTopicsClassification (rus-Cyrl)
+        - CEDRClassification
+        - SensitiveTopicsClassification
   se:
     title: Swedish
     language_long: Swedish
@@ -530,23 +530,23 @@ boards:
     metric: nDCG@10
     tasks:
       Retrieval:
-        - AppsRetrieval (eng-Latn_python-Code)
-        - CodeFeedbackMT (c-Code_sql-Code_python-Code_shell-Code_swift-Code_eng-Latn)
-        - CodeFeedbackST (python-Code_javascript-Code_go-Code_ruby-Code_java-Code_php-Code_eng-Latn)
-        - CodeSearchNetCCRetrieval (python-Code)
-        - CodeSearchNetCCRetrieval (javascript-Code)
-        - CodeSearchNetCCRetrieval (go-Code)
-        - CodeSearchNetCCRetrieval (ruby-Code)
-        - CodeSearchNetCCRetrieval (java-Code)
-        - CodeSearchNetCCRetrieval (php-Code)
-        - CodeSearchNetRetrieval (python-Code)
-        - CodeSearchNetRetrieval (javascript-Code)
-        - CodeSearchNetRetrieval (go-Code)
-        - CodeSearchNetRetrieval (ruby-Code)
-        - CodeSearchNetRetrieval (java-Code)
-        - CodeSearchNetRetrieval (php-Code)
-        - CodeTransOceanContest (python-Code_c++-Code)
+        - AppsRetrieval
+        - CodeFeedbackMT
+        - CodeFeedbackST
+        - CodeSearchNetCCRetrieval (python)
+        - CodeSearchNetCCRetrieval (javascript)
+        - CodeSearchNetCCRetrieval (go)
+        - CodeSearchNetCCRetrieval (ruby)
+        - CodeSearchNetCCRetrieval (java)
+        - CodeSearchNetCCRetrieval (php)
+        - CodeSearchNetRetrieval (python)
+        - CodeSearchNetRetrieval (javascript)
+        - CodeSearchNetRetrieval (go)
+        - CodeSearchNetRetrieval (ruby)
+        - CodeSearchNetRetrieval (java)
+        - CodeSearchNetRetrieval (php)
+        - CodeTransOceanContest
         - CodeTransOceanDL
-        - CosQA (eng-Latn_python-Code)
+        - CosQA
         - StackOverflowQA
-        - SyntheticText2SQL (eng-Latn_sql-Code)
+        - SyntheticText2SQL
