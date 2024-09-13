@@ -30,9 +30,10 @@ PRETTY_NAMES = {
 TASK_TO_METRIC = {k: [v["metric"]] for k, v in TASKS_CONFIG.items()}
 # Add legacy metric names
 TASK_TO_METRIC["STS"].append("cos_sim_spearman")
-TASK_TO_METRIC["STS"].append("cosine_spearman")
+TASK_TO_METRIC["STS"].append("spearman")
 TASK_TO_METRIC["Summarization"].append("cos_sim_spearman")
-TASK_TO_METRIC["Summarization"].append("cosine_spearman")
+TASK_TO_METRIC["Summarization"].append("spearman")
+TASK_TO_METRIC["PairClassification"].append("ap")
 TASK_TO_METRIC["PairClassification"].append("cos_sim_ap")
 TASK_TO_METRIC["PairClassification"].append("cosine_ap")
 
@@ -166,6 +167,8 @@ def filter_metric_external(x, task, metrics) -> bool:
         return bool(x["mteb_task"] == task and x["metric"] == "ndcg_at_1")
     elif (x["mteb_dataset_name"].startswith("BrightRetrieval") and (x["split"] == "long")):
         return bool(x["mteb_task"] == task and x["metric"] in ["recall_at_1"])
+    elif x["mteb_dataset_name"] == "MIRACLReranking":
+        return bool(x["mteb_task"] == task and x["metric"] in ["NDCG@10(MIRACL)"])
     else:
         return bool(x["mteb_task"] == task and x["metric"] in metrics)
 
@@ -258,6 +261,10 @@ def get_external_model_results():
                 download_mode="force_redownload",
                 verification_mode="no_checks",
             )
+        except ValueError as e:
+            print(f"Can't fined model {model} in results repository. Exception: {e}")
+            continue
+
         ds = ds.map(add_lang)
         ds = ds.map(add_task)
         base_dict = {
@@ -273,8 +280,8 @@ def get_external_model_results():
             ds_sub = ds.filter(lambda x: filter_metric_external(x, task, metrics))[
                 "test"
             ]
-            metrics = ds_sub.unique("metric")
-            for metric in metrics:
+            curent_task_metrics = ds_sub.unique("metric")
+            for metric in curent_task_metrics:
                 ds_dict = ds_sub.filter(lambda x: x["metric"] == metric).to_dict()
                 ds_dict = {
                     k: round(v, 2)

@@ -20,7 +20,7 @@ tasks:
     task_description: "Clustering is the task of grouping similar documents together."
   PairClassification:
     icon: "🎭"
-    metric: ap
+    metric: max_ap
     metric_description: "Average Precision (AP) based on the models similarity metric (usually cosine)"
     task_description: "Pair classification is the task of determining whether two texts are similar."
   Reranking: 
@@ -35,14 +35,19 @@ tasks:
     task_description: "Retrieval is the task of finding relevant documents for a query."
   STS:
     icon: "☘️"
-    metric: spearman
+    metric: cosine_spearman
     metric_description: "Spearman correlation based on the model's similarity metric (usually cosine)"
     task_description: "Semantic Textual Similarity is the task of determining how similar two texts are."
   Summarization:
     icon: "📜"
-    metric: spearman
+    metric: cosine_spearman
     metric_description: "Spearman correlation based on the model's similarity metric (usually cosine)"
     task_description: "Summarization is the task of generating a summary of a text."
+  MultilabelClassification:
+    icon: "🏷️"
+    metric: accuracy
+    metric_description: "Accuracy"
+    task_description: "Multilabel classification is the task of assigning multiple labels to a text."
   InstructionRetrieval:
     icon: "🔎📋"
     metric: "p-MRR"
@@ -347,6 +352,8 @@ boards:
         - RuReviewsClassification (rus-Cyrl)
         - RuSciBenchGRNTIClassification (rus-Cyrl)
         - RuSciBenchOECDClassification (rus-Cyrl)
+        - MassiveIntentClassification (rus-Cyrl)
+        - MassiveScenarioClassification (rus-Cyrl)
       Clustering:
         - GeoreviewClusteringP2P (rus-Cyrl)
         - RuSciBenchGRNTIClusteringP2P (rus-Cyrl)
@@ -355,12 +362,18 @@ boards:
         - TERRa (rus-Cyrl)
       Reranking:
         - RuBQReranking (rus-Cyrl)
+        - MIRACLReranking (rus-Cyrl)
       Retrieval:
         - RiaNewsRetrieval (rus-Cyrl)
         - RuBQRetrieval (rus-Cyrl)
+        - MIRACLRetrieval (rus-Cyrl)
       STS:
         - RUParaPhraserSTS (rus-Cyrl)
         - RuSTSBenchmarkSTS (rus-Cyrl)
+        - STS22 (rus-Cyrl)
+      MultilabelClassification:
+        - CEDRClassification (rus-Cyrl)
+        - SensitiveTopicsClassification (rus-Cyrl)
   se:
     title: Swedish
     language_long: Swedish
@@ -517,13 +530,23 @@ boards:
     metric: nDCG@10
     tasks:
       Retrieval:
-        - AppsRetrieval
-        - CodeFeedbackMT
-        - CodeFeedbackST
-        - CodeSearchNetCCRetrieval
-        - CodeSearchNetRetrieval
-        - CodeTransOceanContest
+        - AppsRetrieval (eng-Latn_python-Code)
+        - CodeFeedbackMT (c-Code_sql-Code_python-Code_shell-Code_swift-Code_eng-Latn)
+        - CodeFeedbackST (python-Code_javascript-Code_go-Code_ruby-Code_java-Code_php-Code_eng-Latn)
+        - CodeSearchNetCCRetrieval (python-Code)
+        - CodeSearchNetCCRetrieval (javascript-Code)
+        - CodeSearchNetCCRetrieval (go-Code)
+        - CodeSearchNetCCRetrieval (ruby-Code)
+        - CodeSearchNetCCRetrieval (java-Code)
+        - CodeSearchNetCCRetrieval (php-Code)
+        - CodeSearchNetRetrieval (python-Code)
+        - CodeSearchNetRetrieval (javascript-Code)
+        - CodeSearchNetRetrieval (go-Code)
+        - CodeSearchNetRetrieval (ruby-Code)
+        - CodeSearchNetRetrieval (java-Code)
+        - CodeSearchNetRetrieval (php-Code)
+        - CodeTransOceanContest (python-Code_c++-Code)
         - CodeTransOceanDL
-        - CosQA
+        - CosQA (eng-Latn_python-Code)
         - StackOverflowQA
-        - SyntheticText2SQL
+        - SyntheticText2SQL (eng-Latn_sql-Code)
