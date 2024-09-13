@@ -252,8 +252,8 @@ def get_external_model_results():
                 download_mode="force_redownload",
                 verification_mode="no_checks",
             )
-        except KeyError as e:
-            model_tmp = "__".join(MODEL_META["model_meta"][model]["link"].split("/")[-2:])
+        except (KeyError, ValueError) as e:
+            model_tmp = "__".join([MODEL_META["model_meta"][model]["link"].split("/")[-2], model])
             ds = load_dataset(
                 RESULTS_REPO,
                 model_tmp,
