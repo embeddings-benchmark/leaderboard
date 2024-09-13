@@ -132,11 +132,11 @@ def make_clickable_model(model_name: str, link: None | str = None) -> str:
 
 
 def add_lang(examples):
-    if not (examples["eval_language"]) or (examples["eval_language"] == "default"):
+    if not (examples["hf_subset"]) or (examples["hf_subset"] == "default"):
         examples["mteb_dataset_name_with_lang"] = examples["mteb_dataset_name"]
     else:
         examples["mteb_dataset_name_with_lang"] = (
-            examples["mteb_dataset_name"] + f' ({examples["eval_language"]})'
+            examples["mteb_dataset_name"] + f' ({examples["hf_subset"]})'
         )
     return examples
 
@@ -313,7 +313,7 @@ def get_external_model_results():
 
     # Save & cache EXTERNAL_MODEL_RESULTS
     with open("EXTERNAL_MODEL_RESULTS.json", "w") as f:
-        json.dump(EXTERNAL_MODEL_RESULTS, f, indent=4)
+        json.dump(dict(sorted(EXTERNAL_MODEL_RESULTS.items())), f, indent=4)
 
     return EXTERNAL_MODEL_RESULTS
 
@@ -330,6 +330,10 @@ def download_or_use_cache(modelId: str):
     meta = metadata_load(readme_path)
     MODEL_CACHE[modelId] = meta
     return meta
+
+
+def simplify_dataset_name(name):
+    return name.replace("MTEB ", "").replace(" (default)", "")
 
 
 def get_mteb_data(
@@ -450,11 +454,11 @@ def get_mteb_data(
         try:
             out = [
                 {
-                    res["dataset"]["name"].replace("MTEB ", ""): [
+                    simplify_dataset_name(res["dataset"]["name"]): [
                         round(score["value"], 2)
                         for score in res["metrics"]
                         if filter_metric_fetched(
-                            res["dataset"]["name"].replace("MTEB ", ""),
+                            simplify_dataset_name(res["dataset"]["name"]),
                             score["type"],
                             task_to_metric.get(res["task"]["type"]),
                             res["dataset"]["split"],
