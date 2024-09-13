@@ -131,7 +131,7 @@ def make_clickable_model(model_name: str, link: None | str = None) -> str:
     return f'<a target="_blank" style="text-decoration: underline" href="{link}">{model_name.split("/")[-1]}</a>'
 
 
-def add_lang(examples):
+def add_subset(examples):
     if not (examples["hf_subset"]) or (examples["hf_subset"] == "default"):
         examples["mteb_dataset_name_with_lang"] = examples["mteb_dataset_name"]
     else:
@@ -265,7 +265,7 @@ def get_external_model_results():
             print(f"Can't fined model {model} in results repository. Exception: {e}")
             continue
 
-        ds = ds.map(add_lang)
+        ds = ds.map(add_subset)
         ds = ds.map(add_task)
         base_dict = {
             "Model": make_clickable_model(
