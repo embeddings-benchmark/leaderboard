@@ -603,7 +603,7 @@ def get_mteb_average(task_dict: dict) -> tuple[Any, dict]:
     for task_category, task_category_list in task_dict.items():
         DATA_TASKS[task_category] = add_rank(
             DATA_OVERALL[
-                ["Model", "Model Size (Million Parameters)", "Memory Usage (GB, fp32)"] + task_category_list
+                ["Model", "Model Size (Million Parameters)", "Memory Usage (GB, fp32)", "Embedding Dimensions", "Max Tokens"] + task_category_list
             ]
         )
         DATA_TASKS[task_category] = DATA_TASKS[task_category][
@@ -669,9 +669,6 @@ def refresh_leaderboard() -> tuple[list, dict]:
             for task_category, task_category_list in board_config["tasks"].items():
                 data_task_category = get_mteb_data(
                     tasks=[task_category], datasets=task_category_list
-                )
-                data_task_category.drop(
-                    columns=["Embedding Dimensions", "Max Tokens"], inplace=True
                 )
                 boards_data[board]["data_tasks"][task_category] = data_task_category
                 all_data_tasks.append(data_task_category)
