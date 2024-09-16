@@ -1975,6 +1975,10 @@ models_to_skip:
 - CAiRE/UniVaR-lambda-5
 - CAiRE/UniVaR-lambda-20
 - leeloolee/intention
+- yixuan-chia/snowflake-arctic-embed-m-v1.5-Q8_0-GGUF
+- yixuan-chia/snowflake-arctic-embed-m-v1.5-Q4_K_M-GGUF
+- yishan-wang/snowflake-arctic-embed-m-v1.5-Q8_0-GGUF
+- yixuan-chia/snowflake-arctic-embed-s-Q8_0-GGUF
 cross_encoders:
 - FollowIR-7B
 - flan-t5-base
