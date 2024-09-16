@@ -1974,6 +1974,7 @@ models_to_skip:
 - CAiRE/UniVaR-lambda-1
 - CAiRE/UniVaR-lambda-5
 - CAiRE/UniVaR-lambda-20
+- leeloolee/intention
 cross_encoders:
 - FollowIR-7B
 - flan-t5-base
