@@ -1970,6 +1970,10 @@ models_to_skip:
 - liddlefish/privacy_embedding_rag_10k_base_checkpoint_2
 - liddlefish/privacy_embedding_rag_10k_base_final
 - tomaarsen/bge-base-en-v1.5
+- CAiRE/UniVaR-lambda-80
+- CAiRE/UniVaR-lambda-1
+- CAiRE/UniVaR-lambda-5
+- CAiRE/UniVaR-lambda-20
 cross_encoders:
 - FollowIR-7B
 - flan-t5-base
