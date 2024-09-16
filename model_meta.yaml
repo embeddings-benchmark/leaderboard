@@ -350,7 +350,7 @@ model_meta:
   bge-base-en-v1.5:
     link: https://huggingface.co/BAAI/bge-base-en-v1.5
     seq_len: 512
-    size: 438
+    size: 109
     dim: 768
     is_external: true
     is_proprietary: false
@@ -359,7 +359,7 @@ model_meta:
   bge-base-en-v1.5-instruct:
     link: https://huggingface.co/BAAI/bge-base-en-v1.5
     seq_len: 512
-    size: 438
+    size: 109
     dim: 768
     is_external: true
     is_proprietary: false
@@ -1965,6 +1965,11 @@ models_to_skip:
 - biggunnyso4/stella_en_400M_v5_cpu
 - PotatoOff/mxbai-embed-large-safetensors
 - KeyurRamoliya/multilingual-e5-large-instruct-GGUF
+- liddlefish/privacy_embedding_rag_10k_base_12_final
+- liddlefish/privacy_embedding_rag_10k_base_15_final
+- liddlefish/privacy_embedding_rag_10k_base_checkpoint_2
+- liddlefish/privacy_embedding_rag_10k_base_final
+- tomaarsen/bge-base-en-v1.5
 cross_encoders:
 - FollowIR-7B
 - flan-t5-base
