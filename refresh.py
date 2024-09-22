@@ -128,7 +128,9 @@ def make_clickable_model(model_name: str, link: None | str = None) -> str:
     if link is None:
         link = "https://huggingface.co/" + model_name
     # Remove user from model name
-    return f'<a target="_blank" style="text-decoration: underline" href="{link}">{model_name.split("/")[-1]}</a>'
+    model_name = model_name.split("/")[-1]
+    model_name = model_name.split("__")[-1]
+    return f'<a target="_blank" style="text-decoration: underline" href="{link}">{model_name}</a>'
 
 
 def add_subset(examples):
@@ -657,7 +659,7 @@ def refresh_leaderboard() -> tuple[list, dict]:
     )
     for board, board_config in pbar_tasks:
         # Optional fetch only for a specific board
-        # if board != "bright_long": continue
+        if board != "ru": continue
         # Very hacky - should fix this as soon as possible
         if board == "bright_long":
             TASK_TO_METRIC["Retrieval"] = ["recall_at_1"]

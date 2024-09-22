@@ -1,5 +1,5 @@
 model_meta:
-  Baichuan-text-embedding:
+  baichuan-ai__text-embedding:
     link: https://platform.baichuan-ai.com/docs/text-Embedding
     seq_len: 512
     size: null
@@ -8,7 +8,7 @@ model_meta:
     is_proprietary: true
     is_sentence_transformers_compatible: false
     uses_instruct: false
-  Cohere-embed-english-v3.0:
+  Cohere__Cohere-embed-english-v3.0:
     link: https://huggingface.co/Cohere/Cohere-embed-english-v3.0
     seq_len: 512
     size: null
@@ -17,7 +17,7 @@ model_meta:
     is_proprietary: true
     is_sentence_transformers_compatible: false
     uses_instruct: false
-  Cohere-embed-english-v3.0-instruct:
+  Cohere__Cohere-embed-english-v3.0-instruct:
     link: https://huggingface.co/Cohere/Cohere-embed-english-v3.0
     seq_len: 512
     size: null
@@ -26,7 +26,7 @@ model_meta:
     is_proprietary: true
     is_sentence_transformers_compatible: false
     uses_instruct: true
-  Cohere-embed-multilingual-light-v3.0:
+  Cohere__Cohere-embed-multilingual-light-v3.0:
     link: https://huggingface.co/Cohere/Cohere-embed-multilingual-light-v3.0
     seq_len: 512
     size: null
@@ -35,7 +35,7 @@ model_meta:
     is_proprietary: true
     is_sentence_transformers_compatible: false
     uses_instruct: false
-  Cohere-embed-multilingual-v3.0:
+  Cohere__Cohere-embed-multilingual-v3.0:
     link: https://huggingface.co/Cohere/Cohere-embed-multilingual-v3.0
     seq_len: 512
     size: null
@@ -44,7 +44,7 @@ model_meta:
     is_proprietary: true
     is_sentence_transformers_compatible: false
     uses_instruct: false
-  DanskBERT:
+  vesteinn__DanskBERT:
     link: https://huggingface.co/vesteinn/DanskBERT
     seq_len: 514
     size: 125
@@ -53,7 +53,7 @@ model_meta:
     is_proprietary: false
     is_sentence_transformers_compatible: true
     uses_instruct: false
-  FollowIR-7B:
+  jhu-clsp__FollowIR-7B:
     link: https://huggingface.co/jhu-clsp/FollowIR-7B
     seq_len: 4096
     size: 7240
@@ -61,7 +61,7 @@ model_meta:
     is_propietary: false
     is_sentence_transformer_compatible: false
     uses_instruct: true
-  GritLM-7B:
+  GritLM__GritLM-7B:
     link: https://huggingface.co/GritLM/GritLM-7B
     seq_len: 4096
     size: 7240
@@ -69,7 +69,7 @@ model_meta:
     is_propietary: false
     is_sentence_transformer_compatible: false
     uses_instruct: true
-  GritLM-7B-noinstruct:
+  GritLM__GritLM-7B-noinstruct:
     link: https://huggingface.co/GritLM/GritLM-7B
     seq_len: 4096
     size: 7240
@@ -77,7 +77,7 @@ model_meta:
     is_propietary: false
     is_sentence_transformer_compatible: false
     uses_instruct: false
-  LASER2:
+  facebookresearch__LASER2:
     link: https://github.com/facebookresearch/LASER
     seq_len: N/A
     size: 43
@@ -86,7 +86,7 @@ model_meta:
     is_proprietary: false
     is_sentence_transformers_compatible: false
     uses_instruct: false
-  LLM2Vec-Llama-2-supervised:
+  McGill-NLP__LLM2Vec-Llama-2-7b-chat-hf-mntp-supervised:
     link: https://huggingface.co/McGill-NLP/LLM2Vec-Llama-2-7b-chat-hf-mntp-supervised
     seq_len: 4096
     size: 6607
@@ -95,7 +95,7 @@ model_meta:
     is_proprietary: false
     is_sentence_transformers_compatible: false
     uses_instruct: true
-  LLM2Vec-Llama-2-unsupervised:
+  McGill-NLP__LLM2Vec-Llama-2-unsupervised:
     link: https://huggingface.co/McGill-NLP/LLM2Vec-Llama-2-7b-chat-hf-mntp-unsup-simcse
     seq_len: 4096
     size: 6607
@@ -104,7 +104,7 @@ model_meta:
     is_proprietary: false
     is_sentence_transformers_compatible: false
     uses_instruct: true
-  LLM2Vec-Meta-Llama-3-supervised:
+  McGill-NLP__LLM2Vec-Meta-Llama-3-supervised:
     link: https://huggingface.co/McGill-NLP/LLM2Vec-Meta-Llama-3-8B-Instruct-mntp-supervised
     seq_len: 8192
     size: 7505
@@ -113,7 +113,7 @@ model_meta:
     is_proprietary: false
     is_sentence_transformers_compatible: false
     uses_instruct: true
-  LLM2Vec-Meta-Llama-3-unsupervised:
+  McGill-NLP__LLM2Vec-Meta-Llama-3-unsupervised:
     link: https://huggingface.co/McGill-NLP/LLM2Vec-Meta-Llama-3-8B-Instruct-mntp-unsup-simcse
     seq_len: 8192
     size: 7505
@@ -122,7 +122,7 @@ model_meta:
     is_proprietary: false
     is_sentence_transformers_compatible: false
     uses_instruct: true
-  LLM2Vec-Mistral-supervised:
+  McGill-NLP__LLM2Vec-Mistral-supervised:
     link: https://huggingface.co/McGill-NLP/LLM2Vec-Mistral-7B-Instruct-v2-mntp-supervised
     seq_len: 32768
     size: 7111
@@ -131,7 +131,7 @@ model_meta:
     is_proprietary: false
     is_sentence_transformers_compatible: false
     uses_instruct: true
-  LLM2Vec-Mistral-unsupervised:
+  McGill-NLP__LLM2Vec-Mistral-unsupervised:
     link: https://huggingface.co/McGill-NLP/LLM2Vec-Mistral-7B-Instruct-v2-mntp-unsup-simcse
     seq_len: 32768
     size: 7111
@@ -140,7 +140,7 @@ model_meta:
     is_proprietary: false
     is_sentence_transformers_compatible: false
     uses_instruct: true
-  LLM2Vec-Sheared-Llama-supervised:
+  McGill-NLP__LLM2Vec-Sheared-Llama-supervised:
     link: https://huggingface.co/McGill-NLP/LLM2Vec-Sheared-LLaMA-mntp-supervised
     seq_len: 4096
     size: 1280
@@ -149,7 +149,7 @@ model_meta:
     is_proprietary: false
     is_sentence_transformers_compatible: false
     uses_instruct: true
-  LLM2Vec-Sheared-Llama-unsupervised:
+  McGill-NLP__LLM2Vec-Sheared-Llama-unsupervised:
     link: https://huggingface.co/McGill-NLP/LLM2Vec-Sheared-LLaMA-mntp-unsup-simcse
     seq_len: 4096
     size: 1280
@@ -158,7 +158,7 @@ model_meta:
     is_proprietary: false
     is_sentence_transformers_compatible: false
     uses_instruct: true
-  LaBSE:
+  sentence-transformers__LaBSE:
     link: https://huggingface.co/sentence-transformers/LaBSE
     seq_len: 512
     size: 471
@@ -203,7 +203,7 @@ model_meta:
     is_proprietary: false
     is_sentence_transformers_compatible: false
     uses_instruct: true
-  OpenSearch-text-hybrid:
+  aliyun__OpenSearch-text-hybrid:
     link: https://help.aliyun.com/zh/open-search/vector-search-edition/hybrid-retrieval
     seq_len: 512
     size: null
@@ -212,7 +212,7 @@ model_meta:
     is_proprietary: true
     is_sentence_transformers_compatible: false
     uses_instruct: false
-  SFR-Embedding-Mistral:
+  Salesforce__SFR-Embedding-Mistral:
     link: https://huggingface.co/Salesforce/SFR-Embedding-Mistral
     seq_len: 32768
     size: 7111
@@ -230,7 +230,7 @@ model_meta:
     is_proprietary: false
     is_sentence_transformers_compatible: true
     uses_instruct: true
-  all-MiniLM-L12-v2:
+  sentence-transformers__all-MiniLM-L12-v2:
     link: https://huggingface.co/sentence-transformers/all-MiniLM-L12-v2
     seq_len: 512
     size: 33
@@ -239,7 +239,7 @@ model_meta:
     is_proprietary: false
     is_sentence_transformers_compatible: true
     uses_instruct: false
-  all-MiniLM-L6-v2:
+  sentence-transformers__all-MiniLM-L6-v2:
     link: https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2
     seq_len: 512
     size: 23
@@ -248,7 +248,7 @@ model_meta:
     is_proprietary: false
     is_sentence_transformers_compatible: true
     uses_instruct: false
-  all-MiniLM-L6-v2-instruct:
+  sentence-transformers__all-MiniLM-L6-v2-instruct:
     link: https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2
     seq_len: 512
     size: 23
@@ -256,8 +256,8 @@ model_meta:
     is_external: true
     is_proprietary: false
     is_sentence_transformers_compatible: true
-    uses_instruct: true    
-  all-mpnet-base-v2:
+    uses_instruct: true
+  sentence-transformers__all-mpnet-base-v2:
     link: https://huggingface.co/sentence-transformers/all-mpnet-base-v2
     seq_len: 514
     size: 110
@@ -266,7 +266,7 @@ model_meta:
     is_proprietary: false
     is_sentence_transformers_compatible: true
     uses_instruct: false
-  all-mpnet-base-v2-instruct:
+  sentence-transformers__all-mpnet-base-v2-instruct:
     link: https://huggingface.co/sentence-transformers/all-mpnet-base-v2
     seq_len: 514
     size: 110
@@ -274,8 +274,8 @@ model_meta:
     is_external: true
     is_proprietary: false
     is_sentence_transformers_compatible: true
-    uses_instruct: true    
-  allenai-specter:
+    uses_instruct: true
+  sentence-transformers__allenai-specter:
     link: https://huggingface.co/sentence-transformers/allenai-specter
     seq_len: 512
     size: 110
@@ -284,7 +284,7 @@ model_meta:
     is_proprietary: false
     is_sentence_transformers_compatible: true
     uses_instruct: false
-  bert-base-10lang-cased:
+  Geotrend__bert-base-10lang-cased:
     link: https://huggingface.co/Geotrend/bert-base-10lang-cased
     seq_len: 512
     size: 138
@@ -293,7 +293,7 @@ model_meta:
     is_proprietary: false
     is_sentence_transformers_compatible: true
     uses_instruct: false
-  bert-base-15lang-cased:
+  Geotrend__bert-base-15lang-cased:
     link: https://huggingface.co/Geotrend/bert-base-15lang-cased
     seq_len: 512
     size: 138
@@ -302,7 +302,7 @@ model_meta:
     is_proprietary: false
     is_sentence_transformers_compatible: true
     uses_instruct: false
-  bert-base-25lang-cased:
+  Geotrend__bert-base-25lang-cased:
     link: https://huggingface.co/Geotrend/bert-base-25lang-cased
     seq_len: 512
     size: 138
@@ -311,7 +311,7 @@ model_meta:
     is_proprietary: false
     is_sentence_transformers_compatible: true
     uses_instruct: false
-  bert-base-multilingual-cased:
+  google-bert__bert-base-multilingual-cased:
     link: https://huggingface.co/google-bert/bert-base-multilingual-cased
     seq_len: 512
     size: 179
@@ -320,7 +320,7 @@ model_meta:
     is_proprietary: false
     is_sentence_transformers_compatible: true
     uses_instruct: false
-  bert-base-multilingual-uncased:
+  google-bert__bert-base-multilingual-uncased:
     link: https://huggingface.co/google-bert/bert-base-multilingual-uncased
     seq_len: 512
     size: 168
@@ -329,7 +329,7 @@ model_meta:
     is_proprietary: false
     is_sentence_transformers_compatible: true
     uses_instruct: false
-  bert-base-swedish-cased:
+  KB__bert-base-swedish-cased:
     link: https://huggingface.co/KB/bert-base-swedish-cased
     seq_len: 512
     size: 125
@@ -338,8 +338,8 @@ model_meta:
     is_proprietary: false
     is_sentence_transformers_compatible: true
     uses_instruct: false
-  bert-base-uncased:
-    link: https://huggingface.co/bert-base-uncased
+  google-bert__bert-base-uncased:
+    link: https://huggingface.co/google-bert/bert-base-uncased
     seq_len: 512
     size: 110
     dim: 768
@@ -347,7 +347,7 @@ model_meta:
     is_proprietary: false
     is_sentence_transformers_compatible: true
     uses_instruct: false
-  bge-base-en-v1.5:
+  BAAI__bge-base-en-v1.5:
     link: https://huggingface.co/BAAI/bge-base-en-v1.5
     seq_len: 512
     size: 109
@@ -356,7 +356,7 @@ model_meta:
     is_proprietary: false
     is_sentence_transformers_compatible: false
     uses_instruct: false
-  bge-base-en-v1.5-instruct:
+  BAAI__bge-base-en-v1.5-instruct:
     link: https://huggingface.co/BAAI/bge-base-en-v1.5
     seq_len: 512
     size: 109
@@ -364,8 +364,8 @@ model_meta:
     is_external: true
     is_proprietary: false
     is_sentence_transformers_compatible: false
-    uses_instruct: true  
-  bge-base-zh-v1.5:
+    uses_instruct: true
+  BAAI__bge-base-zh-v1.5:
     link: https://huggingface.co/BAAI/bge-base-zh-v1.5
     seq_len: 512
     size: 102
@@ -392,7 +392,7 @@ model_meta:
     is_proprietary: false
     is_sentence_transformers_compatible: false
     uses_instruct: true
-  bge-large-en-v1.5:
+  BAAI__bge-large-en-v1.5:
     link: https://huggingface.co/BAAI/bge-large-en-v1.5
     seq_len: 512
     size: 1340
@@ -401,7 +401,7 @@ model_meta:
     is_proprietary: false
     is_sentence_transformers_compatible: false
     uses_instruct: false
-  bge-large-en-v1.5-instruct:
+  BAAI__bge-large-en-v1.5-instruct:
     link: https://huggingface.co/BAAI/bge-large-en-v1.5
     seq_len: 512
     size: 1340
@@ -409,8 +409,8 @@ model_meta:
     is_external: true
     is_proprietary: false
     is_sentence_transformers_compatible: false
-    uses_instruct: true    
-  bge-large-zh-noinstruct:
+    uses_instruct: true
+  BAAI__bge-large-zh-noinstruct:
     link: https://huggingface.co/BAAI/bge-large-zh-noinstruct
     seq_len: 512
     size: 326
@@ -419,7 +419,7 @@ model_meta:
     is_proprietary: false
     is_sentence_transformers_compatible: true
     uses_instruct: false
-  bge-large-zh-v1.5:
+  BAAI__bge-large-zh-v1.5:
     link: https://huggingface.co/BAAI/bge-large-zh-v1.5
     seq_len: 512
     size: 326
@@ -428,25 +428,25 @@ model_meta:
     is_proprietary: false
     is_sentence_transformers_compatible: true
     uses_instruct: false
-  bge-m3:
+  BAAI__bge-m3:
     link: https://huggingface.co/BAAI/bge-m3
     seq_len: 8192
     size: 567
     dim: 1024
     is_external: true
     is_proprietary: false
-    is_sentence_transformers_compatible: false    
+    is_sentence_transformers_compatible: false
     uses_instruct: false
-  bge-m3-instruct:
+  BAAI__bge-m3-instruct:
     link: https://huggingface.co/BAAI/bge-m3
     seq_len: 8192
     size: 567
     dim: 1024
     is_external: true
     is_proprietary: false
-    is_sentence_transformers_compatible: false    
-    uses_instruct: true    
-  bge-small-en-v1.5:
+    is_sentence_transformers_compatible: false
+    uses_instruct: true
+  BAAI__bge-small-en-v1.5:
     link: https://huggingface.co/BAAI/bge-small-en-v1.5
     seq_len: 512
     size: 24
@@ -455,7 +455,7 @@ model_meta:
     is_proprietary: false
     is_sentence_transformers_compatible: true
     uses_instruct: false
-  bge-small-en-v1.5-instruct:
+  BAAI__bge-small-en-v1.5-instruct:
     link: https://huggingface.co/BAAI/bge-small-en-v1.5
     seq_len: 512
     size: 24
@@ -463,8 +463,8 @@ model_meta:
     is_external: true
     is_proprietary: false
     is_sentence_transformers_compatible: true
-    uses_instruct: true    
-  bge-small-zh-v1.5:
+    uses_instruct: true
+  BAAI__bge-small-zh-v1.5:
     link: https://huggingface.co/BAAI/bge-small-zh-v1.5
     seq_len: 512
     size: 24
@@ -486,8 +486,8 @@ model_meta:
     is_external: true
     is_proprietary: false
     is_sentence_transformers_compatible: false
-    uses_instruct: false    
-  camembert-base:
+    uses_instruct: false
+  almanach__camembert-base:
     link: https://huggingface.co/almanach/camembert-base
     seq_len: 512
     size: 111
@@ -496,7 +496,7 @@ model_meta:
     is_proprietary: false
     is_sentence_transformers_compatible: true
     uses_instruct: false
-  camembert-large:
+  almanach__camembert-large:
     link: https://huggingface.co/almanach/camembert-large
     seq_len: 512
     size: 338
@@ -505,7 +505,7 @@ model_meta:
     is_proprietary: false
     is_sentence_transformers_compatible: true
     uses_instruct: false
-  contriever-base-msmarco:
+  nthakur__contriever-base-msmarco:
     link: https://huggingface.co/nthakur/contriever-base-msmarco
     seq_len: 512
     size: 110
@@ -514,7 +514,7 @@ model_meta:
     is_proprietary: false
     is_sentence_transformers_compatible: true
     uses_instruct: false
-  contriever:
+  facebook__contriever:
     link: https://huggingface.co/facebook/contriever
     seq_len: 512
     size: 438
@@ -522,8 +522,8 @@ model_meta:
     is_external: true
     is_proprietary: false
     is_sentence_transformers_compatible: false
-    uses_instruct: false    
-  contriever-instruct:
+    uses_instruct: false
+  facebook__contriever-instruct:
     link: https://huggingface.co/facebook/contriever
     seq_len: 512
     size: 438
@@ -531,8 +531,8 @@ model_meta:
     is_external: true
     is_proprietary: false
     is_sentence_transformers_compatible: false
-    uses_instruct: true        
-  cross-en-de-roberta-sentence-transformer:
+    uses_instruct: true
+  T-Systems-onsite__cross-en-de-roberta-sentence-transformer:
     link: https://huggingface.co/T-Systems-onsite/cross-en-de-roberta-sentence-transformer
     seq_len: 514
     size: 278
@@ -541,7 +541,7 @@ model_meta:
     is_proprietary: false
     is_sentence_transformers_compatible: true
     uses_instruct: false
-  dfm-encoder-large-v1:
+  chcaa__dfm-encoder-large-v1:
     link: https://huggingface.co/chcaa/dfm-encoder-large-v1
     seq_len: 512
     size: 355
@@ -550,7 +550,7 @@ model_meta:
     is_proprietary: false
     is_sentence_transformers_compatible: true
     uses_instruct: false
-  distilbert-base-25lang-cased:
+  Geotrend__distilbert-base-25lang-cased:
     link: https://huggingface.co/Geotrend/distilbert-base-25lang-cased
     seq_len: 512
     size: 110
@@ -559,7 +559,7 @@ model_meta:
     is_proprietary: false
     is_sentence_transformers_compatible: true
     uses_instruct: false
-  distilbert-base-en-fr-cased:
+  Geotrend__distilbert-base-en-fr-cased:
     link: https://huggingface.co/Geotrend/distilbert-base-en-fr-cased
     seq_len: 512
     size: 110
@@ -568,7 +568,7 @@ model_meta:
     is_proprietary: false
     is_sentence_transformers_compatible: true
     uses_instruct: false
-  distilbert-base-en-fr-es-pt-it-cased:
+  Geotrend__distilbert-base-en-fr-es-pt-it-cased:
     link: https://huggingface.co/Geotrend/distilbert-base-en-fr-es-pt-it-cased
     seq_len: 512
     size: 110
@@ -577,7 +577,7 @@ model_meta:
     is_proprietary: false
     is_sentence_transformers_compatible: true
     uses_instruct: false
-  distilbert-base-fr-cased:
+  Geotrend__distilbert-base-fr-cased:
     link: https://huggingface.co/Geotrend/distilbert-base-fr-cased
     seq_len: 512
     size: 110
@@ -586,8 +586,8 @@ model_meta:
     is_proprietary: false
     is_sentence_transformers_compatible: true
     uses_instruct: false
-  distilbert-base-uncased:
-    link: https://huggingface.co/distilbert-base-uncased
+  distilbert__distilbert-base-uncased:
+    link: https://huggingface.co/distilbert/distilbert-base-uncased
     seq_len: 512
     size: 110
     dim: 768
@@ -595,7 +595,7 @@ model_meta:
     is_proprietary: false
     is_sentence_transformers_compatible: true
     uses_instruct: false
-  distiluse-base-multilingual-cased-v2:
+  sentence-transformers__distiluse-base-multilingual-cased-v2:
     link: https://huggingface.co/sentence-transformers/distiluse-base-multilingual-cased-v2
     seq_len: 512
     size: 135
@@ -604,7 +604,7 @@ model_meta:
     is_proprietary: false
     is_sentence_transformers_compatible: true
     uses_instruct: false
-  dragon-plus:
+  facebookresearch__dragon-plus:
     link: https://github.com/facebookresearch/dpr-scale/tree/main/dragon
     seq_len: 512
     size: 438
@@ -613,16 +613,16 @@ model_meta:
     is_proprietary: false
     is_sentence_transformers_compatible: false
     uses_instruct: false
-  dragon-plus-instruct:
+  facebookresearch__dragon-plus-instruct:
     link: https://github.com/facebookresearch/dpr-scale/tree/main/dragon
     seq_len: 512
     size: 438
     dim: 768
     is_external: true
     is_proprietary: false
-    is_sentence_transformers_compatible: false    
+    is_sentence_transformers_compatible: false
     uses_instruct: true
-  e5-base-4k:
+  dwzhu__e5-base-4k:
     link: https://huggingface.co/dwzhu/e5-base-4k
     seq_len: 512
     size: 110
@@ -631,7 +631,7 @@ model_meta:
     is_proprietary: false
     is_sentence_transformers_compatible: true
     uses_instruct: false
-  e5-base-v2:
+  intfloat__e5-base-v2:
     link: https://huggingface.co/intfloat/e5-base-v2
     seq_len: 512
     size: 110
@@ -640,7 +640,7 @@ model_meta:
     is_proprietary: false
     is_sentence_transformers_compatible: true
     uses_instruct: false
-  e5-base:
+  intfloat__e5-base:
     link: https://huggingface.co/intfloat/e5-base
     seq_len: 512
     size: 110
@@ -649,7 +649,7 @@ model_meta:
     is_proprietary: false
     is_sentence_transformers_compatible: true
     uses_instruct: false
-  e5-large-v2:
+  intfloat__e5-large-v2:
     link: https://huggingface.co/intfloat/e5-large-v2
     seq_len: 512
     size: 335
@@ -658,7 +658,7 @@ model_meta:
     is_proprietary: false
     is_sentence_transformers_compatible: true
     uses_instruct: false
-  e5-large:
+  intfloat__e5-large:
     link: https://huggingface.co/intfloat/e5-large
     seq_len: 512
     size: 335
@@ -667,7 +667,7 @@ model_meta:
     is_proprietary: false
     is_sentence_transformers_compatible: true
     uses_instruct: false
-  e5-mistral-7b-instruct:
+  intfloat__e5-mistral-7b-instruct:
     link: https://huggingface.co/intfloat/e5-mistral-7b-instruct
     seq_len: 32768
     size: 7111
@@ -676,7 +676,7 @@ model_meta:
     is_proprietary: false
     is_sentence_transformers_compatible: true
     uses_instruct: true
-  e5-mistral-7b-instruct-noinstruct:
+  intfloat__e5-mistral-7b-instruct-noinstruct:
     link: https://huggingface.co/intfloat/e5-mistral-7b-instruct-noinstruct
     seq_len: 32768
     size: 7111
@@ -684,8 +684,8 @@ model_meta:
     is_external: true
     is_proprietary: false
     is_sentence_transformers_compatible: true
-    uses_instruct: false    
-  e5-small:
+    uses_instruct: false
+  intfloat__e5-small:
     link: https://huggingface.co/intfloat/e5-small
     seq_len: 512
     size: 33
@@ -694,7 +694,7 @@ model_meta:
     is_proprietary: false
     is_sentence_transformers_compatible: true
     uses_instruct: false
-  electra-small-nordic:
+  jonfd__electra-small-nordic:
     link: https://huggingface.co/jonfd/electra-small-nordic
     seq_len: 512
     size: 23
@@ -703,7 +703,7 @@ model_meta:
     is_proprietary: false
     is_sentence_transformers_compatible: true
     uses_instruct: false
-  electra-small-swedish-cased-discriminator:
+  KBLab__electra-small-swedish-cased-discriminator:
     link: https://huggingface.co/KBLab/electra-small-swedish-cased-discriminator
     seq_len: 512
     size: 16
@@ -712,16 +712,16 @@ model_meta:
     is_proprietary: false
     is_sentence_transformers_compatible: true
     uses_instruct: false
-  elser-v2:
+  elastic__elser-v2:
     link: https://www.elastic.co/guide/en/machine-learning/current/ml-nlp-elser.html
     seq_len: 512
     size: 110
     dim: 30522
     is_external: true
     is_proprietary: false
-    is_sentence_transformers_compatible: false    
+    is_sentence_transformers_compatible: false
     uses_instruct: false
-  flan-t5-base:
+  google__flan-t5-base:
     link: https://huggingface.co/google/flan-t5-base
     seq_len: 512
     size: 220
@@ -730,7 +730,7 @@ model_meta:
     is_proprietary: false
     is_sentence_transformers_compatible: true
     uses_instruct: true
-  flan-t5-large:
+  google__flan-t5-large:
     link: https://huggingface.co/google/flan-t5-large
     seq_len: 512
     size: 770
@@ -739,7 +739,7 @@ model_meta:
     is_proprietary: false
     is_sentence_transformers_compatible: true
     uses_instruct: true
-  flaubert_base_cased:
+  flaubert__flaubert_base_cased:
     link: https://huggingface.co/flaubert/flaubert_base_cased
     seq_len: 512
     size: 138
@@ -748,7 +748,7 @@ model_meta:
     is_proprietary: false
     is_sentence_transformers_compatible: true
     uses_instruct: false
-  flaubert_base_uncased:
+  flaubert__flaubert_base_uncased:
     link: https://huggingface.co/flaubert/flaubert_base_uncased
     seq_len: 512
     size: 138
@@ -757,7 +757,7 @@ model_meta:
     is_proprietary: false
     is_sentence_transformers_compatible: true
     uses_instruct: false
-  flaubert_large_cased:
+  flaubert__flaubert_large_cased:
     link: https://huggingface.co/flaubert/flaubert_large_cased
     seq_len: 512
     size: 372
@@ -766,7 +766,7 @@ model_meta:
     is_proprietary: false
     is_sentence_transformers_compatible: true
     uses_instruct: false
-  gbert-base:
+  deepset__gbert-base:
     link: https://huggingface.co/deepset/gbert-base
     seq_len: 512
     size: 110
@@ -775,7 +775,7 @@ model_meta:
     is_proprietary: false
     is_sentence_transformers_compatible: true
     uses_instruct: false
-  gbert-large:
+  deepset__gbert-large:
     link: https://huggingface.co/deepset/gbert-large
     seq_len: 512
     size: 337
@@ -784,7 +784,7 @@ model_meta:
     is_proprietary: false
     is_sentence_transformers_compatible: true
     uses_instruct: false
-  gelectra-base:
+  deepset__gelectra-base:
     link: https://huggingface.co/deepset/gelectra-base
     seq_len: 512
     size: 110
@@ -793,7 +793,7 @@ model_meta:
     is_proprietary: false
     is_sentence_transformers_compatible: true
     uses_instruct: false
-  gelectra-large:
+  deepset__gelectra-large:
     link: https://huggingface.co/deepset/gelectra-large
     seq_len: 512
     size: 335
@@ -802,7 +802,7 @@ model_meta:
     is_proprietary: false
     is_sentence_transformers_compatible: true
     uses_instruct: false
-  glove.6B.300d:
+  sentence-transformers__average_word_embeddings_glove.6B.300d:
     link: https://huggingface.co/sentence-transformers/average_word_embeddings_glove.6B.300d
     seq_len: N/A
     size: 120
@@ -811,7 +811,7 @@ model_meta:
     is_proprietary: false
     is_sentence_transformers_compatible: true
     uses_instruct: false
-  google-gecko-256.text-embedding-preview-0409:
+  google-gecko__text-embedding-preview-0409-256:
     link: https://cloud.google.com/vertex-ai/generative-ai/docs/embeddings/get-text-embeddings#latest_models
     seq_len: 2048
     size: 1200
@@ -820,7 +820,7 @@ model_meta:
     is_proprietary: true
     is_sentence_transformers_compatible: false
     uses_instruct: false
-  google-gecko.text-embedding-preview-0409:
+  google-gecko__text-embedding-preview-0409:
     link: https://cloud.google.com/vertex-ai/generative-ai/docs/embeddings/get-text-embeddings#latest_models
     seq_len: 2048
     size: 1200
@@ -829,7 +829,7 @@ model_meta:
     is_proprietary: true
     is_sentence_transformers_compatible: false
     uses_instruct: false
-  gottbert-base:
+  uklfr__gottbert-base:
     link: https://huggingface.co/uklfr/gottbert-base
     seq_len: 512
     size: 127
@@ -838,7 +838,7 @@ model_meta:
     is_proprietary: false
     is_sentence_transformers_compatible: true
     uses_instruct: false
-  gte-Qwen1.5-7B-instruct:
+  Alibaba-NLP__gte-Qwen1.5-7B-instruct:
     link: https://huggingface.co/Alibaba-NLP/gte-Qwen1.5-7B-instruct
     seq_len: 32768
     size: 7099
@@ -847,7 +847,7 @@ model_meta:
     is_proprietary: false
     is_sentence_transformers_compatible: true
     uses_instruct: true
-  gte-Qwen2-1.5B-instruct:
+  Alibaba-NLP__gte-Qwen2-1.5B-instruct:
     link: https://huggingface.co/Alibaba-NLP/gte-Qwen2-1.5B-instruct
     seq_len: 32768
     size: 1780
@@ -856,7 +856,7 @@ model_meta:
     is_proprietary: false
     is_sentence_transformers_compatible: true
     uses_instruct: true
-  gte-Qwen2-7B-instruct:
+  Alibaba-NLP__gte-Qwen2-7B-instruct:
     link: https://huggingface.co/Alibaba-NLP/gte-Qwen2-7B-instruct
     seq_len: 32768
     size: 7613
@@ -865,7 +865,7 @@ model_meta:
     is_proprietary: false
     is_sentence_transformers_compatible: true
     uses_instruct: true
-  gtr-t5-base:
+  sentence-transformers__gtr-t5-base:
     link: https://huggingface.co/sentence-transformers/gtr-t5-base
     seq_len: 512
     size: 110
@@ -874,7 +874,7 @@ model_meta:
     is_proprietary: false
     is_sentence_transformers_compatible: true
     uses_instruct: false
-  gtr-t5-large:
+  sentence-transformers__gtr-t5-large:
     link: https://huggingface.co/sentence-transformers/gtr-t5-large
     seq_len: 512
     size: 168
@@ -883,7 +883,7 @@ model_meta:
     is_proprietary: false
     is_sentence_transformers_compatible: true
     uses_instruct: false
-  gtr-t5-xl:
+  sentence-transformers__gtr-t5-xl:
     link: https://huggingface.co/sentence-transformers/gtr-t5-xl
     seq_len: 512
     size: 1240
@@ -892,7 +892,7 @@ model_meta:
     is_proprietary: false
     is_sentence_transformers_compatible: true
     uses_instruct: false
-  gtr-t5-xxl:
+  sentence-transformers__gtr-t5-xxl:
     link: https://huggingface.co/sentence-transformers/gtr-t5-xxl
     seq_len: 512
     size: 4865
@@ -901,7 +901,7 @@ model_meta:
     is_proprietary: false
     is_sentence_transformers_compatible: true
     uses_instruct: false
-  herbert-base-retrieval-v2:
+  ipipan__herbert-base-retrieval-v2:
     link: https://huggingface.co/ipipan/herbert-base-retrieval-v2
     seq_len: 514
     size: 125
@@ -910,7 +910,7 @@ model_meta:
     is_proprietary: false
     is_sentence_transformers_compatible: true
     uses_instruct: false
-  instructor-base:
+  hkunlp__instructor-base:
     link: https://huggingface.co/hkunlp/instructor-base
     seq_len: N/A
     size: 110
@@ -919,7 +919,7 @@ model_meta:
     is_proprietary: false
     is_sentence_transformers_compatible: true
     uses_instruct: true
-  instructor-large:
+  hkunlp__instructor-large:
     link: https://huggingface.co/hkunlp/instructor-large
     seq_len: 512
     size: 335
@@ -928,7 +928,7 @@ model_meta:
     is_proprietary: false
     is_sentence_transformers_compatible: true
     uses_instruct: true
-  instructor-xl:
+  hkunlp__instructor-xl:
     link: https://huggingface.co/hkunlp/instructor-xl
     seq_len: 512
     size: 1241
@@ -937,16 +937,16 @@ model_meta:
     is_proprietary: false
     is_sentence_transformers_compatible: true
     uses_instruct: true
-  jina-embeddings-v2-base-en:
+  jinaai__jina-embeddings-v2-base-en:
     link: https://huggingface.co/jinaai/jina-embeddings-v2-base-en
     seq_len: 8192
     size: 275
     dim: 768
     is_external: true
     is_proprietary: false
-    is_sentence_transformers_compatible: true  
+    is_sentence_transformers_compatible: true
     uses_instruct: false
-  komninos:
+  sentence-transformers__average_word_embeddings_komninos:
     link: https://huggingface.co/sentence-transformers/average_word_embeddings_komninos
     seq_len: N/A
     size: 134
@@ -955,7 +955,7 @@ model_meta:
     is_proprietary: false
     is_sentence_transformers_compatible: true
     uses_instruct: false
-  llama-2-7b-chat:
+  meta-llama__llama-2-7b-chat:
     link: https://huggingface.co/meta-llama/Llama-2-7b-chat-hf
     seq_len: 4096
     size: 7000
@@ -964,7 +964,7 @@ model_meta:
     is_proprietary: false
     is_sentence_transformers_compatible: false
     uses_instruct: true
-  luotuo-bert-medium:
+  silk-road__luotuo-bert-medium:
     link: https://huggingface.co/silk-road/luotuo-bert-medium
     seq_len: 512
     size: 328
@@ -973,7 +973,7 @@ model_meta:
     is_proprietary: false
     is_sentence_transformers_compatible: true
     uses_instruct: false
-  m3e-base:
+  moka-ai__m3e-base:
     link: https://huggingface.co/moka-ai/m3e-base
     seq_len: 512
     size: 102
@@ -982,7 +982,7 @@ model_meta:
     is_proprietary: false
     is_sentence_transformers_compatible: true
     uses_instruct: false
-  m3e-large:
+  moka-ai__m3e-large:
     link: https://huggingface.co/moka-ai/m3e-large
     seq_len: 512
     size: 102
@@ -991,7 +991,7 @@ model_meta:
     is_proprietary: false
     is_sentence_transformers_compatible: true
     uses_instruct: false
-  mistral-7b-instruct-v0.2:
+  mistralai__mistral-7b-instruct-v0.2:
     link: https://huggingface.co/mistralai/Mistral-7B-Instruct-v0.2
     seq_len: 4096
     size: 7240
@@ -1000,7 +1000,7 @@ model_meta:
     is_proprietary: false
     is_sentence_transformers_compatible: false
     uses_instruct: true
-  mistral-embed:
+  mistral__mistral-embed:
     link: https://docs.mistral.ai/guides/embeddings
     seq_len: null
     size: null
@@ -1009,7 +1009,7 @@ model_meta:
     is_proprietary: true
     is_sentence_transformers_compatible: false
     uses_instruct: false
-  monobert-large-msmarco:
+  castorini__monobert-large-msmarco:
     link: https://huggingface.co/castorini/monobert-large-msmarco
     seq_len: 512
     size: 770
@@ -1018,7 +1018,7 @@ model_meta:
     is_proprietary: false
     is_sentence_transformers_compatible: false
     uses_instruct: false
-  monot5-3b-msmarco-10k:
+  castorini__monot5-3b-msmarco-10k:
     link: https://huggingface.co/castorini/monot5-3b-msmarco-10k
     seq_len: 512
     size: 2480
@@ -1027,7 +1027,7 @@ model_meta:
     is_proprietary: false
     is_sentence_transformers_compatible: false
     uses_instruct: true
-  monot5-base-msmarco-10k:
+  castorini__monot5-base-msmarco-10k:
     link: https://huggingface.co/castorini/monot5-base-msmarco-10k
     seq_len: 512
     size: 220
@@ -1036,7 +1036,7 @@ model_meta:
     is_proprietary: false
     is_sentence_transformers_compatible: false
     uses_instruct: true
-  msmarco-bert-co-condensor:
+  sentence-transformers__msmarco-bert-co-condensor:
     link: https://huggingface.co/sentence-transformers/msmarco-bert-co-condensor
     seq_len: 512
     size: 110
@@ -1045,7 +1045,7 @@ model_meta:
     is_proprietary: false
     is_sentence_transformers_compatible: true
     uses_instruct: false
-  multi-qa-MiniLM-L6-cos-v1:
+  sentence-transformers__multi-qa-MiniLM-L6-cos-v1:
     link: https://huggingface.co/sentence-transformers/multi-qa-MiniLM-L6-cos-v1
     seq_len: 512
     size: 23
@@ -1054,7 +1054,7 @@ model_meta:
     is_proprietary: false
     is_sentence_transformers_compatible: true
     uses_instruct: false
-  multilingual-e5-base:
+  intfloat__multilingual-e5-base:
     link: https://huggingface.co/intfloat/multilingual-e5-base
     seq_len: 514
     size: 278
@@ -1063,7 +1063,7 @@ model_meta:
     is_proprietary: false
     is_sentence_transformers_compatible: true
     uses_instruct: false
-  multilingual-e5-large:
+  intfloat__multilingual-e5-large:
     link: https://huggingface.co/intfloat/multilingual-e5-large
     seq_len: 514
     size: 560
@@ -1072,7 +1072,7 @@ model_meta:
     is_proprietary: false
     is_sentence_transformers_compatible: true
     uses_instruct: false
-  multilingual-e5-large-instruct:
+  intfloat__multilingual-e5-large-instruct:
     link: https://huggingface.co/intfloat/multilingual-e5-large-instruct
     seq_len: 514
     size: 560
@@ -1081,7 +1081,7 @@ model_meta:
     is_proprietary: false
     is_sentence_transformers_compatible: true
     uses_instruct: true
-  multilingual-e5-small:
+  intfloat__multilingual-e5-small:
     link: https://huggingface.co/intfloat/multilingual-e5-small
     seq_len: 512
     size: 118
@@ -1090,7 +1090,7 @@ model_meta:
     is_proprietary: false
     is_sentence_transformers_compatible: true
     uses_instruct: false
-  nb-bert-base:
+  NbAiLab__nb-bert-base:
     link: https://huggingface.co/NbAiLab/nb-bert-base
     seq_len: 512
     size: 179
@@ -1099,7 +1099,7 @@ model_meta:
     is_proprietary: false
     is_sentence_transformers_compatible: true
     uses_instruct: false
-  nb-bert-large:
+  NbAiLab__nb-bert-large:
     link: https://huggingface.co/NbAiLab/nb-bert-large
     seq_len: 512
     size: 355
@@ -1108,7 +1108,7 @@ model_meta:
     is_proprietary: false
     is_sentence_transformers_compatible: true
     uses_instruct: false
-  nomic-embed-text-v1:
+  nomic-ai__nomic-embed-text-v1:
     link: https://huggingface.co/nomic-ai/nomic-embed-text-v1
     seq_len: 8192
     size: 547
@@ -1117,7 +1117,7 @@ model_meta:
     is_proprietary: false
     is_sentence_transformers_compatible: true
     uses_instruct: false
-  nomic-embed-text-v1.5-128:
+  nomic-ai__nomic-embed-text-v1.5-128:
     link: https://huggingface.co/nomic-ai/nomic-embed-text-v1.5
     seq_len: 8192
     size: 138
@@ -1126,7 +1126,7 @@ model_meta:
     is_proprietary: false
     is_sentence_transformers_compatible: true
     uses_instruct: false
-  nomic-embed-text-v1.5-256:
+  nomic-ai__nomic-embed-text-v1.5-256:
     link: https://huggingface.co/nomic-ai/nomic-embed-text-v1.5
     seq_len: 8192
     size: 138
@@ -1135,7 +1135,7 @@ model_meta:
     is_proprietary: false
     is_sentence_transformers_compatible: true
     uses_instruct: false
-  nomic-embed-text-v1.5-512:
+  nomic-ai__nomic-embed-text-v1.5-512:
     link: https://huggingface.co/nomic-ai/nomic-embed-text-v1.5
     seq_len: 8192
     size: 138
@@ -1144,7 +1144,7 @@ model_meta:
     is_proprietary: false
     is_sentence_transformers_compatible: true
     uses_instruct: false
-  nomic-embed-text-v1.5-64:
+  nomic-ai__nomic-embed-text-v1.5-64:
     link: https://huggingface.co/nomic-ai/nomic-embed-text-v1.5
     seq_len: 8192
     size: 138
@@ -1153,7 +1153,7 @@ model_meta:
     is_proprietary: false
     is_sentence_transformers_compatible: true
     uses_instruct: false
-  norbert3-base:
+  ltg__norbert3-base:
     link: https://huggingface.co/ltg/norbert3-base
     seq_len: 512
     size: 131
@@ -1162,7 +1162,7 @@ model_meta:
     is_proprietary: false
     is_sentence_transformers_compatible: true
     uses_instruct: false
-  norbert3-large:
+  ltg__norbert3-large:
     link: https://huggingface.co/ltg/norbert3-large
     seq_len: 512
     size: 368
@@ -1171,7 +1171,7 @@ model_meta:
     is_proprietary: false
     is_sentence_transformers_compatible: true
     uses_instruct: false
-  paraphrase-multilingual-MiniLM-L12-v2:
+  sentence-transformers__paraphrase-multilingual-MiniLM-L12-v2:
     link: https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
     seq_len: 512
     size: 118
@@ -1180,7 +1180,7 @@ model_meta:
     is_proprietary: false
     is_sentence_transformers_compatible: true
     uses_instruct: false
-  paraphrase-multilingual-mpnet-base-v2:
+  sentence-transformers__paraphrase-multilingual-mpnet-base-v2:
     link: https://huggingface.co/sentence-transformers/paraphrase-multilingual-mpnet-base-v2
     seq_len: 514
     size: 278
@@ -1189,7 +1189,7 @@ model_meta:
     is_proprietary: false
     is_sentence_transformers_compatible: true
     uses_instruct: false
-  sentence-bert-swedish-cased:
+  KBLab__sentence-bert-swedish-cased:
     link: https://huggingface.co/KBLab/sentence-bert-swedish-cased
     seq_len: 512
     size: 125
@@ -1198,7 +1198,7 @@ model_meta:
     is_proprietary: false
     is_sentence_transformers_compatible: true
     uses_instruct: false
-  sentence-camembert-base:
+  dangvantuan__sentence-camembert-base:
     link: https://huggingface.co/dangvantuan/sentence-camembert-base
     seq_len: 512
     size: 110
@@ -1207,7 +1207,7 @@ model_meta:
     is_proprietary: false
     is_sentence_transformers_compatible: true
     uses_instruct: false
-  sentence-camembert-large:
+  dangvantuan__sentence-camembert-large:
     link: https://huggingface.co/dangvantuan/sentence-camembert-large
     seq_len: 512
     size: 337
@@ -1216,7 +1216,7 @@ model_meta:
     is_proprietary: false
     is_sentence_transformers_compatible: true
     uses_instruct: false
-  sentence-croissant-llm-base:
+  Wissam42__sentence-croissant-llm-base:
     link: https://huggingface.co/Wissam42/sentence-croissant-llm-base
     seq_len: 2048
     size: 1280
@@ -1225,7 +1225,7 @@ model_meta:
     is_proprietary: false
     is_sentence_transformers_compatible: true
     uses_instruct: false
-  sentence-t5-base:
+  sentence-transformers__sentence-t5-base:
     link: https://huggingface.co/sentence-transformers/sentence-t5-base
     seq_len: 512
     size: 110
@@ -1234,7 +1234,7 @@ model_meta:
     is_proprietary: false
     is_sentence_transformers_compatible: true
     uses_instruct: false
-  sentence-t5-large:
+  sentence-transformers__sentence-t5-large:
     link: https://huggingface.co/sentence-transformers/sentence-t5-large
     seq_len: 512
     size: 168
@@ -1243,7 +1243,7 @@ model_meta:
     is_proprietary: false
     is_sentence_transformers_compatible: true
     uses_instruct: false
-  sentence-t5-xl:
+  sentence-transformers__sentence-t5-xl:
     link: https://huggingface.co/sentence-transformers/sentence-t5-xl
     seq_len: 512
     size: 1240
@@ -1252,7 +1252,7 @@ model_meta:
     is_proprietary: false
     is_sentence_transformers_compatible: true
     uses_instruct: false
-  sentence-t5-xxl:
+  sentence-transformers__sentence-t5-xxl:
     link: https://huggingface.co/sentence-transformers/sentence-t5-xxl
     seq_len: 512
     size: 4865
@@ -1261,7 +1261,7 @@ model_meta:
     is_proprietary: false
     is_sentence_transformers_compatible: true
     uses_instruct: false
-  silver-retriever-base-v1:
+  ipipan__silver-retriever-base-v1:
     link: https://huggingface.co/ipipan/silver-retriever-base-v1
     seq_len: 514
     size: 125
@@ -1270,7 +1270,7 @@ model_meta:
     is_proprietary: false
     is_sentence_transformers_compatible: true
     uses_instruct: false
-  st-polish-paraphrase-from-distilroberta:
+  sdadas__st-polish-paraphrase-from-distilroberta:
     link: https://huggingface.co/sdadas/st-polish-paraphrase-from-distilroberta
     seq_len: 514
     size: 125
@@ -1279,7 +1279,7 @@ model_meta:
     is_proprietary: false
     is_sentence_transformers_compatible: true
     uses_instruct: false
-  st-polish-paraphrase-from-mpnet:
+  sdadas__st-polish-paraphrase-from-mpnet:
     link: https://huggingface.co/sdadas/st-polish-paraphrase-from-mpnet
     seq_len: 514
     size: 125
@@ -1306,7 +1306,7 @@ model_meta:
     is_proprietary: false
     is_sentence_transformers_compatible: true
     uses_instruct: true
-  sup-simcse-bert-base-uncased:
+  princeton-nlp__sup-simcse-bert-base-uncased:
     link: https://huggingface.co/princeton-nlp/sup-simcse-bert-base-uncased
     seq_len: 512
     size: 110
@@ -1315,7 +1315,7 @@ model_meta:
     is_proprietary: false
     is_sentence_transformers_compatible: true
     uses_instruct: false
-  text-embedding-3-large:
+  openai__text-embedding-3-large:
     link: https://openai.com/blog/new-embedding-models-and-api-updates
     seq_len: 8191
     size: null
@@ -1324,7 +1324,7 @@ model_meta:
     is_proprietary: true
     is_sentence_transformers_compatible: false
     uses_instruct: false
-  text-embedding-3-large-instruct:
+  openai__text-embedding-3-large-instruct:
     link: https://openai.com/blog/new-embedding-models-and-api-updates
     seq_len: 8191
     size: null
@@ -1332,8 +1332,8 @@ model_meta:
     is_external: true
     is_proprietary: true
     is_sentence_transformers_compatible: false
-    uses_instruct: true    
-  text-embedding-3-large-256:
+    uses_instruct: true
+  openai__text-embedding-3-large-256:
     link: https://openai.com/blog/new-embedding-models-and-api-updates
     seq_len: 8191
     size: null
@@ -1342,7 +1342,7 @@ model_meta:
     is_proprietary: true
     is_sentence_transformers_compatible: false
     uses_instruct: false
-  text-embedding-3-small:
+  openai__text-embedding-3-small:
     link: https://openai.com/blog/new-embedding-models-and-api-updates
     seq_len: 8191
     size: null
@@ -1351,7 +1351,7 @@ model_meta:
     is_proprietary: true
     is_sentence_transformers_compatible: false
     uses_instruct: false
-  text-embedding-3-small-instruct:
+  openai__text-embedding-3-small-instruct:
     link: https://openai.com/blog/new-embedding-models-and-api-updates
     seq_len: 8191
     size: null
@@ -1359,8 +1359,8 @@ model_meta:
     is_external: true
     is_proprietary: true
     is_sentence_transformers_compatible: false
-    uses_instruct: true    
-  text-embedding-ada-002:
+    uses_instruct: true
+  openai__text-embedding-ada-002:
     link: https://openai.com/blog/new-and-improved-embedding-model
     seq_len: 8191
     size: null
@@ -1369,7 +1369,7 @@ model_meta:
     is_proprietary: true
     is_sentence_transformers_compatible: false
     uses_instruct: false
-  text-embedding-ada-002-instruct:
+  openai__text-embedding-ada-002-instruct:
     link: https://openai.com/blog/new-and-improved-embedding-model
     seq_len: 8191
     size: null
@@ -1377,8 +1377,8 @@ model_meta:
     is_external: true
     is_proprietary: true
     is_sentence_transformers_compatible: false
-    uses_instruct: true    
-  text-search-ada-001:
+    uses_instruct: true
+  openai__text-search-ada-001:
     link: https://openai.com/blog/introducing-text-and-code-embeddings
     seq_len: 2046
     size: null
@@ -1387,7 +1387,7 @@ model_meta:
     is_proprietary: true
     is_sentence_transformers_compatible: false
     uses_instruct: false
-  text-search-ada-doc-001:
+  openai__text-search-ada-doc-001:
     link: https://openai.com/blog/introducing-text-and-code-embeddings
     seq_len: 2046
     size: null
@@ -1405,7 +1405,7 @@ model_meta:
     is_proprietary: true
     is_sentence_transformers_compatible: false
     uses_instruct: false
-  text-search-babbage-001:
+  openai__text-search-babbage-001:
     link: https://openai.com/blog/introducing-text-and-code-embeddings
     seq_len: 2046
     size: null
@@ -1414,7 +1414,7 @@ model_meta:
     is_proprietary: true
     is_sentence_transformers_compatible: false
     uses_instruct: false
-  text-search-curie-001:
+  openai__text-search-curie-001:
     link: https://openai.com/blog/introducing-text-and-code-embeddings
     seq_len: 2046
     size: null
@@ -1423,7 +1423,7 @@ model_meta:
     is_proprietary: true
     is_sentence_transformers_compatible: false
     uses_instruct: false
-  text-search-davinci-001:
+  openai__text-search-davinci-001:
     link: https://openai.com/blog/introducing-text-and-code-embeddings
     seq_len: 2046
     size: null
@@ -1432,7 +1432,7 @@ model_meta:
     is_proprietary: true
     is_sentence_transformers_compatible: false
     uses_instruct: false
-  text-similarity-ada-001:
+  openai__text-similarity-ada-001:
     link: https://openai.com/blog/introducing-text-and-code-embeddings
     seq_len: 2046
     size: null
@@ -1441,7 +1441,7 @@ model_meta:
     is_proprietary: true
     is_sentence_transformers_compatible: false
     uses_instruct: false
-  text-similarity-babbage-001:
+  openai__text-similarity-babbage-001:
     link: https://openai.com/blog/introducing-text-and-code-embeddings
     seq_len: 2046
     size: null
@@ -1450,7 +1450,7 @@ model_meta:
     is_proprietary: true
     is_sentence_transformers_compatible: false
     uses_instruct: false
-  text-similarity-curie-001:
+  openai__text-similarity-curie-001:
     link: https://openai.com/blog/introducing-text-and-code-embeddings
     seq_len: 2046
     size: null
@@ -1459,7 +1459,7 @@ model_meta:
     is_proprietary: true
     is_sentence_transformers_compatible: false
     uses_instruct: false
-  text-similarity-davinci-001:
+  openai__text-similarity-davinci-001:
     link: https://openai.com/blog/introducing-text-and-code-embeddings
     seq_len: 2046
     size: null
@@ -1468,7 +1468,7 @@ model_meta:
     is_proprietary: true
     is_sentence_transformers_compatible: false
     uses_instruct: false
-  tart-dual-contriever-msmarco:
+  orionweller__tart-dual-contriever-msmarco:
     link: https://huggingface.co/orionweller/tart-dual-contriever-msmarco
     seq_len: 512
     size: 110
@@ -1477,7 +1477,7 @@ model_meta:
     is_proprietary: false
     is_sentence_transformers_compatible: false
     uses_instruct: true
-  tart-full-flan-t5-xl:
+  facebook__tart-full-flan-t5-xl:
     link: https://huggingface.co/facebook/tart-full-flan-t5-xl
     seq_len: 512
     size: 2480
@@ -1486,7 +1486,7 @@ model_meta:
     is_proprietary: false
     is_sentence_transformers_compatible: false
     uses_instruct: true
-  text2vec-base-chinese:
+  shibing624__text2vec-base-chinese:
     link: https://huggingface.co/shibing624/text2vec-base-chinese
     seq_len: 512
     size: 102
@@ -1495,16 +1495,16 @@ model_meta:
     is_proprietary: false
     is_sentence_transformers_compatible: true
     uses_instruct: false
-  text2vec-base-multilingual:
-    link: null
-    seq_len: null
-    size: null
-    dim: null
+  shibing624__text2vec-base-multilingual:
+    link: https://huggingface.co/shibing624/text2vec-base-multilingual
+    seq_len: 256
+    size: 118
+    dim: 384
     is_external: true
     is_proprietary: false
     is_sentence_transformers_compatible: false
     uses_instruct: false
-  text2vec-large-chinese:
+  shibing624__text2vec-large-chinese:
     link: https://huggingface.co/GanymedeNil/text2vec-large-chinese
     seq_len: 512
     size: 326
@@ -1513,7 +1513,7 @@ model_meta:
     is_proprietary: false
     is_sentence_transformers_compatible: true
     uses_instruct: false
-  titan-embed-text-v1:
+  amazon__titan-embed-text-v1:
     link: https://docs.aws.amazon.com/bedrock/latest/userguide/embeddings.html
     seq_len: 8000
     size: null
@@ -1522,7 +1522,7 @@ model_meta:
     is_proprietary: true
     is_sentence_transformers_compatible: false
     uses_instruct: false
-  udever-bloom-1b1:
+  izhx__udever-bloom-1b1:
     link: https://huggingface.co/izhx/udever-bloom-1b1
     seq_len: 2048
     size: null
@@ -1531,7 +1531,7 @@ model_meta:
     is_proprietary: false
     is_sentence_transformers_compatible: true
     uses_instruct: false
-  udever-bloom-560m:
+  izhx__udever-bloom-560m:
     link: https://huggingface.co/izhx/udever-bloom-560m
     seq_len: 2048
     size: null
@@ -1540,7 +1540,7 @@ model_meta:
     is_proprietary: false
     is_sentence_transformers_compatible: true
     uses_instruct: false
-  universal-sentence-encoder-multilingual-3:
+  vprelovac__universal-sentence-encoder-multilingual-3:
     link: https://huggingface.co/vprelovac/universal-sentence-encoder-multilingual-3
     seq_len: 512
     size: null
@@ -1549,7 +1549,7 @@ model_meta:
     is_proprietary: false
     is_sentence_transformers_compatible: true
     uses_instruct: false
-  universal-sentence-encoder-multilingual-large-3:
+  vprelovac__universal-sentence-encoder-multilingual-large-3:
     link: https://huggingface.co/vprelovac/universal-sentence-encoder-multilingual-large-3
     seq_len: 512
     size: null
@@ -1558,7 +1558,7 @@ model_meta:
     is_proprietary: false
     is_sentence_transformers_compatible: true
     uses_instruct: false
-  unsup-simcse-bert-base-uncased:
+  princeton-nlp__unsup-simcse-bert-base-uncased:
     link: https://huggingface.co/princeton-nlp/unsup-simcse-bert-base-uncased
     seq_len: 512
     size: 110
@@ -1567,7 +1567,7 @@ model_meta:
     is_proprietary: false
     is_sentence_transformers_compatible: true
     uses_instruct: false
-  use-cmlm-multilingual:
+  sentence-transformers__use-cmlm-multilingual:
     link: https://huggingface.co/sentence-transformers/use-cmlm-multilingual
     seq_len: 512
     size: 472
@@ -1575,8 +1575,8 @@ model_meta:
     is_external: true
     is_proprietary: false
     is_sentence_transformers_compatible: true
-    uses_instruct: false    
-  voyage-2:
+    uses_instruct: false
+  voyageai__voyage-2:
     link: https://docs.voyageai.com/embeddings/
     seq_len: 1024
     size: null
@@ -1584,8 +1584,8 @@ model_meta:
     is_external: true
     is_proprietary: true
     is_sentence_transformers_compatible: false
-    uses_instruct: false    
-  voyage-code-2:
+    uses_instruct: false
+  voyageai__voyage-code-2:
     link: https://docs.voyageai.com/embeddings/
     seq_len: 16000
     size: null
@@ -1593,8 +1593,8 @@ model_meta:
     is_external: true
     is_proprietary: true
     is_sentence_transformers_compatible: false
-    uses_instruct: false    
-  voyage-large-2-instruct:
+    uses_instruct: false
+  voyageai__voyage-large-2-instruct:
     link: https://docs.voyageai.com/embeddings/
     seq_len: 16000
     size: null
@@ -1602,8 +1602,8 @@ model_meta:
     is_external: true
     is_proprietary: false
     is_sentence_transformers_compatible: false
-    uses_instruct: true    
-  voyage-law-2:
+    uses_instruct: true
+  voyageai__voyage-law-2:
     link: https://docs.voyageai.com/embeddings/
     seq_len: 16000
     size: null
@@ -1611,8 +1611,8 @@ model_meta:
     is_external: true
     is_proprietary: true
     is_sentence_transformers_compatible: false
-    uses_instruct: false    
-  voyage-lite-01-instruct:
+    uses_instruct: false
+  voyageai__voyage-lite-01-instruct:
     link: https://docs.voyageai.com/embeddings/
     seq_len: 4000
     size: null
@@ -1620,8 +1620,8 @@ model_meta:
     is_external: true
     is_proprietary: true
     is_sentence_transformers_compatible: false
-    uses_instruct: true    
-  voyage-lite-02-instruct:
+    uses_instruct: true
+  voyageai__voyage-lite-02-instruct:
     link: https://docs.voyageai.com/embeddings/
     seq_len: 4000
     size: 1220
@@ -1629,8 +1629,8 @@ model_meta:
     is_external: true
     is_proprietary: true
     is_sentence_transformers_compatible: false
-    uses_instruct: true    
-  voyage-multilingual-2:
+    uses_instruct: true
+  voyageai__voyage-multilingual-2:
     link: https://docs.voyageai.com/embeddings/
     seq_len: 32000
     size: null
@@ -1638,18 +1638,18 @@ model_meta:
     is_external: true
     is_proprietary: true
     is_sentence_transformers_compatible: false
-    uses_instruct: false    
-  xlm-roberta-base:
-    link: https://huggingface.co/xlm-roberta-base
+    uses_instruct: false
+  FacebookAI__xlm-roberta-base:
+    link: https://huggingface.co/FacebookAI/xlm-roberta-base
     seq_len: 514
     size: 279
     dim: 768
     is_external: true
     is_proprietary: false
     is_sentence_transformers_compatible: true
-    uses_instruct: false    
-  xlm-roberta-large:
-    link: https://huggingface.co/xlm-roberta-large
+    uses_instruct: false
+  FacebookAI__xlm-roberta-large:
+    link: https://huggingface.co/FacebookAI/xlm-roberta-large
     seq_len: 514
     size: 560
     dim: 1024
@@ -1657,7 +1657,7 @@ model_meta:
     is_proprietary: false
     is_sentence_transformers_compatible: true
     uses_instruct: false
-  rubert-tiny:
+  cointegrated__rubert-tiny:
     link: https://huggingface.co/cointegrated/rubert-tiny
     seq_len: 514
     size: 12
@@ -1666,7 +1666,7 @@ model_meta:
     is_proprietary: false
     is_sentence_transformers_compatible: true
     uses_instruct: false
-  rubert-tiny2:
+  cointegrated__rubert-tiny2:
     link: https://huggingface.co/cointegrated/rubert-tiny2
     seq_len: 514
     size: 29
@@ -1675,7 +1675,7 @@ model_meta:
     is_proprietary: false
     is_sentence_transformers_compatible: true
     uses_instruct: false
-  sbert_large_mt_nlu_ru:
+  ai-forever__sbert_large_mt_nlu_ru:
     link: https://huggingface.co/ai-forever/sbert_large_mt_nlu_ru
     seq_len: 514
     size: 427
@@ -1684,7 +1684,7 @@ model_meta:
     is_proprietary: false
     is_sentence_transformers_compatible: true
     uses_instruct: false
-  sbert_large_nlu_ru:
+  ai-forever__sbert_large_nlu_ru:
     link: https://huggingface.co/ai-forever/sbert_large_nlu_ru
     seq_len: 512
     size: 427
@@ -1693,7 +1693,7 @@ model_meta:
     is_proprietary: false
     is_sentence_transformers_compatible: true
     uses_instruct: false
-  USER-base:
+  deepvk__USER-base:
     link: https://huggingface.co/deepvk/USER-base
     seq_len: 512
     size: 124
@@ -1702,7 +1702,7 @@ model_meta:
     is_proprietary: false
     is_sentence_transformers_compatible: true
     uses_instruct: false
-  USER-bge-m3:
+  deepvk__USER-bge-m3:
     link: https://huggingface.co/deepvk/USER-bge-m3
     seq_len: 8192
     size: 359
@@ -1711,7 +1711,7 @@ model_meta:
     is_proprietary: false
     is_sentence_transformers_compatible: true
     uses_instruct: false
-  deberta-v1-base:
+  deepvk__deberta-v1-base:
     link: https://huggingface.co/deepvk/deberta-v1-base
     seq_len: 512
     size: 124
@@ -1720,7 +1720,7 @@ model_meta:
     is_proprietary: false
     is_sentence_transformers_compatible: true
     uses_instruct: false
-  rubert-tiny-turbo:
+  sergeyzh__rubert-tiny-turbo:
     link: https://huggingface.co/sergeyzh/rubert-tiny-turbo
     seq_len: 2048
     size: 29
@@ -1729,7 +1729,7 @@ model_meta:
     is_proprietary: false
     is_sentence_transformers_compatible: true
     uses_instruct: false
-  LaBSE-ru-turbo:
+  sergeyzh__LaBSE-ru-turbo:
     link: https://huggingface.co/sergeyzh/LaBSE-ru-turbo
     seq_len: 512
     size: 128
@@ -1738,7 +1738,7 @@ model_meta:
     is_proprietary: false
     is_sentence_transformers_compatible: true
     uses_instruct: false
-  distilrubert-small-cased-conversational:
+  DeepPavlov__distilrubert-small-cased-conversational:
     link: https://huggingface.co/DeepPavlov/distilrubert-small-cased-conversational
     seq_len: 512
     size: 106
@@ -1747,7 +1747,7 @@ model_meta:
     is_proprietary: false
     is_sentence_transformers_compatible: true
     uses_instruct: false
-  rubert-base-cased:
+  DeepPavlov__rubert-base-cased:
     link: https://huggingface.co/DeepPavlov/rubert-base-cased
     seq_len: 512
     size: 180
@@ -1756,7 +1756,7 @@ model_meta:
     is_proprietary: false
     is_sentence_transformers_compatible: true
     uses_instruct: false
-  rubert-base-cased-sentence:
+  DeepPavlov__rubert-base-cased-sentence:
     link: https://huggingface.co/DeepPavlov/rubert-base-cased-sentence
     seq_len: 512
     size: 180
@@ -1765,7 +1765,7 @@ model_meta:
     is_proprietary: false
     is_sentence_transformers_compatible: true
     uses_instruct: false
-  LaBSE-en-ru:
+  cointegrated__LaBSE-en-ru:
     link: https://huggingface.co/cointegrated/LaBSE-en-ru
     seq_len: 512
     size: 129
