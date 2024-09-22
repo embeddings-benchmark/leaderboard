@@ -179,8 +179,6 @@ def filter_metric_fetched(name: str, metric: str, expected_metrics, split: str) 
         return bool(metric == "ndcg_at_1")
     elif (name.startswith("BrightRetrieval") and (split == "long")):
         return bool(metric in ["recall_at_1"])
-    elif name.startswith("MIRACLReranking"):
-        return bool(metric in ["NDCG@10(MIRACL)"])
     else:
         return bool(metric in expected_metrics)
 
