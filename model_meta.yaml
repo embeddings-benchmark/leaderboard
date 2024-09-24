@@ -1779,7 +1779,7 @@ model_meta:
     seq_len: 512
     size: 143
     dim: 768
-    is_external: true
+    is_external: false
     is_proprietary: false
     is_sentence_transformers_compatible: false
 models_to_skip:
