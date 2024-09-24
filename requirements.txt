@@ -1,3 +1,4 @@
+git+https://github.com/EuDs63/ffmpy.git@333a19ee4d21f32537c0508aa1942ef1aa7afe24
 gradio
 datasets
 pandas

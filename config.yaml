@@ -20,10 +20,10 @@ tasks:
     task_description: "Clustering is the task of grouping similar documents together."
   PairClassification:
     icon: "🎭"
-    metric: ap
+    metric: max_ap
     metric_description: "Average Precision (AP) based on the models similarity metric (usually cosine)"
     task_description: "Pair classification is the task of determining whether two texts are similar."
-  Reranking: 
+  Reranking:
     icon: "🥈"
     metric: map
     metric_description: "Mean Average Precision (MAP)"
@@ -35,14 +35,19 @@ tasks:
     task_description: "Retrieval is the task of finding relevant documents for a query."
   STS:
     icon: "☘️"
-    metric: spearman
+    metric: cosine_spearman
     metric_description: "Spearman correlation based on the model's similarity metric (usually cosine)"
     task_description: "Semantic Textual Similarity is the task of determining how similar two texts are."
   Summarization:
     icon: "📜"
-    metric: spearman
+    metric: cosine_spearman
     metric_description: "Spearman correlation based on the model's similarity metric (usually cosine)"
     task_description: "Summarization is the task of generating a summary of a text."
+  MultilabelClassification:
+    icon: "🏷️"
+    metric: accuracy
+    metric_description: "Accuracy"
+    task_description: "Multilabel classification is the task of assigning multiple labels to a text."
   InstructionRetrieval:
     icon: "🔎📋"
     metric: "p-MRR"
@@ -275,41 +280,6 @@ boards:
       - Robust04InstructionRetrieval
       - News21InstructionRetrieval
       - Core17InstructionRetrieval
-  law:
-    title: Law
-    language_long: "English, German, Chinese"
-    has_overall: false
-    acronym: null
-    icon: "⚖️"
-    special_icons: null
-    credits: "[Voyage AI](https://www.voyageai.com/)"
-    tasks:
-      Retrieval:
-        - AILACasedocs
-        - AILAStatutes
-        - GerDaLIRSmall
-        - LeCaRDv2
-        - LegalBenchConsumerContractsQA
-        - LegalBenchCorporateLobbying
-        - LegalQuAD
-        - LegalSummarization
-  longembed:
-    title: LongEmbed
-    language_long: "English"
-    has_overall: false
-    acronym: null
-    icon: "📚"
-    special_icons: null
-    credits: "[LongEmbed](https://arxiv.org/abs/2404.12096v2)"
-    metric: nDCG@10 (for NarrativeQA, QMSum, SummScreenFD, WikimQA) & nDCG@1 (for passkey and needle)
-    tasks:
-      Retrieval:
-        - LEMBNarrativeQARetrieval
-        - LEMBNeedleRetrieval
-        - LEMBPasskeyRetrieval
-        - LEMBQMSumRetrieval
-        - LEMBSummScreenFDRetrieval
-        - LEMBWikimQARetrieval
   de:
     title: German
     language_long: "German"
@@ -365,6 +335,45 @@ boards:
         - CDSC-R
         - SICK-R-PL
         - STS22 (pl)
+  ru:
+    title: Russian
+    language_long: "Russian"
+    has_overall: true
+    acronym: null
+    icon: "🇷🇺"
+    special_icons: null
+    credits: "[Roman Solomatin](https://github.com/Samoed) and SaluteDevices: [Alena Fenogenova](https://github.com/Alenush), [Aleksandr Abramov](https://github.com/Ab1992ao), [Artem Snegirev](https://github.com/artemsnegirev), [Anna Maksimova](https://github.com/anpalmak2003), [Maria Tikhonova](https://github.com/MariyaTikhonova)"
+    tasks:
+      Classification:
+        - GeoreviewClassification
+        - HeadlineClassification
+        - InappropriatenessClassification
+        - KinopoiskClassification
+        - RuReviewsClassification
+        - RuSciBenchGRNTIClassification
+        - RuSciBenchOECDClassification
+        - MassiveIntentClassification (ru)
+        - MassiveScenarioClassification (ru)
+      Clustering:
+        - GeoreviewClusteringP2P
+        - RuSciBenchGRNTIClusteringP2P
+        - RuSciBenchOECDClusteringP2P
+      PairClassification:
+        - TERRa
+      Reranking:
+        - RuBQReranking
+        - MIRACLReranking (ru)
+      Retrieval:
+        - RiaNewsRetrieval
+        - RuBQRetrieval
+        - MIRACLRetrieval (ru)
+      STS:
+        - RUParaPhraserSTS
+        - RuSTSBenchmarkSTS
+        - STS22 (ru)
+      MultilabelClassification:
+        - CEDRClassification
+        - SensitiveTopicsClassification
   se:
     title: Swedish
     language_long: Swedish
@@ -403,3 +412,141 @@ boards:
     credits: null
     tasks:
       STS: ["STS17 (ar-ar)", "STS17 (en-ar)", "STS17 (en-de)", "STS17 (en-tr)", "STS17 (es-en)", "STS17 (es-es)", "STS17 (fr-en)", "STS17 (it-en)", "STS17 (ko-ko)", "STS17 (nl-en)", "STS22 (ar)", "STS22 (de)", "STS22 (de-en)", "STS22 (de-fr)", "STS22 (de-pl)", "STS22 (es)", "STS22 (es-en)", "STS22 (es-it)", "STS22 (fr)", "STS22 (fr-pl)", "STS22 (it)", "STS22 (pl)", "STS22 (pl-en)", "STS22 (ru)", "STS22 (tr)", "STS22 (zh-en)", "STSBenchmark"]
+  law:
+    title: Law
+    language_long: "English, German, Chinese"
+    has_overall: false
+    acronym: null
+    icon: "⚖️"
+    special_icons: null
+    credits: "[Voyage AI](https://www.voyageai.com/)"
+    tasks:
+      Retrieval:
+        - AILACasedocs
+        - AILAStatutes
+        - GerDaLIRSmall
+        - LeCaRDv2
+        - LegalBenchConsumerContractsQA
+        - LegalBenchCorporateLobbying
+        - LegalQuAD
+        - LegalSummarization
+  longembed:
+    title: LongEmbed
+    language_long: "English"
+    has_overall: false
+    acronym: null
+    icon: "📚"
+    special_icons: null
+    credits: "[LongEmbed (Dawei Zhu et al.)](https://arxiv.org/abs/2404.12096v2)"
+    metric: nDCG@10 (for NarrativeQA, QMSum, SummScreenFD, WikimQA) & nDCG@1 (for passkey and needle)
+    tasks:
+      Retrieval:
+        - LEMBNarrativeQARetrieval
+        - LEMBNeedleRetrieval
+        - LEMBPasskeyRetrieval
+        - LEMBQMSumRetrieval
+        - LEMBSummScreenFDRetrieval
+        - LEMBWikimQARetrieval
+  rar-b:
+    title: RAR-b
+    language_long: "English"
+    has_overall: false
+    acronym: null
+    icon: "📚"
+    special_icons: null
+    credits: "[RAR-b (Chenghao Xiao et al.)](https://arxiv.org/abs/2404.06347/)"
+    metric: nDCG@10
+    tasks:
+      Retrieval:
+        - ARCChallenge
+        - AlphaNLI
+        - HellaSwag
+        - PIQA
+        - Quail
+        - RARbCode
+        - RARbMath
+        - SIQA
+        - SpartQA
+        - TempReasonL1
+        - TempReasonL2Fact
+        - TempReasonL2Pure
+        - TempReasonL3Fact
+        - TempReasonL3Pure
+        - WinoGrande
+  bright:
+    title: BRIGHT
+    language_long: "English"
+    has_overall: false
+    acronym: null
+    icon: "🌟"
+    special_icons: null
+    credits: "[BRIGHT (Hongjin Su, Howard Yen, Mengzhou Xia et al.)](https://brightbenchmark.github.io/)"
+    metric: nDCG@10
+    split: standard
+    desc: This tab only allows submissions with the original queries; not results from LLM rewritten queries or using reranking.
+    tasks:
+      Retrieval:
+        - BrightRetrieval (biology)
+        - BrightRetrieval (earth_science)
+        - BrightRetrieval (economics)
+        - BrightRetrieval (psychology)
+        - BrightRetrieval (robotics)
+        - BrightRetrieval (stackoverflow)
+        - BrightRetrieval (sustainable_living)
+        - BrightRetrieval (pony)
+        - BrightRetrieval (leetcode)
+        - BrightRetrieval (aops)
+        - BrightRetrieval (theoremqa_theorems)
+        - BrightRetrieval (theoremqa_questions)
+  bright_long:
+    title: BRIGHT Long
+    language_long: "English"
+    has_overall: false
+    acronym: null
+    icon: "🌟"
+    special_icons: null
+    credits: "[BRIGHT (Hongjin Su, Howard Yen, Mengzhou Xia et al.)](https://brightbenchmark.github.io/)"
+    metric: Recall@1
+    split: long
+    desc: This tab is for the long document setting of BRIGHT.
+    tasks:
+      Retrieval:
+        - BrightRetrieval (biology)
+        - BrightRetrieval (earth_science)
+        - BrightRetrieval (economics)
+        - BrightRetrieval (psychology)
+        - BrightRetrieval (robotics)
+        - BrightRetrieval (stackoverflow)
+        - BrightRetrieval (sustainable_living)
+        - BrightRetrieval (pony)
+  coir:
+    title: CoIR
+    language_long: "Code"
+    has_overall: false
+    acronym: null
+    icon: "💻"
+    special_icons: null
+    credits: "[Samoed](https://github.com/Samoed) and [monikernemo](https://github.com/monikernemo) and [CoIR (Xiangyang Li, Kuicai Dong, Yi Quan Lee et al.)](https://arxiv.org/abs/2407.02883)"
+    metric: nDCG@10
+    tasks:
+      Retrieval:
+        - AppsRetrieval
+        - CodeFeedbackMT
+        - CodeFeedbackST
+        - CodeSearchNetCCRetrieval (python)
+        - CodeSearchNetCCRetrieval (javascript)
+        - CodeSearchNetCCRetrieval (go)
+        - CodeSearchNetCCRetrieval (ruby)
+        - CodeSearchNetCCRetrieval (java)
+        - CodeSearchNetCCRetrieval (php)
+        - CodeSearchNetRetrieval (python)
+        - CodeSearchNetRetrieval (javascript)
+        - CodeSearchNetRetrieval (go)
+        - CodeSearchNetRetrieval (ruby)
+        - CodeSearchNetRetrieval (java)
+        - CodeSearchNetRetrieval (php)
+        - CodeTransOceanContest
+        - CodeTransOceanDL
+        - CosQA
+        - StackOverflowQA
+        - SyntheticText2SQL
