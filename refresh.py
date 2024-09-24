@@ -661,7 +661,7 @@ def refresh_leaderboard() -> tuple[list, dict]:
     )
     for board, board_config in pbar_tasks:
         # Optional fetch only for a specific board
-        if board != "ru": continue
+        # if board != "ru": continue
         # Very hacky - should fix this as soon as possible
         if board == "bright_long":
             TASK_TO_METRIC["Retrieval"] = ["recall_at_1"]
