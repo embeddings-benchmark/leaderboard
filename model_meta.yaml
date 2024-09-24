@@ -307,6 +307,14 @@ model_meta:
     is_external: false
     is_proprietary: false
     is_sentence_transformers_compatible: true
+  cde-small-v1:
+    link: https://huggingface.co/jxm/cde-small-v1
+    seq_len: 512
+    size: 143
+    dim: 768
+    is_external: true
+    is_proprietary: false
+    is_sentence_transformers_compatible: false
   contriever-base-msmarco:
     link: https://huggingface.co/nthakur/contriever-base-msmarco
     seq_len: 512
