@@ -1578,7 +1578,7 @@ model_meta:
     uses_instruct: false
   voyageai__voyage-2:
     link: https://docs.voyageai.com/embeddings/
-    seq_len: 1024
+    seq_len: 4000
     size: null
     dim: 1024
     is_external: true
@@ -1600,7 +1600,7 @@ model_meta:
     size: null
     dim: 1024
     is_external: true
-    is_proprietary: false
+    is_proprietary: true
     is_sentence_transformers_compatible: false
     uses_instruct: true
   voyageai__voyage-law-2:
@@ -1635,6 +1635,24 @@ model_meta:
     seq_len: 32000
     size: null
     dim: 1024
+    is_external: true
+    is_proprietary: true
+    is_sentence_transformers_compatible: false
+    uses_instruct: false
+  voyageai__voyage-3:
+    link: https://docs.voyageai.com/embeddings/
+    seq_len: 32000
+    size: null
+    dim: 1024
+    is_external: true
+    is_proprietary: true
+    is_sentence_transformers_compatible: false
+    uses_instruct: false
+  voyageai__voyage-3-lite:
+    link: https://docs.voyageai.com/embeddings/
+    seq_len: 32000
+    size: null
+    dim: 512
     is_external: true
     is_proprietary: true
     is_sentence_transformers_compatible: false
