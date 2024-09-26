@@ -2048,6 +2048,10 @@ models_to_skip:
 - twadada/s2v
 - twadada/tst2
 - twadada/tst
+- markaw/NV-Embed-v2
+- linhphanff/stella_en_1.5B_v5_clone
+- BN7002/gte-Qwen2-7B-instruct-Q4_K_M-GGUF
+- DecisionOptimizationSystemProduction/DeepFeatTextEmbeddingLarge
 cross_encoders:
 - FollowIR-7B
 - flan-t5-base
