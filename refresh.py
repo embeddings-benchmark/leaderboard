@@ -472,6 +472,7 @@ def get_mteb_data(
                 for res in task_results
             ]
         except Exception as e:
+            if 'ILKT' in model.modelId: continue
             print("ERROR", model.modelId, e)
             continue
         out = {k: v for d in out for k, v in d.items()}

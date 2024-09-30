@@ -811,7 +811,7 @@ model_meta:
     is_proprietary: false
     is_sentence_transformers_compatible: true
     uses_instruct: false
-  google-gecko__text-embedding-preview-0409-256:
+  google-gecko__text-embedding-preview-004-256:
     link: https://cloud.google.com/vertex-ai/generative-ai/docs/embeddings/get-text-embeddings#latest_models
     seq_len: 2048
     size: 1200
@@ -820,7 +820,7 @@ model_meta:
     is_proprietary: true
     is_sentence_transformers_compatible: false
     uses_instruct: false
-  google-gecko__text-embedding-preview-0409:
+  google-gecko__text-embedding-preview-004:
     link: https://cloud.google.com/vertex-ai/generative-ai/docs/embeddings/get-text-embeddings#latest_models
     seq_len: 2048
     size: 1200
