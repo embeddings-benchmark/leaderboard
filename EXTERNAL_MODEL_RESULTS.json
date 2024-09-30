@@ -7578,14 +7578,14 @@
             "p-MRR": []
         }
     },
-    "google-gecko__text-embedding-preview-004": {
+    "google-gecko__text-embedding-004": {
         "BitextMining": {
             "f1": []
         },
         "Classification": {
             "accuracy": [
                 {
-                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://cloud.google.com/vertex-ai/generative-ai/docs/embeddings/get-text-embeddings#latest_models\">text-embedding-preview-004</a>",
+                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://cloud.google.com/vertex-ai/generative-ai/docs/embeddings/get-text-embeddings#latest_models\">text-embedding-004</a>",
                     "AmazonCounterfactualClassification (en)": 75.34,
                     "AmazonPolarityClassification": 97.34,
                     "AmazonReviewsClassification (en)": 51.17,
@@ -7604,7 +7604,7 @@
         "Clustering": {
             "v_measure": [
                 {
-                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://cloud.google.com/vertex-ai/generative-ai/docs/embeddings/get-text-embeddings#latest_models\">text-embedding-preview-004</a>",
+                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://cloud.google.com/vertex-ai/generative-ai/docs/embeddings/get-text-embeddings#latest_models\">text-embedding-004</a>",
                     "ArxivClusteringP2P": 46.27,
                     "ArxivClusteringS2S": 38.36,
                     "BiorxivClusteringP2P": 37.87,
@@ -7622,13 +7622,13 @@
         "PairClassification": {
             "max_ap": [
                 {
-                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://cloud.google.com/vertex-ai/generative-ai/docs/embeddings/get-text-embeddings#latest_models\">text-embedding-preview-004</a>",
+                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://cloud.google.com/vertex-ai/generative-ai/docs/embeddings/get-text-embeddings#latest_models\">text-embedding-004</a>",
                     "SprintDuplicateQuestions": 96.26,
                     "TwitterSemEval2015": 79.04,
                     "TwitterURLCorpus": 87.53
                 },
                 {
-                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://cloud.google.com/vertex-ai/generative-ai/docs/embeddings/get-text-embeddings#latest_models\">text-embedding-preview-004</a>",
+                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://cloud.google.com/vertex-ai/generative-ai/docs/embeddings/get-text-embeddings#latest_models\">text-embedding-004</a>",
                     "SprintDuplicateQuestions": 96.26,
                     "TwitterSemEval2015": 79.04,
                     "TwitterURLCorpus": 87.53
@@ -7638,7 +7638,7 @@
         "Reranking": {
             "map": [
                 {
-                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://cloud.google.com/vertex-ai/generative-ai/docs/embeddings/get-text-embeddings#latest_models\">text-embedding-preview-004</a>",
+                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://cloud.google.com/vertex-ai/generative-ai/docs/embeddings/get-text-embeddings#latest_models\">text-embedding-004</a>",
                     "AskUbuntuDupQuestions": 64.4,
                     "MindSmallReranking": 33.07,
                     "SciDocsRR": 83.59,
@@ -7649,7 +7649,7 @@
         "Retrieval": {
             "ndcg_at_10": [
                 {
-                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://cloud.google.com/vertex-ai/generative-ai/docs/embeddings/get-text-embeddings#latest_models\">text-embedding-preview-004</a>",
+                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://cloud.google.com/vertex-ai/generative-ai/docs/embeddings/get-text-embeddings#latest_models\">text-embedding-004</a>",
                     "ArguAna": 62.18,
                     "BrightRetrieval (earth_science)": 34.38,
                     "BrightRetrieval (leetcode)": 29.64,
@@ -7681,7 +7681,7 @@
             ],
             "recall_at_1": [
                 {
-                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://cloud.google.com/vertex-ai/generative-ai/docs/embeddings/get-text-embeddings#latest_models\">text-embedding-preview-004</a>",
+                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://cloud.google.com/vertex-ai/generative-ai/docs/embeddings/get-text-embeddings#latest_models\">text-embedding-004</a>",
                     "BrightRetrieval (economics)": 21.84,
                     "BrightRetrieval (stackoverflow)": 19.23,
                     "BrightRetrieval (pony)": 0.29,
@@ -7696,7 +7696,7 @@
         "STS": {
             "cosine_spearman": [
                 {
-                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://cloud.google.com/vertex-ai/generative-ai/docs/embeddings/get-text-embeddings#latest_models\">text-embedding-preview-004</a>",
+                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://cloud.google.com/vertex-ai/generative-ai/docs/embeddings/get-text-embeddings#latest_models\">text-embedding-004</a>",
                     "BIOSSES": 89.46,
                     "SICK-R": 81.93,
                     "STS12": 77.59,
@@ -7713,7 +7713,7 @@
         "Summarization": {
             "cosine_spearman": [
                 {
-                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://cloud.google.com/vertex-ai/generative-ai/docs/embeddings/get-text-embeddings#latest_models\">text-embedding-preview-004</a>",
+                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://cloud.google.com/vertex-ai/generative-ai/docs/embeddings/get-text-embeddings#latest_models\">text-embedding-004</a>",
                     "SummEval": 32.63
                 }
             ]
@@ -7724,7 +7724,7 @@
         "InstructionRetrieval": {
             "p-MRR": [
                 {
-                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://cloud.google.com/vertex-ai/generative-ai/docs/embeddings/get-text-embeddings#latest_models\">text-embedding-preview-004</a>",
+                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://cloud.google.com/vertex-ai/generative-ai/docs/embeddings/get-text-embeddings#latest_models\">text-embedding-004</a>",
                     "Core17InstructionRetrieval": 5.44,
                     "News21InstructionRetrieval": 3.94,
                     "Robust04InstructionRetrieval": -2.4
@@ -7732,14 +7732,14 @@
             ]
         }
     },
-    "google-gecko__text-embedding-preview-004-256": {
+    "google-gecko__text-embedding-004-256": {
         "BitextMining": {
             "f1": []
         },
         "Classification": {
             "accuracy": [
                 {
-                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://cloud.google.com/vertex-ai/generative-ai/docs/embeddings/get-text-embeddings#latest_models\">text-embedding-preview-004-256</a>",
+                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://cloud.google.com/vertex-ai/generative-ai/docs/embeddings/get-text-embeddings#latest_models\">text-embedding-004-256</a>",
                     "AmazonCounterfactualClassification (en)": 70.93,
                     "AmazonPolarityClassification": 97.34,
                     "AmazonReviewsClassification (en)": 48.47,
@@ -7758,7 +7758,7 @@
         "Clustering": {
             "v_measure": [
                 {
-                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://cloud.google.com/vertex-ai/generative-ai/docs/embeddings/get-text-embeddings#latest_models\">text-embedding-preview-004-256</a>",
+                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://cloud.google.com/vertex-ai/generative-ai/docs/embeddings/get-text-embeddings#latest_models\">text-embedding-004-256</a>",
                     "ArxivClusteringP2P": 44.12,
                     "ArxivClusteringS2S": 36.54,
                     "BiorxivClusteringP2P": 36.28,
@@ -7776,13 +7776,13 @@
         "PairClassification": {
             "max_ap": [
                 {
-                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://cloud.google.com/vertex-ai/generative-ai/docs/embeddings/get-text-embeddings#latest_models\">text-embedding-preview-004-256</a>",
+                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://cloud.google.com/vertex-ai/generative-ai/docs/embeddings/get-text-embeddings#latest_models\">text-embedding-004-256</a>",
                     "SprintDuplicateQuestions": 96.49,
                     "TwitterSemEval2015": 78.23,
                     "TwitterURLCorpus": 87.04
                 },
                 {
-                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://cloud.google.com/vertex-ai/generative-ai/docs/embeddings/get-text-embeddings#latest_models\">text-embedding-preview-004-256</a>",
+                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://cloud.google.com/vertex-ai/generative-ai/docs/embeddings/get-text-embeddings#latest_models\">text-embedding-004-256</a>",
                     "SprintDuplicateQuestions": 96.49,
                     "TwitterSemEval2015": 78.25,
                     "TwitterURLCorpus": 87.12
@@ -7792,7 +7792,7 @@
         "Reranking": {
             "map": [
                 {
-                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://cloud.google.com/vertex-ai/generative-ai/docs/embeddings/get-text-embeddings#latest_models\">text-embedding-preview-004-256</a>",
+                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://cloud.google.com/vertex-ai/generative-ai/docs/embeddings/get-text-embeddings#latest_models\">text-embedding-004-256</a>",
                     "AskUbuntuDupQuestions": 63.84,
                     "MindSmallReranking": 31.89,
                     "SciDocsRR": 81.62,
@@ -7803,7 +7803,7 @@
         "Retrieval": {
             "ndcg_at_10": [
                 {
-                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://cloud.google.com/vertex-ai/generative-ai/docs/embeddings/get-text-embeddings#latest_models\">text-embedding-preview-004-256</a>",
+                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://cloud.google.com/vertex-ai/generative-ai/docs/embeddings/get-text-embeddings#latest_models\">text-embedding-004-256</a>",
                     "ArguAna": 56.27,
                     "CQADupstackRetrieval": 45.41,
                     "ClimateFEVER": 29.35,
@@ -7825,7 +7825,7 @@
         "STS": {
             "cosine_spearman": [
                 {
-                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://cloud.google.com/vertex-ai/generative-ai/docs/embeddings/get-text-embeddings#latest_models\">text-embedding-preview-004-256</a>",
+                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://cloud.google.com/vertex-ai/generative-ai/docs/embeddings/get-text-embeddings#latest_models\">text-embedding-004-256</a>",
                     "BIOSSES": 89.42,
                     "SICK-R": 81.67,
                     "STS12": 78.02,
@@ -7842,7 +7842,7 @@
         "Summarization": {
             "cosine_spearman": [
                 {
-                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://cloud.google.com/vertex-ai/generative-ai/docs/embeddings/get-text-embeddings#latest_models\">text-embedding-preview-004-256</a>",
+                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://cloud.google.com/vertex-ai/generative-ai/docs/embeddings/get-text-embeddings#latest_models\">text-embedding-004-256</a>",
                     "SummEval": 32.36
                 }
             ]
