@@ -42,26 +42,17 @@ jobs:
           all_data_tasks/*
         committer: Orion Weller <wellerorion@gmail.com>
         author: Orion Weller <wellerorion@gmail.com>
-    - name: Enable Pull Request Automerge
-      if: steps.cpr.outputs.pull-request-operation == 'created'
-      uses: peter-evans/enable-pull-request-automerge@v3
-      with:
-        token: ${{ secrets.GITHUB_TOKEN }}
-        pull-request-number: ${{ steps.cpr.outputs.pull-request-number }}
-        merge-method: squash
-    - name: Automatically merge PR if all checks pass
-      if: steps.cpr.outputs.pull-request-operation == 'created'
+    - name: Automatically merge PR
       uses: pascalgn/automerge-action@v0.15.6
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         PULL_REQUEST: ${{ steps.cpr.outputs.pull-request-number }}
         MERGE_LABELS: ""
         MERGE_METHOD: squash
-        MERGE_COMMIT_MESSAGE: "pull-request-title"
+        MERGE_COMMIT_MESSAGE: "automated-leaderboard-update-merge"
         MERGE_RETRIES: "6"
         MERGE_RETRY_SLEEP: "10000"
     - name: Push to hub
-      if: steps.cpr.outputs.pull-request-operation == 'closed'
       env:
         HF_TOKEN: ${{ secrets.HF_TOKEN }}
       run: git push https://mteb:$HF_TOKEN@huggingface.co/spaces/mteb/leaderboard main
