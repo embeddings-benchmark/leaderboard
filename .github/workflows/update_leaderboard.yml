@@ -1,3 +1,6 @@
+# This workflow will install Python dependencies, run tests and lint with a single version of Python
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-python-with-github-actions
+
 name: update_leaderboard_daily
 
 on:
@@ -5,10 +8,11 @@ on:
     - cron: '30 2 * * *'
   push:
     branches: [ main ]
-  workflow_dispatch:
+  workflow_dispatch: # Allows us to trigger the workflow manually via the GitHub UI
 
 jobs:
-  update-and-merge:
+  update_leaderboard:
+
     runs-on: ubuntu-latest
     
     steps:
@@ -26,33 +30,15 @@ jobs:
     - name: Run leaderboard updating code
       run: |
         python refresh.py
-    - name: Create Pull Request
-      id: cpr
-      uses: peter-evans/create-pull-request@v5
+    - name: Commit updates
+      uses: stefanzweifel/git-auto-commit-action@v4
       with:
-        token: ${{ secrets.GITHUB_TOKEN }}
-        commit-message: Automated Leaderboard Update
-        title: Automated Leaderboard Update
-        body: This is an automated PR to update the leaderboard.
-        branch: automated-leaderboard-update
-        delete-branch: true
-        add-paths: |
-          *.json
-          boards_data/*
-          all_data_tasks/*
-        committer: Orion Weller <wellerorion@gmail.com>
-        author: Orion Weller <wellerorion@gmail.com>
-    - name: Automatically merge PR
-      uses: pascalgn/automerge-action@v0.15.6
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        PULL_REQUEST: ${{ steps.cpr.outputs.pull-request-number }}
-        MERGE_LABELS: ""
-        MERGE_METHOD: squash
-        MERGE_COMMIT_MESSAGE: "automated-leaderboard-update-merge"
-        MERGE_RETRIES: "6"
-        MERGE_RETRY_SLEEP: "10000"
-        MERGE_ERROR_FAIL: "true"
+        commit_message: Automated Leaderboard Update
+        file_pattern: '*.json boards_data/* all_data_tasks/*'
+        # Needed so that it can override the PR settings
+        commit_user_name: Orion Weller
+        commit_user_email: wellerorion@gmail.com
+        commit_author: Orion Weller <wellerorion@gmail.com>
     - name: Push to hub
       env:
         HF_TOKEN: ${{ secrets.HF_TOKEN }}
