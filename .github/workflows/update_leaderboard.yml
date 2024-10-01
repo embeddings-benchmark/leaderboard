@@ -36,7 +36,10 @@ jobs:
         body: This is an automated PR to update the leaderboard.
         branch: automated-leaderboard-update
         delete-branch: true
-        file-pattern: '*.json boards_data/* all_data_tasks/*'
+        add-paths: |
+          *.json
+          boards_data/*
+          all_data_tasks/*
         committer: Orion Weller <wellerorion@gmail.com>
         author: Orion Weller <wellerorion@gmail.com>
     - name: Enable Pull Request Automerge
