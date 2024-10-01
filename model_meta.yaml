@@ -1639,24 +1639,6 @@ model_meta:
     is_proprietary: true
     is_sentence_transformers_compatible: false
     uses_instruct: false
-  voyageai__voyage-3:
-    link: https://docs.voyageai.com/embeddings/
-    seq_len: 32000
-    size: null
-    dim: 1024
-    is_external: true
-    is_proprietary: true
-    is_sentence_transformers_compatible: false
-    uses_instruct: false
-  voyageai__voyage-3-lite:
-    link: https://docs.voyageai.com/embeddings/
-    seq_len: 32000
-    size: null
-    dim: 512
-    is_external: true
-    is_proprietary: true
-    is_sentence_transformers_compatible: false
-    uses_instruct: false
   FacebookAI__xlm-roberta-base:
     link: https://huggingface.co/FacebookAI/xlm-roberta-base
     seq_len: 514
