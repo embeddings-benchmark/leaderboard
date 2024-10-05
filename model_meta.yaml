@@ -2062,6 +2062,7 @@ models_to_skip:
 - twadada/nmc-nignore50
 - twadada/nmc-300-w75k-b10k
 - twadada/nmc-300-w50k-b10k
+- bijaygurung/stella_en_400M_v5
 cross_encoders:
 - FollowIR-7B
 - flan-t5-base
