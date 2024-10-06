@@ -1639,7 +1639,7 @@ model_meta:
     is_proprietary: true
     is_sentence_transformers_compatible: false
     uses_instruct: false
-   voyageai__voyage-3:
+  voyageai__voyage-3:
     link: https://docs.voyageai.com/embeddings/
     seq_len: 32000
     size: null
