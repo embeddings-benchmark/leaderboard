@@ -2063,6 +2063,10 @@ models_to_skip:
 - twadada/nmc-300-w75k-b10k
 - twadada/nmc-300-w50k-b10k
 - bijaygurung/stella_en_400M_v5
+- bennegeek/stella_en_1.5B_v5
+- lgbird/stella_1.5B_custom
+- mmazeem/gte-Qwen2-7B-instruct-Q4_K_M-GGUF
+- shanghung/stella-base-zh-v3-1792d
 cross_encoders:
 - FollowIR-7B
 - flan-t5-base
