@@ -24156,6 +24156,130 @@
             "p-MRR": []
         }
     },
+    "voyageai__voyage-3": {
+        "BitextMining": {
+            "f1": []
+        },
+        "Classification": {
+            "accuracy": []
+        },
+        "Clustering": {
+            "v_measure": []
+        },
+        "PairClassification": {
+            "max_ap": []
+        },
+        "Reranking": {
+            "map": []
+        },
+        "Retrieval": {
+            "ndcg_at_10": [
+                {
+                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://docs.voyageai.com/embeddings/\">voyage-3</a>",
+                    "AILACasedocs": 40.59,
+                    "AILAStatutes": 42.49,
+                    "AlloprofRetrieval": 73.76,
+                    "AppsRetrieval": 73.03,
+                    "BSARDRetrieval": 44.87,
+                    "CodeFeedbackMT": 66.69,
+                    "CodeFeedbackST": 83.02,
+                    "CodeSearchNetCCRetrieval (python)": 79.8,
+                    "CodeSearchNetCCRetrieval (javascript)": 81.06,
+                    "CodeSearchNetCCRetrieval (go)": 75.78,
+                    "CodeSearchNetCCRetrieval (ruby)": 79.51,
+                    "CodeSearchNetCCRetrieval (java)": 79.75,
+                    "CodeSearchNetCCRetrieval (php)": 71.3,
+                    "CodeSearchNetRetrieval (python)": 93.04,
+                    "CodeSearchNetRetrieval (javascript)": 87.26,
+                    "CodeSearchNetRetrieval (go)": 97.36,
+                    "CodeSearchNetRetrieval (ruby)": 90.89,
+                    "CodeSearchNetRetrieval (java)": 93.56,
+                    "CodeSearchNetRetrieval (php)": 91.69,
+                    "CodeTransOceanContest": 89.92,
+                    "CodeTransOceanDL": 33.92,
+                    "CosQA": 28.7,
+                    "GerDaLIRSmall": 44.72,
+                    "LEMBNarrativeQARetrieval": 54.12,
+                    "LEMBQMSumRetrieval": 51.05,
+                    "LEMBSummScreenFDRetrieval": 97.82,
+                    "LEMBWikimQARetrieval": 88.9,
+                    "LeCaRDv2": 69.66,
+                    "LegalBenchConsumerContractsQA": 86.75,
+                    "LegalBenchCorporateLobbying": 94.54,
+                    "LegalQuAD": 65.03,
+                    "LegalSummarization": 69.23,
+                    "MIRACLRetrieval (ru)": 68.43,
+                    "MintakaRetrieval (fr)": 44.56,
+                    "RiaNewsRetrieval": 88.02,
+                    "RuBQRetrieval": 71.54,
+                    "StackOverflowQA": 94.33,
+                    "SyntecRetrieval": 87.54,
+                    "SyntheticText2SQL": 57.56,
+                    "XPQARetrieval (fra-fra)": 76.08
+                }
+            ]
+        },
+        "STS": {
+            "cosine_spearman": []
+        },
+        "Summarization": {
+            "cosine_spearman": []
+        },
+        "MultilabelClassification": {
+            "accuracy": []
+        },
+        "InstructionRetrieval": {
+            "p-MRR": []
+        }
+    },
+    "voyageai__voyage-3-lite": {
+        "BitextMining": {
+            "f1": []
+        },
+        "Classification": {
+            "accuracy": []
+        },
+        "Clustering": {
+            "v_measure": []
+        },
+        "PairClassification": {
+            "max_ap": []
+        },
+        "Reranking": {
+            "map": []
+        },
+        "Retrieval": {
+            "ndcg_at_10": [
+                {
+                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://docs.voyageai.com/embeddings/\">voyage-3-lite</a>",
+                    "AILACasedocs": 38.15,
+                    "AILAStatutes": 35.03,
+                    "GerDaLIRSmall": 43.73,
+                    "LEMBNarrativeQARetrieval": 51.67,
+                    "LEMBQMSumRetrieval": 53.01,
+                    "LEMBSummScreenFDRetrieval": 96.71,
+                    "LEMBWikimQARetrieval": 88.34,
+                    "LeCaRDv2": 67.96,
+                    "LegalBenchConsumerContractsQA": 83.22,
+                    "LegalBenchCorporateLobbying": 94.53,
+                    "LegalQuAD": 61.96,
+                    "LegalSummarization": 61.42
+                }
+            ]
+        },
+        "STS": {
+            "cosine_spearman": []
+        },
+        "Summarization": {
+            "cosine_spearman": []
+        },
+        "MultilabelClassification": {
+            "accuracy": []
+        },
+        "InstructionRetrieval": {
+            "p-MRR": []
+        }
+    },
     "voyageai__voyage-code-2": {
         "BitextMining": {
             "f1": []
