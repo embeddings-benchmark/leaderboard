@@ -2085,6 +2085,7 @@ models_to_skip:
 - lgbird/stella_1.5B_custom
 - mmazeem/gte-Qwen2-7B-instruct-Q4_K_M-GGUF
 - shanghung/stella-base-zh-v3-1792d
+- mav23/gte-Qwen2-7B-instruct-GGUF
 cross_encoders:
 - FollowIR-7B
 - flan-t5-base
