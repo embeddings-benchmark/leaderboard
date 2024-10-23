@@ -2086,6 +2086,14 @@ models_to_skip:
 - mmazeem/gte-Qwen2-7B-instruct-Q4_K_M-GGUF
 - shanghung/stella-base-zh-v3-1792d
 - mav23/gte-Qwen2-7B-instruct-GGUF
+- Marqo/dunzhang-stella_en_400M_v5
+- mav23/gte-Qwen2-1.5B-instruct-GGUF
+- DivineNnamdi/jina-embeddings-v3
+- tomaarsen/mxbai-embed-large-v1-exported
+- yixuan-chia/multilingual-e5-large-instruct-gguf
+- Nextcloud-AI/multilingual-e5-large-instruct
+- aiacademyvn/multilingual-e5-large-instruct
+- katanemo/bge-large-en-v1.5
 cross_encoders:
 - FollowIR-7B
 - flan-t5-base
