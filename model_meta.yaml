@@ -2094,6 +2094,25 @@ models_to_skip:
 - Nextcloud-AI/multilingual-e5-large-instruct
 - aiacademyvn/multilingual-e5-large-instruct
 - katanemo/bge-large-en-v1.5
+- delwinn/stella_en_1.5B_v5
+- tensorblock/gte-Qwen2-7B-instruct-GGUF
+- tensorblock/gte-Qwen2-1.5B-instruct-GGUF
+- arkohut/jina-embeddings-v3
+- ISOISS/jina-embeddings-v3-tei
+- OrcaDB/cde-small-v1
+- tomaarsen/mxbai-embed-large-v1-test
+- OrcaDB/gte-base-en-v1.5
+- twine-network/NoInstruct-small-Embedding-v0-Q8_0-GGUF
+- twine-network/NoInstruct-small-Embedding-v0-Q5_K_M-GGUF
+- tomaarsen/bge-small-en-v1.5-copy
+- nnch/multilingual-e5-large-Q4_K_M-GGUF
+- apto-as/multilingual-e5-large-Q8_0-GGUF
+- gpustack/jina-embeddings-v2-base-en-GGUF
+- sheldonrobinson/snowflake-arctic-embed-m-v1.5-Q8_0-GGUF
+- yixuan-chia/multilingual-e5-base-gguf
+- deepfile/multilingual-e5-small-onnx-qint8
+- deepfile/multilingual-e5-small-openvino
+- Marqo/multilingual-e5-small
 cross_encoders:
 - FollowIR-7B
 - flan-t5-base
