@@ -2129,6 +2129,8 @@ models_to_skip:
 - arkohut/jina-embeddings-v2-base-zh
 - silverjam/jina-embeddings-v2-base-zh
 - BookingCare/gte-multilingual-base-onnx-quantized
+- blevlabs/stella_en_v5
+- sigridjineth/stella_en_1.5B_v5_sigrid
 cross_encoders:
 - FollowIR-7B
 - flan-t5-base
