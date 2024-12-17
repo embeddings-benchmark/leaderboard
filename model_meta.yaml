@@ -2131,6 +2131,7 @@ models_to_skip:
 - BookingCare/gte-multilingual-base-onnx-quantized
 - blevlabs/stella_en_v5
 - sigridjineth/stella_en_1.5B_v5_sigrid
+- google/Gemma-Embeddings-v1.0
 cross_encoders:
 - FollowIR-7B
 - flan-t5-base
