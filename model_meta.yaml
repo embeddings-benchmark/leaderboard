@@ -2148,6 +2148,10 @@ models_to_skip:
 - annofung/Dmeta-embedding-zh-Q4_0-GGUF
 - annofung/Dmeta-embedding-zh-Q5_K_M-GGUF
 - huizhang0110/hui-embedding
+- tensorblock/e5-R-mistral-7b-GGUF
+- google/Gemma-Embeddings-v0.8
+- lynxeco/snowflake-arctic-embed-m-v1.5-Q8_0-GGUF
+- mavihsrr/bge-small-retail-finetuned
 cross_encoders:
 - FollowIR-7B
 - flan-t5-base
