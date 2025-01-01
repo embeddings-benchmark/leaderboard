@@ -2147,6 +2147,7 @@ models_to_skip:
 - HIT-TMG/KaLM-embedding-multilingual-max-instruct-v1
 - annofung/Dmeta-embedding-zh-Q4_0-GGUF
 - annofung/Dmeta-embedding-zh-Q5_K_M-GGUF
+- huizhang0110/hui-embedding
 cross_encoders:
 - FollowIR-7B
 - flan-t5-base
