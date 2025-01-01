@@ -2132,6 +2132,21 @@ models_to_skip:
 - blevlabs/stella_en_v5
 - sigridjineth/stella_en_1.5B_v5_sigrid
 - google/Gemma-Embeddings-v1.0
+- starsy/bge-en-icl
+- Gouzi3618/LENS-8000
+- Gouzi3618/LENS-4000
+- starsy/gte-Qwen2-7B-instruct
+- sthuck/gte-Qwen2-7B-instruct-bfloat16
+- Fashion-Italia/gte-Qwen2-7B-instruct-Q4_K_M-GGUF
+- gall88/gte-Qwen2-7B-instruct-fp16
+- BillSYZhang/gte-Qwen2-7B-instruct-Q4-mlx
+- Fashion-Italia/gte-Qwen2-1.5B-instruct-Q4_K_M-GGUF
+- pingkeest/learning2_model
+- Quark-LLM/quark-llm-embedding-8B
+- Quark-LLM/quark-llm-embedding-1.5B
+- HIT-TMG/KaLM-embedding-multilingual-max-instruct-v1
+- annofung/Dmeta-embedding-zh-Q4_0-GGUF
+- annofung/Dmeta-embedding-zh-Q5_K_M-GGUF
 cross_encoders:
 - FollowIR-7B
 - flan-t5-base
