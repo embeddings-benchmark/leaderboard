@@ -2152,6 +2152,7 @@ models_to_skip:
 - google/Gemma-Embeddings-v0.8
 - lynxeco/snowflake-arctic-embed-m-v1.5-Q8_0-GGUF
 - mavihsrr/bge-small-retail-finetuned
+- jburmeister/stella_en_400M_v5
 cross_encoders:
 - FollowIR-7B
 - flan-t5-base
