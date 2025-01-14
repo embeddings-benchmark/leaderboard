@@ -1800,6 +1800,16 @@ model_meta:
     is_external: false
     is_proprietary: false
     is_sentence_transformers_compatible: false
+    uses_instruct: true
+  cde-small-v2:
+    link: https://huggingface.co/jxm/cde-small-v2
+    seq_len: 512
+    size: 150
+    dim: 768
+    is_external: false
+    is_proprietary: false
+    is_sentence_transformers_compatible: false
+    uses_instruct: true
 models_to_skip:
 - michaelfeil/ct2fast-e5-large-v2
 - McGill-NLP/LLM2Vec-Sheared-LLaMA-mntp-unsup-simcse
