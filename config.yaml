@@ -299,6 +299,10 @@ boards:
       - GerDaLIR
       - GermanGovServiceRetrieval
       - LegalQuAD
+      STS:
+      - GermanSTSBenchmark
+      PairClassification:
+      - FalseFriendsGermanEnglish 
   pl:
     title: Polish
     language_long: Polish
