@@ -287,13 +287,18 @@ boards:
     acronym: null
     icon: "🇩🇪"
     special_icons: null
-    credits: "[Silvan](https://github.com/slvnwhrl)"
+    credits: "[Silvan](https://github.com/slvnwhrl), [Sam Heymann](https://github.com/sam-hey)"
     tasks:
       Clustering:
       - BlurbsClusteringP2P
       - BlurbsClusteringS2S
       - TenKGnadClusteringP2P
       - TenKGnadClusteringS2S
+      Retrieval:
+      - GermanDPR
+      - GerDaLIR
+      - GermanGovServiceRetrieval
+      - LegalQuAD
   pl:
     title: Polish
     language_long: Polish
