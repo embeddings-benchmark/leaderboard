@@ -297,23 +297,23 @@ boards:
       Retrieval:
       - GermanQuAD-Retrieval
       - GermanDPR
-      - XMarket
+      - XMarket (de)
       - GerDaLIR
       STS:
       - GermanSTSBenchmark
-      - STS22
+      - STS22 (de-en)
       PairClassification:
       - FalseFriendsGermanEnglish
-      - PawsXPairClassification
+      - PawsXPairClassification (de)
       Reranking:
-      - MIRACLReranking
+      - MIRACLReranking (de)
       Classification:
-      - AmazonCounterfactualClassification
-      - AmazonReviewsClassification
-      - MTOPDomainClassification
-      - MTOPIntentClassification
-      - MassiveIntentClassification
-      - MassiveScenarioClassification
+      - AmazonCounterfactualClassification (de)
+      - AmazonReviewsClassification (de)
+      - MTOPDomainClassification (de)
+      - MTOPIntentClassification (de)
+      - MassiveIntentClassification (de)
+      - MassiveScenarioClassification (de)
   pl:
     title: Polish
     language_long: Polish
