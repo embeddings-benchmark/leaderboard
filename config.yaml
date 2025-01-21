@@ -295,25 +295,25 @@ boards:
       - TenKGnadClusteringP2P
       - TenKGnadClusteringS2S
       Retrieval:
-      - "GermanQuAD-Retrieval"
-      - "GermanDPR"
-      - "XMarket"
-      - "GerDaLIR"
+      - GermanQuAD-Retrieval
+      - GermanDPR
+      - XMarket
+      - GerDaLIR
       STS:
-      - "GermanSTSBenchmark"
-      - "STS22"
+      - GermanSTSBenchmark
+      - STS22
       PairClassification:
-      - "FalseFriendsGermanEnglish"
-      - "PawsXPairClassification"
+      - FalseFriendsGermanEnglish
+      - PawsXPairClassification
       Reranking:
-      - "MIRACLReranking"
+      - MIRACLReranking
       Classification:
-      - "AmazonCounterfactualClassification"
-      - "AmazonReviewsClassification"
-      - "MTOPDomainClassification"
-      - "MTOPIntentClassification"
-      - "MassiveIntentClassification"
-      - "MassiveScenarioClassification"
+      - AmazonCounterfactualClassification
+      - AmazonReviewsClassification
+      - MTOPDomainClassification
+      - MTOPIntentClassification
+      - MassiveIntentClassification
+      - MassiveScenarioClassification
   pl:
     title: Polish
     language_long: Polish
