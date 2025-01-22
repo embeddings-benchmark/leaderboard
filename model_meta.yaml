@@ -1810,6 +1810,15 @@ model_meta:
     is_proprietary: false
     is_sentence_transformers_compatible: false
     uses_instruct: true
+  infly__inf-retriever-v1:
+    link: https://huggingface.co/infly/inf-retriever-v1
+    seq_len: 32768
+    size: 7069
+    dim: 3584
+    is_external: false
+    is_proprietary: false
+    is_sentence_transformers_compatible: true
+    uses_instruct: true
 models_to_skip:
 - michaelfeil/ct2fast-e5-large-v2
 - McGill-NLP/LLM2Vec-Sheared-LLaMA-mntp-unsup-simcse
