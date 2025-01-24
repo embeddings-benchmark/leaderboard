@@ -53,6 +53,11 @@ tasks:
     metric: "p-MRR"
     metric_description: "paired mean reciprocal rank (p-MRR)"
     task_description: "Retrieval w/Instructions is the task of finding relevant documents for a query that has detailed instructions."
+  SummaryRetrieval:
+    icon: "📜🔎"
+    metric: "f1"
+    metric_description: "[F1](https://huggingface.co/spaces/evaluate-metric/f1)"
+    task_description: "SummaryRetrieval is the task of finding true summary for a text."
 boards:
   en:
     title: English
@@ -374,6 +379,79 @@ boards:
       MultilabelClassification:
         - CEDRClassification
         - SensitiveTopicsClassification
+  fa:
+    title: Persian
+    language_long: "Persian (Farsi)"
+    has_overall: true
+    acronym: null
+    icon: "🇮🇷"
+    special_icons: null
+    credits: "[MCINect:](https://huggingface.co/MCINext)[Erfan Zeinivand](https://github.com/Erfun76)[Morteza Alikhani](https://github.com/mortezaalikhani)[Mehran Sarmadi](https://github.com/mehran-sarmadi)"
+    tasks:
+      Classification:
+        - PersianFoodSentimentClassification
+        - SynPerChatbotConvSAClassification
+        - SynPerChatbotConvSAToneClassification
+        - SynPerChatbotSatisfactionLevelClassification
+        - SynPerChatbotRAGToneClassification
+        - SynPerChatbotToneClassification
+        - PersianTextTone
+        - SIDClassification
+        - DeepSentiPers
+        - PersianTextEmotion
+        - SentimentDKSF
+        - NLPTwitterAnalysisClassification
+        - DigikalamagClassification
+        - MassiveIntentClassification (fa)
+        - MassiveScenarioClassification (fa)
+      Clustering:
+        - BeytooteClustering
+        - DigikalamagClustering
+        - HamshahriClustring
+        - NLPTwitterAnalysisClustering
+        - SIDClustring
+      PairClassification:
+        - FarsTail
+        - CExaPPC
+        - SynPerChatbotRAGFAQPC
+        - FarsiParaphraseDetection
+        - SynPerTextKeywordsPC
+        - SynPerQAFaPC
+        - ParsinluEntail
+        - ParsinluQueryParaphPC
+      Reranking:
+        - MIRACLReranking (fa)
+        - WikipediaRerankingMultilingual (fa)
+      Retrieval:
+        - SynPerQARetrieval
+        - SynPerChatbotTopicsRetrieval
+        - SynPerChatbotRAGTopicsRetrieval
+        - SynPerChatbotRAGFAQRetrieval
+        - PersianWebDocumentRetrieval
+        - WikipediaRetrievalMultilingual (fa)
+        - MIRACLRetrieval (fa)
+        - ClimateFEVER-Fa
+        - DBPedia-Fa
+        - HotpotQA-Fa
+        - MSMARCO-Fa
+        - NQ-Fa
+        - ArguAna-Fa
+        - CQADupstackRetrieval-Fa
+        - FiQA2018-Fa
+        - NFCorpus-Fa
+        - QuoraRetrieval-Fa
+        - SCIDOCS-Fa
+        - SciFact-Fa
+        - TRECCOVID-Fa
+        - Touche2020-Fa
+      STS:
+        - Farsick
+        - SynPerSTS
+        - Query2Query
+      SummaryRetrieval:
+        - SAMSumFa
+        - SynPerChatbotSumSRetrieval
+        - SynPerChatbotRAGSumSRetrieval
   se:
     title: Swedish
     language_long: Swedish
