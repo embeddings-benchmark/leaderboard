@@ -386,7 +386,7 @@ boards:
     acronym: null
     icon: "🇮🇷"
     special_icons: null
-    credits: "[MCINect:](https://huggingface.co/MCINext)[Erfan Zeinivand], (https://github.com/Erfun76)[Morteza Alikhani], (https://github.com/mortezaalikhani)[Mehran Sarmadi](https://github.com/mehran-sarmadi)"
+    credits: "[MCINect: ](https://huggingface.co/MCINext)[Erfan Zeinivand](https://github.com/Erfun76), [Morteza Alikhani](https://github.com/mortezaalikhani), [Mehran Sarmadi](https://github.com/mehran-sarmadi)"
     tasks:
       Classification:
         - PersianFoodSentimentClassification
