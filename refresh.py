@@ -25,6 +25,8 @@ PRETTY_NAMES = {
     "InstructionRetrieval": "Retrieval w/Instructions",
     "PairClassification": "Pair Classification",
     "BitextMining": "Bitext Mining",
+    "SummaryRetrieval": "Summary Retrieval",
+
 }
 
 TASK_TO_METRIC = {k: [v["metric"]] for k, v in TASKS_CONFIG.items()}
