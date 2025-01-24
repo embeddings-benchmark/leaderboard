@@ -398,7 +398,7 @@ boards:
     acronym: null
     icon: null
     special_icons: null
-    credits: null
+    credits: "[NAMAA-Space](https://huggingface.co/NAMAA-Space)"
     tasks:
       Retrieval:
         - MintakaRetrieval (ar)
