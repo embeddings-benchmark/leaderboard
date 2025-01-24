@@ -1810,6 +1810,96 @@ model_meta:
     is_proprietary: false
     is_sentence_transformers_compatible: false
     uses_instruct: true
+  BAAI__bge-m3-unsupervised:
+    link: https://huggingface.co/BAAI/bge-m3-unsupervised
+    seq_len: 8194
+    size: 568
+    dim: 1024
+    is_external: true
+    is_proprietary: false
+    is_sentence_transformers_compatible: true
+    uses_instruct: false
+  jinaai__jina-embeddings-v3:
+    link: https://huggingface.co/jinaai/jina-embeddings-v3
+    seq_len: 8194
+    size: 572
+    dim: 1024
+    is_external: true
+    is_proprietary: false
+    is_sentence_transformers_compatible: true
+    uses_instruct: false
+  Alibaba-NLP__gte-multilingual-base:
+    link: https://huggingface.co/Alibaba-NLP/gte-multilingual-base
+    seq_len: 8192
+    size: 305
+    dim: 768
+    is_external: true
+    is_proprietary: false
+    is_sentence_transformers_compatible: true
+    uses_instruct: false
+  HooshvareLab__bert-base-parsbert-uncased:
+    link: https://huggingface.co/HooshvareLab/bert-base-parsbert-uncased
+    seq_len: 512
+    size: 110
+    dim: 768
+    is_external: true
+    is_proprietary: false
+    is_sentence_transformers_compatible: true
+    uses_instruct: false
+  m3hrdadfi__bert-zwnj-wnli-mean-tokens:
+    link: https://huggingface.co/m3hrdadfi/bert-zwnj-wnli-mean-tokens
+    seq_len: 512
+    size: 110
+    dim: 768
+    is_external: true
+    is_proprietary: false
+    is_sentence_transformers_compatible: true
+    uses_instruct: false
+  m3hrdadfi__roberta-zwnj-wnli-mean-tokens:
+    link: https://huggingface.co/HooshvareLab/roberta-fa-zwnj-base
+    seq_len: 514
+    size: 110
+    dim: 768
+    is_external: true
+    is_proprietary: false
+    is_sentence_transformers_compatible: true
+    uses_instruct: false
+  myrkur__sentence-transformer-parsbert-fa:
+    link: https://huggingface.co/myrkur/sentence-transformer-parsbert-fa
+    seq_len: 512
+    size: 163
+    dim: 768
+    is_external: true
+    is_proprietary: false
+    is_sentence_transformers_compatible: true
+    uses_instruct: false
+  PartAI__TookaBERT-Base:
+    link: https://huggingface.co/PartAI/TookaBERT-Base
+    seq_len: 512
+    size: 123
+    dim: 768
+    is_external: true
+    is_proprietary: false
+    is_sentence_transformers_compatible: true
+    uses_instruct: false
+  PartAI__Tooka-SBERT:
+    link: https://huggingface.co/PartAI/Tooka-SBERT
+    seq_len: 512
+    size: 353
+    dim: 1024
+    is_external: true
+    is_proprietary: false
+    is_sentence_transformers_compatible: true
+    uses_instruct: false
+  sbunlp__fabert:
+    link: https://huggingface.co/sbunlp/fabert
+    seq_len: 512
+    size: 124
+    dim: 768
+    is_external: true
+    is_proprietary: false
+    is_sentence_transformers_compatible: true
+    uses_instruct: false
 models_to_skip:
 - michaelfeil/ct2fast-e5-large-v2
 - McGill-NLP/LLM2Vec-Sheared-LLaMA-mntp-unsup-simcse
