@@ -391,6 +391,22 @@ boards:
         - MassiveIntentClassification (nb)
         - MassiveScenarioClassification (nb)
         - ScalaNbClassification
+  ara:
+    title: Arabic
+    language_long: "Arabic"
+    has_overall: false
+    acronym: null
+    icon: null
+    special_icons: null
+    credits: null
+    tasks:
+      Retrieval:
+        - MintakaRetrieval (ar)
+        - MIRACLRetrieval (ar)
+        - MIRACLRetrievalHardNegatives (ar)
+        - MLQARetrieval (ara-ara)
+        - MrTidyRetrieval (arabic)
+        - XPQARetrieval (ara-ara)
   other-cls:
     title: "Other Languages"
     language_long: "47 (Only languages not included in the other tabs)"
