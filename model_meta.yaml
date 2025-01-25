@@ -2253,6 +2253,11 @@ models_to_skip:
 - lynxeco/snowflake-arctic-embed-m-v1.5-Q8_0-GGUF
 - mavihsrr/bge-small-retail-finetuned
 - jburmeister/stella_en_400M_v5
+- iamgroot42/rover_nexus
+- alexlimh/jasper_en_vision_language_v1
+- msyukorai/gte-Qwen2-1.5B-instruct-Q4_0-GGUF
+- LuminaInc/jina-embeddings-v3
+- sparkhonyuk/gte-Qwen2-7B-instruct-GGUF
 cross_encoders:
 - FollowIR-7B
 - flan-t5-base
