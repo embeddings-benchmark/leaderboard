@@ -21,7 +21,8 @@ This repository contains the code for pushing and updating the MTEB leaderboard 
 |------------------------------------------|------------------------------|
 | [mteb](https://github.com/embeddings-benchmark/mteb)          | The implementation of the benchmark. Here you e.g. find the code to run your model on the benchmark.                                                                                                      |
 | [leaderboard](https://huggingface.co/spaces/mteb/leaderboard) | The leaderboard itself, here you can view results of model run on MTEB.                                                                                                                                   |
-| [results](https://github.com/embeddings-benchmark/results)    | The results of MTEB is stored here. Though you can publish them to the leaderboard [adding](https://github.com/embeddings-benchmark/mteb/blob/main/docs/adding_a_model.md) the result to your model card. |
+| [results](https://github.com/embeddings-benchmark/results)    | The results of MTEB is stored here.  To learn how to add results to the Leaderboard, refer to the documentation: [Adding a Model to the Leaderboard](https://github.com/embeddings-benchmark/mteb/blob/main/docs/adding_a_model.md).
+ |
 
 ## Developer setup
 
