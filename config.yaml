@@ -287,13 +287,33 @@ boards:
     acronym: null
     icon: "🇩🇪"
     special_icons: null
-    credits: "[Silvan](https://github.com/slvnwhrl)"
+    credits: "[Silvan](https://github.com/slvnwhrl), [Sam Heymann](https://github.com/sam-hey)"
     tasks:
       Clustering:
       - BlurbsClusteringP2P
       - BlurbsClusteringS2S
       - TenKGnadClusteringP2P
       - TenKGnadClusteringS2S
+      Retrieval:
+      - GermanQuAD-Retrieval
+      - GermanDPR
+      - XMarket (de)
+      - GerDaLIR
+      STS:
+      - GermanSTSBenchmark
+      - STS22 (de-en)
+      PairClassification:
+      - FalseFriendsGermanEnglish
+      - PawsXPairClassification (de)
+      Reranking:
+      - MIRACLReranking (de)
+      Classification:
+      - AmazonCounterfactualClassification (de)
+      - AmazonReviewsClassification (de)
+      - MTOPDomainClassification (de)
+      - MTOPIntentClassification (de)
+      - MassiveIntentClassification (de)
+      - MassiveScenarioClassification (de)
   pl:
     title: Polish
     language_long: Polish
