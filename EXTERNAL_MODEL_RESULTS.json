@@ -9124,15 +9124,15 @@
                     "CBD": 77.23,
                     "DanishPoliticalCommentsClassification": 41.28,
                     "EmotionClassification": 56.01,
-                    "GeoreviewClassification": 53.47,
-                    "HeadlineClassification": 85.66,
-                    "HindiDiscourseClassification (hi)": 37.08,
+                    "GeoreviewClassification": 57.7,
+                    "HeadlineClassification": 86.08,
+                    "HindiDiscourseClassification (hi)": 37.09,
                     "IFlyTek": 52.7,
                     "ImdbClassification": 95.07,
-                    "InappropriatenessClassification": 65.29,
+                    "InappropriatenessClassification": 67.85,
                     "IndicSentimentClassification (hi)": 85.64,
                     "JDReview": 87.65,
-                    "KinopoiskClassification": 64.25,
+                    "KinopoiskClassification": 69.15,
                     "LccSentimentClassification": 70.13,
                     "MTOPDomainClassification (en)": 95.37,
                     "MTOPDomainClassification (de)": 93.51,
@@ -9272,15 +9272,15 @@
                     "PAC": 67.05,
                     "PolEmo2.0-IN": 83.5,
                     "PolEmo2.0-OUT": 62.55,
-                    "RuReviewsClassification": 68.58,
-                    "RuSciBenchGRNTIClassification": 64.56,
-                    "RuSciBenchOECDClassification": 51.2,
-                    "SIB200Classification (hi)": 76.51,
-                    "SentimentAnalysisHindi (hi)": 58.26,
+                    "RuReviewsClassification": 72.05,
+                    "RuSciBenchGRNTIClassification": 67.98,
+                    "RuSciBenchOECDClassification": 54.45,
+                    "SentimentAnalysisHindi (hi)": 58.27,
+		            "SIB200Classification (hi)": 76.52,
                     "TNews": 51.99,
                     "ToxicConversationsClassification": 68.81,
                     "TweetSentimentExtractionClassification": 66.26,
-                    "TweetSentimentClassification (hi)": 37.57,
+                    "TweetSentimentClassification (hi)": 37.58,
                     "Waimai": 87.91
                 }
             ]
@@ -9289,8 +9289,8 @@
             "v_measure": [
                 {
                     "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/GritLM/GritLM-7B\">GritLM-7B</a>",
-                    "IndicReviewsClusteringP2P (hi)": 45.03,
-                    "GeoreviewClusteringP2P": 74.06,
+                    "GeoreviewClusteringP2P": 77.46,
+                    "IndicReviewsClusteringP2P (hi)": 45.04,
                     "MasakhaNEWSClusteringP2P (amh)": 45.1,
                     "MasakhaNEWSClusteringP2P (eng)": 70.5,
                     "MasakhaNEWSClusteringP2P (fra)": 73.54,
@@ -9323,8 +9323,8 @@
                     "MasakhaNEWSClusteringS2S (tir)": 45.32,
                     "MasakhaNEWSClusteringS2S (xho)": 28.94,
                     "MasakhaNEWSClusteringS2S (yor)": 63.26,
-                    "RuSciBenchGRNTIClusteringP2P": 60.01,
-                    "RuSciBenchOECDClusteringP2P": 51.66,
+                    "RuSciBenchGRNTIClusteringP2P": 61.57,
+                    "RuSciBenchOECDClusteringP2P": 53.88,
                     "SIB200ClusteringS2S (hi)": 44.08
                 }
             ]
@@ -9334,6 +9334,7 @@
                 {
                     "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/GritLM/GritLM-7B\">GritLM-7B</a>",
                     "CDSC-E": 75.61,
+                    "FalseFriendsGermanEnglish": 54.17,
                     "OpusparcusPC (de)": 97.43,
                     "OpusparcusPC (en)": 99.14,
                     "OpusparcusPC (fi)": 92.05,
@@ -9358,6 +9359,7 @@
                 {
                     "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/GritLM/GritLM-7B\">GritLM-7B</a>",
                     "CDSC-E": 75.61,
+                    "FalseFriendsGermanEnglish": 54.17,
                     "OpusparcusPC (de)": 97.43,
                     "OpusparcusPC (en)": 99.14,
                     "OpusparcusPC (fi)": 92.05,
@@ -9376,8 +9378,7 @@
                     "SprintDuplicateQuestions": 93.35,
                     "TERRa": 58.93,
                     "TwitterSemEval2015": 81.08,
-                    "TwitterURLCorpus": 87.43,
-                    "XNLI (hi)": 66.59
+                    "TwitterURLCorpus": 87.43
                 }
             ]
         },
@@ -9389,13 +9390,33 @@
                     "AskUbuntuDupQuestions": 67.37,
                     "MMarcoReranking": 21.7,
                     "MindSmallReranking": 31.81,
-                    "MIRACLReranking (hi)": 30.69,
-                    "RuBQReranking": 72.43,
+                    "RuBQReranking": 75.75,
                     "SciDocsRR": 86.82,
                     "StackOverflowDupQuestions": 55.94,
                     "SyntecReranking": 92.62,
                     "T2Reranking": 65.64,
-                    "WikipediaRerankingMultilingual (hi)": 78.81
+                    "WikipediaRerankingMultilingual (hi)": 85.64
+                },
+                {
+                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/GritLM/GritLM-7B\">GritLM-7B</a>",
+                    "MIRACLReranking (ru)": 64.23,
+                    "MIRACLReranking (ar)": 74.22,
+                    "MIRACLReranking (bn)": 70.07,
+                    "MIRACLReranking (de)": 54.02,
+                    "MIRACLReranking (en)": 63.11,
+                    "MIRACLReranking (es)": 61.47,
+                    "MIRACLReranking (fa)": 53.69,
+                    "MIRACLReranking (fi)": 77.58,
+                    "MIRACLReranking (fr)": 53.51,
+                    "MIRACLReranking (hi)": 60.69,
+                    "MIRACLReranking (id)": 57.2,
+                    "MIRACLReranking (ja)": 66.14,
+                    "MIRACLReranking (ko)": 55.58,
+                    "MIRACLReranking (sw)": 65.0,
+                    "MIRACLReranking (te)": 70.57,
+                    "MIRACLReranking (th)": 70.61,
+                    "MIRACLReranking (yo)": 66.19,
+                    "MIRACLReranking (zh)": 50.02
                 }
             ]
         },
@@ -9411,8 +9432,8 @@
                     "AppsRetrieval": 35.13,
                     "ArguAna": 63.17,
                     "ArguAna-PL": 48.96,
+                    "BelebeleRetrieval (hi)": 80.57,
                     "BSARDRetrieval": 26.61,
-                    "BelebeleRetrieval (hin-Deva)": 80.57,
                     "BrightRetrieval (pony)": 21.98,
                     "BrightRetrieval (robotics)": 17.31,
                     "BrightRetrieval (economics)": 19.0,
@@ -9448,7 +9469,10 @@
                     "EcomRetrieval": 54.33,
                     "FiQA-PL": 37.98,
                     "FiQA2018": 59.91,
+                    "GerDaLIR": 9.32,
                     "GerDaLIRSmall": 20.61,
+                    "GermanDPR": 83.09,
+                    "GermanQuAD-Retrieval": 95.32,
                     "HellaSwag": 39.45,
                     "IndicQARetrieval (hi)": 55.98,
                     "LEMBNarrativeQARetrieval": 41.45,
@@ -9460,6 +9484,7 @@
                     "LegalBenchCorporateLobbying": 95.0,
                     "LegalQuAD": 44.18,
                     "LegalSummarization": 70.64,
+                    "MIRACLRetrieval (ru)": 68.3,
                     "MMarcoRetrieval": 76.54,
                     "MedicalRetrieval": 55.81,
                     "MintakaRetrieval (ar)": 25.88,
@@ -9471,14 +9496,15 @@
                     "MintakaRetrieval (ja)": 34.11,
                     "MintakaRetrieval (pt)": 54.89,
                     "MIRACLRetrievalHardNegatives (hi)": 44.29,
-                    "MultiLongDocRetrieval (hi)": 19.2,
+		            "MultiLongDocRetrieval (hi)": 19.15,
                     "NFCorpus": 40.86,
                     "NFCorpus-PL": 32.85,
                     "PIQA": 44.35,
                     "Quail": 11.67,
                     "RARbCode": 84.02,
                     "RARbMath": 82.35,
-                    "RuBQRetrieval": 70.94,
+                    "RiaNewsRetrieval": 82.76,
+                    "RuBQRetrieval": 76.31,
                     "SCIDOCS": 24.41,
                     "SCIDOCS-PL": 18.34,
                     "SIQA": 7.23,
@@ -9500,6 +9526,9 @@
                     "VideoRetrieval": 53.85,
                     "WinoGrande": 53.7,
                     "WikipediaRetrievalMultilingual (hi)": 84.96,
+                    "XMarket (de)": 25.01,
+                    "XMarket (en)": 26.66,
+                    "XMarket (es)": 26.2,
                     "XPQARetrieval (ara-ara)": 45.21,
                     "XPQARetrieval (eng-ara)": 27.34,
                     "XPQARetrieval (ara-eng)": 39.43,
@@ -9535,8 +9564,7 @@
                     "XPQARetrieval (tam-eng)": 21.26,
                     "XPQARetrieval (cmn-cmn)": 65.29,
                     "XPQARetrieval (eng-cmn)": 35.86,
-                    "XPQARetrieval (cmn-eng)": 58.12,
-                    "XQuADRetrieval (hi-hi)": 88.93
+                    "XPQARetrieval (cmn-eng)": 58.12
                 }
             ],
             "recall_at_1": [
@@ -9562,6 +9590,7 @@
                     "BIOSSES": 86.32,
                     "BQ": 49.18,
                     "CDSC-R": 93.38,
+                    "GermanSTSBenchmark": 81.23,
                     "LCQMC": 75.52,
                     "PAWSX": 16.4,
                     "RUParaPhraserSTS": 74.37,
@@ -9586,6 +9615,8 @@
                     "STS17 (en-en)": 90.14,
                     "STS17 (es-en)": 87.47,
                     "STS17 (es-es)": 87.12,
+                    "STS22 (ru)": 68.45,
+                    "STS22 (en)": 68.63,
                     "STSB": 78.12,
                     "STSBenchmark": 85.64,
                     "STSBenchmarkMultilingualSTS (en)": 85.65,
@@ -9606,6 +9637,7 @@
                     "BIOSSES": 86.32,
                     "BQ": 49.18,
                     "CDSC-R": 93.38,
+                    "GermanSTSBenchmark": 81.23,
                     "LCQMC": 75.52,
                     "PAWSX": 16.4,
                     "RUParaPhraserSTS": 74.37,
@@ -9629,6 +9661,7 @@
                     "STS17 (en-en)": 90.14,
                     "STS17 (es-en)": 87.47,
                     "STS17 (es-es)": 87.12,
+                    "STS22 (ru)": 68.45,
                     "STSB": 78.12,
                     "STSBenchmark": 85.64,
                     "STSBenchmarkMultilingualSTS (en)": 85.65,
@@ -9641,6 +9674,10 @@
                     "STSBenchmarkMultilingualSTS (de)": 82.08,
                     "STSBenchmarkMultilingualSTS (it)": 81.69,
                     "STSBenchmarkMultilingualSTS (zh)": 79.73
+                },
+                {
+                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/GritLM/GritLM-7B\">GritLM-7B</a>",
+                    "STS22 (en)": 68.63
                 }
             ]
         },
@@ -9660,8 +9697,8 @@
             "accuracy": [
                 {
                     "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://huggingface.co/GritLM/GritLM-7B\">GritLM-7B</a>",
-                    "CEDRClassification": 42.68,
-                    "SensitiveTopicsClassification": 28.52
+                    "CEDRClassification": 50.67,
+                    "SensitiveTopicsClassification": 33.24
                 }
             ]
         },
