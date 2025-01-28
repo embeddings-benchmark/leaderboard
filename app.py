@@ -340,7 +340,7 @@ with gr.Blocks(css=css) as block:
 
                             with gr.Row():
                                 datatype = ["number", "markdown"] + ["number"] * len(item["data"])
-                                dataframe = gr.Dataframe(item["data"], datatype=datatype, type="pandas", height=500)
+                                dataframe = gr.Dataframe(item["data"], datatype=datatype, type="pandas")
                                 dataframes.append(dataframe)
 
                                 full_dataframe = gr.Dataframe(item["data"], datatype=datatype, type="pandas", visible=False)

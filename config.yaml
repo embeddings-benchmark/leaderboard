@@ -425,7 +425,6 @@ boards:
        - SentimentAnalysisHindi (hi)
        - MassiveIntentClassification (hi)
        - MassiveScenarioClassification (hi)
-       - MTOPIntentClassification (hi)
        - MultiHateClassification (hi)
        - SIB200Classification (hi)
        - TweetSentimentClassification (hi)
@@ -434,15 +433,12 @@ boards:
        - IndicReviewsClusteringP2P (hi)
        - SIB200ClusteringS2S (hi)
      Reranking:
-       - MIRACLReranking (hi)
        - WikipediaRerankingMultilingual (hi)
      Retrieval:
        - BelebeleRetrieval (hin-Deva)
        - IndicQARetrieval (hi)
        - MintakaRetrieval (hi)
-       - MIRACLRetrievalHardNegatives (hi)
        - MultiLongDocRetrieval (hi)
-       - WikipediaRetrievalMultilingual (hi)
      STS:
        - SemRel24STS (hi)
      PairClassification:
