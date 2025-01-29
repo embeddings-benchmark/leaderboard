@@ -2176,6 +2176,7 @@ models_to_skip:
 - yoeven/multilingual-e5-large-instruct-Q3_K_S-GGUF
 - yoeven/multilingual-e5-large-instruct-Q5_K_M-GGUF
 - anuccikpmg/multilingual-e5-large-instruct-openvino-int8
+- iamgroot42/spice
 cross_encoders:
 - FollowIR-7B
 - flan-t5-base
