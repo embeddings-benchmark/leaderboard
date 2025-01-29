@@ -421,8 +421,6 @@ boards:
    credits: "[Lingo-iitgn](https://github.com/lingo-iitgn), [Sailesh Panda](https://github.com/SaileshP97)"
    tasks:
      Classification:
-       - HindiDiscourseClassification (hi)
-       - SentimentAnalysisHindi (hi)
        - MassiveIntentClassification (hi)
        - MassiveScenarioClassification (hi)
        - MultiHateClassification (hi)
