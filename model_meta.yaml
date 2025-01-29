@@ -2168,6 +2168,14 @@ models_to_skip:
 - msyukorai/gte-Qwen2-1.5B-instruct-Q4_0-GGUF
 - LuminaInc/jina-embeddings-v3
 - sparkhonyuk/gte-Qwen2-7B-instruct-GGUF
+- billatsectorflow/stella_en_1.5B_v5
+- billatsectorflow/stella_en_400M_v5
+- koble-ai/jina-embeddings-v3
+- yoeven/multilingual-e5-large-instruct-Q5_0-GGUF
+- JHJHJHJHJ/multilingual-e5-large-instruct-Q5_K_M-GGUF
+- yoeven/multilingual-e5-large-instruct-Q3_K_S-GGUF
+- yoeven/multilingual-e5-large-instruct-Q5_K_M-GGUF
+- anuccikpmg/multilingual-e5-large-instruct-openvino-int8
 cross_encoders:
 - FollowIR-7B
 - flan-t5-base
