@@ -411,6 +411,36 @@ boards:
         - MassiveIntentClassification (nb)
         - MassiveScenarioClassification (nb)
         - ScalaNbClassification
+  hi:
+   title: Hindi
+   language_long: "Hindi"
+   has_overall: true
+   acronym: null
+   icon: 🇮🇳
+   special_icons: null
+   credits: "[Lingo-iitgn](https://github.com/lingo-iitgn), [Sailesh Panda](https://github.com/SaileshP97)"
+   tasks:
+     Classification:
+       - MassiveIntentClassification (hi)
+       - MassiveScenarioClassification (hi)
+       - MultiHateClassification (hi)
+       - SIB200Classification (hi)
+       - TweetSentimentClassification (hi)
+       - IndicSentimentClassification (hi)
+     Clustering:
+       - IndicReviewsClusteringP2P (hi)
+       - SIB200ClusteringS2S (hi)
+     Reranking:
+       - WikipediaRerankingMultilingual (hi)
+     Retrieval:
+       - BelebeleRetrieval (hin-Deva)
+       - IndicQARetrieval (hi)
+       - MintakaRetrieval (hi)
+       - MultiLongDocRetrieval (hi)
+     STS:
+       - SemRel24STS (hi)
+     PairClassification:
+       - XNLI (hi)
   other-cls:
     title: "Other Languages"
     language_long: "47 (Only languages not included in the other tabs)"
