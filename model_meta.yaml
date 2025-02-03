@@ -1818,6 +1818,16 @@ model_meta:
     is_external: false
     is_proprietary: false
     is_sentence_transformers_compatible: false
+    uses_instruct: true
+  cde-small-v2:
+    link: https://huggingface.co/jxm/cde-small-v2
+    seq_len: 512
+    size: 150
+    dim: 768
+    is_external: false
+    is_proprietary: false
+    is_sentence_transformers_compatible: false
+    uses_instruct: true
 models_to_skip:
 - michaelfeil/ct2fast-e5-large-v2
 - McGill-NLP/LLM2Vec-Sheared-LLaMA-mntp-unsup-simcse
@@ -2131,6 +2141,60 @@ models_to_skip:
 - deepfile/multilingual-e5-small-onnx-qint8
 - deepfile/multilingual-e5-small-openvino
 - Marqo/multilingual-e5-small
+- mirekphd/gte-Qwen2-7B-instruct-Q2_K-GGUF
+- beethogedeon/gte-Qwen2-7B-instruct-Q4_K_M-GGUF
+- MichielEeckhout/gte-Qwen2-7B-instruct-Q4_K_M-GGUF
+- compressa-ai/Compressa-Embeddings
+- ilhamdprastyo/jina-embeddings-v3-tei
+- OysterHR/gte-base-en-v1.5
+- Saco93/Conan-embedding-v1-Q4_K_S-GGUF
+- lagoon999/Conan-embedding-v1-Q4_K_M-GGUF
+- lagoon999/xiaobu-embedding-v2-Q8_0-GGUF
+- mirekphd/gte-Qwen2-7B-instruct-Q2_K-GGUF
+- beethogedeon/gte-Qwen2-7B-instruct-Q4_K_M-GGUF
+- MichielEeckhout/gte-Qwen2-7B-instruct-Q4_K_M-GGUF
+- gpustack/jina-embeddings-v2-base-zh-GGUF
+- arkohut/jina-embeddings-v2-base-zh
+- silverjam/jina-embeddings-v2-base-zh
+- BookingCare/gte-multilingual-base-onnx-quantized
+- blevlabs/stella_en_v5
+- sigridjineth/stella_en_1.5B_v5_sigrid
+- google/Gemma-Embeddings-v1.0
+- starsy/bge-en-icl
+- Gouzi3618/LENS-8000
+- Gouzi3618/LENS-4000
+- starsy/gte-Qwen2-7B-instruct
+- sthuck/gte-Qwen2-7B-instruct-bfloat16
+- Fashion-Italia/gte-Qwen2-7B-instruct-Q4_K_M-GGUF
+- gall88/gte-Qwen2-7B-instruct-fp16
+- BillSYZhang/gte-Qwen2-7B-instruct-Q4-mlx
+- Fashion-Italia/gte-Qwen2-1.5B-instruct-Q4_K_M-GGUF
+- pingkeest/learning2_model
+- Quark-LLM/quark-llm-embedding-8B
+- Quark-LLM/quark-llm-embedding-1.5B
+- HIT-TMG/KaLM-embedding-multilingual-max-instruct-v1
+- annofung/Dmeta-embedding-zh-Q4_0-GGUF
+- annofung/Dmeta-embedding-zh-Q5_K_M-GGUF
+- huizhang0110/hui-embedding
+- tensorblock/e5-R-mistral-7b-GGUF
+- google/Gemma-Embeddings-v0.8
+- lynxeco/snowflake-arctic-embed-m-v1.5-Q8_0-GGUF
+- mavihsrr/bge-small-retail-finetuned
+- jburmeister/stella_en_400M_v5
+- iamgroot42/rover_nexus
+- alexlimh/jasper_en_vision_language_v1
+- msyukorai/gte-Qwen2-1.5B-instruct-Q4_0-GGUF
+- LuminaInc/jina-embeddings-v3
+- sparkhonyuk/gte-Qwen2-7B-instruct-GGUF
+- billatsectorflow/stella_en_1.5B_v5
+- billatsectorflow/stella_en_400M_v5
+- koble-ai/jina-embeddings-v3
+- yoeven/multilingual-e5-large-instruct-Q5_0-GGUF
+- JHJHJHJHJ/multilingual-e5-large-instruct-Q5_K_M-GGUF
+- yoeven/multilingual-e5-large-instruct-Q3_K_S-GGUF
+- yoeven/multilingual-e5-large-instruct-Q5_K_M-GGUF
+- anuccikpmg/multilingual-e5-large-instruct-openvino-int8
+- iamgroot42/spice
 cross_encoders:
 - FollowIR-7B
 - flan-t5-base
