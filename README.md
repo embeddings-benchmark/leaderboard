@@ -13,9 +13,11 @@ startup_duration_timeout: 1h
 fullWidth: true
 ---
 
-## The MTEB Leaderboard repository
+> As of February 4, 2025, this repository will no longer be under active maintenance, and will be replaced by the new version of the leaderboard, which is integrated into the [mteb package](https://github.com/embeddings-benchmark/mteb). All requested modifications to the leaderboard or model submissions should start in the MTEB repository. 
 
-This repository contains the code for pushing and updating the MTEB leaderboard daily. 
+## The Legacy MTEB Leaderboard repository
+
+This repository contains legacy code for pushing and updating the MTEB leaderboard daily. 
 
 | Relevant Links                                                | Decription                                                                                                                                                                                                |
 |------------------------------------------|------------------------------|
