@@ -45518,6 +45518,144 @@
             ]
         }
     },
+    "voyageai__voyage-3-m-exp": {
+        "BitextMining": {
+            "f1": []
+        },
+        "Classification": {
+            "accuracy": [
+                {
+                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://docs.voyageai.com/embeddings/\">voyage-3-m-exp</a>",
+                    "AmazonCounterfactualClassification (en)": 95.78,
+                    "AmazonPolarityClassification": 97.71,
+                    "AmazonReviewsClassification (en)": 63.62,
+                    "Banking77Classification": 93.8,
+                    "EmotionClassification": 64.86,
+                    "ImdbClassification": 97.29,
+                    "MTOPDomainClassification (en)": 99.95,
+                    "MTOPIntentClassification (en)": 91.85,
+                    "MassiveIntentClassification (en)": 91.94,
+                    "MassiveScenarioClassification (en)": 99.3,
+                    "ToxicConversationsClassification": 97.59,
+                    "TweetSentimentExtractionClassification": 88.23
+                }
+            ]
+        },
+        "Clustering": {
+            "v_measure": [
+                {
+                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://docs.voyageai.com/embeddings/\">voyage-3-m-exp</a>",
+                    "ArxivClusteringP2P": 57.14,
+                    "ArxivClusteringS2S": 52.64,
+                    "BiorxivClusteringP2P": 54.65,
+                    "BiorxivClusteringS2S": 49.95,
+                    "MedrxivClusteringP2P": 51.53,
+                    "MedrxivClusteringS2S": 48.99,
+                    "RedditClustering": 77.16,
+                    "RedditClusteringP2P": 70.23,
+                    "StackExchangeClustering": 82.03,
+                    "StackExchangeClusteringP2P": 48.17,
+                    "TwentyNewsgroupsClustering": 83.49
+                }
+            ]
+        },
+        "PairClassification": {
+            "max_ap": [
+                {
+                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://docs.voyageai.com/embeddings/\">voyage-3-m-exp</a>",
+                    "SprintDuplicateQuestions": 92.09,
+                    "TwitterSemEval2015": 79.18,
+                    "TwitterURLCorpus": 87.12
+                },
+                {
+                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://docs.voyageai.com/embeddings/\">voyage-3-m-exp</a>",
+                    "SprintDuplicateQuestions": 92.09,
+                    "TwitterSemEval2015": 79.18,
+                    "TwitterURLCorpus": 87.12
+                }
+            ]
+        },
+        "Reranking": {
+            "map": [
+                {
+                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://docs.voyageai.com/embeddings/\">voyage-3-m-exp</a>",
+                    "AskUbuntuDupQuestions": 66.93,
+                    "MindSmallReranking": 29.68,
+                    "SciDocsRR": 86.72,
+                    "StackOverflowDupQuestions": 54.69
+                }
+            ]
+        },
+        "Retrieval": {
+            "ndcg_at_10": [
+                {
+                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://docs.voyageai.com/embeddings/\">voyage-3-m-exp</a>",
+                    "ArguAna": 89.79,
+                    "ClimateFEVER": 56.93,
+                    "DBPedia": 48.25,
+                    "FEVER": 96.28,
+                    "FiQA2018": 78.01,
+                    "HotpotQA": 86.96,
+                    "MSMARCO": 37.28,
+                    "NFCorpus": 46.99,
+                    "NQ": 82.48,
+                    "QuoraRetrieval": 88.86,
+                    "SCIDOCS": 34.53,
+                    "SciFact": 85.09,
+                    "TRECCOVID": 82.75,
+                    "Touche2020": 39.39
+                }
+            ]
+        },
+        "STS": {
+            "cosine_spearman": [
+                {
+                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://docs.voyageai.com/embeddings/\">voyage-3-m-exp</a>",
+                    "BIOSSES": 87.7,
+                    "SICK-R": 81.62,
+                    "STS12": 78.57,
+                    "STS13": 88.19,
+                    "STS14": 84.07,
+                    "STS15": 89.45,
+                    "STS16": 86.36,
+                    "STS17 (en-en)": 89.36,
+                    "STS22 (en)": 65.48,
+                    "STSBenchmark": 88.32
+                },
+                {
+                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://docs.voyageai.com/embeddings/\">voyage-3-m-exp</a>",
+                    "BIOSSES": 87.7,
+                    "SICK-R": 81.62,
+                    "STS12": 78.57,
+                    "STS13": 88.19,
+                    "STS14": 84.07,
+                    "STS15": 89.45,
+                    "STS16": 86.36,
+                    "STS17 (en-en)": 89.36,
+                    "STS22 (en)": 65.48,
+                    "STSBenchmark": 88.32
+                }
+            ]
+        },
+        "Summarization": {
+            "cosine_spearman": [
+                {
+                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://docs.voyageai.com/embeddings/\">voyage-3-m-exp</a>",
+                    "SummEval": 30.45
+                },
+                {
+                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://docs.voyageai.com/embeddings/\">voyage-3-m-exp</a>",
+                    "SummEval": 30.45
+                }
+            ]
+        },
+        "MultilabelClassification": {
+            "accuracy": []
+        },
+        "InstructionRetrieval": {
+            "p-MRR": []
+        }
+    },
     "voyageai__voyage-code-2": {
         "BitextMining": {
             "f1": []
@@ -45601,6 +45739,62 @@
                     "SummEvalFr": 28.34
                 }
             ]
+        },
+        "MultilabelClassification": {
+            "accuracy": []
+        },
+        "InstructionRetrieval": {
+            "p-MRR": []
+        }
+    },
+    "voyageai__voyage-code-3": {
+        "BitextMining": {
+            "f1": []
+        },
+        "Classification": {
+            "accuracy": []
+        },
+        "Clustering": {
+            "v_measure": []
+        },
+        "PairClassification": {
+            "max_ap": []
+        },
+        "Reranking": {
+            "map": []
+        },
+        "Retrieval": {
+            "ndcg_at_10": [
+                {
+                    "Model": "<a target=\"_blank\" style=\"text-decoration: underline\" href=\"https://docs.voyageai.com/embeddings/\">voyage-code-3</a>",
+                    "AppsRetrieval": 93.62,
+                    "CodeFeedbackMT": 93.58,
+                    "CodeFeedbackST": 90.67,
+                    "CodeSearchNetCCRetrieval (python)": 94.43,
+                    "CodeSearchNetCCRetrieval (javascript)": 91.53,
+                    "CodeSearchNetCCRetrieval (go)": 91.76,
+                    "CodeSearchNetCCRetrieval (ruby)": 89.26,
+                    "CodeSearchNetCCRetrieval (java)": 90.19,
+                    "CodeSearchNetCCRetrieval (php)": 83.39,
+                    "CodeSearchNetRetrieval (python)": 96.69,
+                    "CodeSearchNetRetrieval (javascript)": 89.98,
+                    "CodeSearchNetRetrieval (go)": 97.5,
+                    "CodeSearchNetRetrieval (ruby)": 92.83,
+                    "CodeSearchNetRetrieval (java)": 94.51,
+                    "CodeSearchNetRetrieval (php)": 92.29,
+                    "CodeTransOceanContest": 94.96,
+                    "CodeTransOceanDL": 38.57,
+                    "CosQA": 34.45,
+                    "StackOverflowQA": 97.17,
+                    "SyntheticText2SQL": 62.87
+                }
+            ]
+        },
+        "STS": {
+            "cosine_spearman": []
+        },
+        "Summarization": {
+            "cosine_spearman": []
         },
         "MultilabelClassification": {
             "accuracy": []
